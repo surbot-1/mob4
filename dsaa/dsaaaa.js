@@ -31,9 +31,9 @@
 	  
 	var timer;
 	function check() { 
-	var x = cordx;  var y = cordy; 
-	var tend = cordt;  
-           if (tend == 3) { cordt = 0;
+	var x = cordix;  var y = cordiy; 
+	var tend = touchit;  
+           if (tend == 3) { touchit = 0;
               if (x>0 && x<1080 && y>2032 && y<2176) { 
               clearInterval(timer); dsaaaaaa(); 
                }
