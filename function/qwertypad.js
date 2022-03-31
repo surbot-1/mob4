@@ -2,12 +2,9 @@ function qwertypad() {
      cxp=cx; cyp=cy;
      clearInterval(cursor);
      showCursor();
-     writeChar();
-     // writeMessage1();
-     storeMessageStr();
-    // storeMessageArr();
-     // putMsgCnt();
-     updateCursor();
+     writeChar(); 
+     storeMessageStr(); 
+     updateCursor(); 
      cursor = setInterval(writeCursor, 1000); 	
 
 var qwertyChar    = ["Q","W","E","R","T","Y","U","I","O","P",
@@ -118,7 +115,6 @@ function writeMessage() {
   var x = cordx;
   var y = cordy;
   if (x>0 && x<1080 && y>1536 && y<2176) {
-  readQwerty();
   var keyC = keyChar; 
   if(keyC == "SI") { 
   } else if(keyC == "BS") {
@@ -157,12 +153,11 @@ function writeMessage() {
    }   // write_message
 
 	
-function storeMessageStr() {
-        readQwerty();
+function storeMessageStr() { 
         var keyC = keyChar;
         var keyH = keyHex;
-        if (keyC == "SI") {           // shift_in
-                
+        if (keyC == "SI") {           // shift_in  
+		
 	} else if (keyC == "BS") {    // back_space
                if (cpr==0) {
               } else {
@@ -188,8 +183,7 @@ function storeMessageStr() {
      }
 	
   
- function storeMessageArr() {
-	  readQwerty();
+ function storeMessageArr() { 
 	 var keyC = keyChar;
 	 var keyH = keyHex;
 	
@@ -225,15 +219,13 @@ function writeChar() {
         var y = cordy;
   if (x>0 && x<1080 && y>1536 && y<2176) {
      var cnv = document.getElementById("canvas");
-     var ctx = cnv.getContext('2d');
-	readQwerty();
+     var ctx = cnv.getContext('2d'); 
         var keyP = msgArr[cpr-1]; // previous
 	var keyH = keyHex;
   if(keyH == 0x0F) {              // shift
   } else if(keyH == 0x08) {       // back_space
        if (cpr==0) {
-       } else if(keyP==0x0A) {
-	       
+       } else if(keyP==0x0A) { 
 	       var i=0; var j=0;
 	       for (let k=0; k<cpr-1; k++) {
                   if (msgArr[k]==0x0A) {
@@ -245,8 +237,7 @@ function writeChar() {
 		   if (j>1) {i=0; j=0;}
 		  }
 		}
-	      cx=cxi+28*i; cy=cyi+48*j;
-	       
+	      cx=cxi+28*i; cy=cyi+48*j;   
        } else {
         ctx.fillStyle = "white";
         ctx.fillRect(cx, cy, 4, 48);
@@ -263,15 +254,12 @@ function writeChar() {
        ctx.fillRect(cx, cy, 28, 48);
 	   cx+=28;
        if(cx>cxf) {cx=cxi; cy+=48;}
-       if(cy>cyf) {cx=cxi; cy=cyi;}
-	  
+       if(cy>cyf) {cx=cxi; cy=cyi;} 
   } else if(keyH == 0x0A) {    // enter
        ctx.fillStyle = "white";
        ctx.fillRect(cx, cy, 4, 48);
 	 cx=cxi; cy+=48;
-       if(cy>cyf) {cx=cxi; cy=cyi;}
-       
-	  
+       if(cy>cyf) {cx=cxi; cy=cyi;}   
   } else {
        ctx.fillStyle = "white";
        ctx.fillRect(cx, cy, 4, 48);
@@ -280,13 +268,11 @@ function writeChar() {
         cx+=28;
        if(cx>cxf) {cx=cxi; cy+=48;}
        if(cy>cyf) {cx=cxi; cy=cyi;}
-       }  
-     }
-   }
+    }  
+  }
+}
 	
- 
-function putChar() {
-	
+function putChar() { 
         var cnv = document.getElementById("canvas");
         var ctx = cnv.getContext('2d');
         var imgData = ctx.createImageData(24, 48);
