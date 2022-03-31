@@ -1,4 +1,4 @@
- function dsaaaa() {  // drawKeypad(0, 240);
+ function dsaaaa() { 
 	
     var cx=0, cy=0, cw=1080, ch=2400-112-112; // 2176
     var canvas = document.getElementById("canvas");
