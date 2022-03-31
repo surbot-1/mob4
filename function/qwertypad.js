@@ -4,6 +4,7 @@ function qwertypad() {
      showCursor(); 
      readQwerty();
      writeChar(); 
+     writeMessagege(); 
      storeMessageStr(); 
      updateCursor(); 
      cursor = setInterval(writeCursor, 1000); 	
@@ -110,7 +111,7 @@ var qwertyHex     = [0x51,0x57,0x45,0x52,0x54,0x59,0x55,0x49,0x4F,0x50,  // 0-9 
    }  // read_qwerty
 	
    
-function writeMessage() { 
+function writeMessagege() { 
   var cvs = document.getElementById("canvas");
   var ctx = cvs.getContext('2d');
   var x = cordx;
