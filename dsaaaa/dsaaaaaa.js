@@ -1,6 +1,5 @@
  function dsaaaaaa() { 
-	 
-    cursor = setInterval(writeCursor, 1000);
+	
     var canx=0, cany=0, canw=1080, canh=2400-112-112; // 2176
     var cvs = document.getElementById("canvas");
     var ctx = cvs.getContext('2d');
@@ -47,7 +46,7 @@
     var tend = touch;  
     if (tend == 3) { touch = 0;
        if (x>0 && x<72 && y>0 && y<144) {          // back
-              clearInterval(timer); clrCursor(); dsaaaa();
+              clearInterval(timer); dsaaaa();
        } else if (x>72 && x<108 && y>0 && y<144) {  // dp
        } else if (x>108 && x<740 && y>0 && y<144) {  // space
        } else if (x>740 && x<800 && y>0 && y<144) {  // video call
@@ -62,7 +61,7 @@
 	      
        } else if (x>0 && x<1080 && y>1536 && y<2032) {  // keypad 
        } else if (x>0 && x<1080 && y>2032 && y<2176) {  // keypad
-	      clearInterval(timer); clrCursor(); dsaaaaab();
+	      clearInterval(timer); dsaaaaab();
        }
       }
      }
