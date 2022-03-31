@@ -22,8 +22,8 @@ var qwertyHex     = [0x51,0x57,0x45,0x52,0x54,0x59,0x55,0x49,0x4F,0x50,  // 0-9 
  }
 	
  function readQwerty() {
-     var x = cordix;
-     var y = cordiy;
+     var x = cordx;
+     var y = cordy;
 	
    if (y>1535 && y<1535+160) {
      for (let i=0; i<10; i++) {
@@ -249,13 +249,13 @@ function putChar() {
 		   fontView[k+2] = 0x00;
 		   fontView[k+3] = 0xFF;
 		    k+=4; 
-                   } else {
+                 } else {
 		   fontView[k+0] = 0xFF; 
 		   fontView[k+1] = 0xFF;
 		   fontView[k+2] = 0xFF;
 		   fontView[k+3] = 0xFF;
 		    k+=4; 
-                   }
+                 }
 		  
               }
           }
