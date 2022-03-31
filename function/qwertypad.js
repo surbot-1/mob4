@@ -2,9 +2,9 @@ function qwertypad() {
      cxp=cx; cyp=cy; 
      clearInterval(cursor); 
      showCursor(); 
-     readQwerty();
-     writeChar(); 
-     storeMessageStr(); 
+     readQwerty(); 
+     storeMessageStr();
+     writeChar();  
      updateCursor(); 
      cursor = setInterval(writeCursor, 1000); 	
 	
@@ -18,8 +18,8 @@ var msgStr="";
 var ci = 16; var cj = 208;
 var ptr=0;
 var cls=0; var cla=0; var cpr=0;
-var keyChar; var kHex; 
-var keyHex;  var kChar; 
+var keyChar=""; var kHex=[]; 
+var keyHex=[];  var kChar=""; 
 var cxi=124+14;  var cxf=796-14;
 var cyi=1440-24; var cyf=1488-24;
 var cx=124+14; var cy=1440-24; var cp;
