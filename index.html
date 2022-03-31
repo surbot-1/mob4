@@ -50,8 +50,12 @@ document.getElementById("divCanv").appendChild(canvs);
 var canvas = document.getElementById("canvas"); 
 var context = canvas.getContext('2d'); 
 	
-var cordx, cordy, cordt=0; 
-var cursor; 
+var cordix=0, cordiy=0;  
+var cordpx=0, cordpy=0; 
+var ttype=0; 
+var cix=0, ciy=208;
+var cpx=0, cpy=0; 
+var cursor=false; 
 	
 </script>  
 
@@ -63,9 +67,9 @@ function handleEnd(evt) {
        var ele = document.getElementById("canvas");
        var ctx = ele.getContext("2d");
        var touches = evt.changedTouches;
-       var  x = touches[0].pageX; cordx = x;
-       var  y = touches[0].pageY; cordy = y;
-       var  tend = 3;             cordt = tend;  // touchend
+       var  x = touches[0].pageX; cordix = x;
+       var  y = touches[0].pageY; cordiy = y;
+       var  tend = 3;             ttype = tend;  // touchend
       }
       canvas.addEventListener("touchend", handleEnd, false);	
 	
