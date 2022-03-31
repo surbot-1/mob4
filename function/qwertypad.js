@@ -182,7 +182,7 @@ function writeChar() {
 	var keyH = keyHex;
   if(keyH == 0x0F) {              // shift
   } else if(keyH == 0x08) {       // back_space
-       if (cpr==0) {
+       if (ptr==0) {
        } else if(keyP==0x0A) { 
 	       var i=0; var j=0;
 	       for (let k=0; k<(ptr-1); k++) {
