@@ -9,7 +9,7 @@
 	   
         var image1 = new Image();  // dp 144
         image1.setAttribute('crossOrigin', 'anonymous');
-        image1.src = 'dp3.png'; 
+        image1.src = 'image/dp3.png'; 
         image1.onload = function (e) {
         var x = cx;
         var y = cy;
@@ -20,7 +20,7 @@
 	  
 	var image2 = new Image();  // text 144
         image2.setAttribute('crossOrigin', 'anonymous');
-        image2.src = 'text5.png';
+        image2.src = 'image/text5.png';
         image2.onload = function (e) {
 	var x = cx;
 	var y = ch-144-640;  // 1392
@@ -31,7 +31,7 @@
 	  
 	var image3 = new Image();  // keypad 640
         image3.setAttribute('crossOrigin', 'anonymous');
-        image3.src = 'keypad1.png';
+        image3.src = 'image/keypad1.png';
         image3.onload = function (e) { 
 	var x = cx;
 	var y = ch-640;    // 1536
@@ -40,13 +40,13 @@
           ctx.drawImage(image3, x, y, w, h); 
         };
 	  
-   var inv;
-   function chk() { 
+   var timer;
+   function check() { 
     var x = cordx;  var y = cordy; 
-    var t = cordt;  
-    if (t == 3) { cordt = 0;
+    var tend = cordt;  
+    if (tend == 3) { cordt = 0;
 	   if (x>0 && x<72 && y>0 && y<144) {          // back
-           clearInterval(inv); clrCursor(); ds1();
+           clearInterval(timer); clrCursor(); dsaaaa();
        } else if (x>72 && x<108 && y>0 && y<144) {  // dp
        } else if (x>108 && x<740 && y>0 && y<144) {  // space
        } else if (x>740 && x<800 && y>0 && y<144) {  // video call
@@ -64,6 +64,6 @@
        }
       }
      }
-     inv = setInterval(chk, 0100);
+     timer= setInterval(check, 0100);
 	    
  }
