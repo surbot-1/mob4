@@ -1,21 +1,4 @@
-function qwertypad() { 
-  	
-var msgBuf = new ArrayBuffer(256);
-var msgView = new DataView(msgBuf);
-msgView.setUint8(0, 125);
-msgView.getUint8(0); // 125
-var msgArr = new Uint8Array(msgBuf);
-var msgStr="";
-		
-var ci = 16; var cj = 208; 
-var cls=0; var cla=0; var cpr=0;
-var keyChar=""; var kHex=[]; 
-var keyHex=[];  var kChar=""; 
-var cxi=124+14;  var cxf=796-14;
-var cyi=1440-24; var cyf=1488-24;
-var cx=124+14; var cy=1440-24; 
-var cxp=0; var cyp=0;  
-var cw=24; var ch=48; var oh=33; 
+function qwertypad() {  
 
 var qwertyChar    = ["Q","W","E","R","T","Y","U","I","O","P",
 	               "A","S","D","F","G","H","J","K","L",
