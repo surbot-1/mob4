@@ -22,44 +22,13 @@
         image2.setAttribute('crossOrigin', 'anonymous');
         image2.src = 'image/dp9.png';
         image2.onload = function (e) {
-        var x = canx;
-	var y = cany+144;
-	var w = canw;
-	var h = 144;
-          context.drawImage(image2, x, y, w, h);
-        }; 
-	 
-	var image3 = new Image();  // dp 144
-        image3.setAttribute('crossOrigin', 'anonymous');
-        image3.src = 'image/dp9.png';
-        image3.onload = function (e) {
-        var x = canx;
-	var y = cany+144*2;
-	var w = canw;
-	var h = 144;
-          context.drawImage(image3, x, y, w, h);
-        }; 
-	 
-	var image4 = new Image();  // dp 144
-        image4.setAttribute('crossOrigin', 'anonymous');
-        image4.src = 'image/dp9.png';
-        image4.onload = function (e) {
-        var x = canx;
-	var y = cany+144*3;
-	var w = canw;
-	var h = 144;
-          context.drawImage(image4, x, y, w, h);
-        }; 
-	 
-	var image5 = new Image();  // dp 144
-        image5.setAttribute('crossOrigin', 'anonymous');
-        image5.src = 'image/dp9.png';
-        image5.onload = function (e) {
-        var x = canx;
-	var y = cany+144*4;
-	var w = canw;
-	var h = 144;
-          context.drawImage(image5, x, y, w, h);
+           for (let i=0; i<10; i++) { 
+               var x = canx; 
+               var y = cany+160+160*i;
+               var w = canw;
+               var h = 144; 
+               context.drawImage(image2, x, y, w, h); 
+            }
         }; 
 	
         var image10 = new Image();  // text 144
