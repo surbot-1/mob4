@@ -1,4 +1,4 @@
-function keypad() { 
+function qwertypad() { 
 	
 var msgBuf = new ArrayBuffer(256);
 var msgView = new DataView(msgBuf);
@@ -28,8 +28,8 @@ var cx=124+14; var cy=1440-24; var cp;
 var cxp; var cyp;  
 var cw=24; var ch=48; var oh=33; 
   
-qwertypad();
-function qwertypad() {
+qwertypad1();
+function qwertypad1() {
      cxp=cx; cyp=cy;
      clearInterval(cursor);
      showCursor();
@@ -41,7 +41,7 @@ function qwertypad() {
      updateCursor();
      cursor = setInterval(writeCursor, 1000); 	
 	
-   } // qwertypad
+   } // qwertypad1
 	
   
  function readQwerty() {
@@ -384,6 +384,6 @@ function putChar() {
               }
         ctx.putImageData(imgData,cx+4, cy);   
     
-     } // keypad
+     } // qwertypad
 
 
