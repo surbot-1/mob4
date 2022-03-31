@@ -17,7 +17,9 @@
 <script src="font/inconsolafont.js"></script>
 <script src="font/font1632.js"></script>
 <script src="font/font2448.js"></script>
-<script src="font/font3264.js"></script>
+<script src="initialize/signin.js"></script>
+<script src="initialize/signup.js"></script>
+
 <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 	
 <script>
@@ -37,12 +39,26 @@ document.getElementById("divCanv").appendChild(canvs);
 	
 </script>  
 
+		
+<script> 
+var cordx, cordy, cordt=0; 
+var canvas = document.getElementById("canvas"); 
+var context = canvas.getContext('2d'); 
+function handleEnd(evt) { 
+       evt.preventDefault();
+       var ele = document.getElementById("canvas");
+       var ctx = ele.getContext("2d");
+       var touches = evt.changedTouches;
+       var  x = touches[0].pageX; cordx = x;
+       var  y = touches[0].pageY; cordy = y;
+       var  t = 3;                cordt = t;  // touchend
+      }
+      canvas.addEventListener("touchend", handleEnd, false);	
 	
+</script> 
 	
 <script> 
-	
-	
-	
+dsaa();	
 </script> 
 	
 </body> 
