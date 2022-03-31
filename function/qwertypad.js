@@ -1,35 +1,4 @@
 function qwertypad() { 
-	
-var msgBuf = new ArrayBuffer(256);
-var msgView = new DataView(msgBuf);
-msgView.setUint8(0, 125);
-msgView.getUint8(0); // 125
-var msgArr = new Uint8Array(msgBuf);
-var msgStr;
-
-var qwertyChar    = ["Q","W","E","R","T","Y","U","I","O","P",
-	               "A","S","D","F","G","H","J","K","L",
-	             "SI", "Z","X","C","V","B","N","M","BS",
-	            "DC1","DC2",",",   "SPACE",    ".","\n"];
-
-var qwertyHex     = [0x51,0x57,0x45,0x52,0x54,0x59,0x55,0x49,0x4F,0x50,  // 0-9  QEERTYUIOP
-	               0x41,0x53,0x44,0x46,0x47,0x48,0x4A,0x4B,0x4C,     // 10-18 ASDFGHJKL
-	             0x0F, 0x5A,0x58,0x43,0x56,0x42,0x4E,0x4D, 0x08,    // 19-27 siZXCVBNMbs
-	             0x11, 0x12,0x2C,       0x20,        0x2E, 0x0A];   // 28-33 dc1dc2,Space.dc
-	
-var ci = 16; var cj = 208;
-var ptr=0;
-var cls=0; var cla=0; var cpr=0;
-var keyChar; var kChar;
-var keyHex;  var kHex;
-var cxi=124+14;  var cxf=796-14;
-var cyi=1440-24; var cyf=1488-24;
-var cx=124+14; var cy=1440-24; var cp;
-var cxp; var cyp;  
-var cw=24; var ch=48; var oh=33; 
-  
-qwertypad1();
-function qwertypad1() {
      cxp=cx; cyp=cy;
      clearInterval(cursor);
      showCursor();
@@ -40,12 +9,18 @@ function qwertypad1() {
      // putMsgCnt();
      updateCursor();
      cursor = setInterval(writeCursor, 1000); 	
-	
-   } // qwertypad1
-	
+
+var qwertyChar    = ["Q","W","E","R","T","Y","U","I","O","P",
+	               "A","S","D","F","G","H","J","K","L",
+	             "SI", "Z","X","C","V","B","N","M","BS",
+	            "DC1","DC2",",",   "SPACE",    ".","\n"];
+
+var qwertyHex     = [0x51,0x57,0x45,0x52,0x54,0x59,0x55,0x49,0x4F,0x50,  // 0-9  QEERTYUIOP
+	               0x41,0x53,0x44,0x46,0x47,0x48,0x4A,0x4B,0x4C,     // 10-18 ASDFGHJKL
+	             0x0F, 0x5A,0x58,0x43,0x56,0x42,0x4E,0x4D, 0x08,    // 19-27 siZXCVBNMbs
+	             0x11, 0x12,0x2C,       0x20,        0x2E, 0x0A];   // 28-33 dc1dc2,Space.dc 
   
  function readQwerty() {
-	
      var x = cordx;
      var y = cordy;
 	
@@ -138,8 +113,8 @@ function qwertypad1() {
 	
    
 function writeMessage() { 
- // var cvs = document.getElementById("canvas");
- // var ctx = cvs.getContext('2d');
+  var cvs = document.getElementById("canvas");
+  var ctx = cvs.getContext('2d');
   var x = cordx;
   var y = cordy;
   if (x>0 && x<1080 && y>1536 && y<2176) {
@@ -216,7 +191,6 @@ function storeMessageStr() {
 	
   
  function storeMessageArr() {
-	 
 	  readQwerty();
 	 var keyC = keyChar;
 	 var keyH = keyHex;
@@ -245,46 +219,10 @@ function storeMessageStr() {
        
    }
 	
-function writeCursor() {
-        var cvs = document.getElementById("canvas");
-        var ctx = cvs.getContext('2d');
-	
-        ctx.fillStyle = "blue";
-        ctx.fillRect(cx, cy, 4, 48);
-	setTimeout( function() {
-	ctx.fillStyle = "white";
-        ctx.fillRect(cx, cy, 4, 48);
-        }, 0500);
-      }	 
 
-function showCursor() {
-        var cvs = document.getElementById("canvas");
-        var ctx = cvs.getContext('2d');
-        ctx.fillStyle = "blue";
-        ctx.fillRect(cx, cy, 4, 48);
-        }
-	
-function updateCursor() {
-        var cvs = document.getElementById("canvas");
-        var ctx = cvs.getContext('2d');
-        ctx.fillStyle = "white";
-        ctx.fillRect(cxp, cyp, 4, 48);
-	ctx.fillStyle = "blue";
-        ctx.fillRect(cx, cy, 4, 48);
-        }
-	
-function clrCursor() {
-        var cvs = document.getElementById("canvas");
-        var ctx = cvs.getContext('2d');
-        clearInterval(cursor);
-        ctx.fillStyle = "white";
-        ctx.fillRect(cx, cy, 4, 48);
-        }
-  
-} // qwertypad 
-
-
-function writeChar() {
+function writeChar() { 
+  var cvs = document.getElementById("canvas");
+  var ctx = cvs.getContext('2d');
 	var x = cordx;
         var y = cordy;
   if (x>0 && x<1080 && y>1536 && y<2176) {
@@ -384,6 +322,7 @@ function putChar() {
               }
         ctx.putImageData(imgData,cx+4, cy);   
      }
-    
-  } // qwertypad
+ 
+	
+} //qwertypad  
 
