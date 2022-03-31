@@ -32,10 +32,12 @@ document.getElementById("divCanv").appendChild(canvs);
 
 var canvas = document.getElementById("canvas"); 
 var context = canvas.getContext('2d'); 
+var canx=0; var cany=0; 
+var canw=0; var canh=0; 
 	
-var cordx=0, cordy=0;  
-var cordxp=0, cordpyp=0; 
-var touch=0, touchp=0;
+var cordx=0; var cordy=0;  
+var cordxp=0; var cordpyp=0; 
+var touch=0; var touchp=0;
 
 var cursor=false; 
 	
@@ -46,7 +48,7 @@ msgView.getUint8(0); // 125
 var msgArr = new Uint8Array(msgBuf);
 var msgStr=""; 
 var cls=0; var cla=0; var cpr=0;
-var keyChar; var kHex; 
+var keyChar; var keyHex; 
 var cxi=124+14;  var cxf=796-14;
 var cyi=1440-24; var cyf=1488-24;
 var cx=124+14; var cy=1440-24; 
