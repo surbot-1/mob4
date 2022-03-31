@@ -47,10 +47,25 @@ document.getElementById("divCanv").appendChild(canvs);
 <script> 
 	
 var cordx, cordy, cordt=0; 
-var cursor; 
+var cursor;
+var ci = 16; var cj = 208;
+var ptr=0;
+var cls=0; var cla=0; var cpr=0;
+var keyChar; var kChar;
+var keyHex;  var kHex;
+var cxi=124+14;  var cxf=796-14;
+var cyi=1440-24; var cyf=1488-24;
+var cx=124+14; var cy=1440-24; var cp;
+var cxp; var cyp;  
+var cw=24; var ch=48; var oh=33; 
 	
 var canvas = document.getElementById("canvas"); 
 var context = canvas.getContext('2d'); 
+	
+</script>  
+
+		
+<script> 
 	
 function handleEnd(evt) { 
        evt.preventDefault();
