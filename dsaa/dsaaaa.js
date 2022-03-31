@@ -22,7 +22,7 @@
         image2.setAttribute('crossOrigin', 'anonymous');
         image2.src = 'image/dp9.png';
         image2.onload = function (e) {
-           for (let i=0; i<10; i++) { 
+           for (let i=0; i<1; i++) { 
                var x = canx; 
                var y = cany+160+160*i;
                var w = canw;
@@ -61,6 +61,7 @@
 	      } else if (x>0 && x<1080 && y>160*9 && y<160*9+144) { 
 	      } else if (x>0 && x<1080 && y>160*10 && y<160*10+144) { 
 	      } else if (x>0 && x<1080 && y>2032 && y<2176) { 
+		      
 	      }
 		      
            } 
