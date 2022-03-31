@@ -4,7 +4,6 @@ function qwertypad() {
      showCursor(); 
      readQwerty();
      writeChar(); 
-     writeMessagege(); 
      storeMessageStr(); 
      updateCursor(); 
      cursor = setInterval(writeCursor, 1000); 	
