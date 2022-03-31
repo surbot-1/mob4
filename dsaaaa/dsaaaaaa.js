@@ -1,4 +1,5 @@
  function dsaaaaaa() { 
+	 
     cursor = setInterval(writeCursor, 1000);
     var cx=0, cy=0, cw=1080, ch=2400-112-112; // 2176
     var cvs = document.getElementById("canvas");
