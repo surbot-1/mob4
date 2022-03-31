@@ -13,7 +13,7 @@ var keyChar=""; var kHex=[];
 var keyHex=[];  var kChar=""; 
 var cxi=124+14;  var cxf=796-14;
 var cyi=1440-24; var cyf=1488-24;
-var cx=124+14; var cy=1440-24; var cp=0;
+var cx=124+14; var cy=1440-24; 
 var cxp=0; var cyp=0;  
 var cw=24; var ch=48; var oh=33; 
 
