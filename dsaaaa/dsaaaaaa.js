@@ -21,16 +21,16 @@
 	  
 	var image2 = new Image();  // text 144
         image2.setAttribute('crossOrigin', 'anonymous');
-        image2.src = 'image/text5.png';
+        image2.src = 'image/text4.png';
         image2.onload = function (e) {
 	var x = canx;
-	var y = canh-144-640;  // 1392
+	var y = canh-144;  // 2032
 	var w = canw;
 	var h = 144;
           ctx.drawImage(image2, x, y, w, h);
         };
 	  
-	var image3 = new Image();  // keypad 640
+        /* var image3 = new Image();  // keypad 640
         image3.setAttribute('crossOrigin', 'anonymous');
         image3.src = 'image/keypad1.png';
         image3.onload = function (e) { 
@@ -39,7 +39,7 @@
 	var w = canw;
 	var h = 640;
           ctx.drawImage(image3, x, y, w, h); 
-        };
+        }; */
 	  
    var timer;
    function check() { 
@@ -59,9 +59,10 @@
        } else if (x>128 && x<800 && y>1392 && y<1536) { // type_field
        } else if (x>800 && x<932 && y>1392 && y<1536) { // attachment
        } else if (x>932 && x<1080 && y>1392 && y<1536) { // send
-	      message();
-       } else if (x>0 && x<1080 && y>1536 && y<2176) {  // keypad
-	      qwertypad(); 
+	      
+       } else if (x>0 && x<1080 && y>1536 && y<2032) {  // keypad 
+       } else if (x>0 && x<1080 && y>2032 && y<2176) {  // keypad
+	      clearInterval(timer); clrCursor(); dsaaaaab();
        }
       }
      }
