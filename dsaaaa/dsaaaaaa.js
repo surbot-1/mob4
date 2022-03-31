@@ -43,9 +43,9 @@
 	  
    var timer;
    function check() { 
-    var x = cordx;  var y = cordy; 
-    var tend = cordt;  
-    if (tend == 3) { cordt = 0;
+    var x = cordix;  var y = cordiy; 
+    var tend = touchit;  
+    if (tend == 3) { touchit = 0;
 	   if (x>0 && x<72 && y>0 && y<144) {          // back
            clearInterval(timer); clrCursor(); dsaaaa();
        } else if (x>72 && x<108 && y>0 && y<144) {  // dp
