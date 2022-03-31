@@ -177,9 +177,7 @@ function writeChar() {
   var ctx = cvs.getContext('2d');
 	var x = cordx;
         var y = cordy;
-  if (x>0 && x<1080 && y>1536 && y<2176) {
-     var cnv = document.getElementById("canvas");
-     var ctx = cnv.getContext('2d'); 
+  if (x>0 && x<1080 && y>1536 && y<2176) { 
         var keyP = msgArr[cpr-1]; // previous
 	var keyH = keyHex;
   if(keyH == 0x0F) {              // shift
