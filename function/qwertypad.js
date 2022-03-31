@@ -12,9 +12,6 @@ var qwertyHex     = [0x51,0x57,0x45,0x52,0x54,0x59,0x55,0x49,0x4F,0x50,  // 0-9 
   f1();
  function f1() {
      cxp=cx; cyp=cy; 
-     keyCharp=keyChar; 
-     keyHexp=keyHex; 
-     clsp=cls; clap=cla; cprp=cpr;
      clearInterval(cursor); 
      showCursor(); 
      readQwerty(); 
