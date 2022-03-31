@@ -188,7 +188,7 @@ function writeChar() {
        if (ptr==0) {
        } else if(keyP==0x0A) {    // newline 
 	       var i=0; var j=0;
-	       for (let k=0; k<(ptr-2); k++) {
+	       for (let k=0; k<(ptr-1); k++) {
                   if (msgArr[k]==0x0A) {
 		   i=0; j++; 
 		   if (j>1) {i=0; j=0;}
