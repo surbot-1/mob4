@@ -177,7 +177,7 @@ function writeChar() {
   var ctx = cvs.getContext('2d');
 	var x = cordx;
         var y = cordy; 
-	var ptr = cpr;
+	var ptr = cpr-1;
         var keyP = msgArr[(ptr-1)]; // previous
 	var keyH = keyHex;
   if(keyH == 0x0F) {              // shift
