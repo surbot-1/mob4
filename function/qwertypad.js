@@ -180,8 +180,8 @@ function writeChar() {
   var ctx = cvs.getContext('2d');
 	var x = cordx;
         var y = cordy; 
-	var ptr = cprp;
-        var keyP = keyHexp; // previous
+	var ptr = cpr-1;
+        var keyP = msgArr[ptr];   // previous
 	var keyH = keyHex;
   if(keyH == 0x0F) {              // shift
   } else if(keyH == 0x08) {       // back_space
