@@ -120,8 +120,6 @@ function writeMessage() {
   if (x>0 && x<1080 && y>1536 && y<2176) {
   readQwerty();
   var keyC = keyChar; 
-  var canv = document.getElementById("canvas");
-  var ctx = canv.getContext('2d');
   if(keyC == "SI") { 
   } else if(keyC == "BS") {
   ctx.fillStyle = "white";
