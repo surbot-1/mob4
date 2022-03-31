@@ -15,8 +15,8 @@ var qwertyHex     = [0x51,0x57,0x45,0x52,0x54,0x59,0x55,0x49,0x4F,0x50,  // 0-9 
      clearInterval(cursor); 
      showCursor(); 
      readQwerty(); 
-     writeChar();  
-     storeMessageStr();
+     storeMessageStr(); 
+     writeChar(); 
      updateCursor(); 
      cursor = setInterval(writeCursor, 1000); 	
  }
