@@ -47,10 +47,23 @@
 	var x = cordx;  var y = cordy; 
 	var tend = touch;  
            if (tend == 3) { touch = 0;
-              if (x>0 && x<1080 && y>2032 && y<2176) { 
-                 clearInterval(timer); dsaaaaaa(); 
-               }
-             } 
+              if (x>0 && x<1080 && y>0 && y<144) { 
+                 
+              } else if (x>0 && x<1080 && y>160 && y<160+144) { 
+		      clearInterval(timer); dsaaaaaa(); 
+              } else if (x>0 && x<1080 && y>160*2 && y<160*2+144) { 
+              } else if (x>0 && x<1080 && y>160*3 && y<160*3+144) { 
+              } else if (x>0 && x<1080 && y>160*4 && y<160*4+144) { 
+              } else if (x>0 && x<1080 && y>160*5 && y<160*5+144) { 
+	      } else if (x>0 && x<1080 && y>160*6 && y<160*6+144) { 
+	      } else if (x>0 && x<1080 && y>160*7 && y<160*7+144) { 
+	      } else if (x>0 && x<1080 && y>160*8 && y<160*8+144) { 
+	      } else if (x>0 && x<1080 && y>160*9 && y<160*9+144) { 
+	      } else if (x>0 && x<1080 && y>160*10 && y<160*10+144) { 
+	      } else if (x>0 && x<1080 && y>2032 && y<2176) { 
+	      }
+		      
+           } 
 	}
 	timer = setInterval(check, 0100); 
 	 
