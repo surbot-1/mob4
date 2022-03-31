@@ -176,8 +176,7 @@ function writeChar() {
   var cvs = document.getElementById("canvas");
   var ctx = cvs.getContext('2d');
 	var x = cordx;
-        var y = cordy;
-  if (x>0 && x<1080 && y>1536 && y<2176) { 
+        var y = cordy; 
         var keyP = msgArr[cpr-1]; // previous
 	var keyH = keyHex;
   if(keyH == 0x0F) {              // shift
@@ -226,8 +225,8 @@ function writeChar() {
         cx+=28;
        if(cx>cxf) {cx=cxi; cy+=48;}
        if(cy>cyf) {cx=cxi; cy=cyi;}
-    }  
-  }
+  }  
+  
 }
 	
 function putChar() { 
