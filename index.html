@@ -45,9 +45,13 @@ document.getElementById("divCanv").appendChild(canvs);
 
 		
 <script> 
+	
 var cordx, cordy, cordt=0; 
+var cursor; 
+	
 var canvas = document.getElementById("canvas"); 
 var context = canvas.getContext('2d'); 
+	
 function handleEnd(evt) { 
        evt.preventDefault();
        var ele = document.getElementById("canvas");
