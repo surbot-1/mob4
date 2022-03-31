@@ -18,7 +18,7 @@ var qwertyHex     = [0x51,0x57,0x45,0x52,0x54,0x59,0x55,0x49,0x4F,0x50,  // 0-9 
 	             0x11, 0x12,0x2C,       0x20,        0x2E, 0x0A];   // 28-33 dc1dc2,Space.dc
 	
 var ci = 16; var cj = 208;
-var cursor; var ptr=0;
+var ptr=0;
 var cls=0; var cla=0; var cpr=0;
 var keyChar; var kChar;
 var keyHex;  var kHex;
@@ -383,6 +383,7 @@ function putChar() {
              imgData.data[i] = fontView[i];
               }
         ctx.putImageData(imgData,cx+4, cy);   
+     }
     
-     } // qwertypad
+  } // qwertypad
 
