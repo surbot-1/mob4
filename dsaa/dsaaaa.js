@@ -35,24 +35,10 @@
 	var t = cordt;  
            if (t == 3) { cordt = 0;
               if (x>0 && x<1080 && y>2032 && y<2176) { 
-              clearInterval(inv); ds2(); 
+              clearInterval(inv); dsaaaaaa(); 
                }
              }
 	   }
 	  inv = setInterval(chk, 0100); 
-	  
-      /* function handleEnd(evt) {
-       evt.preventDefault();
-       var ele = document.getElementById("canvas");
-       var ctx = ele.getContext("2d");
-       var touches = evt.changedTouches;
-       var  x = touches[0].pageX; cordx = x;
-       var  y = touches[0].pageY; cordy = y;
-	  
-       if (x>0 && x<1080 && y>2032 && y<2176) { 
-           ds2();
-           }
-       }
-       canvas.addEventListener("touchend", handleEnd, false); 
-        */
+	 
    }
