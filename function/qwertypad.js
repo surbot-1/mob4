@@ -7,15 +7,14 @@ msgView.getUint8(0); // 125
 var msgArr = new Uint8Array(msgBuf);
 var msgStr="";
 		
-var ci = 16; var cj = 208;
-var ptr=0;
+var ci = 16; var cj = 208; 
 var cls=0; var cla=0; var cpr=0;
 var keyChar=""; var kHex=[]; 
 var keyHex=[];  var kChar=""; 
 var cxi=124+14;  var cxf=796-14;
 var cyi=1440-24; var cyf=1488-24;
-var cx=124+14; var cy=1440-24; var cp;
-var cxp; var cyp;  
+var cx=124+14; var cy=1440-24; var cp=0;
+var cxp=0; var cyp=0;  
 var cw=24; var ch=48; var oh=33; 
 
 var qwertyChar    = ["Q","W","E","R","T","Y","U","I","O","P",
@@ -40,8 +39,8 @@ var qwertyHex     = [0x51,0x57,0x45,0x52,0x54,0x59,0x55,0x49,0x4F,0x50,  // 0-9 
  }
 	
  function readQwerty() {
-     var x = cordx;
-     var y = cordy;
+     var x = cordix;
+     var y = cordiy;
 	
    if (y>1535 && y<1535+160) {
      for (let i=0; i<10; i++) {
@@ -134,8 +133,8 @@ var qwertyHex     = [0x51,0x57,0x45,0x52,0x54,0x59,0x55,0x49,0x4F,0x50,  // 0-9 
 function writeMessagege() { 
   var cvs = document.getElementById("canvas");
   var ctx = cvs.getContext('2d');
-  var x = cordx;
-  var y = cordy;
+  var x = cordix;
+  var y = cordiy;
   if (x>0 && x<1080 && y>1536 && y<2176) {
   var keyC = keyChar; 
   if(keyC == "SI") { 
