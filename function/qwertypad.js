@@ -180,15 +180,15 @@ function writeChar() {
   var ctx = cvs.getContext('2d');
 	var x = cordx;
         var y = cordy; 
-	var ptr = cpr-1;
-        var keyP = msgArr[ptr];   // previous
+	var ptr = cpr;
+        var keyP = msgArr[(ptr-1)];   // previous
 	var keyH = keyHex;
   if(keyH == 0x0F) {              // shift
   } else if(keyH == 0x08) {       // back_space
        if (ptr==0) {
        } else if(keyP==0x0A) {    // newline 
 	       var i=0; var j=0;
-	       for (let k=0; k<ptr-1; k++) {
+	       for (let k=0; k<(ptr-2); k++) {
                   if (msgArr[k]==0x0A) {
 		   i=0; j++; 
 		   if (j>1) {i=0; j=0;}
