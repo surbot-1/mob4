@@ -52,7 +52,7 @@ var context = canvas.getContext('2d');
 	
 var cordix=0, cordiy=0;  
 var cordpx=0, cordpy=0; 
-var ttype=0; 
+var touchit=0, touchpt=0;
 var cix=0, ciy=208;
 var cpx=0, cpy=0; 
 var cursor=false; 
@@ -69,7 +69,7 @@ function handleEnd(evt) {
        var touches = evt.changedTouches;
        var  x = touches[0].pageX; cordix = x;
        var  y = touches[0].pageY; cordiy = y;
-       var  tend = 3;             ttype = tend;  // touchend
+       var  tend = 3;            touchit = tend;  // touchend
       }
       canvas.addEventListener("touchend", handleEnd, false);	
 	
