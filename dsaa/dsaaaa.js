@@ -29,16 +29,16 @@
           context.drawImage(image2, x, y, w, h);
         }; 
 	  
-	var inv;
-	function chk() { 
+	var timer;
+	function check() { 
 	var x = cordx;  var y = cordy; 
 	var t = cordt;  
            if (t == 3) { cordt = 0;
               if (x>0 && x<1080 && y>2032 && y<2176) { 
-              clearInterval(inv); dsaaaaaa(); 
+              clearInterval(timer); dsaaaaaa(); 
                }
              }
 	   }
-	  inv = setInterval(chk, 0100); 
+	  timer = setInterval(check, 0100); 
 	 
    }
