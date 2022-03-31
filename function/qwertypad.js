@@ -18,8 +18,8 @@ var qwertyHex     = [0x51,0x57,0x45,0x52,0x54,0x59,0x55,0x49,0x4F,0x50,  // 0-9 
      clearInterval(cursor); 
      showCursor(); 
      readQwerty(); 
-     storeMessageStr(); 
-     writeChar(); 
+     writeChar();
+     storeMessageStr();  
      updateCursor(); 
      cursor = setInterval(writeCursor, 1000); 	
  }
@@ -188,7 +188,7 @@ function writeChar() {
        if (ptr==0) {
        } else if(keyP==0x0A) {    // newline 
 	       var i=0; var j=0;
-	       for (let k=0; k<ptr; k++) {
+	       for (let k=0; k<ptr-1; k++) {
                   if (msgArr[k]==0x0A) {
 		   i=0; j++; 
 		   if (j>1) {i=0; j=0;}
