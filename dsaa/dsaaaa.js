@@ -20,12 +20,12 @@
 	 
 	var image2 = new Image();  // dp 144
         image2.setAttribute('crossOrigin', 'anonymous');
-        image2.src = 'image/dp9.png';
+        image2.src = 'image/dp9.png'; 
         image2.onload = function (e) {
            for (let i=0; i<1; i++) { 
                var x = canx; 
-               var y = cany+160+160*i;
-               var w = canw;
+               var y = cany+160+160*i; 
+               var w = canw; 
                var h = 144; 
                context.drawImage(image2, x, y, w, h); 
             }
