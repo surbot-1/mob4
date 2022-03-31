@@ -12,8 +12,8 @@
                      var part = hours < 12 ? 'am' : 'pm' ;
                      hours = hours % 12; 
                      hours = hours ? hours : 12 ; hours = hours<10 ? "0"+hours : hours;
-                      date = day +"."+ month +"."+ year ;
-                      time = hours +":"+ minutes +" "+ part ;
+                     date = day +"."+ month +"."+ year ;
+                     time = hours +":"+ minutes +" "+ part ;
                             if(sec) {   
                                 date = day +"."+ month +"."+ year ;
                                 time = hours +":"+ minutes +":"+ seconds +" "+ part  +" "+ gmt ;
@@ -22,6 +22,6 @@
                               date = day +"."+ month +"."+ year ;
                               time = hours +":"+ minutes +":"+ seconds +" "+ gmt ;
                                }
-                     dateTime = date +" "+ time ;
+                     datetime = date +" "+ time ;
                    
                  }
