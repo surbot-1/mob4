@@ -1,6 +1,6 @@
  function dsaaaa() { 
 	
-    var cx=0, cy=0, cw=1080, ch=2400-112-112; // 2176
+    var canx=0, cany=0, canw=1080, canh=2400-112-112; // 2176
     var canvas = document.getElementById("canvas");
     var context = canvas.getContext('2d');
 	  
@@ -11,9 +11,9 @@
         image1.setAttribute('crossOrigin', 'anonymous');
         image1.src = 'image/dp4.png';
         image1.onload = function (e) {
-        var x = cx;
-	var y = cy;
-	var w = cw;
+        var x = canx;
+	var y = cany;
+	var w = canw;
 	var h = 144;
           context.drawImage(image1, x, y, w, h);
         }; 
@@ -22,9 +22,9 @@
         image2.setAttribute('crossOrigin', 'anonymous');
         image2.src = 'image/text4.png';
         image2.onload = function (e) {
-	var x = cx;
-	var y = ch-144-640+640;  // 1391+640=2032
-	var w = cw;
+	var x = canx;
+	var y = canh-144-640+640;  // 1391+640=2032
+	var w = canw;
 	var h = 144;
           context.drawImage(image2, x, y, w, h);
         }; 
@@ -35,10 +35,10 @@
 	var tend = touch;  
            if (tend == 3) { touch = 0;
               if (x>0 && x<1080 && y>2032 && y<2176) { 
-              clearInterval(timer); dsaaaaaa(); 
+                 clearInterval(timer); dsaaaaaa(); 
                }
-             }
-	   }
-	  timer = setInterval(check, 0100); 
+             } 
+	}
+	timer = setInterval(check, 0100); 
 	 
    }
