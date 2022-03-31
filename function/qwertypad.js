@@ -110,51 +110,7 @@ var qwertyHex     = [0x51,0x57,0x45,0x52,0x54,0x59,0x55,0x49,0x4F,0x50,  // 0-9 
 	}
       } 
 	
-   }  // read_qwerty
-	
-   
-function writeMessagege() { 
-  var cvs = document.getElementById("canvas");
-  var ctx = cvs.getContext('2d');
-  var x = cordix;
-  var y = cordiy;
-  if (x>0 && x<1080 && y>1536 && y<2176) {
-  var keyC = keyChar; 
-  if(keyC == "SI") { 
-  } else if(keyC == "BS") {
-  ctx.fillStyle = "white";
-  ctx.fillRect(0, 144, 1080, 1247);
-  ci=16; cj=208;
-  } else if(keyC == "DC1") { 
-  } else if(keyC == "DC2") {
-  } else if(keyC == "SPACE") {
-       ctx.fillStyle = "white";
-       ctx.fillRect(ci, cj-32, 4, 32);
-	  ci+=48;
-       if(ci>1080-48) {ci=16; cj+=64;}
-       if(cj>1392-64) {ci=16; cj=208;}
-	  
-  } else if(keyC == "\n") {
-       ctx.fillStyle = "white";
-       ctx.fillRect(ci, cj-32, 4, 32);
-	  ci=16; cj+=64;
-       if(cj>1392-64) {ci=16; cj=208;}
-	  
-  } else {
-       // if(ci>1080-48) {ci=16; cj+=64;}
-       // if(cj>1392-64) {ci=16; cj=208;}
-       ctx.fillStyle = "white";
-       ctx.fillRect(ci, cj-32, 4, 32);
-       ctx.font = "48px Arial";
-       ctx.fillStyle = "red";
-       ctx.fillText(keyC, ci, cj);
-           ci+=48;
-       if(ci>1080-48) {ci=16; cj+=64;}
-       if(cj>1392-64) {ci=16; cj=208;}
-       }  
-	  
-     }
-   }   // write_message
+   }  // read_qwerty 
 
 	
 function storeMessageStr() { 
