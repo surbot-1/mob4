@@ -1,13 +1,5 @@
 function qwertypad() { 
-     cxp=cx; cyp=cy; 
-     clearInterval(cursor); 
-     showCursor(); 
-     readQwerty(); 
-     storeMessageStr();
-     writeChar();  
-     updateCursor(); 
-     cursor = setInterval(writeCursor, 1000); 	
-	
+  	
 var msgBuf = new ArrayBuffer(256);
 var msgView = new DataView(msgBuf);
 msgView.setUint8(0, 125);
@@ -35,7 +27,18 @@ var qwertyHex     = [0x51,0x57,0x45,0x52,0x54,0x59,0x55,0x49,0x4F,0x50,  // 0-9 
 	               0x41,0x53,0x44,0x46,0x47,0x48,0x4A,0x4B,0x4C,     // 10-18 ASDFGHJKL
 	             0x0F, 0x5A,0x58,0x43,0x56,0x42,0x4E,0x4D, 0x08,    // 19-27 siZXCVBNMbs
 	             0x11, 0x12,0x2C,       0x20,        0x2E, 0x0A];   // 28-33 dc1dc2,Space.dc 
-  
+  f1();
+ function f1() {
+     cxp=cx; cyp=cy; 
+     clearInterval(cursor); 
+     showCursor(); 
+     readQwerty(); 
+     writeChar();  
+     storeMessageStr();
+     updateCursor(); 
+     cursor = setInterval(writeCursor, 1000); 	
+ }
+	
  function readQwerty() {
      var x = cordx;
      var y = cordy;
