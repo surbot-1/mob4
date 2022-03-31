@@ -9,7 +9,7 @@
 	   
         var image1 = new Image();  // dp 144
         image1.setAttribute('crossOrigin', 'anonymous');
-        image1.src = 'image/dp3.png'; 
+        image1.src = 'image/dp4.png'; 
         image1.onload = function (e) {
         var x = cx;
         var y = cy;
