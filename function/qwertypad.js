@@ -1,7 +1,8 @@
 function qwertypad() { 
-     cxp=cx; cyp=cy;
-     clearInterval(cursor);
-     showCursor();
+     cxp=cx; cyp=cy; 
+     clearInterval(cursor); 
+     showCursor(); 
+     readQwerty();
      writeChar(); 
      storeMessageStr(); 
      updateCursor(); 
