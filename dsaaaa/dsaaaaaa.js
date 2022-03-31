@@ -61,7 +61,7 @@
        } else if (x>932 && x<1080 && y>1392 && y<1536) { // send
 	       message();
        } else if (x>0 && x<1080 && y>1536 && y<2176) {  // keypad
-	       keypad(); 
+	       qwertypad(); 
        }
       }
      }
