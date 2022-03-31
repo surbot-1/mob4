@@ -1,4 +1,4 @@
- function dsaaaaaa() { 
+ function dsaaaaab() { 
 	 
     cursor = setInterval(writeCursor, 1000);
     var canx=0, cany=0, canw=1080, canh=2400-112-112; // 2176
