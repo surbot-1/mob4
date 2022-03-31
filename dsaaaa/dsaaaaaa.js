@@ -1,7 +1,7 @@
  function dsaaaaaa() { 
 	 
     cursor = setInterval(writeCursor, 1000);
-    var cx=0, cy=0, cw=1080, ch=2400-112-112; // 2176
+    var canx=0, cany=0, canw=1080, canh=2400-112-112; // 2176
     var cvs = document.getElementById("canvas");
     var ctx = cvs.getContext('2d');
 	  
@@ -12,9 +12,9 @@
         image1.setAttribute('crossOrigin', 'anonymous');
         image1.src = 'image/dp4.png'; 
         image1.onload = function (e) {
-        var x = cx;
-        var y = cy;
-        var w = cw;
+        var x = canx;
+        var y = cany;
+        var w = canw;
         var h = 144;
           ctx.drawImage(image1, 0, 0,1080,144);
         }; 
@@ -23,9 +23,9 @@
         image2.setAttribute('crossOrigin', 'anonymous');
         image2.src = 'image/text5.png';
         image2.onload = function (e) {
-	var x = cx;
-	var y = ch-144-640;  // 1392
-	var w = cw;
+	var x = canx;
+	var y = canh-144-640;  // 1392
+	var w = canw;
 	var h = 144;
           ctx.drawImage(image2, x, y, w, h);
         };
@@ -34,20 +34,20 @@
         image3.setAttribute('crossOrigin', 'anonymous');
         image3.src = 'image/keypad1.png';
         image3.onload = function (e) { 
-	var x = cx;
-	var y = ch-640;    // 1536
-	var w = cw;
+	var x = canx;
+	var y = canh-640;    // 1536
+	var w = canw;
 	var h = 640;
           ctx.drawImage(image3, x, y, w, h); 
         };
 	  
    var timer;
    function check() { 
-    var x = cordix;  var y = cordiy; 
-    var tend = touchit;  
-    if (tend == 3) { touchit = 0;
-	   if (x>0 && x<72 && y>0 && y<144) {          // back
-           clearInterval(timer); clrCursor(); dsaaaa();
+    var x = cordx;  var y = cordy; 
+    var tend = touch;  
+    if (tend == 3) { touch = 0;
+       if (x>0 && x<72 && y>0 && y<144) {          // back
+              clearInterval(timer); clrCursor(); dsaaaa();
        } else if (x>72 && x<108 && y>0 && y<144) {  // dp
        } else if (x>108 && x<740 && y>0 && y<144) {  // space
        } else if (x>740 && x<800 && y>0 && y<144) {  // video call
@@ -59,9 +59,9 @@
        } else if (x>128 && x<800 && y>1392 && y<1536) { // type_field
        } else if (x>800 && x<932 && y>1392 && y<1536) { // attachment
        } else if (x>932 && x<1080 && y>1392 && y<1536) { // send
-	       message();
+	      message();
        } else if (x>0 && x<1080 && y>1536 && y<2176) {  // keypad
-	       qwertypad(); 
+	      qwertypad(); 
        }
       }
      }
