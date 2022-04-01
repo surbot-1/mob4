@@ -6,7 +6,7 @@
                   ip[i]=data[i];
                  if (i==1 && data[i]!=null) {
                   ipsts=true;
-                  iprcv= ip[1];
+                  ipads= ip[1]; 
                  }
                }
            })();
