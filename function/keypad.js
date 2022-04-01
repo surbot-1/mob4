@@ -135,8 +135,68 @@ function writeStr(x, y, font, str) {
 
 
 function writeChar(x, y, font, char) {  
+	var cw; var ch; var oh; 
+	var offset = (char.charCodeAt(0))-32;
 	
+	if (font=="font1632") {  
+		cw=16; ch=32; oh=offset;
+	} else if (font=="font2448") { 
+		cw=24; ch=48; oh=offset;
+	} else if (font=="font3264") { 
+		cw=32; ch=64; oh=offset; 
+	} else if (font=="inconsolafont") { 
+		cw=24; ch=32; oh=offset; 
+	} else if (font=="ununtufont") { 
+		cw=24; ch=32; oh=offset; 
+	} else if (font=="ubuntubold") { 
+		cw=24; ch=32; oh=offset; 
+	}
 	
+        var cnv = document.getElementById("canvas");
+        var ctx = cnv.getContext('2d');
+        var imgData = ctx.createImageData(cw, ch);
+        
+        var fontBuf = new ArrayBuffer(cw*4*ch);
+        var fontView = new Uint8Array(fontBuf);
+             
+	var cb = new Uint8Array ([0x80,0x40,0x20,0x10,0x08,0x04,0x02,0x01]);
+	var fb; var k=0; 
+        for (let i=0; i<(cw/8)*ch; i++) { 
+            for (let j=0; j<8; j++) {  
+		 if (font=="font1632") { 
+			 fb = font1632[(cw/8)*ch*oh+i] & cb[j]; 
+		 } else if (font=="font2448") { 
+			 fb = font2448[(cw/8)*ch*oh+i] & cb[j]; 
+		 } else if (font=="font3264") { 
+			 fb = font3264[(cw/8)*ch*oh+i] & cb[j]; 
+		 } else if (font=="inconsolafont") { 
+			 fb = inconsolafont[(cw/8)*ch*oh+i] & cb[j]; 
+		 } else if (font=="ununtufont") { 
+			 fb = ubuntufont[(cw/8)*ch*oh+i] & cb[j]; 
+		 } else if (font=="ubuntubold") { 
+			 fb = ubuntubold[(cw/8)*ch*oh+i] & cb[j]; 
+		 }
+                 if (fb) {
+		   fontView[k+0] = 0x00;
+                   fontView[k+1] = 0x00;
+		   fontView[k+2] = 0x00;
+		   fontView[k+3] = 0xFF;
+		    k+=4; 
+                 } else {
+		   fontView[k+0] = 0xFF; 
+		   fontView[k+1] = 0xFF;
+		   fontView[k+2] = 0xFF;
+		   fontView[k+3] = 0xFF;
+		    k+=4; 
+                 }
+		  
+              }
+          }
+        for (let i=0; i<cw*4*ch; i++) { 
+             imgData.data[i] = fontView[i]; 
+              }
+        ctx.putImageData(imgData,x, y);   
+     }
 
 }
 
