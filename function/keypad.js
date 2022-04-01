@@ -150,21 +150,58 @@ function writeStr(x, y, w, h, font, str) {
 }
 
 */ 
-             writeChar(20,20);
-    function writeChar(x, y) { alert('1');
-	    var cw=32; var ch=64; var oh=33;
-        var cnv = document.getElementById("canvas");
+             writeChar(20,200);
+    function writeChar(x, y, font, char) { alert('1');
+	var cw=32; var ch=64; 
+	var oh = (char.charCodeAt(0))-32; 
+			      
+	var fBuf = new ArrayBuffer(16*128); 
+        var fView = new Uint8Array(fBuf); 
+					  
+	if (font=="font1632") {  
+		cw=16; ch=32;
+		for(let i=0; i<(cw/8)*ch; i++) {  
+			fView[i]=font1632[i]; 
+		}
+	} else if (font=="font2448") {  
+		cw=24; ch=48;
+		for(let i=0; i<(cw/8)*ch; i++) {  
+			fView[i]=font2448[i]; 
+		}
+	} else if (font=="font3264") {  
+		cw=32; ch=64;
+		for(let i=0; i<(cw/8)*ch; i++) {  
+			fView[i]=font3264[i]; 
+		}
+	} else if (font=="inconsolafont") {  
+		cw=24; ch=32;
+		for(let i=0; i<(cw/8)*ch; i++) {  
+			fView[i]=inconsolafont[i]; 
+		}
+	} else if (font=="ubuntufont") {  
+		cw=24; ch=32;
+		for(let i=0; i<(cw/8)*ch; i++) {  
+			fView[i]=ubuntufont[i]; 
+		}
+	} else if (font=="font1632") {  
+		cw=24; ch=32;
+		for(let i=0; i<(cw/8)*ch; i++) {  
+			fView[i]=ubuntubold[i]; 
+		}
+	} 
+	
+	var cnv = document.getElementById("canvas");
         var ctx = cnv.getContext('2d');
-        var imgData = ctx.createImageData(cw, ch);
+        var imgData = ctx.createImageData(cw, ch); 
         
         var fontBuf = new ArrayBuffer(cw*4*ch);
-        var fontView = new Uint8Array(fontBuf);
+        var fontView = new Uint8Array(fontBuf); 
              
 	var cb = new Uint8Array ([0x80,0x40,0x20,0x10,0x08,0x04,0x02,0x01]);
 	var fb; var k=0; 
         for (let i=0; i<(cw/8)*ch; i++) { 
             for (let j=0; j<8; j++) {
-                 fb = font3264[(cw/8)*ch*oh+i] & cb[j]; 
+                 fb = fView[(cw/8)*ch*oh+i] & cb[j]; 
                  if (fb) {
 		   fontView[k+0] = 0x00;
                    fontView[k+1] = 0x00;
