@@ -72,3 +72,47 @@ function drawKeypad(x, y) { // alert('1');
   }  
   
 }
+
+
+function readKeypad() {  
+	
+	var x=cordx; var y=cordy; 
+	
+  for (let j=0; j<rw; j++) { 
+    for (let i=0; i<cl; i++) { 
+      if (j==0 && i==0) {cl=10; px=0;} 
+      if (j==1 && i==0) {cl=9; px=((kw+kl*2)/2);} 
+      if (j==2 && i==0) {cl=9; px=0; pw=((kw+kl*2)/2);} 
+      if (j==2 && i==1) {cl=9; px=((kw+kl*2)/2); pw=0;} 
+      if (j==2 && i==8) {cl=9; px=((kw+kl*2)/2); pw=((kw+kl*2)/2);}
+      if (j==3 && i==0) {cl=5; px=0; pw=((kw+kl*2)/2);} 
+      if (j==3 && i==1) {cl=5; px=((kw+kl*2)/2); pw=0;} 
+      if (j==3 && i==2) {cl=5; px=((kw+kl*2)/2); pw=((kw+kl*2)*4);} 
+      if (j==3 && i==3) {cl=5; px=((kw+kl*2)/2)+((kw+kl*2)*4); pw=0;} 
+      if (j==3 && i==4) {cl=5; px=((kw+kl*2)/2)+((kw+kl*2)*4); pw=((kw+kl*2)/2);}
+      kc=i; kr=j; 
+      read(kc, kr, kw, kh, kl, kt); 
+    } 
+  }  
+	
+}
+
+
+function writeStr(x, y, font, str) {  
+	
+	
+
+}
+
+
+function writeChar(x, y, font, char) {  
+	
+	
+
+}
+
+
+
+
+
+
