@@ -35,7 +35,7 @@ function drawKeypad(x, y) {  // alert('1');
       var keychar = [["Q","W","E","R","T","Y","U","I","O","P"],
 	               ["A","S","D","F","G","H","J","K","L"],
 	           ["SIFT", "Z","X","C","V","B","N","M","BS"],
-	            ["?123",",",       "SPACE",    ".","ENTER"]]; 
+	           ["?123",",",       "SPACE",    ".","ENTER"]]; 
 	  var key = keychar[kr][kc];
 	  return key; 
   } 
