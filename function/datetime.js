@@ -58,7 +58,7 @@
                  } 
 
 
-function getTime() { 
+           function getTime() { 
                     var ampm=true, sec=false; 
                     var datetime; var date; var time; 
                      let  today = new Date();
