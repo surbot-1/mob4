@@ -162,9 +162,9 @@ function writeStr(x, y, w, h, font, str) {
              
 	var cb = new Uint8Array ([0x80,0x40,0x20,0x10,0x08,0x04,0x02,0x01]);
 	var fb; var k=0; 
-        for (let i=0; i<(cw/3)*ch; i++) { 
+        for (let i=0; i<(cw/8)*ch; i++) { 
             for (let j=0; j<8; j++) {
-                 fb = font2448[(cw/3)*ch*oh+i] & cb[j]; 
+                 fb = font2448[(cw/8)*ch*oh+i] & cb[j]; 
                  if (fb) {
 		   fontView[k+0] = 0x00;
                    fontView[k+1] = 0x00;
