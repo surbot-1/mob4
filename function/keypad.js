@@ -212,9 +212,9 @@ function writeChar(x, y, font, char) {  alert('4');
              imgData.data[i] = fontView[i]; 
               }
         ctx.putImageData(imgData,x, y);   
-     }
+  }
 alert('10');
-}
+
 
 
 
