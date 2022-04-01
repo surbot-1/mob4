@@ -1,5 +1,5 @@
 // drawKeypad(20, 1648); // 2160-512
-function drawKeypad(x, y) {  alert('1');
+function drawKeypad(x, y) {  // alert('1');
   var px=0; var py=0; 
   var pw=0; var ph=0;
   var cl=10; var rw=4; 
@@ -29,16 +29,16 @@ function drawKeypad(x, y) {  alert('1');
     imgView[i+1] = 0xFF; // G
     imgView[i+2] = 0xFF; // B
     imgView[i+3] = 0xFF; // A
-  } alert('10');
+  } 
 
-  /* function keyChar(kc, kr) {  
+   function keyChar(kc, kr) {  
       var keychar = [["Q","W","E","R","T","Y","U","I","O","P"],
 	               ["A","S","D","F","G","H","J","K","L"],
 	             ["SI", "Z","X","C","V","B","N","M","BS"],
 	            ["DC1","DC2",",",   "SPACE",    ".","ENTER"]]; 
 	  var key = keychar[kr][kc];
 	  return key; 
-  } */ alert('1'); 
+  }  alert('2'); 
   
   function draw(kc, kr, kw, kh, kl, kt) { 
 	  var kx=x+px+(kw+kl*2)*kc; 
@@ -53,7 +53,7 @@ function drawKeypad(x, y) {  alert('1');
 	  ctx.strokeStyle = "rgba(220,220,220,1.0)"; // "black"; 
 	  ctx.rect(kx, ky, kw+pw+kl*2, kh+ph+kt*2); 
 	  ctx.stroke(); */
-  } alert('2'); 
+  } alert('3'); 
   
   for (let j=0; j<rw; j++) { 
     for (let i=0; i<cl; i++) { 
