@@ -80,15 +80,15 @@ function readKeypad() {
   var kc=0; var kr=0; 
   var kl=12; var kt=16; 
   var kw=80; var kh=96; 
+	var b=false;
 	
 	function read(kc, kr, kw, kh, kl, kt) { 
 		var k=[];
 	  var kx=x+px+(kw+kl*2)*kc; 
 	  var ky=y+py+(kh+kt*2)*kr; 
-		if (x>kx && x<(kx+kw+pw) && y>ky && y<(ky+kh+ph)) {  
-			k[0]=kc; k[1]=kr; 
-			return k;	
-		}
+		if (x>kx && x<(kx+kw+pw) && y>ky && y<(ky+kh+ph)) {   
+			b=true; 
+		} else {b=false;}
 	}
 	
   for (let j=0; j<rw; j++) { 
@@ -105,11 +105,19 @@ function readKeypad() {
       if (j==3 && i==4) {cl=5; px=((kw+kl*2)/2)+((kw+kl*2)*4); pw=((kw+kl*2)/2);}
       kc=i; kr=j; 
       read(kc, kr, kw, kh, kl, kt); 
-      if (k) {break;}
+      if (b) {break;}
     } 
-    if (k) {break;}
+    if (b) {break;}
   }  
-  return k;
+	
+   if (b) {
+	var obj = { 
+		col: kc, 
+		row: kr  
+	}; 
+	return obj; 
+   } else {return false;}
+	
 }
 
 
