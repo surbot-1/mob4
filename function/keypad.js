@@ -167,7 +167,7 @@ function writeChar(x, y, font, char) {  alert('4');
         } else if (font=="ubuntubold") { 
                 cw=24; ch=32; oh=offset; 
         } alert('51'); 
-/*
+
         var cnv = document.getElementById("canvas");
         var ctx = cnv.getContext('2d');
         var imgData = ctx.createImageData(cw, ch);
@@ -179,19 +179,19 @@ function writeChar(x, y, font, char) {  alert('4');
 	var fb; var k=0; 
         for (let i=0; i<(cw/8)*ch; i++) { 
             for (let j=0; j<8; j++) {  
-		 if (font=="font1632") { 
-			 fb = font1632[(cw/8)*ch*oh+i] & cb[j]; 
-		 } else if (font=="font2448") { 
-			 fb = font2448[(cw/8)*ch*oh+i] & cb[j]; 
-		 } else if (font=="font3264") { 
-			 fb = font3264[(cw/8)*ch*oh+i] & cb[j]; 
-		 } else if (font=="inconsolafont") { 
-			 fb = inconsolafont[(cw/8)*ch*oh+i] & cb[j]; 
-		 } else if (font=="ununtufont") { 
-			 fb = ubuntufont[(cw/8)*ch*oh+i] & cb[j]; 
-		 } else if (font=="ubuntubold") { 
-			 fb = ubuntubold[(cw/8)*ch*oh+i] & cb[j]; 
-		 }
+                 if (font=="font1632") { 
+                         fb = font1632[(cw/8)*ch*oh+i] & cb[j]; 
+                 } else if (font=="font2448") { 
+                         fb = font2448[(cw/8)*ch*oh+i] & cb[j]; 
+                 } else if (font=="font3264") { 
+                         fb = font3264[(cw/8)*ch*oh+i] & cb[j]; 
+                 } else if (font=="inconsolafont") { 
+                         fb = inconsolafont[(cw/8)*ch*oh+i] & cb[j]; 
+                 } else if (font=="ununtufont") { 
+                         fb = ubuntufont[(cw/8)*ch*oh+i] & cb[j]; 
+                 } else if (font=="ubuntubold") { 
+                         fb = ubuntubold[(cw/8)*ch*oh+i] & cb[j]; 
+                 } alert('52');
                  if (fb) {
 		   fontView[k+0] = 0x00;
                    fontView[k+1] = 0x00;
@@ -211,7 +211,7 @@ function writeChar(x, y, font, char) {  alert('4');
         for (let i=0; i<cw*4*ch; i++) { 
              imgData.data[i] = fontView[i]; 
               }
-        ctx.putImageData(imgData,x, y);   */
+        ctx.putImageData(imgData,x, y);   
   }
 alert('10');
 
