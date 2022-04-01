@@ -17,9 +17,10 @@
          function detectOnline() {
                if (navigator.onLine) {
                    if (!ipReceived){
-                        getIP(); 
+                        return getIP(); 
                     }
                } else {
-                   ipsts=false;
+                   ipsts=false; 
+                   return false;
                }
           }
