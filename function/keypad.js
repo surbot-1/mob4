@@ -188,7 +188,7 @@ function writeChar(x, y, font, char) {  alert('4');
 		fView[i]=ubuntubold[i]; 
 		}
         } alert('55'); 
-				     
+/* 
         var cnv = document.getElementById("canvas");
         var ctx = cnv.getContext('2d');
         var imgData = ctx.createImageData(cw, ch);
@@ -220,9 +220,11 @@ function writeChar(x, y, font, char) {  alert('4');
         for (let i=0; i<cw*4*ch; i++) { 
              imgData.data[i] = fontView[i]; 
               }
-        ctx.putImageData(imgData,x, y);   
+        ctx.putImageData(imgData,x, y);  
+         alert('10'); */
   }
-alert('10');
+
+
 
 
 
