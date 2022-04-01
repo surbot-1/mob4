@@ -184,6 +184,6 @@ function writeStr(x, y, w, h, font, str) {
         for (let i=0; i<cw*4*ch; i++) {
              imgData.data[i] = fontView[i];
               }
-        ctx.putImageData(imgData,x, y);   
+        ctx.putImageData(imgData, x, y);   
      }
 
