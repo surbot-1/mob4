@@ -49,9 +49,11 @@ function drawKeypad(x, y) {  // alert('1');
 	  } 
 	  ctx.putImageData(imgData, kx+kl, ky+kt); 
 	  
-	  var font = "ubuntubold"; 
+	  var x = kx+kl+(kw+pw-24)/2;
+	  var y = ky+kt+(kh+ph-48)/2;
+	  var font = "font2448"; 
 	  var char = keyChar(kc, kr); alert(char);
-	  writeChar(kx+kl+(kw-24)/2, ky+kt+(kh-32)/2, font, "A"); 
+	  writeChar(x, y, font, char); 
 	  
 	  /* ctx.beginPath(); 
 	  ctx.lineWidth = "2"; 
