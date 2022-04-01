@@ -51,7 +51,7 @@ function drawKeypad(x, y) {  // alert('1');
 	  
 	  var font = "font2448";  
 	  var str = keyChar(kc, kr); 
-	  var ki = kx+kl+(kw+pw-(str.length)*24)/2; 
+	  var ki = kx+kl+(kw+pw-(str.length)*24)/2;  
 	  var kj = ky+kt+(kh+ph-48)/2; 
 	  writeStr(ki, kj, 24*4, 28*1, font, str); 
 	  
