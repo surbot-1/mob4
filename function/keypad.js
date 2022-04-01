@@ -126,7 +126,7 @@ function readKeypad(x, y) {
 	
 } 
 */
-writeStr(0,50,100,100,"font2448","ABCDEFGH"); 
+// writeStr(0,50,100,100,"font2448","ABCDEFGH"); 
 function writeStr(x, y, w, h, font, str) {  
 	var cw=24; var ch=32; 
 
@@ -150,7 +150,7 @@ function writeStr(x, y, w, h, font, str) {
 }
 
 
-    writeChar(20,200,"font2448","B");
+    // writeChar(20,200,"font2448","B");
     function writeChar(x, y, font, char) { 
 	var cw=24; var ch=32; 
 	var oh = (char.charCodeAt(0))-32; 
