@@ -184,7 +184,7 @@ function writeChar(x, y, font, char) {  alert('4');
 		}
         } else if (font=="ubuntubold") { 
                 cw=24; ch=32; oh=offset; 
-		for (let i=0; i<(cw/8)*ch; i++) {  
+		for (let i=0; i<((cw/8)*ch); i++) {  
 		fView[i]=ubuntubold[i]; 
 		}  */
         } alert('57'); 
