@@ -152,7 +152,7 @@ function writeStr(x, y, w, h, font, str) {
 */ 
              writeChar(20,20);
     function writeChar(x, y) { alert('1');
-	    var cw=24; var ch=48; var oh=33;
+	    var cw=32; var ch=64; var oh=33;
         var cnv = document.getElementById("canvas");
         var ctx = cnv.getContext('2d');
         var imgData = ctx.createImageData(cw, ch);
@@ -164,7 +164,7 @@ function writeStr(x, y, w, h, font, str) {
 	var fb; var k=0; 
         for (let i=0; i<(cw/8)*ch; i++) { 
             for (let j=0; j<8; j++) {
-                 fb = font2448[(cw/8)*ch*oh+i] & cb[j]; 
+                 fb = font3264[(cw/8)*ch*oh+i] & cb[j]; 
                  if (fb) {
 		   fontView[k+0] = 0x00;
                    fontView[k+1] = 0x00;
