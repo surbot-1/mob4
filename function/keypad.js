@@ -152,7 +152,7 @@ function writeStr(x, y, w, h, font, str) {
 */ 
              writeChar(20,20);
     function writeChar(x, y) { 
-	    var cw=24; var ch=48; var oh=20;
+	    var cw=24; var ch=48; var oh=33;
         var cnv = document.getElementById("canvas");
         var ctx = cnv.getContext('2d');
         var imgData = ctx.createImageData(cw, ch);
