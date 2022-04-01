@@ -151,9 +151,9 @@ function writeStr(x, y, w, h, font, str) {
 
 */ 
 function writeChar(x, y, font, char) {  alert('4');
-	var cw; var ch; var oh; 
-	var offset = (char.charCodeAt(0))-32;
-	
+         var cw; var ch; var oh; 
+         var offset = (char.charCodeAt(0))-32;
+/*
 	if (font=="font1632") {  
 		cw=16; ch=32; oh=offset;
 	} else if (font=="font2448") { 
@@ -211,7 +211,7 @@ function writeChar(x, y, font, char) {  alert('4');
         for (let i=0; i<cw*4*ch; i++) { 
              imgData.data[i] = fontView[i]; 
               }
-        ctx.putImageData(imgData,x, y);   
+        ctx.putImageData(imgData,x, y);   */
   }
 alert('10');
 
