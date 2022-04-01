@@ -48,6 +48,11 @@ function drawKeypad(x, y) {  // alert('1');
 		  imgData.data[i] = imgView[(kw*4*kh*cl)*kr+(kw*4*kh)*kc+i]; 
 	  } 
 	  ctx.putImageData(imgData, kx+kl, ky+kt); 
+	  
+	  var font = "ubuntubold";
+	  var char = keyChar(kc, kr);
+	  writeChar(kx+kl+(kw-24)/2, ky+kt+(kh-32)/2, font, char); 
+	  
 	  /* ctx.beginPath(); 
 	  ctx.lineWidth = "2"; 
 	  ctx.strokeStyle = "rgba(220,220,220,1.0)"; // "black"; 
