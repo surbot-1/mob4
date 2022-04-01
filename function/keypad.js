@@ -169,7 +169,7 @@ function writeChar(x, y, font, char) {  alert('4');
 		}
         } else if (font=="font3264") { 
                 cw=32; ch=64; oh=offset; 
-		for (let i=0; i<(cw/8)*ch; i++) {  
+		for (let i=0; i<((cw/8)*ch); i++) {  
 		fView[i]=font3264[i];     
 		}
       /* } else if (font=="inconsolafont") { 
