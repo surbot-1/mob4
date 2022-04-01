@@ -49,8 +49,8 @@ function drawKeypad(x, y) {  // alert('1');
 	  } 
 	  ctx.putImageData(imgData, kx+kl, ky+kt); 
 	  
-	  var font = "ubuntubold";
-	  var char = keyChar(kc, kr);
+	  var font = "ubuntubold"; 
+	  var char = keyChar(kc, kr); 
 	  writeChar(kx+kl+(kw-24)/2, ky+kt+(kh-32)/2, font, char); 
 	  
 	  /* ctx.beginPath(); 
