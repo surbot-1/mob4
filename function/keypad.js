@@ -171,7 +171,7 @@ function writeStr(x, y, w, h, font, str) {
 		   fontView[k+2] = 0x00;
 		   fontView[k+3] = 0xFF;
 		    k+=4; 
-                 } else {
+                 } else { 
 		   fontView[k+0] = 0xFF; 
 		   fontView[k+1] = 0xFF;
 		   fontView[k+2] = 0xFF;
