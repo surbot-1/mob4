@@ -150,9 +150,9 @@ function writeStr(x, y, w, h, font, str) {
 }
 
 */ 
-             writeChar();
-    function writeChar() { 
-	    var cw=32; var ch=64; var oh=33;
+             writeChar(20,20);
+    function writeChar(x, y) { 
+	    var cw=32; var ch=64; var oh=20;
         var cnv = document.getElementById("canvas");
         var ctx = cnv.getContext('2d');
         var imgData = ctx.createImageData(cw, ch);
@@ -184,6 +184,6 @@ function writeStr(x, y, w, h, font, str) {
         for (let i=0; i<cw*4*ch; i++) {
              imgData.data[i] = fontView[i];
               }
-        ctx.putImageData(imgData,10, 10);   
+        ctx.putImageData(imgData,x, y);   
      }
 
