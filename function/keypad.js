@@ -181,16 +181,16 @@ function writeChar(x, y, font, char) {  alert('4');
             for (let j=0; j<8; j++) {  
                  if (font=="font1632") { 
                          fb = font1632[(cw/8)*ch*oh+i] & cb[j]; 
-                 } else if (font=="font2448") { 
-                         fb = font2448[(cw/8)*ch*oh+i] & cb[j]; 
-                 } else if (font=="font3264") { 
-                         fb = font3264[(cw/8)*ch*oh+i] & cb[j]; 
-                 } else if (font=="inconsolafont") { 
-                         fb = inconsolafont[(cw/8)*ch*oh+i] & cb[j]; 
-                 } else if (font=="ununtufont") { 
-                         fb = ubuntufont[(cw/8)*ch*oh+i] & cb[j]; 
-                 } else if (font=="ubuntubold") { 
-                         fb = ubuntubold[(cw/8)*ch*oh+i] & cb[j]; 
+                // } else if (font=="font2448") { 
+                        // fb = font2448[(cw/8)*ch*oh+i] & cb[j]; 
+               //  } else if (font=="font3264") { 
+                      //   fb = font3264[(cw/8)*ch*oh+i] & cb[j]; 
+               //  } else if (font=="inconsolafont") { 
+                      //   fb = inconsolafont[(cw/8)*ch*oh+i] & cb[j]; 
+               //  } else if (font=="ununtufont") { 
+                      //   fb = ubuntufont[(cw/8)*ch*oh+i] & cb[j]; 
+               //  } else if (font=="ubuntubold") { 
+                      //   fb = ubuntubold[(cw/8)*ch*oh+i] & cb[j]; 
                  } alert('52');
                  if (fb) {
 		   fontView[k+0] = 0x00;
