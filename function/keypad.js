@@ -19,13 +19,7 @@ function drawKeypad(x, y) { // alert('1');
 	ctx.fillStyle = "rgba(0,0,192,1.0)"; // gray
 	ctx.fillRect(x, y-128*2, 1040, 128);
 	ctx.fillStyle = "rgba(255,255,255,1.0)"; // gray
-	ctx.fillRect(x+4, y-128*2+4, 1040-8, 128-8);
-	
-        /* ctx.beginPath(); 
-	ctx.lineWidth = "4"; 
-	ctx.strokeStyle = "rgba(0,0,220,1.0)"; // "blue"; 
-	ctx.rect(x, y-256, 1040, 128); 
-	ctx.stroke(); */
+	ctx.fillRect(x+4, y-128*2+4, 1040-8, 128-8); 
 	
   var imgBuf = new ArrayBuffer(kw*4*kh*rw*cl); 
   var imgView = new Uint8Array(imgBuf); 
@@ -36,6 +30,14 @@ function drawKeypad(x, y) { // alert('1');
     imgView[i+2] = 0xFF; // B
     imgView[i+3] = 0xFF; // A
   } 
+	
+  function keyChar(kc, kr) {  
+      var keychar = [["Q","W","E","R","T","Y","U","I","O","P"],
+	               ["A","S","D","F","G","H","J","K","L"],
+	             ["SI", "Z","X","C","V","B","N","M","BS"],
+	            ["DC1","DC2",",",   "SPACE",    ".","ENTER"]]; 
+	  return keychar[kr][kc]; 
+  }
   
   function draw(kc, kr, kw, kh, kl, kt) { 
 	  var kx=x+px+(kw+kl*2)*kc; 
@@ -80,7 +82,15 @@ function readKeypad() {
   var kc=0; var kr=0; 
   var kl=12; var kt=16; 
   var kw=80; var kh=96; 
-	var b=false;
+	var b=false; 
+	
+  function keyChar(kc, kr) {  
+      var keychar = [["Q","W","E","R","T","Y","U","I","O","P"],
+	               ["A","S","D","F","G","H","J","K","L"],
+	             ["SI", "Z","X","C","V","B","N","M","BS"],
+	            ["DC1","DC2",",",   "SPACE",    ".","ENTER"]]; 
+	  return keychar[kr][kc]; 
+  }
 	
 	function read(kc, kr, kw, kh, kl, kt) { 
 		var k=[];
@@ -105,20 +115,16 @@ function readKeypad() {
       if (j==3 && i==4) {cl=5; px=((kw+kl*2)/2)+((kw+kl*2)*4); pw=((kw+kl*2)/2);}
       kc=i; kr=j; 
       read(kc, kr, kw, kh, kl, kt); 
-      if (b) {break;}
+      if (b) {break;} 
     } 
-    if (b) {break;}
+    if (b) {break;} 
   }  
 	
    if (b) {
-	var obj = { 
-		col: kc, 
-		row: kr  
-	}; 
-	return obj; 
-   } else {return false;}
+	return keyChar(kc, kr); 
+   } else {return false;} 
 	
-}
+} 
 
 
 function writeStr(x, y, font, str) {  
