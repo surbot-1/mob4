@@ -150,7 +150,7 @@ function writeStr(x, y, w, h, font, str) {
 }
 
 */ 
-             writeChar(20,200);
+             writeChar(20,200,"font2448","A");
     function writeChar(x, y, font, char) { alert('1');
 	var cw=32; var ch=64; 
 	var oh = (char.charCodeAt(0))-32; 
@@ -161,32 +161,32 @@ function writeStr(x, y, w, h, font, str) {
 	if (font=="font1632") {  
 		cw=16; ch=32;
 		for(let i=0; i<(cw/8)*ch; i++) {  
-			fView[i]=font1632[i]; 
+			fView[i]=font1632[(cw/8)*ch*oh+i]; 
 		}
 	} else if (font=="font2448") {  
 		cw=24; ch=48;
 		for(let i=0; i<(cw/8)*ch; i++) {  
-			fView[i]=font2448[i]; 
+			fView[i]=font2448[(cw/8)*ch*oh+i]; 
 		}
 	} else if (font=="font3264") {  
 		cw=32; ch=64;
 		for(let i=0; i<(cw/8)*ch; i++) {  
-			fView[i]=font3264[i]; 
+			fView[i]=font3264[(cw/8)*ch*oh+i]; 
 		}
 	} else if (font=="inconsolafont") {  
 		cw=24; ch=32;
 		for(let i=0; i<(cw/8)*ch; i++) {  
-			fView[i]=inconsolafont[i]; 
+			fView[i]=inconsolafont[(cw/8)*ch*oh+i]; 
 		}
 	} else if (font=="ubuntufont") {  
 		cw=24; ch=32;
 		for(let i=0; i<(cw/8)*ch; i++) {  
-			fView[i]=ubuntufont[i]; 
+			fView[i]=ubuntufont[(cw/8)*ch*oh+i]; 
 		}
 	} else if (font=="font1632") {  
 		cw=24; ch=32;
 		for(let i=0; i<(cw/8)*ch; i++) {  
-			fView[i]=ubuntubold[i]; 
+			fView[i]=ubuntubold[(cw/8)*ch*oh+i]; 
 		}
 	} 
 	
@@ -201,7 +201,7 @@ function writeStr(x, y, w, h, font, str) {
 	var fb; var k=0; 
         for (let i=0; i<(cw/8)*ch; i++) { 
             for (let j=0; j<8; j++) {
-                 fb = fView[(cw/8)*ch*oh+i] & cb[j]; 
+                 fb = fView[i] & cb[j]; 
                  if (fb) {
 		   fontView[k+0] = 0x00;
                    fontView[k+1] = 0x00;
