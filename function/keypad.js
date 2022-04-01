@@ -1,5 +1,5 @@
 // drawKeypad(20, 1648); // 2160-512
-function drawKeypad(x, y) { // alert('1');
+function drawKeypad(x, y) {  alert('1');
   var px=0; var py=0; 
   var pw=0; var ph=0;
   var cl=10; var rw=4; 
@@ -29,7 +29,7 @@ function drawKeypad(x, y) { // alert('1');
     imgView[i+1] = 0xFF; // G
     imgView[i+2] = 0xFF; // B
     imgView[i+3] = 0xFF; // A
-  } 
+  } alert('10');
 	
   function keyChar(kc, kr) {  
       var keychar = [["Q","W","E","R","T","Y","U","I","O","P"],
