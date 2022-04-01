@@ -150,24 +150,44 @@ function writeStr(x, y, w, h, font, str) {
 }
 
 */ 
-function writeChar(x, y, font, char) {  alert('4');
+function writeChar(x, y, font, char) {  alert('4'); 
+         var fBuf = new ArrayBuffer(16*128);
+         var fView = new Uint8Array(fBuf); 
          var cw; var ch; var oh; 
-         var offset = (char.charCodeAt(0))-32;
+         var offset = (char.charCodeAt(0))-32; 
 
 	if (font=="font1632") {  
-                cw=16; ch=32; oh=offset;
+                cw=16; ch=32; oh=offset; 
+		for (let i=0; i<(cw/8)*ch; i++) {  
+		fView[i]=font1632[i]; 
+		}
         } else if (font=="font2448") { 
-                cw=24; ch=48; oh=offset;
+                cw=24; ch=48; oh=offset; 
+		for (let i=0; i<(cw/8)*ch; i++) {  
+		fView[i]=font2448[i]; 
+		}
         } else if (font=="font3264") { 
                 cw=32; ch=64; oh=offset; 
+		for (let i=0; i<(cw/8)*ch; i++) {  
+		fView[i]=font3264[i];     
+		}
         } else if (font=="inconsolafont") { 
                 cw=24; ch=32; oh=offset; 
+		for (let i=0; i<(cw/8)*ch; i++) {  
+		fView[i]=inconsolafont[i]; 
+		}
         } else if (font=="ubuntufont") { 
                 cw=24; ch=32; oh=offset; 
+		for (let i=0; i<(cw/8)*ch; i++) {  
+		fView[i]=ubuntufont[i];  
+		}
         } else if (font=="ubuntubold") { 
                 cw=24; ch=32; oh=offset; 
-        } alert('51'); 
-
+		for (let i=0; i<(cw/8)*ch; i++) {  
+		fView[i]=ubuntubold[i]; 
+		}
+        } alert('55'); 
+				     
         var cnv = document.getElementById("canvas");
         var ctx = cnv.getContext('2d');
         var imgData = ctx.createImageData(cw, ch);
@@ -179,19 +199,7 @@ function writeChar(x, y, font, char) {  alert('4');
 	var fb; var k=0; 
         for (let i=0; i<(cw/8)*ch; i++) { 
             for (let j=0; j<8; j++) {  
-                 if (font=="font1632") { 
-                         fb = font1632[(cw/8)*ch*oh+i] & cb[j]; 
-                 } else if (font=="font2448") { 
-                         fb = font2448[(cw/8)*ch*oh+i] & cb[j]; 
-                 } else if (font=="font3264") { 
-                         fb = font3264[(cw/8)*ch*oh+i] & cb[j]; 
-                 } else if (font=="inconsolafont") { 
-                         fb = inconsolafont[(cw/8)*ch*oh+i] & cb[j]; 
-                 } else if (font=="ununtufont") { 
-                         fb = ubuntufont[(cw/8)*ch*oh+i] & cb[j]; 
-                 } else if (font=="ubuntubold") { 
-                         fb = ubuntubold[(cw/8)*ch*oh+i] & cb[j]; 
-                 } alert('53');
+                 fb = fView[(cw/8)*ch*oh+i] & cb[j]; 
                  if (fb) {
 		   fontView[k+0] = 0x00;
                    fontView[k+1] = 0x00;
