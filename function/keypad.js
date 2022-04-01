@@ -150,6 +150,40 @@ function writeStr(x, y, w, h, font, str) {
 }
 
 */ 
-
-
+             writeChar();
+    function writeChar() { 
+	    var cw=24; var ch=48; var oh=33;
+        var cnv = document.getElementById("canvas");
+        var ctx = cnv.getContext('2d');
+        var imgData = ctx.createImageData(cw, ch);
+        
+        var fontBuf = new ArrayBuffer(cw*4*ch);
+        var fontView = new Uint8Array(fontBuf);
+             
+	var cb = new Uint8Array ([0x80,0x40,0x20,0x10,0x08,0x04,0x02,0x01]);
+	var fb; var k=0; 
+        for (let i=0; i<(cw/3)*ch; i++) { 
+            for (let j=0; j<8; j++) {
+                 fb = font2448[(cw/3)*ch*oh+i] & cb[j]; 
+                 if (fb) {
+		   fontView[k+0] = 0x00;
+                   fontView[k+1] = 0x00;
+		   fontView[k+2] = 0x00;
+		   fontView[k+3] = 0xFF;
+		    k+=4; 
+                 } else {
+		   fontView[k+0] = 0xFF; 
+		   fontView[k+1] = 0xFF;
+		   fontView[k+2] = 0xFF;
+		   fontView[k+3] = 0xFF;
+		    k+=4; 
+                 }
+		  
+              }
+          }
+        for (let i=0; i<cw*4*ch; i++) {
+             imgData.data[i] = fontView[i];
+              }
+        ctx.putImageData(imgData,10, 10);   
+     }
 
