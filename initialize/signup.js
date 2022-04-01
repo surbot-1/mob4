@@ -1,25 +1,27 @@
 function gotoSignup() { 
+  var unamed; var passd; 
+  var unamea; var passa; 
   getIP(); 
   getDateTime(); 
   getUserSignupInfo(); 
   getAppSignupInfo(); 
   firebase.database().ref("App/userinfo/signup").set({ 
-    username: username, 
-    password: password, 
+    username: unamed, 
+    password: passd, 
     date: datetime, 
-    ip: iprcv 
+    ip: ipads 
   }); 
   
   function getUserSignupInfo() { 
-    username = document.getElementById("usernameField").value ; 
-    password = document.getElementById("passwordField").value ; 
+    unamed = document.getElementById("usernameField").value ; 
+    passd = document.getElementById("passwordField").value ; 
   } 
   
   function getAppSignupInfo() { 
     var ref = firebase.database().ref("App/userinfo/signup"); 
     ref.once("value", function(snapshot) {   
-      username = snapshot.child("username").val(); 
-      password = snapshot.child("password").val(); 
+      unamea = snapshot.child("username").val(); 
+      passa = snapshot.child("password").val(); 
     }); 
   } 
   
@@ -28,7 +30,7 @@ function gotoSignup() {
   function wait1() { 
     document.querySelector('#divSign').innerHTML = "" ; 
     document.querySelector('#divSign').innerHTML += "Signup done" ; 
-    document.querySelector('#divSign').innerHTML += '<br>' + "Username:" + username ; 
-    document.querySelector('#divSign').innerHTML += '<br>' + "Password:" + password ;
+    document.querySelector('#divSign').innerHTML += '<br>' + "Username:" + unamea ; 
+    document.querySelector('#divSign').innerHTML += '<br>' + "Password:" + passa ;
   } 
 }
