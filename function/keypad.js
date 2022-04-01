@@ -74,8 +74,8 @@ function drawKeypad(x, y) { // alert('1');
 }
 
 
-function readKeypad() {  
-  var x=cordx; var y=cordy; 
+function readKeypad(x, y) {  
+  var tx=cordx; var ty=cordy; 
   var px=0; var py=0; 
   var pw=0; var ph=0;
   var cl=10; var rw=4; 
@@ -93,10 +93,9 @@ function readKeypad() {
   }
 	
 	function read(kc, kr, kw, kh, kl, kt) { 
-		var k=[];
 	  var kx=x+px+(kw+kl*2)*kc; 
 	  var ky=y+py+(kh+kt*2)*kr; 
-		if (x>kx && x<(kx+kw+pw) && y>ky && y<(ky+kh+ph)) {   
+		if (tx>kx && tx<(kx+kw+pw) && ty>ky && ty<(ky+kh+ph)) {   
 			b=true; 
 		} else {b=false;}
 	}
