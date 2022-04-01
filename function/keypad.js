@@ -153,7 +153,7 @@ function writeStr(x, y, w, h, font, str) {
 function writeChar(x, y, font, char) {  alert('4');
          var cw; var ch; var oh; 
          var offset = (char.charCodeAt(0))-32;
-/*
+
 	if (font=="font1632") {  
 		cw=16; ch=32; oh=offset;
 	} else if (font=="font2448") { 
@@ -166,8 +166,8 @@ function writeChar(x, y, font, char) {  alert('4');
 		cw=24; ch=32; oh=offset; 
 	} else if (font=="ubuntubold") { 
 		cw=24; ch=32; oh=offset; 
-	} alert('5');
-	
+	} alert('5'); 
+/*
         var cnv = document.getElementById("canvas");
         var ctx = cnv.getContext('2d');
         var imgData = ctx.createImageData(cw, ch);
