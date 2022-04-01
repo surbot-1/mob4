@@ -151,7 +151,7 @@ function writeStr(x, y, w, h, font, str) {
 
 */ 
              writeChar(20,20);
-    function writeChar(x, y) { 
+    function writeChar(x, y) { alert('1');
 	    var cw=32; var ch=64; var oh=33;
         var cnv = document.getElementById("canvas");
         var ctx = cnv.getContext('2d');
