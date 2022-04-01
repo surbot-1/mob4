@@ -162,7 +162,7 @@ function writeChar(x, y, font, char) {  alert('4');
 		for (let i=0; i<(cw/8)*ch; i++) {  
 		fView[i]=font1632[i]; 
 		}
-        } else if (font=="font2448") { alert('4'); 
+       /*  } else if (font=="font2448") { alert('4'); 
                 cw=24; ch=48; oh=offset; 
 		for (let i=0; i<(cw/8)*ch; i++) {  
 		fView[i]=font2448[i]; 
@@ -186,7 +186,7 @@ function writeChar(x, y, font, char) {  alert('4');
                 cw=24; ch=32; oh=offset; 
 		for (let i=0; i<(cw/8)*ch; i++) {  
 		fView[i]=ubuntubold[i]; 
-		}
+		}  */
         } alert('55'); 
 /* 
         var cnv = document.getElementById("canvas");
