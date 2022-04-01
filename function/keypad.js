@@ -149,7 +149,7 @@ function writeStr(x, y, w, h, font, str) {
 	
 }
 
-
+*/ 
 function writeChar(x, y, font, char) {  
 	var cw; var ch; var oh; 
 	var offset = (char.charCodeAt(0))-32;
@@ -215,7 +215,7 @@ function writeChar(x, y, font, char) {
      }
 
 }
-*/
+
 
 
 
