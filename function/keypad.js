@@ -150,7 +150,7 @@ function writeStr(x, y, w, h, font, str) {
 }
 
 */ 
-function writeChar(x, y, font, char) {  
+function writeChar(x, y, font, char) {  alert('4');
 	var cw; var ch; var oh; 
 	var offset = (char.charCodeAt(0))-32;
 	
@@ -166,7 +166,7 @@ function writeChar(x, y, font, char) {
 		cw=24; ch=32; oh=offset; 
 	} else if (font=="ubuntubold") { 
 		cw=24; ch=32; oh=offset; 
-	}
+	} alert('5');
 	
         var cnv = document.getElementById("canvas");
         var ctx = cnv.getContext('2d');
@@ -207,7 +207,7 @@ function writeChar(x, y, font, char) {
                  }
 		  
               }
-          }
+          } alert('6');
         for (let i=0; i<cw*4*ch; i++) { 
              imgData.data[i] = fontView[i]; 
               }
