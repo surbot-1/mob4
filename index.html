@@ -116,7 +116,7 @@ drawKeypad(20,1664);
 setInterval(function() {
 if (touch==3) { touch=0;
 var kchar=readKeypad(20,1664); 
-writeChar(32,32,"font2448",kchar);  
+writeChar(32,1664-256+88,"font2448",kchar);  
 }
 }, 0100) ;
 </script> 
