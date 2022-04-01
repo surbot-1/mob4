@@ -128,7 +128,7 @@ function readKeypad(x, y) {
 */
 writeStr(0,50,100,100,"font2448","ABCDEFGH"); 
 function writeStr(x, y, w, h, font, str) {  
-	var cw; var ch; 
+	var cw=24; var ch=32; 
 
 	if (font=="font1632") { cw=16; ch=32; 
 	} else if (font=="font2448") { cw=24; ch=48; 
