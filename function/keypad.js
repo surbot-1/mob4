@@ -127,10 +127,26 @@ function readKeypad() {
 } 
 
 
-function writeStr(x, y, font, str) {  
-	
-	
+function writeStr(x, y, w, h, font, str) {  
+	var cw; var ch; 
 
+	if (font=="font1632") { cw=16; ch=32; 
+	} else if (font=="font2448") { cw=24; ch=48; 
+	} else if (font=="font3264") { cw=32; ch=64; 
+	} else if (font=="inconsolafont") { cw=24; ch=32; 
+	} else if (font=="ununtufont") { cw=24; ch=32; 
+	} else if (font=="ubuntubold") { cw=24; ch=32; 
+	} 
+	
+	var i=0; var j=0;
+	for (let k=0; k<(str.length); k++) { 
+		var char=str.charAt(k); 
+		writeChar(x+i, y+j, font, char); 
+		i+=cw; 
+		if (i>=w) {i=0; j+=ch;} 
+		if(j>=h) {i=0; j=0;}
+	}
+	
 }
 
 
