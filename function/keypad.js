@@ -167,12 +167,12 @@ function writeChar(x, y, font, char) {  alert('4');
 		for (let i=0; i<(cw/8)*ch; i++) {  
 		fView[i]=font2448[i]; 
 		}
-       /* } else if (font=="font3264") { 
+        } else if (font=="font3264") { 
                 cw=32; ch=64; oh=offset; 
 		for (let i=0; i<(cw/8)*ch; i++) {  
 		fView[i]=font3264[i];     
 		}
-       } else if (font=="inconsolafont") { 
+      /* } else if (font=="inconsolafont") { 
                 cw=24; ch=32; oh=offset; 
 		for (let i=0; i<(cw/8)*ch; i++) {  
 		fView[i]=inconsolafont[i]; 
@@ -187,7 +187,7 @@ function writeChar(x, y, font, char) {  alert('4');
 		for (let i=0; i<(cw/8)*ch; i++) {  
 		fView[i]=ubuntubold[i]; 
 		}  */
-        } alert('56'); 
+        } alert('57'); 
 /* 
         var cnv = document.getElementById("canvas");
         var ctx = cnv.getContext('2d');
