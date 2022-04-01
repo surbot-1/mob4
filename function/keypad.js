@@ -125,8 +125,8 @@ function readKeypad(x, y) {
    } else {return false;} 
 	
 } 
-
-
+*/
+writeStr(0,50,100,100,"font2448","ABCDEFGH");
 function writeStr(x, y, w, h, font, str) {  
 	var cw; var ch; 
 
@@ -149,10 +149,10 @@ function writeStr(x, y, w, h, font, str) {
 	
 }
 
-*/ 
+
     writeChar(20,200,"font2448","A");
     function writeChar(x, y, font, char) { 
-	var cw=32; var ch=64; 
+	var cw=24; var ch=32; 
 	var oh = (char.charCodeAt(0))-32; 
 			      
 	var fBuf = new ArrayBuffer(16*128); 
