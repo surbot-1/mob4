@@ -213,7 +213,7 @@ function writeChar(x, y, font, char) {
               }
         ctx.putImageData(imgData,x, y);   
      }
-
+alert('10');
 }
 
 
