@@ -30,15 +30,15 @@ function drawKeypad(x, y) {  alert('1');
     imgView[i+2] = 0xFF; // B
     imgView[i+3] = 0xFF; // A
   } alert('10');
-	
-  function keyChar(kc, kr) {  
+
+  /* function keyChar(kc, kr) {  
       var keychar = [["Q","W","E","R","T","Y","U","I","O","P"],
 	               ["A","S","D","F","G","H","J","K","L"],
 	             ["SI", "Z","X","C","V","B","N","M","BS"],
 	            ["DC1","DC2",",",   "SPACE",    ".","ENTER"]]; 
 	  var key = keychar[kr][kc];
 	  return key; 
-  } alert('1'); 
+  } */ alert('1'); 
   
   function draw(kc, kr, kw, kh, kl, kt) { 
 	  var kx=x+px+(kw+kl*2)*kc; 
