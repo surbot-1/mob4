@@ -16,9 +16,9 @@ function drawKeypad(x, y) {  alert('1');
 	ctx.fillStyle = "rgba(192,192,192,1.0)"; // gray
 	ctx.fillRect(x, y-128, 1040, 128); 
 	
-	ctx.fillStyle = "rgba(0,0,192,1.0)"; // gray
+	ctx.fillStyle = "rgba(0,0,192,1.0)"; // blue
 	ctx.fillRect(x, y-128*2, 1040, 128);
-	ctx.fillStyle = "rgba(255,255,255,1.0)"; // gray
+	ctx.fillStyle = "rgba(255,255,255,1.0)"; // white
 	ctx.fillRect(x+4, y-128*2+4, 1040-8, 128-8); 
 	
   var imgBuf = new ArrayBuffer(kw*4*kh*rw*cl); 
