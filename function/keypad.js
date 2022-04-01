@@ -188,7 +188,7 @@ function writeStr(x, y, w, h, font, str) {
 		for(let i=0; i<(cw/8)*ch; i++) {  
 			fView[i]=ubuntufont[(cw/8)*ch*oh+i]; 
 		}
-	} else if (font=="font1632") {  
+	} else if (font=="ubuntubold") {  
 		cw=24; ch=32;
 		for(let i=0; i<(cw/8)*ch; i++) {  
 			fView[i]=ubuntubold[(cw/8)*ch*oh+i]; 
