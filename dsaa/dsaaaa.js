@@ -22,7 +22,7 @@
         image2.setAttribute('crossOrigin', 'anonymous');
         image2.src = 'image/dp9.png'; 
         image2.onload = function (e) {
-           for (let i=0; i<1; i++) { 
+           for (let i=0; i<4; i++) { 
                var x = canx; 
                var y = cany+160+160*i; 
                var w = canw; 
