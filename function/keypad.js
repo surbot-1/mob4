@@ -157,17 +157,17 @@ function writeChar(x, y, font, char) {  alert('4');
 	var fBuf = new ArrayBuffer(16*128);
         var fView = new Uint8Array(fBuf); 
 
-	if (font=="font1632") {  alert('4'); 
+	if (font=="font1632") { 
                 cw=16; ch=32; oh=offset; 
 		for (let i=0; i<(cw/8)*ch; i++) {  
 		fView[i]=font1632[i]; 
 		}
-       /*  } else if (font=="font2448") { alert('4'); 
+        } else if (font=="font2448") { 
                 cw=24; ch=48; oh=offset; 
 		for (let i=0; i<(cw/8)*ch; i++) {  
 		fView[i]=font2448[i]; 
 		}
-        } else if (font=="font3264") { alert('4'); 
+       /* } else if (font=="font3264") { alert('4'); 
                 cw=32; ch=64; oh=offset; 
 		for (let i=0; i<(cw/8)*ch; i++) {  
 		fView[i]=font3264[i];     
