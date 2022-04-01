@@ -16,7 +16,7 @@
         
          function detectOnline() {
                if (navigator.onLine) {
-                   if (!ipReceived){
+                   if (!ipsts){
                         return getIP(); 
                     }
                } else {
