@@ -49,9 +49,9 @@ function drawKeypad(x, y) {  // alert('1');
 	  } 
 	  ctx.putImageData(imgData, kx+kl, ky+kt); 
 	  
-	  var ki = kx+kl+(kw+pw-24)/2;
-	  var kj = ky+kt+(kh+ph-48)/2;
-	  var font = "font2448"; 
+	  var ki = kx+kl+(kw+pw-24)/2; 
+	  var kj = ky+kt+(kh+ph-48)/2; 
+	  var font = "font2448";  
 	  var char = keyChar(kc, kr); alert(char);
 	  writeChar(ki, kj, font, char); 
 	  
