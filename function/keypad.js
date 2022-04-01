@@ -74,7 +74,7 @@ function drawKeypad(x, y) {  alert('1');
   
 }
 
-
+/* 
 function readKeypad(x, y) {  
   var tx=cordx; var ty=cordy; 
   var px=0; var py=0; 
@@ -215,7 +215,7 @@ function writeChar(x, y, font, char) {
      }
 
 }
-
+*/
 
 
 
