@@ -149,9 +149,9 @@ function readKeypad(x, y, t) {
 	   var ky=y+py+(kh+kt*2)*kr; 
 	   imgData = ctx.createImageData(kw+pw, kh+ph); 
 	   for (let i=0; i<(kw+pw)*4*(kh+ph); i+=4) {  
-		   imgData.data[i+0] = 0x00; 
-		   imgData.data[i+1] = 0x00; 
-		   imgData.data[i+2] = 0xFF; 
+		   imgData.data[i+0] = 0xD0; 
+		   imgData.data[i+1] = 0xD0; 
+		   imgData.data[i+2] = 0xD0; 
 		   imgData.data[i+3] = 0xFF; 
 	   } 
 	   ctx.putImageData(imgData, kx+kl, ky+kt); 
