@@ -42,7 +42,7 @@
 	  
    var timer;
    function check() { 
-    var x = cordx;  var y = cordy; 
+    var x = touchx;  var y = touchy; 
     var tend = touch;  
     if (tend == 3) { touch = 0;
        if (x>0 && x<72 && y>0 && y<144) {          // back
