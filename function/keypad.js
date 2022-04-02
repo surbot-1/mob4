@@ -181,7 +181,7 @@ function readKeypad(x, y, t) {
 	   writeStr(ki, kj, 24*5, 48*1, font, str); 
         } 
         f1(); 
-        setTimeout(f2, 0020);
+        setTimeout(f2, 0040);
    }
 	
   for (let j=0; j<rw; j++) { 
