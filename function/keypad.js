@@ -158,7 +158,7 @@ function writeStr(x, y, w, h, font, str) {
 
 
     // writeChar(20,200,"font2448","B");
-    function writeChar(x, y, font, char) { 
+function writeChar(x, y, font, char) { 
 	var cw=24; var ch=32; 
 	var oh = (char.charCodeAt(0))-32; 
 			      
@@ -229,5 +229,5 @@ function writeStr(x, y, w, h, font, str) {
              imgData.data[i] = fontView[i];
               }
         ctx.putImageData(imgData, x, y);   
-     }
+}
 
