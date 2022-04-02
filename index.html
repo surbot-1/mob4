@@ -49,8 +49,8 @@ var context = canvas.getContext('2d');
 var canx=0; var cany=0; 
 var canw=0; var canh=0; 
 	
-var cordx=0; var cordy=0;  
-var cordxp=0; var cordyp=0; 
+var touchx=0; var touchy=0;  
+var touchxp=0; var touchyp=0;  
 var touch=0; var touchp=0;
 
 var datetime; var date; var time; 
@@ -102,9 +102,9 @@ function handleEnd(evt) {
        var ele = document.getElementById("canvas");
        var ctx = ele.getContext("2d");
        var touches = evt.changedTouches;
-       var  x = touches[0].pageX; cordx = x;
-       var  y = touches[0].pageY; cordy = y;
-       var  tend = 3;            touch = tend;  // touchend
+       var  x = touches[0].pageX; touchx = x;
+       var  y = touches[0].pageY; touchy = y;
+       var  tend = 3;             touch  = tend;  // touchend
       }
       canvas.addEventListener("touchend", handleEnd, false);	
 	
