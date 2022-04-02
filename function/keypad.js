@@ -65,7 +65,7 @@ function drawKeypad(x, y, t) {  // alert('1');
   for (let j=0; j<rw; j++) { 
     for (let i=0; i<cl; i++) { 
       if (j==0 && i==0) {cl=10; px=0;} 
-      if (j==1 && i==0) {if(t==(0||1)){cl=9; px=((kw+kl*2)/2);}if(t==(2||3)){cl=10; px=0;}} 
+      if (j==1 && i==0) {if(t==0||t==1){cl=9; px=((kw+kl*2)/2);}if(t==2||t==3){cl=10; px=0;}} 
       if (j==2 && i==0) {cl=9; px=0; pw=((kw+kl*2)/2);} 
       if (j==2 && i==1) {cl=9; px=((kw+kl*2)/2); pw=0;} 
       if (j==2 && i==8) {cl=9; px=((kw+kl*2)/2); pw=((kw+kl*2)/2);}
