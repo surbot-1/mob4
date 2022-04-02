@@ -31,7 +31,7 @@ function drawKeypad(x, y, t) {  // alert('1');
     imgView[i+3] = 0xFF; // A
   } 
 
-   function keyChar(kc, kr) {  
+   function keyChar(kc, kr, t) {  
     var keychar = [[["Q","W","E","R","T","Y","U","I","O","P"],
 	               ["A","S","D","F","G","H","J","K","L"],
 	           ["SIFT", "Z","X","C","V","B","N","M","BS"],
