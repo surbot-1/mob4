@@ -112,10 +112,10 @@ function handleEnd(evt) {
 	
 <script> 
 // dsaaaa(); 
-drawKeypad(20,1664,1); 
+drawKeypad(20,1664,2); 
 setInterval(function() {
 if (touch==3) { touch=0;
-var kchar=readKeypad(20,1664,1); 
+var kchar=readKeypad(20,1664,2); 
 writeChar(32,1448,"font2448",kchar);  
 }
 }, 0100) ;
