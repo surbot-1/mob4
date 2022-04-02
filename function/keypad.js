@@ -107,6 +107,10 @@ function readKeypad(x, y, t) {
   var kw=80; var kh=96; 
 	var b=false; 
 	
+  var cvs = document.getElementById("canvas"); 
+  var ctx = cvs.getContext('2d'); 
+  var imgData = ctx.createImageData(kw, kh); 
+	
   function keyChar(kc, kr, t) {  
     var keychar = [[["Q","W","E","R","T","Y","U","I","O","P"],
 	               ["A","S","D","F","G","H","J","K","L"],
@@ -131,13 +135,54 @@ function readKeypad(x, y, t) {
         return keychar[t][kr][kc]; 
   }
 	
-	function read(kc, kr, kw, kh, kl, kt) { 
+   function read(kc, kr, kw, kh, kl, kt) { 
 	  var kx=x+px+(kw+kl*2)*kc; 
 	  var ky=y+py+(kh+kt*2)*kr; 
 		if (tx>kx && tx<(kx+kl+kw+pw+kl) && ty>ky && ty<(ky+kt+kh+ph+kt)) {   
 			b=true; 
 		} else {b=false;}
-	}
+   } 
+	
+   function show(kc, kr, kw, kh, kl, kt) {  
+	function f1() {
+	   var kx=x+px+(kw+kl*2)*kc; 
+	   var ky=y+py+(kh+kt*2)*kr; 
+	   imgData = ctx.createImageData(kw+pw, kh+ph); 
+	   for (let i=0; i<(kw+pw)*4*(kh+ph); i+=4) {  
+		   imgData.data[i+0] = 0x00; 
+		   imgData.data[i+1] = 0x00; 
+		   imgData.data[i+2] = 0xFF; 
+		   imgData.data[i+3] = 0xFF; 
+	   } 
+	   ctx.putImageData(imgData, kx+kl, ky+kt); 
+	   
+	   var font = "font2448";  
+	   var str = keyChar(kc, kr, t); 
+	   var ki = kx+kl+(kw+pw-(str.length)*24)/2;  
+	   var kj = ky+kt+(kh+ph-48)/2; 
+	   writeStr(ki, kj, 24*5, 48*1, font, str); 
+        }
+	function f2() {
+	   var kx=x+px+(kw+kl*2)*kc; 
+	   var ky=y+py+(kh+kt*2)*kr; 
+	   imgData = ctx.createImageData(kw+pw, kh+ph); 
+	   for (let i=0; i<(kw+pw)*4*(kh+ph); i+=4) {  
+		   imgData.data[i+0] = 0xFF; 
+		   imgData.data[i+1] = 0xFF; 
+		   imgData.data[i+2] = 0xFF; 
+		   imgData.data[i+3] = 0xFF; 
+	   } 
+	   ctx.putImageData(imgData, kx+kl, ky+kt); 
+	   
+	   var font = "font2448";  
+	   var str = keyChar(kc, kr, t); 
+	   var ki = kx+kl+(kw+pw-(str.length)*24)/2;  
+	   var kj = ky+kt+(kh+ph-48)/2; 
+	   writeStr(ki, kj, 24*5, 48*1, font, str); 
+        } 
+        f1(); 
+        setTimeout(f2, 0020);
+   }
 	
   for (let j=0; j<rw; j++) { 
     for (let i=0; i<cl; i++) { 
@@ -158,7 +203,8 @@ function readKeypad(x, y, t) {
     if (b) {break;} 
   }  
 	
-   if (b) {
+   if (b) { 
+	show(kc, kr, kw, kh, kl, kt); 
 	return keyChar(kc, kr, t); 
    } else {return false;} 
 	
