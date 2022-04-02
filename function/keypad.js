@@ -98,7 +98,7 @@ function drawKeypad(x, y, t) {  // alert('1');
 
 
 function readKeypad(x, y, t) {  
-  var tx=cordx; var ty=cordy; 
+  var tx=touchx; var ty=touchy; 
   var px=0; var py=0; 
   var pw=0; var ph=0;
   var cl=10; var rw=4; 
