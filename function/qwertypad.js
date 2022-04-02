@@ -22,8 +22,8 @@ var qwertyHex     = [0x51,0x57,0x45,0x52,0x54,0x59,0x55,0x49,0x4F,0x50,  // 0-9 
  }
 	
  function readQwerty() {
-     var x = cordx;
-     var y = cordy;
+     var x = touchx;
+     var y = touchy;
 	
    if (y>1535 && y<1535+160) {
      for (let i=0; i<10; i++) {
@@ -175,8 +175,8 @@ function storeMessageStr() {
 function writeChar() { 
   var cvs = document.getElementById("canvas");
   var ctx = cvs.getContext('2d');
-	var x = cordx;
-        var y = cordy; 
+	var x = touchx;
+        var y = touchy; 
 	var ptr = cpr;
         var keyP = msgArr[(ptr-1)];   // previous
 	var keyH = keyHex;
