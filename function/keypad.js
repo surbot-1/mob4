@@ -4,7 +4,7 @@ function drawKeypad(x, y, t) {  // alert('1');
   var pw=0; var ph=0;
   var cl=10; var rw=4; 
   var kc=0; var kr=0; 
-  var kl=12; var kt=16; 
+  var kl=14; var kt=16; 
   var kw=80; var kh=96; 
   
   var cvs = document.getElementById("canvas"); 
@@ -103,7 +103,7 @@ function readKeypad(x, y, t) {
   var pw=0; var ph=0;
   var cl=10; var rw=4; 
   var kc=0; var kr=0; 
-  var kl=12; var kt=16; 
+  var kl=14; var kt=16; 
   var kw=80; var kh=96; 
 	var b=false; 
 	
