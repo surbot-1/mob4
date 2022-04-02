@@ -52,7 +52,7 @@ function drawKeypad(x, y, t) {  // alert('1');
 	           ["SIFT", "Z","X","C","V","B","N","M","BS"],
 	           ["?123",",",       "SPACE",    ".","ENTER"]]]; 
 	   
-       return keychar[t][kr][kc]; 
+         return keychar[t][kr][kc]; 
   } 
   
   function draw(kc, kr, kw, kh, kl, kt) { 
