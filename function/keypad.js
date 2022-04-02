@@ -12,12 +12,12 @@ function drawKeypad(x, y, t) {  // alert('1');
   var imgData = ctx.createImageData(kw, kh); 
 	
 	ctx.fillStyle = "rgba(192,192,192,1.0)"; // gray
-	ctx.fillRect(x, y, 1080, 128*4);
+	ctx.fillRect(x, y, 1080, 128*4); 
 	ctx.fillStyle = "rgba(192,192,192,1.0)"; // gray
 	ctx.fillRect(x, y-128, 1080, 128); 
 	
 	ctx.fillStyle = "rgba(0,0,192,1.0)"; // blue
-	ctx.fillRect(x, y-128*2, 1080, 128);
+	ctx.fillRect(x, y-128*2, 1080, 128); 
 	ctx.fillStyle = "rgba(255,255,255,1.0)"; // white
 	ctx.fillRect(x+4, y-128*2+4, 1080-8, 128-8); 
 	
