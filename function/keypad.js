@@ -32,11 +32,27 @@ function drawKeypad(x, y, t) {  // alert('1');
   } 
 
    function keyChar(kc, kr) {  
-      var keychar = [["Q","W","E","R","T","Y","U","I","O","P"],
+    var keychar = [[["Q","W","E","R","T","Y","U","I","O","P"],
 	               ["A","S","D","F","G","H","J","K","L"],
 	           ["SIFT", "Z","X","C","V","B","N","M","BS"],
-	           ["?123",",",       "SPACE",    ".","ENTER"]]; 
-	  var key = keychar[kr][kc];
+	           ["?123",",",       "SPACE",    ".","ENTER"]], 
+		   
+	           [["q","w","e","r","t","y","u","i","o","p"],
+	               ["a","s","d","f","g","h","j","k","l"],
+	           ["SIFT", "z","x","c","v","b","n","m","BS"],
+	           ["?123",",",       "SPACE",    ".","ENTER"]], 
+		   
+		   [["Q","W","E","R","T","Y","U","I","O","P"],
+	               ["A","S","D","F","G","H","J","K","L"],
+	           ["SIFT", "Z","X","C","V","B","N","M","BS"],
+	           ["?123",",",       "SPACE",    ".","ENTER"]], 
+		   
+		   [["Q","W","E","R","T","Y","U","I","O","P"],
+	               ["A","S","D","F","G","H","J","K","L"],
+	           ["SIFT", "Z","X","C","V","B","N","M","BS"],
+	           ["?123",",",       "SPACE",    ".","ENTER"]]]; 
+	   
+	  var key = keychar[t][kr][kc];
 	  return key; 
   } 
   
@@ -50,7 +66,7 @@ function drawKeypad(x, y, t) {  // alert('1');
 	  ctx.putImageData(imgData, kx+kl, ky+kt); 
 	  
 	  var font = "font2448";  
-	  var str = keyChar(kc, kr); 
+	  var str = keyChar(kc, kr, t); 
 	  var ki = kx+kl+(kw+pw-(str.length)*24)/2;  
 	  var kj = ky+kt+(kh+ph-48)/2; 
 	  writeStr(ki, kj, 24*5, 48*1, font, str); 
