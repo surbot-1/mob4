@@ -97,7 +97,7 @@ function drawKeypad(x, y, t) {  // alert('1');
 }
 
 
-function readKeypad(x, y) {  
+function readKeypad(x, y, t) {  
   var tx=cordx; var ty=cordy; 
   var px=0; var py=0; 
   var pw=0; var ph=0;
@@ -107,12 +107,28 @@ function readKeypad(x, y) {
   var kw=80; var kh=96; 
 	var b=false; 
 	
-  function keyChar(kc, kr) {  
-      var keychar = [["Q","W","E","R","T","Y","U","I","O","P"],
+  function keyChar(kc, kr, t) {  
+    var keychar = [[["Q","W","E","R","T","Y","U","I","O","P"],
 	               ["A","S","D","F","G","H","J","K","L"],
 	           ["SIFT", "Z","X","C","V","B","N","M","BS"],
-	           ["?123",",",      "SPACE",    ".","ENTER"]]; 
-	  return keychar[kr][kc]; 
+	           ["?123",",",      "SPACE",    ".","ENTER"]], 
+	           
+	           [["q","w","e","r","t","y","u","i","o","p"],
+	               ["a","s","d","f","g","h","j","k","l"],
+	           ["SIFT", "z","x","c","v","b","n","m","BS"],
+	           ["?123",",",       "SPACE",    ".","ENTER"]], 
+		   
+		   [["1","2","3","4","5","6","7","8","9","0"],
+	            ["@","#","₹","_","&","-","+","(",")","/"],
+	           ["SIFT", "*",'"',"'",":",";","!","?","BS"],
+	           ["ABC",",",       "SPACE",    ".","ENTER"]], 
+		   
+		   [["~","`","|","•","√","π","÷","×","¶","∆"],
+	            ["£","€","$","¢","^","°","=","{","}","\\"],
+	           ["SIFT", "%","©","®","™","℅","[","]","BS"],
+	           ["ABC",",",       "SPACE",    ".","ENTER"]]]; 
+	  
+        return keychar[t][kr][kc]; 
   }
 	
 	function read(kc, kr, kw, kh, kl, kt) { 
@@ -143,7 +159,7 @@ function readKeypad(x, y) {
   }  
 	
    if (b) {
-	return keyChar(kc, kr); 
+	return keyChar(kc, kr, t); 
    } else {return false;} 
 	
 } 
