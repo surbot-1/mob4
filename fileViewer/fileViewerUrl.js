@@ -2,7 +2,7 @@ function fileViewerUrl(x, y, url) {
   
   var index = url.indexOf('.'); 
   var filename = url.substring(0, index); 
-  var fileext = url.substring(index+1); 
+  var fileext = url.substring(index+1, index+4); 
   
   if (fileext=="bmp") {  
     var oReq = new XMLHttpRequest(); 
