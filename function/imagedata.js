@@ -1,4 +1,4 @@
-function saveImageData(x, y, w, h) { 
+function saveImageData(x, y, w, h) { alert('1');
 	var cnv = document.getElementById("canvas"); 
 	var ctx = cnv.getContext('2d'); 
         // var imgData = ctx.createImageData(w, h); 
@@ -8,7 +8,7 @@ function saveImageData(x, y, w, h) {
 		imageView[i+1]=imgData.data[i+1]; 
 		imageView[i+2]=imgData.data[i+2]; 
 		imageView[i+3]=imgData.data[i+3]; 
-	} */ aler((imgData.data[0])); aler((imageView[0])); 
+	} */ aler((imgData.data[0])); // aler((imageView[0])); 
 	ctx.putImageData(imgData, 500, 500);
 } 
 
