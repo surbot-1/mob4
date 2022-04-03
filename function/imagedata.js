@@ -9,7 +9,7 @@ function saveImageData(x, y, w, h) { alert('1');
 		imageView[i+2]=imgData.data[i+2]; 
 		imageView[i+3]=imgData.data[i+3]; 
 	} */ aler((imgData.data[0])); // aler((imageView[0])); 
-	ctx.putImageData(imgData, 500, 500); alert('3');
+	ctx.putImageData(imgData, 20, 400); alert('3');
 } 
 
 function restoreImageData(x, y, w, h) {  
