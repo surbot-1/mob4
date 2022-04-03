@@ -1,8 +1,8 @@
 function saveImageData(x, y, w, h) { alert('1');
 	var cnv = document.getElementById("canvas"); 
 	var ctx = cnv.getContext('2d'); 
-        // var imgData = ctx.createImageData(w, h); 
-        var imgData = ctx.getImageData(x, y, w, h); alert('2');
+        var imgData = ctx.createImageData(w, h); alert('11');
+        imgData = ctx.getImageData(x, y, w, h); alert('2');
         /* for (let i=0; i<w*4*h; i+=4) { 
 		imageView[i+0]=imgData.data[i+0]; 
 		imageView[i+1]=imgData.data[i+1]; 
