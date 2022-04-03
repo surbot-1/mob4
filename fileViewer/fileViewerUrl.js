@@ -63,7 +63,7 @@ function fileViewerUrl(x, y, url) {
                             imageData.data[k + 0] = data[bgn+2+i+j];  // R value
                             imageData.data[k + 1] = data[bgn+1+i+j];  // G value
                             imageData.data[k + 2] = data[bgn+0+i+j];  // B value
-                            imageData.data[k + 3] = 255; // data[bgn+3+i+j];  // A value
+                            imageData.data[k + 3] = data[bgn+3+i+j];  // A value
                             k += b;
                            }
                           }
