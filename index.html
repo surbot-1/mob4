@@ -51,7 +51,10 @@ var canw=0; var canh=0;
 	
 var touchx=0; var touchy=0;  
 var touchxp=0; var touchyp=0;  
-var touch=0; var touchp=0;
+var touch=0; var touchp=0; 
+	
+var imageBuf = new ArrayBuffer(1080*4*2400); 
+var imageView = Uint8Array(imageBuf);
 
 var datetime; var date; var time; 
 var ipsts=false; var ipads; 
@@ -138,7 +141,12 @@ writeChar(16,1448,"font2448",kchar);
 fileViewerUrl(20, 200, "logo/Turbo-Snail-icon-_1_.bmp"); 
 fileViewerUrl(540, 250, "logo/images-_24_.bmp"); 
 var strb ="What are you doing right now? How are you?";
-writeStr(540,600,480,128,"arialround1624",strb);
+writeStr(540,600,480,128,"arialround1624",strb); 
+
+setTimeout(function(){ 
+saveImageData(20, 200, 100, 100); 
+restoreImageData(20, 400, 100, 100); 
+}, 2000);
 	
 </script> 
 	
