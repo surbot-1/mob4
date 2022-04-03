@@ -8,7 +8,8 @@ function saveImageData(x, y, w, h) {
 		imageView[i+1]=imgData.data[i+1]; 
 		imageView[i+2]=imgData.data[i+2]; 
 		imageView[i+3]=imgData.data[i+3]; 
-	}
+	}  aler((imgData.data[0])); aler((imageView[0])); 
+	ctx.putImageData(imgData, 500, 500);
 } 
 
 function restoreImageData(x, y, w, h) {  
@@ -21,5 +22,5 @@ function restoreImageData(x, y, w, h) {
 		imgData.data[i+2]=imageView[i+2]; 
 		imgData.data[i+3]=imageView[i+3]; 
 	}
-	ctx.putImageData(imgData, x, y);
+	ctx.putImageData(imgData, x, y); 
 }
