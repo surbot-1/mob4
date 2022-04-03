@@ -288,6 +288,16 @@ function writeChar(x, y, font, char) {
 		for(let i=0; i<(cw/8)*ch; i++) {  
 			fView[i]=ubuntubold[(cw/8)*ch*oh+i]; 
 		}
+	} else if (font=="arialnormal1616") {  
+		cw=16; ch=16;
+		for(let i=0; i<(cw/8)*ch; i++) {  
+			fView[i]=arialnormal1616[(cw/8)*ch*oh+i]; 
+		}
+	} else if (font=="arialround1624") {  
+		cw=16; ch=24;
+		for(let i=0; i<(cw/8)*ch; i++) {  
+			fView[i]=arialround1624[(cw/8)*ch*oh+i]; 
+		}
 	} 
 	
 	var cnv = document.getElementById("canvas");
