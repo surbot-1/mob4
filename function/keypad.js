@@ -236,6 +236,22 @@ function writeStr(x, y, w, h, font, str) {
 
     // writeChar(20,200,"font2448","B");
 function writeChar(x, y, font, char) { 
+	
+       /* var fcolor=""; var bcolor="";
+	for (let i=0; i<frgba.length; i++) {  
+		if (frgba.charAt(i)==" ") {  
+		} else {fcolor+=frgba.charAt(i);}
+	} 
+	var findex = fcolor.indexOf("(", 0); 
+	var fred = fcolor.substring(findex+1, fcolor.indexOf(",", 0)); 
+	if (fred.length==1) { 
+		fred = (fred.charCodeAt(0))-48; 
+	} else if (fred.length==2) { 
+		fred = ((fred.charCodeAt(0))-48)*10+(fred.charCodeAt(1))-48; 
+	} else if (fred.length==3) { 
+		fred = ((fred.charCodeAt(0))-48)*100+((fred.charCodeAt(1))-48)*10+(fred.charCodeAt(2))-48; 
+	} */
+	
 	var cw=24; var ch=32; 
 	var oh = (char.charCodeAt(0))-32; 
 			      
