@@ -1,4 +1,4 @@
-function saveimageData(x, y, w, h) { 
+function saveImageData(x, y, w, h) { 
 	var cnv = document.getElementById("canvas"); 
 	var ctx = cnv.getContext('2d'); 
 	var imgData = ctx.createImageData(w, h); 
