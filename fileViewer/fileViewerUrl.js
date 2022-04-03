@@ -12,9 +12,10 @@ function fileViewerUrl(x, y, url) {
     oReq.onload = function (oEvent) { 
       var arrayBuffer = oReq.response; 
       // var byteArray = new Uint8Array(arrayBuffer); 
-      var data = new Uint8Array(arrayBuffer); 
+      // var data = new Uint8Array(arrayBuffer); 
       
-      if (arrayBuffer) {
+      if (arrayBuffer) { 
+                      var data = new Uint8Array(arrayBuffer); 
                       var buf = new ArrayBuffer(4);
                       var view = new DataView(buf);
                       
@@ -45,10 +46,10 @@ function fileViewerUrl(x, y, url) {
                       for ( i = w*b*h-w*b; i>0; i -=w*b ) {
                           for ( j = 0; j < w*b; j += b ) {
                             
-                            imageData.data[k + 0] = data[bgn+2+i+j];  // 255;    // R value
-                            imageData.data[k + 1] = data[bgn+1+i+j]  // 0;  // G value
-                            imageData.data[k + 2] = data[bgn+0+i+j] ;  // 0;    // B value
-                            imageData.data[k + 3] = 255; // data[bgn+3+i+j] ;  //  255;  // A value
+                            imageData.data[k + 0] = data[bgn+2+i+j];         // R value
+                            imageData.data[k + 1] = data[bgn+1+i+j];         // G value
+                            imageData.data[k + 2] = data[bgn+0+i+j];         // B value
+                            imageData.data[k + 3] = 255; // data[bgn+3+i+j]; // A value
                             k += b+1;
                            }
                           }
@@ -62,13 +63,13 @@ function fileViewerUrl(x, y, url) {
                             imageData.data[k + 0] = data[bgn+2+i+j];  // R value
                             imageData.data[k + 1] = data[bgn+1+i+j];  // G value
                             imageData.data[k + 2] = data[bgn+0+i+j];  // B value
-                            imageData.data[k + 3] = data[bgn+3+i+j];  // A value
+                            imageData.data[k + 3] = 255; // data[bgn+3+i+j];  // A value
                             k += b;
                            }
                           }
                         }
                    
-                         ctx.putImageData(imageData, x, y); 
+                        ctx.putImageData(imageData, x, y); 
       }
       
     }; 
