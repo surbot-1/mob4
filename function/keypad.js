@@ -354,7 +354,7 @@ function writecStr(x, y, w, h, font,fcolor, bcolor, str) {
 	var i=0; var j=0;
 	for (let k=0; k<(str.length); k++) { 
 		var char=str.charAt(k); 
-		writeChar(x+i, y+j, font, fcolor, bcolor, char); 
+		writecChar(x+i, y+j, font, fcolor, bcolor, char); 
 		i+=cw; 
 		if (i>=w) {i=0; j+=ch;} 
 		if(j>=h) {i=0; j=0;}
