@@ -10,8 +10,8 @@ function saveImage(x, y, w, h) {
     imgView[i+1] = imgData.data[i+1]; 
     imgView[i+2] = imgData.data[i+2]; 
     imgView[i+3] = imgData.data[i+3]; 
-  }   alert((imgData.data[0])); 
-  ctx.putImageData(imgData, 20, 1000); alert('6'); 
+  }  
+  ctx.putImageData(imgData, 20, 1000); 
                                 
             var cvs4 = document.getElementById('canvas');
             var ctx4 = cvs4.getContext('2d'); 
