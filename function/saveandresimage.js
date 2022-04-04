@@ -5,7 +5,7 @@ function saveImage(x, y, w, h) { alert('1');
   // var imgData = ctx.getImageData(20, 200, 100, 100); alert('5');
   // ctx.putImageData(imgData, 20, 400); alert('6'); 
                                 
-            var cvs4 = document.getElementById('canvas1');
+            var cvs4 = document.getElementById('canvas');
             var ctx4 = cvs4.getContext('2d'); 
             // var data4;
                   var img4 = new Image();
