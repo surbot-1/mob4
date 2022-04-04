@@ -29,12 +29,15 @@ function fileManager(op, file, size, data) {
     driveView[FAT1+fatno]=cluno; 
     for (i=0; i<32; i++) { 
       var fnl=filename.length; 
-      if (i>=0 && i<fnl) {driveView[directory+dirno+i]=filename.charCodeAt(i);} 
-      if (i>=fnl && i<8) {driveView[directory+dirno+i]=" ".charCodeAt(0);} 
-      if (i>=8 && i<11) {driveView[directory+dirno+i]=fileext.charCodeAt(i-8);} 
-      if (i>=20 && i<22) {driveView[directory+dirno+i]=cluho[i-20];} 
-      if (i>=26 && i<28) {driveView[directory+dirno+i]=clulo[i-26];} 
-      if (i>=28 && i<32) {driveView[directory+dirno+i]=fsize[i-28];} 
+      if (i>=0 && i<fnl) {driveView[dir0+dirno*32+i]=filename.charCodeAt(i);} 
+      if (i>=fnl && i<8) {driveView[dir0+dirno*32+i]=" ".charCodeAt(0);} 
+      if (i>=8 && i<11) {driveView[dir0+dirno*32+i]=fileext.charCodeAt(i-8);} 
+      if (i>=20 && i<22) {driveView[dir0+dirno*32+i]=cluho[i-20];} 
+      if (i>=26 && i<28) {driveView[dir0+dirno*32+i]=clulo[i-26];} 
+      if (i>=28 && i<32) {driveView[dir0+dirno*32+i]=fsize[i-28];} 
+    }
+    for (i=0; i<size; i++) { 
+      driveView[cluster0+cluno*8*512+i]=data.charCodeAt(i); 
     }
   
   
