@@ -17,6 +17,9 @@ function saveImage(x, y, w, h) { alert('1');
                       var imgData4 = ctx4.getImageData(20, 400, 128, 128); 
                       ctx4.putImageData(imgData4, 20, 600); 
                       
+                      var imgData41 = ctx4.getImageData(20, 200, 128, 128); 
+                      ctx4.putImageData(imgData41, 20, 800); 
+                      
                        }; 
                     
   }
