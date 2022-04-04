@@ -9,7 +9,7 @@ function saveImage(x, y, w, h) { alert('1');
             var ctx4 = cvs4.getContext('2d'); 
             // var data4;
                   var img4 = new Image();
-                  img4.src = 'logo/Turbo-Snail-icon-_1_.png';
+                  img4.src = 'logo/Turbo-Snail-icon.png';
                   img4.onload = function (e4)
                       { 
                     
