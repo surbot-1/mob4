@@ -1,6 +1,6 @@
 function saveImage(x, y, w, h) { 
   var can = document.getElementById('canvas'); 
-  var ctx = can.getContext('2d'); alert('3'); 
+  var ctx = can.getContext('2d'); 
   // var imgData = ctx.createImageData(w, h); 
   var imgData = ctx.getImageData(x, y, w, h); 
   var imgBuf = new ArrayBuffer(w*4*h); 
@@ -13,9 +13,9 @@ function saveImage(x, y, w, h) {
   }  
   ctx.putImageData(imgData, 20, 1000); 
                                 
-            var cvs4 = document.getElementById('canvas');
+       /*  var cvs4 = document.getElementById('canvas');
             var ctx4 = cvs4.getContext('2d'); 
-            // var data4;
+       
                   var img4 = new Image();
                   img4.src = 'logo/Turbo-Snail-icon-_1_.bmp';
                   img4.onload = function (e4)
@@ -28,7 +28,7 @@ function saveImage(x, y, w, h) {
                       var imgData41 = ctx4.getImageData(20, 200, 128, 128); 
                       ctx4.putImageData(imgData41, 20, 800); 
                       
-                       }; 
+                       }; */
                     
   } 
 
