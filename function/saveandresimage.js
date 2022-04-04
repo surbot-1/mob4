@@ -3,7 +3,7 @@ function saveImage(x, y, w, h) {
   var can = document.getElementById('canvas'); alert('2');
   var ctx = can.getContext('2d'); alert('3');
   // var imgData = ctx.createImageData(w, h); alert('4');
-  var imgData = ctx.getImageData(20, 200, 100, 100); alert('5'); 
+  var imgData = ctx.getImageData(20, 200, 128, 128); alert('5'); 
   for (let i=0; i<w*4*h; i+=4) {  
     imageView[i+0] = imgData.data[i+0]; 
     imageView[i+1] = imgData.data[i+1]; 
