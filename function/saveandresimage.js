@@ -1,9 +1,16 @@
-function saveImage(x, y, w, h) { alert('1');
-  var can = document.getElementById("canvas"); alert('2');
+function saveImage(x, y, w, h) { 
+  alert('1'); 
+  var can = document.getElementById('canvas'); alert('2');
   var ctx = can.getContext('2d'); alert('3');
   // var imgData = ctx.createImageData(w, h); alert('4');
-  // var imgData = ctx.getImageData(20, 200, 100, 100); alert('5');
-  // ctx.putImageData(imgData, 20, 400); alert('6'); 
+  var imgData = ctx.getImageData(20, 200, 100, 100); alert('5'); 
+  for (let i=0; i<w*4*h; i+=4) {  
+    imageView[i+0] = imgData.data[i+0]; 
+    imageView[i+1] = imgData.data[i+1]; 
+    imageView[i+2] = imgData.data[i+2]; 
+    imageView[i+3] = imgData.data[i+3]; 
+  }
+  ctx.putImageData(imgData, 20, 1000); alert('6'); 
                                 
             var cvs4 = document.getElementById('canvas');
             var ctx4 = cvs4.getContext('2d'); 
