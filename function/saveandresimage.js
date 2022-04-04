@@ -11,7 +11,7 @@ function saveImage(x, y, w, h) {
     imgView[i+2] = imgData.data[i+2]; 
     imgView[i+3] = imgData.data[i+3]; 
   }  
-  ctx.putImageData(imgData, x, y+400);             
+  // ctx.putImageData(imgData, x, y+400);             
 } 
 
 
