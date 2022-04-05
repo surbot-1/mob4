@@ -1,11 +1,12 @@
-function fileViewerDrive(filedir,cluho,clulo,fsize) {  
+function fileViewerDrive(x,y,filedir,cluno,size) {  
   var filename=""; 
   var fileext=""; 
   fileext=filedir.substring(8); 
   
   if (fileext=="txt") { 
     var text=""; 
-    for (let i=0; i>size; i++) {text+=ascChar(driveView[cluno*8*512+i]);}
+    for (let i=0; i<size; i++) {text+=ascChar(driveView[cluno*8*512+i]);} 
+    writeStr(x,y,480,128"ubuntubold",text);
   }
   
 }
