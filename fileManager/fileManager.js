@@ -39,7 +39,7 @@ function fileManager(op, file, size, data) {
     for (i=0; i<size; i++) { 
       driveView[cluster0+cluno*8*512+i]=data.charCodeAt(i); 
     }
-  
+  fatno++; cluno++;
   
   }
 }
