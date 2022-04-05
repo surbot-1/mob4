@@ -72,7 +72,7 @@ function fileManager(op, file, size, blob) {
       } 
       if (b) {break;} 
     } 
-    if (b) {fileViewerDrive(); break;}
+    if (b) {fileViewerDrive(filedir,cluho,clulo,fsize); break;}
   }
   
 } 
