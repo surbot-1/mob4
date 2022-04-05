@@ -25,15 +25,12 @@ function fileManager(op, file, size, blob) {
     fsize[2]=size&0x00FF0000; 
     fsize[2]=fsize[2]>>16; 
     fsize[3]=size&0xFF000000; 
-    fsize[3]=fsize[3]>>24;     / for(let i=0; i<(file.length)-4; i++) {  
-      filename+=file.charAt(i);
-    } 
-l
-    driveView[FAT1+fatno*4]=cluno; 
+    fsize[3]=fsize[3]>>24; 
+    
     for (i=0; i<32; i++) { 
       if (i>=0 && i<11) {driveView[dirct0+dirno*32+i]=filercv.charCodeAt(i);} 
       if (i>=20 && i<22) {driveView[dirct0+dirno*32+i]=cluho[i-20];} 
-      if (i>=26 && i<28) {driveView[dir0+dirno*32+i]=clulo[i-26];} 
+      if (i>=26 && i<28) {driveView[dirct0+dirno*32+i]=clulo[i-26];} 
       if (i>=28 && i<32) {driveView[dirct0+dirno*32+i]=fsize[i-28];} 
     }
     
@@ -46,6 +43,8 @@ l
     }); 
     reader.readAsArrayBuffer(blob); 
     
+    driveView[FAT1+fatno*4]=cluno; 
+    
     fatno++; dirno++; cluno++;
   } 
   
@@ -53,15 +52,27 @@ l
     var filename=file.substring(0,file.indexOf("."));  
     var fileext=file.substring(file.indexOf(".")+1); 
     var filercv=""; 
+    var filedir=""; 
+    var cluho=[]; 
+    var clulo=[]; 
+    var fsize=[]; 
     for (let i=0; i<11; i++) { 
       if (i>=0 && i<filename.length) {filercv+=filename.charAt(i);} 
       if (i>=filename.length && i<8) {filercv+=" ".charAt(0);} 
       if (i>=8 && i<11) {filercv+=fileext.charAt(i-8);} 
-    }
+    } 
+    var b=false; 
     for (let i=0; i<dirno; i++) { 
-      if () {}
-    }
-    
+      for (let j=0; j<32; j++) { 
+        if (j>=0 && j<11) {filedir+=ascChar(driveView[direct0+i*32+j]);} 
+        if (j>=20 && j<22) {cluho[j-20]=driveView[direct0+i*32+j];} 
+        if (j>=26 && j<28) {clulo[j-26]=driveView[direct0+i*32+j];} 
+        if (j>=28 && j<32) {fsize[j-28]=driveView[direct0+i*32+j];} 
+        if (filedir==filercv) {b=true;}
+      } 
+      if (b) {break;} 
+    } 
+    if (b) {fileViewerDrive(); break;}
   }
   
 } 
