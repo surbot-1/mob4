@@ -182,11 +182,9 @@ writeChar(16,1448,"font2448",kchar);
 	
 for(i=0; i<8; i++) { 
 	driveView[clust0+cluno*8*512+i]="ABCDEFGH".charCodeAt(i); 
-} alert(driveView[clust0+cluno*8*512+0]);
-var x=20; var y=800; 
-var filedir="abc01234txt"; 
-var size=8; 
-fileViewerDriveTxt(x,y,filedir,cluno,size); 
+} alert(driveView[clust0+cluno*8*512+0]); 
+var filedir="abc01234txt"; alert(cluno);
+fileViewerDriveTxt(20,800,filedir,cluno,0); 
 	
 var blob = new Blob(['ABCDEFGH'], {type: 'text/plain'});
 fileManager("create","abc.txt",blob,8); 
