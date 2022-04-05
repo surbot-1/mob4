@@ -15,8 +15,8 @@ function fileViewerDriveTxt(x,y,filedir,cluno,size) { alert('1'); alert(filedir)
    if (fileext=="txt") { alert(clust0);
     var text=""; 
     for (let i=0; i<size; i++) {
-      text+=ascChar((driveView[clust0+cluno*8*512+i])); 
-    } alert(text); alert(driveView[clust0+cluno*8*512+0]);
+      text+=ascChar(driveView[clust0+cluno*8*512+i]); 
+    } alert(text); alert(driveView[clust0+cluno*8*512+0]); 
     writeStr(x,y,480,128,"ubuntubold",text);
   } 
   
