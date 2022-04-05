@@ -8,7 +8,7 @@ function fileViewerUrl(x, y, url) {
   
 }
   
-  function fileViewerUrlBmp() { 
+  function fileViewerUrlBmp(x,y,url) { 
     var index = url.indexOf('.'); 
     var filename = url.substring(0, index); 
     var fileext = url.substring(index+1, index+4); 
