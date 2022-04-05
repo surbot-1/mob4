@@ -1,6 +1,6 @@
 function fileManager(op, file, blob, size) { alert('1');
   
-  if (op=="create") { 
+ /* if (op=="create") { 
     var filename=file.substring(0,file.indexOf("."));  
     var fileext=file.substring(file.indexOf(".")+1); 
     var filercv=""; 
@@ -46,9 +46,9 @@ function fileManager(op, file, blob, size) { alert('1');
     driveView[fat1+fatno*4]=cluno; 
     
     fatno++; dirno++; cluno++;
-  } 
+  } */
   
-  if (op=="open") {  
+/*  if (op=="open") {  
     var filename=file.substring(0,file.indexOf("."));  
     var fileext=file.substring(file.indexOf(".")+1); 
     var filercv=""; 
@@ -90,7 +90,7 @@ function fileManager(op, file, blob, size) { alert('1');
       fileViewerDrive(x,y,filedir,cluno,size); 
       break; 
     } 
-  } 
+  }  */
 
 }
 
