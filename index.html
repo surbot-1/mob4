@@ -182,14 +182,14 @@ writeChar(16,1448,"font2448",kchar);
 	
 for(i=0; i<8; i++) { 
 	driveView[clust0+cluno*8*512+i]="ABCDEFGH".charCodeAt(i); 
-} alert(driveView[clust0+cluno*8*512+1]); 
+} alert(driveView[clust0+cluno*8*512+2]); 
 var filedir="abc01234txt"; 
 fileViewerDrive(20,800,filedir,cluno,8); 
 	
-var blob = new Blob(['ABCDEFGH'], {type: 'text/plain'});
+/* var blob = new Blob(['ABCDEFGH'], {type: 'text/plain'});
 fileManager("create","abc.txt",blob,8); 
 fileManager("open","abc.txt",20,1000); 
-	
+*/ 
 </script> 
 	
 <script> 
