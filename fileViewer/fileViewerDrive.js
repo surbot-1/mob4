@@ -9,7 +9,7 @@ function fileViewerDrive(x,y,filedir,cluno,size) {
 
 function fileViewerDriveTxt(x,y,filedir,cluno,size) { alert('1');
   var filename=""; 
-  var fileext=""; 
+  var fileext=""; alert(filedir);
   fileext=filedir.substring(8,11); 
   alert(fileext);
   /* if (fileext=="txt") { 
