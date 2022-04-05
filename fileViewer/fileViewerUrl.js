@@ -4,11 +4,15 @@ function fileViewerUrl(x, y, url) {
   var filename = url.substring(0, index); 
   var fileext = url.substring(index+1, index+4); 
   
-  if (fileext=="bmp") { 
-    fileViewerUrlBmp();
-  } 
+  if (fileext=="bmp") {fileViewerUrlBmp(x,y,url);} 
+  
+}
   
   function fileViewerUrlBmp() { 
+    var index = url.indexOf('.'); 
+    var filename = url.substring(0, index); 
+    var fileext = url.substring(index+1, index+4); 
+    
     var oReq = new XMLHttpRequest(); 
     oReq.open("GET", url, true); 
     oReq.responseType = "arraybuffer"; 
@@ -80,4 +84,4 @@ function fileViewerUrl(x, y, url) {
     oReq.send(null);
   } 
   
-}
+
