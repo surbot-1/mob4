@@ -26,7 +26,7 @@ function fileManager(op, file, size, data) {
     for(let i=(file.length)-3; i<(file.length); i++) {  
       fileext+=file.charAt(i);
     } */
-    driveView[FAT1+fatno]=cluno; 
+    driveView[FAT1+fatno*8]=cluno; 
     for (i=0; i<32; i++) { 
       var fnl=filename.length; 
       if (i>=0 && i<fnl) {driveView[dir0+dirno*32+i]=filename.charCodeAt(i);} 
@@ -39,7 +39,7 @@ function fileManager(op, file, size, data) {
     for (i=0; i<size; i++) { 
       driveView[cluster0+cluno*8*512+i]=data.charCodeAt(i); 
     }
-  fatno++; cluno++;
+  fatno++; dirno++; cluno++;
   
   }
 }
