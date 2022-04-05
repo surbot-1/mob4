@@ -74,7 +74,20 @@ function fileManager(op, file, size, blob) {
       } 
       if (b) {break;} 
     } 
-    if (b) {fileViewerDrive(x,y,filedir,cluho,clulo,fsize); break;}
+    if (b) {
+      var buf = new ArrayBuffer(4); 
+      var view = new DataView(buf); 
+      view.setUint8(0,cluho[1]); 
+      view.setUint8(1,cluho[0]); 
+      view.setUint8(2,clulo[1]); 
+      view.setUint8(3,clulo[1]); 
+      var cluno=view.getUint32(0); 
+      view.setUint8(0,fsize[3]); 
+      view.setUint8(1,fsize[2]); 
+      view.setUint8(2,fsize[1]); 
+      view.setUint8(3,fsize[0]); 
+      var size=view.getUint32(0);
+      fileViewerDrive(x,y,filedir,cluno,size); break;}
   }
   
 } 
