@@ -66,7 +66,7 @@ function fileManager(op, file, blob, size) {
     var b=false; 
     for (let i=0; i<dirno; i++) { 
       for (let j=0; j<32; j++) { 
-        if (j>=0 && j<11) {filedir+=ascChar(driveView[diret0+i*32+j]);} 
+        if (j>=0 && j<11) {filedir+=ascChar(driveView[dirct0+i*32+j]);} 
         if (j>=20 && j<22) {cluho[j-20]=driveView[dirct0+i*32+j];} 
         if (j>=26 && j<28) {clulo[j-26]=driveView[dirct0+i*32+j];} 
         if (j>=28 && j<32) {fsize[j-28]=driveView[dirct0+i*32+j];} 
@@ -80,7 +80,7 @@ function fileManager(op, file, blob, size) {
       view.setUint8(0,cluho[1]); 
       view.setUint8(1,cluho[0]); 
       view.setUint8(2,clulo[1]); 
-      view.setUint8(3,clulo[1]); 
+      view.setUint8(3,clulo[0]); 
       var cluno=view.getUint32(0); 
       view.setUint8(0,fsize[3]); 
       view.setUint8(1,fsize[2]); 
