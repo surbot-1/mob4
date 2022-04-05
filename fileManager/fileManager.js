@@ -1,4 +1,4 @@
-function fileManager(op, file, blob, size) { 
+function fileManager(op, file, blob, size) { alert('1');
   
   if (op=="create") { 
     var filename=file.substring(0,file.indexOf("."));  
