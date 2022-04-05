@@ -14,10 +14,10 @@ function fileViewerDriveTxt(x,y,filedir,cluno,size) { alert('1'); alert(filedir)
   alert(fileext); 
    if (fileext=="txt") { alert(clust0);
     var text=""; 
-   /* for (let i=0; i<size; i++) {
+    for (let i=0; i<size; i++) {
       text+=ascChar(driveView[clust0+cluno*8*512+i]); 
-    } alert(text); */
-    writeStr(x,y,480,128"ubuntubold",text);
+    } alert(text); 
+    writeStr(x,y,480,128,"ubuntubold",text);
   } 
   
 }
