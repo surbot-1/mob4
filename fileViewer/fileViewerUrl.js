@@ -8,7 +8,7 @@ function fileViewerUrl(x, y, url) {
   
 }
   
-  function fileViewerUrlBmp(x,y,url) { 
+function fileViewerUrlBmp(x,y,url) { 
     var index = url.indexOf('.'); 
     var filename = url.substring(0, index); 
     var fileext = url.substring(index+1, index+4); 
@@ -81,7 +81,11 @@ function fileViewerUrl(x, y, url) {
       }
       
     }; 
-    oReq.send(null);
-  } 
+    oReq.send(null); 
+} 
   
+
+
+
+
 
