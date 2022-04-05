@@ -2,7 +2,7 @@ function fileViewerDrive(x,y,filedir,cluno,size) {
   var filename=filedir.substring(0,8); alert(filename); 
   var fileext=filedir.substring(8,11); alert(fileext); 
   if (fileext=="txt") { 
-    // fileViewerDriveTxt(x,y,filedir,cluno,size); 
+     fileViewerDriveTxt(x,y,filedir,cluno,size); 
   } 
 } 
 
