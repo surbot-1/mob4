@@ -1,6 +1,6 @@
 function fileManager(op, file, size, blob) { 
+  
   if (op=="create") { 
-   
     var filename=file.substring(0,file.indexOf("."));  
     var fileext=file.substring(file.indexOf(".")+1); 
     var cluho=[]; 
@@ -47,6 +47,26 @@ function fileManager(op, file, size, blob) {
     reader.readAsArrayBuffer(blob); 
     
     fatno++; dirno++; cluno++;
+  } 
   
+  if (op=="open") {  
+    var filename=file.substring(0,file.indexOf("."));  
+    var fileext=file.substring(file.indexOf(".")+1); 
+    for (let i=0; i<dirno; i++) { 
+      
+    }
+    for (let i=0; i<dirno; i++) { 
+      if () {}
+    }
+    
   }
-}
+  
+} 
+
+
+
+
+
+
+
+
