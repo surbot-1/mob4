@@ -10,7 +10,8 @@ function fileViewerDriveTxt(x,y,filedir,cluno,size) {
   if (fileext=="txt") { 
     var text="";
     for (let i=0; i<size; i++) { 
-       text += ascChar(driveView[clust0+cluno*8*512+i]); 
+       var char = ascChar(driveView[clust0+cluno*8*512+i]); 
+       text += char; 
     } 
     writeStr(x,y,480,128,"ubuntubold",text);
   } 
