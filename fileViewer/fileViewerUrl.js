@@ -13,6 +13,7 @@ function fileViewerUrlBmp(x,y,url) {
     var filename = url.substring(0, index); 
     var fileext = url.substring(index+1, index+4); 
     
+  if (fileext=="bmp") {
     var oReq = new XMLHttpRequest(); 
     oReq.open("GET", url, true); 
     oReq.responseType = "arraybuffer"; 
@@ -78,10 +79,10 @@ function fileViewerUrlBmp(x,y,url) {
                         }
                    
                         ctx.putImageData(imageData, x, y); 
-      }
-      
+      }  
     }; 
     oReq.send(null); 
+  }
 } 
   
 
