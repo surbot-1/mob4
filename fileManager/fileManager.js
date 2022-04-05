@@ -1,6 +1,6 @@
 function fileManager(op, file, blob, size) { alert('1');
   
- /* if (op=="create") { 
+  if (op=="create") { 
     var filename=file.substring(0,file.indexOf("."));  
     var fileext=file.substring(file.indexOf(".")+1); 
     var filercv=""; 
@@ -8,8 +8,8 @@ function fileManager(op, file, blob, size) { alert('1');
       if (i>=0 && i<filename.length) {filercv+=filename.charAt(i);} 
       if (i>=filename.length && i<8) {filercv+=" ".charAt(0);} 
       if (i>=8 && i<11) {filercv+=fileext.charAt(i-8);} 
-    }
-    var cluho=[]; 
+    } alert('2');
+   /* var cluho=[]; 
     var clulo=[]; 
     var fsize=[]; 
     cluho[0]=cluno&0x00FF0000;     // lsb 
