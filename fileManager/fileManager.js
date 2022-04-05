@@ -56,6 +56,8 @@ function fileManager(op, file, size, blob) {
     var cluho=[]; 
     var clulo=[]; 
     var fsize=[]; 
+    var x=size, 
+    var y=blob;
     for (let i=0; i<11; i++) { 
       if (i>=0 && i<filename.length) {filercv+=filename.charAt(i);} 
       if (i>=filename.length && i<8) {filercv+=" ".charAt(0);} 
@@ -72,7 +74,7 @@ function fileManager(op, file, size, blob) {
       } 
       if (b) {break;} 
     } 
-    if (b) {fileViewerDrive(filedir,cluho,clulo,fsize); break;}
+    if (b) {fileViewerDrive(x,y,filedir,cluho,clulo,fsize); break;}
   }
   
 } 
