@@ -55,13 +55,13 @@ var touch=0; var touchp=0;
 	
 var driveBuf = new ArrayBuffer(128*1024*1024); 
 var driveView = new Uint8Array(driveBuf); 
-var sector0 = 0; 
-var partition1 = sector0+2048*512; // 2048 sectors
-var FAT1 = partition1+2048*512; // 2048 sectors
+var sect0 = 0; 
+var part1 = sect0+2048*512; // 2048 sectors
+var FAT1 = part1+2048*512; // 2048 sectors
 var FAT2 = FAT1+2048*512; // 2048 sectors 
-var cluster0 = FAT2+2048*8*512-2*8*512; 
-var directory0=cluster0; 
-var dirbgn = cluster0+2*8*512; // 2048 clustors & cluster no. 2
+var clust0 = FAT2+2048*8*512-2*8*512; 
+var direct0=clust0; 
+var dirbgn = clust0+2*8*512; // 2048 clustors & cluster no. 2
 var databgn =dirbgn+2048*8*512; // cluster no. 2050 
 var secno=0; 
 var fatno=2; 
