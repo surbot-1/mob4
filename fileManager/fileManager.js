@@ -1,4 +1,4 @@
-function fileManager(op, file, size, data) { 
+function fileManager(op, file, size, blob) { 
   if (op=="create") { 
    
     var filename=file.substring(0,file.indexOf("."));  
@@ -36,10 +36,17 @@ function fileManager(op, file, size, data) {
       if (i>=26 && i<28) {driveView[dir0+dirno*32+i]=clulo[i-26];} 
       if (i>=28 && i<32) {driveView[dirct0+dirno*32+i]=fsize[i-28];} 
     }
-    for (i=0; i<size; i++) { 
-      driveView[clust0+cluno*8*512+i]=data.charCodeAt(i); 
-    }
-  fatno++; dirno++; cluno++;
+    
+    var reader = new FileReader(); 
+    reader.addEventListener('loadend', () => { 
+      var dataByte = new Uint8Array(reader.result);
+      for (i=0; i<size; i++) { 
+        driveView[clust0+cluno*8*512+i]=dataByte[i]; 
+      } 
+    }); 
+    reader.readAsArrayBuffer(blob); 
+    
+    fatno++; dirno++; cluno++;
   
   }
 }
