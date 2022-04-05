@@ -1,8 +1,8 @@
 function fileManager(op, file, blob, size) { alert('1');
   
   if (op=="create") { 
-    var filename=file.substring(0,file.indexOf("."));  
-    var fileext=file.substring(file.indexOf(".")+1); 
+    var filename=file.substring(0,(file.indexOf(".")));  
+    var fileext=file.substring((file.indexOf("."))+1); 
     var filercv=""; 
     for (let i=0; i<11; i++) { 
       if (i>=0 && i<filename.length) {filercv+=filename.charAt(i);} 
