@@ -1,4 +1,5 @@
-function fileManager(op, file, blob, size) { alert('1');
+function fileManager(op, file, blob, size) { 
+  alert('1');
   
   if (op=="create") { 
     var index = file.indexOf(".");
@@ -9,26 +10,26 @@ function fileManager(op, file, blob, size) { alert('1');
       if (i>=0 && i<filename.length) {filercv+=filename.charAt(i);} 
       if (i>=filename.length && i<8) {filercv+=" ".charAt(0);} 
       if (i>=8 && i<11) {filercv+=fileext.charAt(i-8);} 
-    } alert('2');
+    } alert('2'); alert(filercv);
     var cluho=[]; 
     var clulo=[]; 
     var fsize=[]; 
-    /* cluho[0]=cluno&0x00FF0000;     // lsb 
-    cluho[0]=cluho[0]>>16; 
-    cluho[1]=cluno&0xFF000000;     // msb 
-    cluho[1]=cluho[1]>>24; 
-    clulo[0]=cluno&0x000000FF;     // lsb
+    cluho[0]=cluno&0x00FF0000; 
+    cluho[0]=cluho[0]>>16;      
+    cluho[1]=cluno&0xFF000000; 
+    cluho[1]=cluho[1]>>24;      alert(cluho);
+    clulo[0]=cluno&0x000000FF; 
     clulo[1]=cluno&0x0000FF00;
-    clulo[1]=clulo[1]>>8;          // msb 
+    clulo[1]=clulo[1]>>8;       alert(clulo);
     fsize[0]=size&0x000000FF; 
     fsize[1]=size&0x0000FF00; 
     fsize[1]=fsize[1]>>8; 
     fsize[2]=size&0x00FF0000; 
     fsize[2]=fsize[2]>>16; 
     fsize[3]=size&0xFF000000; 
-    fsize[3]=fsize[3]>>24; 
-    
-    for (i=0; i<32; i++) { 
+    fsize[3]=fsize[3]>>24;      alert(fsize);
+    alert ('3');
+   /* for (i=0; i<32; i++) { 
       if (i>=0 && i<11) {driveView[dirct0+dirno*32+i]=filercv.charCodeAt(i);} 
       if (i>=20 && i<22) {driveView[dirct0+dirno*32+i]=cluho[i-20];} 
       if (i>=26 && i<28) {driveView[dirct0+dirno*32+i]=clulo[i-26];} 
