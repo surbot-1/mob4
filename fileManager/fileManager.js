@@ -73,7 +73,7 @@ function fileManager(op, file, blob, size) {
         if (j>=20 && j<22) {cluho[j-20]=driveView[dirct0+i*32+j];} 
         if (j>=26 && j<28) {clulo[j-26]=driveView[dirct0+i*32+j];} 
         if (j>=28 && j<32) {fsize[j-28]=driveView[dirct0+i*32+j];} 
-      } 
+      } alert(filedir);
       if (filedir==filercv) {b=true; alert(b); break;} 
     } 
     if (b) { alert(filedir); 
