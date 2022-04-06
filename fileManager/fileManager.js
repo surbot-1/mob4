@@ -15,12 +15,12 @@ function fileManager(op, file, blob, size) {
     var clulo=[]; 
     var fsize=[]; 
     cluho[0]=cluno&0x00FF0000; 
-    cluho[0]=cluho[0]>>16;      
+    cluho[0]=cluho[0]>>16;      alert(cluho[0]);
     cluho[1]=cluno&0xFF000000; 
-    cluho[1]=cluho[1]>>24;      alert(cluho);
-    clulo[0]=cluno&0x000000FF; 
+    cluho[1]=cluho[1]>>24;      alert(cluho[1]);
+    clulo[0]=cluno&0x000000FF;  alert(clulo[0]);
     clulo[1]=cluno&0x0000FF00;
-    clulo[1]=clulo[1]>>8;       alert(clulo);
+    clulo[1]=clulo[1]>>8;       alert(clulo[1]);
     fsize[0]=size&0x000000FF; 
     fsize[1]=size&0x0000FF00; 
     fsize[1]=fsize[1]>>8; 
