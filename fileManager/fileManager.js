@@ -51,8 +51,9 @@ function fileManager(op, file, blob, size) {
   } 
   
   if (op=="open") {  
-    var filename=file.substring(0,file.indexOf("."));  
-    var fileext=file.substring(file.indexOf(".")+1); 
+    var index=file.indexOf(".");
+    var filename=file.substring(0,index);  
+    var fileext=file.substring(index+1,index+4); 
     var filercv=""; 
     var filedir=""; 
     var cluho=[]; 
