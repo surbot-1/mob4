@@ -188,8 +188,8 @@ var clust = cluno;
 fileViewerDrive(20,800,filedir,clust,8); 
 	
 var blob1 = new Blob(['ABCDEFGH'], {type: 'text/plain'}); 
-var blob1 = new Blob(['ABCDEFGHabcdefgh'], {type: 'text/plain'}); 
-var blob1 = new Blob(['01234567'], {type: 'text/plain'}); 
+var blob2 = new Blob(['ABCDEFGHabcdefgh'], {type: 'text/plain'}); 
+var blob3 = new Blob(['01234567'], {type: 'text/plain'}); 
 fileManager("create","abc1.txt",blob1,8); 
 fileManager("create","abc2.txt",blob2,16); 
 fileManager("create","abc3.txt",blob3,8); 
