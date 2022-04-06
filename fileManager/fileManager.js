@@ -60,8 +60,8 @@ function fileManager(op, file, blob, size) {
     var clulo=[]; 
     var fsize=[]; 
     var x=blob;
-    var y=size;
-    for (let i=0; i<11; i++) { 
+    var y=size; alert('10');
+   /* for (let i=0; i<11; i++) { 
       if (i>=0 && i<filename.length) {filercv+=filename.charAt(i);} 
       if (i>=filename.length && i<8) {filercv+=" ".charAt(0);} 
       if (i>=8 && i<11) {filercv+=fileext.charAt(i-8);} 
@@ -92,7 +92,7 @@ function fileManager(op, file, blob, size) {
       var size=view.getUint32(0);
       fileViewerDrive(x,y,filedir,cluno,size); 
       break; 
-    } 
+    } */
   }  
 
 }
