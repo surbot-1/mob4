@@ -61,11 +61,11 @@ function fileManager(op, file, blob, size) {
     var fsize=[]; 
     var x=blob;
     var y=size; alert('10');
-   /* for (let i=0; i<11; i++) { 
+    for (let i=0; i<11; i++) { 
       if (i>=0 && i<filename.length) {filercv+=filename.charAt(i);} 
       if (i>=filename.length && i<8) {filercv+=" ".charAt(0);} 
       if (i>=8 && i<11) {filercv+=fileext.charAt(i-8);} 
-    } 
+    } alert(filercv);
     var b=false; 
     for (let i=0; i<dirno; i++) { 
       for (let j=0; j<32; j++) { 
@@ -74,10 +74,10 @@ function fileManager(op, file, blob, size) {
         if (j>=26 && j<28) {clulo[j-26]=driveView[dirct0+i*32+j];} 
         if (j>=28 && j<32) {fsize[j-28]=driveView[dirct0+i*32+j];} 
         if (filedir==filercv) {b=true;}
-      } 
+      } alert(filedir); 
       if (b) {break;} 
     } 
-    if (b) {
+    /* if (b) {
       var buf = new ArrayBuffer(4); 
       var view = new DataView(buf); 
       view.setUint8(0,cluho[1]); 
