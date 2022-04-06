@@ -18,7 +18,7 @@ function fileManager(op, file, blob, size) {
     cluho[0]=cluho[0]>>16;      
     cluho[1]=cluno&0xFF000000; 
     cluho[1]=cluho[1]>>24;      alert(cluho);
-    clulo[0]=cluno&0x000000FF; 
+    /* clulo[0]=cluno&0x000000FF; 
     clulo[1]=cluno&0x0000FF00;
     clulo[1]=clulo[1]>>8;       alert(clulo);
     fsize[0]=size&0x000000FF; 
