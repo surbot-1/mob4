@@ -34,7 +34,7 @@ function fileManager(op, file, blob, size) {
       if (i>=20 && i<22) {driveView[dirct0+dirno*32+i]=cluho[i-20];} 
       if (i>=26 && i<28) {driveView[dirct0+dirno*32+i]=clulo[i-26];} 
       if (i>=28 && i<32) {driveView[dirct0+dirno*32+i]=fsize[i-28];} 
-    } alert(driveView[dirct0+dirno*32+9]);
+    } alert(ascChar(driveView[dirct0+dirno*32+9]));
     /*
     var reader = new FileReader(); 
     reader.addEventListener('loadend', () => { 
