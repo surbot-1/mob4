@@ -29,13 +29,13 @@ function fileManager(op, file, blob, size) {
     fsize[3]=size&0xFF000000; 
     fsize[3]=fsize[3]>>24;      alert(fsize);
     alert ('3');
-     /* for (i=0; i<32; i++) { 
+      for (i=0; i<32; i++) { 
       if (i>=0 && i<11) {driveView[dirct0+dirno*32+i]=filercv.charCodeAt(i);} 
       if (i>=20 && i<22) {driveView[dirct0+dirno*32+i]=cluho[i-20];} 
       if (i>=26 && i<28) {driveView[dirct0+dirno*32+i]=clulo[i-26];} 
       if (i>=28 && i<32) {driveView[dirct0+dirno*32+i]=fsize[i-28];} 
-    }
-    
+    } alert(driveView[dirct0+dirno*32+9]);
+    /*
     var reader = new FileReader(); 
     reader.addEventListener('loadend', () => { 
       var dataByte = new Uint8Array(reader.result);
