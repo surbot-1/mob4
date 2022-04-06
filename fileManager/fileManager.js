@@ -37,8 +37,8 @@ function fileManager(op, file, blob, size) {
     } alert(ascChar(driveView[dirct0+dirno*32+9]));
     
     var reader = new FileReader(); 
-    reader.addEventListener('loadend', () => { 
-      var dataByte = new Uint8Array(reader.result);
+    reader.addEventListener('loadend', (e) => { 
+      var dataByte = new Uint8Array(e.target.result);
       for (i=0; i<size; i++) { 
         driveView[clust0+cluno*8*512+i]=dataByte[i]; 
       } alett(dataByte);
