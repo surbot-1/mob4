@@ -43,12 +43,11 @@ function fileManager(op, file, blob, size) {
       for (i=0; i<size; i++) { 
         driveView[clust0+cluno*8*512+i]=dataByte[i]; 
       } alett(dataByte); 
+      driveView[fat1+fatno*4]=cluno; 
+      fatno++; dirno++; cluno++; 
     }; 
     reader.readAsArrayBuffer(blob); 
-    
-    driveView[fat1+fatno*4]=cluno; 
-    
-    fatno++; dirno++; cluno++; 
+   
   } 
   
 /*  if (op=="open") {  
