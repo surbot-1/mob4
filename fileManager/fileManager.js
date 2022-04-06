@@ -84,12 +84,12 @@ function fileManager(op, file, blob, size) {
       view.setUint8(1,cluho[0]); 
       view.setUint8(2,clulo[1]); 
       view.setUint8(3,clulo[0]); 
-      var cluno=view.getUint32(0); 
+      var cluno=view.getUint32(0);  alert(cluno);
       view.setUint8(0,fsize[3]); 
       view.setUint8(1,fsize[2]); 
       view.setUint8(2,fsize[1]); 
       view.setUint8(3,fsize[0]); 
-      var size=view.getUint32(0);
+      var size=view.getUint32(0);  alert(size);
       fileViewerDrive(x,y,filedir,cluno,size); 
     } 
   }  
