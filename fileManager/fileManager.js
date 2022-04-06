@@ -75,6 +75,7 @@ function fileManager(op, file, blob, size) {
         if (j>=28 && j<32) {fsize[j-28]=driveView[dirct0+i*32+j];} 
       } alert(filedir);
       if (filedir==filercv) {b=true; alert(b); break;} 
+      else {filedir="";}
     } 
     if (b) { alert(filedir); 
       var buf = new ArrayBuffer(4); 
