@@ -50,7 +50,7 @@ function fileManager(op, file, blob, size) {
    
   } 
   
-/*  if (op=="open") {  
+  if (op=="open") {  
     var filename=file.substring(0,file.indexOf("."));  
     var fileext=file.substring(file.indexOf(".")+1); 
     var filercv=""; 
@@ -92,7 +92,7 @@ function fileManager(op, file, blob, size) {
       fileViewerDrive(x,y,filedir,cluno,size); 
       break; 
     } 
-  }  */
+  }  
 
 }
 
