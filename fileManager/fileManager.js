@@ -13,7 +13,7 @@ function fileManager(op, file, blob, size) {
     } alert(filercv.length); alert(fileext); alert(filercv.charAt(8));
     var cluho=[]; 
     var clulo=[]; 
-    var fsize=[]; 
+    var fsize=[]; alert(cluno);
     cluho[0]=cluno&0x00FF0000; 
     cluho[0]=cluho[0]>>16;      alert(cluho[0]);
     cluho[1]=cluno&0xFF000000; 
