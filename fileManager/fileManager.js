@@ -46,8 +46,8 @@ function fileManager(op, file, blob, size) { alert('1');
     
     driveView[fat1+fatno*4]=cluno; 
     
-    fatno++; dirno++; cluno++;
-  } */
+    fatno++; dirno++; cluno++; */
+  } 
   
 /*  if (op=="open") {  
     var filename=file.substring(0,file.indexOf("."));  
