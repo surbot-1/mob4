@@ -58,7 +58,7 @@ function fileManager(op, file, blob, size) {
     var cluho=[]; 
     var clulo=[]; 
     var fsize=[]; 
-    var x=blob, 
+    var x=blob;
     var y=size;
     for (let i=0; i<11; i++) { 
       if (i>=0 && i<filename.length) {filercv+=filename.charAt(i);} 
