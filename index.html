@@ -55,18 +55,18 @@ var touch=0; var touchp=0;
 	
 var driveBuf = new ArrayBuffer(128*1024*1024); 
 var driveView = new Uint8Array(driveBuf); 
-var dsect0 = 0; 
-var dpart1 = dsect0+2048*512; // 2048 sectors
-var dfat1 = dpart1+2048*512; // 2048 sectors
-var dfat2 = dfat1+2048*512; // 2048 sectors 
-var dclust0 = dfat2+2048*512-2*8*512; 
-var dirct0=dclust0; 
-var ddirbgn = dclust0+2*8*512; // 2048 clustors & cluster no. 2
-var ddatabgn =ddirbgn+2048*8*512; // cluster no. 2050 
-var dsecno=0; 
-var dfatno=2; 
-var ddirno=2; 
-var dcluno=2+2048; 
+var sect0 = 0; 
+var part1 = sect0+2048*512; // 2048 sectors
+var fat1 = part1+2048*512; // 2048 sectors
+var fat2 = fat1+2048*512; // 2048 sectors 
+var clust0 = fat2+2048*512-2*8*512; 
+var dirct0=clust0; 
+var dirbgn = clust0+2*8*512; // 2048 clustors & cluster no. 2
+var databgn =dirbgn+2048*8*512; // cluster no. 2050 
+var secno=0; 
+var fatno=2; 
+var dirno=2; 
+var cluno=2+2048; 
 	
 var imgBuf = new ArrayBuffer(1080*4*2400); 
 var imgView = new Uint8Array(imgBuf); 
@@ -184,8 +184,8 @@ for(i=0; i<8; i++) {
 	driveView[dclust0+dcluno*8*512+i]="ABCDEFGH".charCodeAt(i); 
 } alert(driveView[dclust0+dcluno*8*512+3]); 
 var filedir="abc01234txt"; 
-var cluno = dcluno;
-fileViewerDrive(20,800,filedir,cluno,8); 
+var clust = cluno;
+fileViewerDrive(20,800,filedir,clust,8); 
 	
 var blob = new Blob(['ABCDEFGH'], {type: 'text/plain'});
 fileManager("create","abc.txt",blob,8); 
