@@ -10,8 +10,8 @@ function fileManager(op, file, blob, size) {
       if (i>=0 && i<filename.length) {filercv+=filename.charAt(i);} 
       if (i>=filename.length && i<8) {filercv+=" ".charAt(0);} 
       if (i>=8 && i<11) {filercv+=fileext.charAt(i-8);} 
-    } alert('2'); alert(filercv);
-    var cluho=[]; 
+    } alert(filercv);
+    /* var cluho=[]; 
     var clulo=[]; 
     var fsize=[]; 
     cluho[0]=cluno&0x00FF0000; 
@@ -29,7 +29,7 @@ function fileManager(op, file, blob, size) {
     fsize[3]=size&0xFF000000; 
     fsize[3]=fsize[3]>>24;      alert(fsize);
     alert ('3');
-   /* for (i=0; i<32; i++) { 
+      for (i=0; i<32; i++) { 
       if (i>=0 && i<11) {driveView[dirct0+dirno*32+i]=filercv.charCodeAt(i);} 
       if (i>=20 && i<22) {driveView[dirct0+dirno*32+i]=cluho[i-20];} 
       if (i>=26 && i<28) {driveView[dirct0+dirno*32+i]=clulo[i-26];} 
