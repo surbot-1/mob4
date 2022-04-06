@@ -42,7 +42,7 @@ function fileManager(op, file, blob, size) {
       for (i=0; i<size; i++) { 
         driveView[clust0+cluno*8*512+i]=dataByte[i]; 
       } alett(dataByte);
-    }); 
+    }; 
     reader.readAsArrayBuffer(blob); 
     
     driveView[fat1+fatno*4]=cluno; 
