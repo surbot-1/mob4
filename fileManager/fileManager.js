@@ -10,7 +10,7 @@ function fileManager(op, file, blob, size) {
       if (i>=0 && i<filename.length) {filercv+=filename.charAt(i);} 
       if (i>=filename.length && i<8) {filercv+=" ".charAt(0);} 
       if (i>=8 && i<11) {filercv+=fileext.charAt(i-8);} 
-    } alert(filercv); alert(fileext); alert(filercv.charAt(8));
+    } alert(filercv.length); alert(fileext); alert(filercv.charAt(8));
     /* var cluho=[]; 
     var clulo=[]; 
     var fsize=[]; 
