@@ -13,13 +13,14 @@ function fileManager(op, file, blob, size) {
     } alert(filercv.length); alert(fileext); alert(filercv.charAt(8));
     var cluho=[]; 
     var clulo=[]; 
-    var fsize=[]; alert(cluno);
-    cluho[0]=cluno&0x00FF0000; 
+    var fsize=[]; 
+    var clust=cluno; alert(clust); 
+    cluho[0]=clust&0x00FF0000; 
     cluho[0]=cluho[0]>>16;      alert(cluho[0]);
-    cluho[1]=cluno&0xFF000000; 
+    cluho[1]=clust&0xFF000000; 
     cluho[1]=cluho[1]>>24;      alert(cluho[1]);
-    clulo[0]=cluno&0x000000FF;  alert(clulo[0]);
-    clulo[1]=cluno&0x0000FF00;
+    clulo[0]=clust&0x000000FF;  alert(clulo[0]);
+    clulo[1]=clust&0x0000FF00;
     clulo[1]=clulo[1]>>8;       alert(clulo[1]);
     fsize[0]=size&0x000000FF; 
     fsize[1]=size&0x0000FF00; 
@@ -90,7 +91,7 @@ function fileManager(op, file, blob, size) {
       view.setUint8(2,fsize[1]); 
       view.setUint8(3,fsize[0]); 
       var size=view.getUint32(0);  alert(size);
-      fileViewerDrive(x,y,filedir,cluno,size); 
+      fileViewerDrive(x,y,filedir,clust,size); 
     } 
   }  
 
