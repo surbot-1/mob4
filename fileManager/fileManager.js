@@ -18,7 +18,7 @@ function fileManager(op, file, blob, size) {
     cluho[0]=cluho[0]>>16;      
     cluho[1]=cluno&0xFF000000; 
     cluho[1]=cluho[1]>>24;      alert(cluho);
-    /* clulo[0]=cluno&0x000000FF; 
+    clulo[0]=cluno&0x000000FF; 
     clulo[1]=cluno&0x0000FF00;
     clulo[1]=clulo[1]>>8;       alert(clulo);
     fsize[0]=size&0x000000FF; 
@@ -29,7 +29,7 @@ function fileManager(op, file, blob, size) {
     fsize[3]=size&0xFF000000; 
     fsize[3]=fsize[3]>>24;      alert(fsize);
     alert ('3');
-      for (i=0; i<32; i++) { 
+     /* for (i=0; i<32; i++) { 
       if (i>=0 && i<11) {driveView[dirct0+dirno*32+i]=filercv.charCodeAt(i);} 
       if (i>=20 && i<22) {driveView[dirct0+dirno*32+i]=cluho[i-20];} 
       if (i>=26 && i<28) {driveView[dirct0+dirno*32+i]=clulo[i-26];} 
