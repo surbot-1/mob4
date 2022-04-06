@@ -180,9 +180,9 @@ writeChar(16,1448,"font2448",kchar);
 	
 <script> 
 	
-for(i=0; i<8; i++) { 
-	driveView[dclust0+dcluno*8*512+i]="ABCDEFGH".charCodeAt(i); 
-} alert(driveView[dclust0+dcluno*8*512+3]); 
+for(let i=0; i<8; i++) { 
+	driveView[clust0+cluno*8*512+i]="ABCDEFGH".charCodeAt(i); 
+} alert(driveView[clust0+cluno*8*512+3]); 
 var filedir="abc01234txt"; 
 var clust = cluno;
 fileViewerDrive(20,800,filedir,clust,8); 
