@@ -41,11 +41,19 @@ function fileManager(op, file, buf, size) {
     } alert(driveView[dirct0+dirno*32+9]);
     
       var dataByte = new Uint8Array(buf); 
-      for (i=0; i<size; i++) { 
-        driveView[clust0+cluno*8*512+i]=dataByte[i]; 
-      } alert(dataByte); 
-      driveView[fat1+fatno*4]=cluno; 
-      fatno++; dirno++; cluno++; 
+      var j=0; 
+      for (let i=0; i<size; i++) { 
+        if (i>=0*j && i<8*512*j) { 
+          driveView[clust0+cluno*8*512*j+i]=dataByte[8*512*j+i]; 
+        } 
+        alert(dataByte); 
+        var clust=cluno; 
+        driveView[fat1+fatno*4]=clust++; 
+        fatno++; cluno++; j++; 
+      }  
+      dirno++; 
+      var fat=fatno; 
+      driveView[fat1+(fat-1)*4]=0x8FFFFFFF; 
   }
     
    /* var reader = new FileReader(); 
