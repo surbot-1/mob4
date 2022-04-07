@@ -79,13 +79,14 @@ function fileManagerSaveUrl(url) { alert('100');
         clust=cluno;
         driveView[clust0+clust*8*512+i]=data[i]; 
         if (i>=8*512*(1+j)) { 
-          alert(dataByte); 
+          alert(data); 
           driveView[fat1+fat*4]=fat++; 
           fatno=fat++; cluno=clust++; j++; 
         } 
       }  
       driveView[fat1+fatno*4]=0x8FFFFFFF; 
       fatno++; dirno++; cluno++; 
+      alert(fatno); alert(dirno); alert(cluno);
   } 
     
 
