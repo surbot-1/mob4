@@ -1,4 +1,4 @@
-function fileManager(op, file, blob, size) { 
+function fileManager(op, file, buf, size) { 
   alert('1');
   
   if (op=="create") { 
@@ -37,7 +37,14 @@ function fileManager(op, file, blob, size) {
       if (i>=28 && i<32) {driveView[dirct0+dirno*32+i]=fsize[i-28];} 
     } alert(driveView[dirct0+dirno*32+9]);
     
-    var reader = new FileReader(); 
+      var dataByte = new Uint8Array(buf); 
+      for (i=0; i<size; i++) { 
+        driveView[clust0+cluno*8*512+i]=dataByte[i]; 
+      } alert(dataByte); 
+      driveView[fat1+fatno*4]=cluno; 
+      fatno++; dirno++; cluno++; 
+    
+   /* var reader = new FileReader(); 
     reader.onload = function(e) { 
       var dataBuf = e.target.result; 
       var dataByte = new Uint8Array(dataBuf); 
@@ -47,7 +54,7 @@ function fileManager(op, file, blob, size) {
       driveView[fat1+fatno*4]=cluno; 
       fatno++; dirno++; cluno++; 
     }; 
-    reader.readAsArrayBuffer(blob); 
+    reader.readAsArrayBuffer(blob); */
    
   } 
   
@@ -60,7 +67,7 @@ function fileManager(op, file, blob, size) {
     var cluho=[]; 
     var clulo=[]; 
     var fsize=[]; 
-    var x=blob;
+    var x=buf; 
     var y=size; alert('10');
     for (let i=0; i<11; i++) { 
       if (i>=0 && i<filename.length) {filercv+=filename.charAt(i);} 
