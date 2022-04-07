@@ -1,6 +1,6 @@
 function fileManager(op, file, buf, size) { 
   if (op=="create") {fileManagerCreate(file, buf, size);} 
-  if (op=="open") {fileManagerOpen(file, buf, size);} 
+  if (op=="open") {fileManagerOpen(buf, size, file);} 
 }
   alert('1');
   
@@ -72,7 +72,7 @@ function fileManager(op, file, buf, size) {
    
   
   
-  function fileManagerOpen(file,buf,size) { 
+  function fileManagerOpen(x, y, file) { 
     var index=file.indexOf(".");
     var filename=file.substring(0,index);  
     var fileext=file.substring(index+1,index+4); 
@@ -81,8 +81,8 @@ function fileManager(op, file, buf, size) {
     var cluho=[]; 
     var clulo=[]; 
     var fsize=[]; 
-    var x=buf; 
-    var y=size; alert('10');
+    // var x=buf; 
+    // var y=size; alert('10');
     for (let i=0; i<11; i++) { 
       if (i>=0 && i<filename.length) {filercv+=filename.charAt(i);} 
       if (i>=filename.length && i<8) {filercv+=" ".charAt(0);} 
