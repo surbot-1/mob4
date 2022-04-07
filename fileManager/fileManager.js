@@ -1,7 +1,10 @@
 function fileManager(op, file, buf, size) { 
+  if (op=="create") {fileManagerCreate(file, buf, size);} 
+  if (op=="open") {fileManagerOpen(file, buf, size);} 
+}
   alert('1');
   
-  if (op=="create") { 
+  function fileManagerCreate(file, buf, size) {
     var index = file.indexOf(".");
     var filename=file.substring(0, index);  
     var fileext=file.substring(index+1, index+4); 
@@ -43,6 +46,7 @@ function fileManager(op, file, buf, size) {
       } alert(dataByte); 
       driveView[fat1+fatno*4]=cluno; 
       fatno++; dirno++; cluno++; 
+  }
     
    /* var reader = new FileReader(); 
     reader.onload = function(e) { 
@@ -56,9 +60,9 @@ function fileManager(op, file, buf, size) {
     }; 
     reader.readAsArrayBuffer(blob); */
    
-  } 
   
-  if (op=="open") {  
+  
+  function fileManagerOpen(file,x,y) { 
     var index=file.indexOf(".");
     var filename=file.substring(0,index);  
     var fileext=file.substring(index+1,index+4); 
@@ -67,8 +71,8 @@ function fileManager(op, file, buf, size) {
     var cluho=[]; 
     var clulo=[]; 
     var fsize=[]; 
-    var x=buf; 
-    var y=size; alert('10');
+    // var x=buf; 
+    // var y=size; alert('10');
     for (let i=0; i<11; i++) { 
       if (i>=0 && i<filename.length) {filercv+=filename.charAt(i);} 
       if (i>=filename.length && i<8) {filercv+=" ".charAt(0);} 
@@ -100,9 +104,13 @@ function fileManager(op, file, buf, size) {
       var size=view.getUint32(0);  alert(size);
       fileViewerDrive(x,y,filedir,clust,size); 
     } 
-  }  
+  }
+  
 
-}
+  
+  
+  
+  
 
 
 
