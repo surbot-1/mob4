@@ -43,7 +43,7 @@ function fileManager(op, file, buf, size) {
       var dataByte = new Uint8Array(buf); 
       var j=0; 
       for (let i=0; i<size; i++) { 
-        if (i>=0*j && i<8*512*j) { 
+        if (i>=8*512*j && i<8*512*(j+1)) { 
           driveView[clust0+cluno*8*512+i]=dataByte[8*512*j+i]; 
         } 
         alert(dataByte); 
@@ -104,12 +104,22 @@ function fileManager(op, file, buf, size) {
       view.setUint8(1,cluho[0]); 
       view.setUint8(2,clulo[1]); 
       view.setUint8(3,clulo[0]); 
-      var clust=view.getUint32(0);  alert(clust);
+      var clust=view.getUint32(0);  alert(clust); 
+      var fat=clust; 
       view.setUint8(0,fsize[3]); 
       view.setUint8(1,fsize[2]); 
       view.setUint8(2,fsize[1]); 
       view.setUint8(3,fsize[0]); 
-      var size=view.getUint32(0);  alert(size);
+      var size=view.getUint32(0);  alert(size); 
+      var j=0; 
+      for (let i=0; i<size; i++) {  
+        if (i>=8*512*j && i<8*512*(j+1)) { 
+          dataView[i]=driveView[clust0+clust*8*512*j+i]; 
+        } 
+        clust=driveView[fat1+fat*4]; 
+        fat=driveView[fat1+fat*4]; 
+        j++; 
+      }
       fileViewerDrive(x,y,filedir,clust,size); 
     } 
   }
