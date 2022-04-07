@@ -71,7 +71,10 @@ var cluno=2+2048;
 var imgBuf = new ArrayBuffer(1080*4*2400); 
 var imgView = new Uint8Array(imgBuf); 
 	
-var msgBuffer = new ArrayBuffer(512*2048); // 1mb
+var dataBuf = new ArrayBuffer(4*1024*1024); 
+var dataView = new Uint8Array(dataBuf); 
+	
+var msgBuf = new ArrayBuffer(512*2048); // 1mb
 var msgView = new Uint8Array(msgBuffer); 
 /* var msgView = new DataView(msgBuf); 
 msgView.setUint8(0, 125);
@@ -82,8 +85,8 @@ var ipsts=false; var ipads;
 var name; var message; 
 var username; var password; 
 	
-var msgBuf = new ArrayBuffer(512); 
-var msgArr = new Uint8Array(msgBuf);
+var msgBfr = new ArrayBuffer(512); 
+var msgArr = new Uint8Array(msgBfr);
 var msgStr=""; 
 var cursor=false;
 var cls=0; var cla=0; var cpr=0; 
