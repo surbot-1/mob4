@@ -1,7 +1,7 @@
 function fileViewerDrive(x,y,filedir,clust,size) { 
   var filename=filedir.substring(0,8); 
   var fileext=filedir.substring(8,11); 
-  if (fileext=="txt") { 
+  if (fileext=="txt") { alert(filedir); alert(clust); alert(size);
     fileViewerDriveTxt(x,y,filedir,clust,size); 
   } else if (fileext=="bmp" || fileext=="BMP") { 
     fileViewerDriveBmp(x,y,filedir,clust,size); 
@@ -11,7 +11,7 @@ function fileViewerDrive(x,y,filedir,clust,size) {
 function fileViewerDriveTxt(x,y,filedir,clust,size) { 
   var filename = filedir.substring(0,8);
   var fileext = filedir.substring(8,11); 
-  if (fileext=="txt") { 
+  if (fileext=="txt") { alert(filedir); alert(clust); alert(size); 
     var text="";
     for (let i=0; i<size; i++) { 
        var char = ascChar(driveView[clust0+clust*8*512+i]); 
