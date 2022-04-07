@@ -105,13 +105,13 @@ function fileManager(op, file, buf, size) {
       view.setUint8(2,clulo[1]); 
       view.setUint8(3,clulo[0]); 
       var clust=view.getUint32(0);  alert(clust); 
-      var fat=clust; 
+      // var fat=clust; 
       view.setUint8(0,fsize[3]); 
       view.setUint8(1,fsize[2]); 
       view.setUint8(2,fsize[1]); 
       view.setUint8(3,fsize[0]); 
       var size=view.getUint32(0);  alert(size); 
-      var dataByte=[]; 
+      /* var dataByte=[]; 
       var j=0; 
       for (let i=0; i<size; i++) {  
         if (i>=8*512*j && i<8*512*(j+1)) { 
@@ -121,8 +121,8 @@ function fileManager(op, file, buf, size) {
         fat=driveView[fat1+fat*4]; 
         j++; 
       } 
-      var buf=dataByte.buffer; 
-      fileViewerDrive(x,y,filedir,buf,size); 
+      var buf=dataByte.buffer; */
+      fileViewerDrive(x,y,filedir,clust,size); 
     } 
   }
   
