@@ -120,8 +120,9 @@ function fileManager(op, file, buf, size) {
         clust=driveView[fat1+fat*4]; 
         fat=driveView[fat1+fat*4]; 
         j++; 
-      }
-      fileViewerDrive(x,y,filedir,dataByte,size); 
+      } 
+      var buf=dataByte.buffer; 
+      fileViewerDrive(x,y,filedir,buf,size); 
     } 
   }
   
