@@ -190,7 +190,8 @@ for(let i=0; i<8; i++) {
 var filedir="abc01234txt"; 
 var clust = cluno;
 fileViewerDrive(20,800,filedir,clust,8); 
-	
+
+/* 
 var blob1 = new Blob(['ABCDEFGH'], {type: 'text/plain'}); 
 var blob2 = new Blob(['ABCDEFGHabcdefgh'], {type: 'text/plain'}); 
 var blob3 = new Blob(['01234567'], {type: 'text/plain'}); 
@@ -213,19 +214,19 @@ var blob3 = new Blob(['01234567'], {type: 'text/plain'});
   var size = buf.byteLength; 
   fileManager("create","abc3.txt",buf,size); 
 })(); 
-// (async () => { 
+*/
       fileManagerSaveUrl("icon/elephant.bmp"); 
       setTimeout( () => { 
         fileManagerOpenBmp(540,512,"icon/elephant.bmp"); 
       }, 5000); 
-// })(); 
+
 	
 
-setTimeout( () => {
+/* setTimeout( () => {
 (async () => {
   await fileManager("open","abc3.txt",20,1000); 
 })(); 
-},2000);
+},2000); */ 
 	
 </script> 
 	
