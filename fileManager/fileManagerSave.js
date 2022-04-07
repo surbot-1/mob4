@@ -1,5 +1,5 @@
-function fileManagerSaveUrl(url) { 
-    var index = url.indexOf('.'); 
+function fileManagerSaveUrl(url) { alert('1');
+    /* var index = url.indexOf('.'); 
     var filename = url.substring(0, index); 
     var fileext = url.substring(index+1, index+4); 
     var file = url; alert(file); 
@@ -13,7 +13,7 @@ function fileManagerSaveUrl(url) {
       var size = buf.byteLength; alert(size);
       function fileManagerSave(file, buf, size)
      }; 
-    oReq.send(null); 
+    oReq.send(null); */
 }
     
 /* function fileManagerSaveStorage(url) { 
@@ -34,8 +34,8 @@ function fileManagerSaveUrl(url) {
     oReq.send(null); 
 } */
     
-/* function fileManagerSave(file, buf, size) {
-    var index = file.indexOf(".");
+ function fileManagerSave(file, buf, size) {
+   /* var index = file.indexOf(".");
     var filename=file.substring(0, index);  
     var fileext=file.substring(index+1, index+4); 
     var filercv=""; 
@@ -85,8 +85,8 @@ function fileManagerSaveUrl(url) {
         } 
       }  
       driveView[fat1+fatno*4]=0x8FFFFFFF; 
-      fatno++; dirno++; cluno++; 
-  } */
+      fatno++; dirno++; cluno++; */
+  } 
     
 
   
