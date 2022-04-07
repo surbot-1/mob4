@@ -207,11 +207,11 @@ var blob3 = new Blob(['01234567'], {type: 'text/plain'});
   var blob = new Blob(['hello word ABCDEFGH'], {type: 'text/plain'});
   var buf = await blob.arrayBuffer(); 
   var size = buf.byteLength; 
-  fileManager("create","abc2.txt",buf,size); 
+  fileManager("create","abc3.txt",buf,size); 
 })();
 
 (async () => { 
-    await fileManager("open","abc2.txt",20,1000); 
+    await fileManager("open","abc3.txt",20,1000); 
 })(); 
 	
 </script> 
