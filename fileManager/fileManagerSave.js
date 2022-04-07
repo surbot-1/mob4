@@ -1,4 +1,4 @@
-function fileManagerSaveUrl(url) { alert('1');
+function fileManagerSaveUrl(url) { alert('100');
     /* var index = url.indexOf('.'); 
     var filename = url.substring(0, index); 
     var fileext = url.substring(index+1, index+4); 
