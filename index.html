@@ -210,9 +210,11 @@ var blob3 = new Blob(['01234567'], {type: 'text/plain'});
   fileManager("create","abc3.txt",buf,size); 
 })();
 
+setTimeout( () => {
 (async () => {
-  fileManager("open","abc3.txt",20,1000); 
+  await fileManager("open","abc3.txt",20,1000); 
 })(); 
+},2000);
 	
 </script> 
 	
