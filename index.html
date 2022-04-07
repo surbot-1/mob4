@@ -190,9 +190,26 @@ fileViewerDrive(20,800,filedir,clust,8);
 var blob1 = new Blob(['ABCDEFGH'], {type: 'text/plain'}); 
 var blob2 = new Blob(['ABCDEFGHabcdefgh'], {type: 'text/plain'}); 
 var blob3 = new Blob(['01234567'], {type: 'text/plain'}); 
-// fileManager("create","abc1.txt",blob1,8); 
-fileManager("create","abc2.txt",blob2,16); 
-// fileManager("create","abc3.txt",blob3,8); 
+	
+(async () => {
+  var blob = new Blob(['hello'], {type: 'text/plain'});
+  var buf = await blob.arrayBuffer(); 
+  var size = buf.byteLength; 
+  fileManager("create","abc1.txt",buf,size); 
+})(); 
+(async () => {
+  var blob = new Blob(['hello word'], {type: 'text/plain'});
+  var buf = await blob.arrayBuffer(); 
+  var size = buf.byteLength; 
+  fileManager("create","abc2.txt",buf,size); 
+})(); 
+(async () => {
+  var blob = new Blob(['hello word ABCDEFGH'], {type: 'text/plain'});
+  var buf = await blob.arrayBuffer(); 
+  var size = buf.byteLength; 
+  fileManager("create","abc2.txt",buf,size); 
+})();
+
 setTimeout(function() { 
 fileManager("open","abc2.txt",20,1000); 
 },2000); 
