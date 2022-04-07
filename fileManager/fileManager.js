@@ -117,15 +117,6 @@ function fileManager(op, file, buf, size) {
   }
   
 
-  var index = url.indexOf('.'); 
-  var filename = url.substring(0, index); 
-  var fileext = url.substring(index+1, index+4); 
-  
-  if (fileext=="bmp") {fileViewerUrlBmp(x,y,url);} 
-  
-}
-  
-
 function fileManagerSaveUrl(url) { 
     var index = url.indexOf('.'); 
     var filename = url.substring(0, index); 
