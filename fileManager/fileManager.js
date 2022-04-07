@@ -110,18 +110,6 @@ function fileManager(op, file, buf, size) {
       view.setUint8(2,fsize[1]); 
       view.setUint8(3,fsize[0]); 
       var size=view.getUint32(0);  alert(size); 
-      /* var dataByte=[]; 
-      var fat=clust; 
-      var j=0; 
-      for (let i=0; i<size; i++) {  
-        if (i>=8*512*j && i<8*512*(j+1)) { 
-          dataByte[i]=driveView[clust0+clust*8*512*j+i]; 
-        } 
-        clust=driveView[fat1+fat*4]; 
-        fat=driveView[fat1+fat*4]; 
-        j++; 
-      } 
-      var buf=dataByte.buffer; */
       fileViewerDrive(x,y,filedir,clust,size); 
     } 
   }
