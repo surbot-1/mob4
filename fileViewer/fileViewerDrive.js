@@ -23,17 +23,18 @@ function fileViewerDriveBmp(x,y,filedir,clust,size) {
   var filename = filedir.substring(0,8);
   var fileext = filedir.substring(8,11); 
   if (fileext=="bmp" || fileext=="BMP") { 
-      var dataByte=[]; 
+      var fat=clust; 
+      var data=[]; 
       var j=0; 
       for (let i=0; i<size; i++) {  
-        if (i>=8*512*j && i<8*512*(j+1)) { 
-          dataByte[i]=driveView[clust0+clust*8*512*j+i]; 
-        } 
-        clust=driveView[fat1+fat*4]; 
-        fat=driveView[fat1+fat*4]; 
-        j++; 
+        data[i]=driveView[clust0+clust*8*512*j+i]; 
+        if (i>=8*512*(1+j)) { 
+          fat=driveView[fat1+fat*4]; 
+          clust=driveView[fat1+fat*4]; 
+          j++; 
+        }
       } 
-      var buf=dataByte.buffer; 
+      var buf=data.buffer; 
     drawImageBmp(x, y, buf);
   } 
 } 
