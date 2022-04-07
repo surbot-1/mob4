@@ -41,17 +41,17 @@ function fileManager(op, file, buf, size) {
       if (i>=28 && i<32) {driveView[dirct0+dirno*32+i]=fsize[i-28];} 
     } alert(driveView[dirct0+dirno*32+9]);
     
-      var dataByte = new Uint8Array(buf); 
+      var data = new Uint8Array(buf); 
  
       var j=0; 
       for (let i=0; i<size; i++) { 
         fat=fatno; 
         clust=cluno;
-        driveView[clust0+clust*8*512+i]=dataByte[i]; 
+        driveView[clust0+clust*8*512+i]=data[i]; 
         if (i>=8*512*(1+j)) { 
           alert(dataByte); 
           driveView[fat1+fat*4]=fat++; 
-          fatno++; cluno++; j++; 
+          fatno=fat++; cluno=clust++; j++; 
         } 
       }  
       driveView[fat1+fatno*4]=0x8FFFFFFF; 
