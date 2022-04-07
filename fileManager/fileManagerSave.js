@@ -1,5 +1,5 @@
 function fileManagerSaveUrl(url) { alert('100');
-    /* var index = url.indexOf('.'); 
+    var index = url.indexOf('.'); 
     var filename = url.substring(0, index); 
     var fileext = url.substring(index+1, index+4); 
     var file = url; alert(file); 
@@ -13,7 +13,7 @@ function fileManagerSaveUrl(url) { alert('100');
       var size = buf.byteLength; alert(size);
       function fileManagerSave(file, buf, size)
      }; 
-    oReq.send(null); */
+    oReq.send(null); 
 }
     
 /* function fileManagerSaveStorage(url) { 
