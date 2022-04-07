@@ -57,7 +57,7 @@ function fileViewerDriveBmp(x,y,filedir,clust,size) {
                
                 
                 function drawImageBmp(x, y, buf) {  alert('drawImageBmp');
-                      var data = new Uint8Array(buf); 
+                      var data = new Uint8Array(buf); alert(data);
                       var viewBuf = new ArrayBuffer(4);
                       var view = new DataView(viewBuf);
                       
