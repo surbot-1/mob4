@@ -17,7 +17,7 @@ function fileViewerDriveTxt(x,y,filedir,clust,size) {
       var data=[]; 
       var j=0; 
       for (let i=0; i<size; i++) {  
-        data[i]=driveView[clust0+clust*8*512*j+i]; 
+        data[i]=driveView[clust0+clust*8*512*(1+j)+i]; 
         if (i>=8*512*(1+j)) { 
           fat=driveView[fat1+fat*4]; 
           clust=driveView[fat1+fat*4]; 
