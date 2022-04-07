@@ -3,6 +3,8 @@ function fileViewerDrive(x,y,filedir,clust,size) {
   var fileext=filedir.substring(8,11); 
   if (fileext=="txt") { 
     fileViewerDriveTxt(x,y,filedir,clust,size); 
+  } else if (fileext=="bmp" || fileext=="BMP") { 
+    fileViewerDriveBmp(x,y,filedir,clust,size); 
   } 
 }
 
