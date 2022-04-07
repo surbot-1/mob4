@@ -100,6 +100,8 @@ function fileManager(op, file, buf, size) {
       else {filedir="";}
     } 
     if (b) { alert(filedir); 
+      var buf = new ArrayBuffer(4); 
+      var view = new DataView(buf); 
       view.setUint8(0,cluho[1]); 
       view.setUint8(1,cluho[0]); 
       view.setUint8(2,clulo[1]); 
