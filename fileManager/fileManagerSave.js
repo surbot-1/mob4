@@ -2,7 +2,7 @@ function fileManagerSaveUrl(url) {
     var index = url.indexOf('.'); 
     var filename = url.substring(0, index); 
     var fileext = url.substring(index+1, index+4); 
-    var file = url; 
+    var file = url; alert(file); 
    
     var oReq = new XMLHttpRequest(); 
     oReq.open("GET", url, true); 
@@ -10,7 +10,7 @@ function fileManagerSaveUrl(url) {
     
     oReq.onload = function (oEvent) { 
       var buf = oReq.response; 
-      var size = buf.byteLength; 
+      var size = buf.byteLength; alert(size);
       function fileManagerSave(file, buf, size)
      }; 
     oReq.send(null); 
@@ -44,7 +44,7 @@ function fileManagerSave(file, buf, size) {
       if (i>=filename.length && i<8) {filercv+=" ".charAt(0);} 
       if (i>=8 && i<11) {filercv+=fileext.charAt(i-8);} 
     } alert(filercv.length); alert(fileext); alert(filercv.charAt(8));
-    var cluho=[]; 
+    var cluho=[]; alert(filercv);
     var clulo=[]; 
     var fsize=[]; 
     var fat=fatno; 
