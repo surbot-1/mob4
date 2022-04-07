@@ -34,7 +34,7 @@ function fileViewerDriveBmp(x,y,filedir,clust,size) {
           j++; 
         }
       } 
-      var buf=data.buffer; 
+    var buf=data.buffer; 
     drawImageBmp(x, y, buf);
   } 
 } 
