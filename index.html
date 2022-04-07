@@ -211,7 +211,12 @@ var blob3 = new Blob(['01234567'], {type: 'text/plain'});
   var buf = await blob.arrayBuffer(); 
   var size = buf.byteLength; 
   fileManager("create","abc3.txt",buf,size); 
-})();
+})(); 
+(async () => { 
+  await fileManagerSave("icon/elephant.bmp"); 
+        fileManagerOpen(540,512"icon/elephant.bmp"); 
+})(); 
+	
 
 setTimeout( () => {
 (async () => {
