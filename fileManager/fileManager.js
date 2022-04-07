@@ -44,7 +44,7 @@ function fileManager(op, file, buf, size) {
       var j=0; 
       for (let i=0; i<size; i++) { 
         if (i>=0*j && i<8*512*j) { 
-          driveView[clust0+cluno*8*512*j+i]=dataByte[8*512*j+i]; 
+          driveView[clust0+cluno*8*512+i]=dataByte[8*512*j+i]; 
         } 
         alert(dataByte); 
         var clust=cluno; 
