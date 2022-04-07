@@ -17,6 +17,7 @@ function fileManager(op, file, buf, size) {
     var cluho=[]; 
     var clulo=[]; 
     var fsize=[]; 
+    var fat=fatno; 
     var clust=cluno; alert(clust); 
     cluho[0]=clust&0x00FF0000; 
     cluho[0]=cluho[0]>>16;      alert(cluho[0]);
@@ -41,19 +42,20 @@ function fileManager(op, file, buf, size) {
     } alert(driveView[dirct0+dirno*32+9]);
     
       var dataByte = new Uint8Array(buf); 
+ 
       var j=0; 
       for (let i=0; i<size; i++) { 
-        if (i>=8*512*j && i<8*512*(j+1)) { 
-          driveView[clust0+cluno*8*512+i]=dataByte[8*512*j+i]; 
+        fat=fatno; 
+        clust=cluno;
+        driveView[clust0+clust*8*512+i]=dataByte[i]; 
+        if (i>=8*512*(1+j)) { 
+          alert(dataByte); 
+          driveView[fat1+fat*4]=fat++; 
+          fatno++; cluno++; j++; 
         } 
-        alert(dataByte); 
-        var clust=cluno; 
-        driveView[fat1+fatno*4]=clust++; 
-        fatno++; cluno++; j++; 
       }  
-      dirno++; 
-      var fat=fatno; 
-      driveView[fat1+(fat-1)*4]=0x8FFFFFFF; 
+      driveView[fat1+fatno*4]=0x8FFFFFFF; 
+      fatno++; dirno++; cluno++; 
   }
     
    /* var reader = new FileReader(); 
@@ -98,20 +100,18 @@ function fileManager(op, file, buf, size) {
       else {filedir="";}
     } 
     if (b) { alert(filedir); 
-      var buf = new ArrayBuffer(4); 
-      var view = new DataView(buf); 
       view.setUint8(0,cluho[1]); 
       view.setUint8(1,cluho[0]); 
       view.setUint8(2,clulo[1]); 
       view.setUint8(3,clulo[0]); 
       var clust=view.getUint32(0);  alert(clust); 
-      // var fat=clust; 
       view.setUint8(0,fsize[3]); 
       view.setUint8(1,fsize[2]); 
       view.setUint8(2,fsize[1]); 
       view.setUint8(3,fsize[0]); 
       var size=view.getUint32(0);  alert(size); 
       /* var dataByte=[]; 
+      var fat=clust; 
       var j=0; 
       for (let i=0; i<size; i++) {  
         if (i>=8*512*j && i<8*512*(j+1)) { 
