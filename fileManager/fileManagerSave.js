@@ -47,7 +47,7 @@ function fileManagerSaveUrl(url) { alert('100');
     var cluho=[]; alert(filercv);
     var clulo=[]; 
     var fsize=[]; 
-    var fat=fatno; 
+    var fat=cluno; 
     var clust=cluno; alert(clust); 
     cluho[0]=clust&0x00FF0000; 
     cluho[0]=cluho[0]>>16;      alert(cluho[0]);
@@ -74,7 +74,7 @@ function fileManagerSaveUrl(url) { alert('100');
       // var buf  = new ArrayBuffer(size); 
       var data = new Uint8Array(buf); 
       alert(data); alert(fatno); alert(cluno); 
-      fat=fatno; clust=cluno; 
+      fat=cluno; clust=cluno; 
       var j=0; 
       for (let i=0; i<size; i++) { 
         driveView[clust0+clust*8*512+i]=data[i]; 
