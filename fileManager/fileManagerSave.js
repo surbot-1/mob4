@@ -78,7 +78,7 @@ function fileManagerSaveUrl(url) { alert('100');
       var j=0; 
       for (let i=0; i<size; i++) { 
         driveView[clust0+clust*8*512+i]=data[i]; 
-        if (i>=8*512*(1+j)) { // alert(driveView[fat1+fat*4]); alert(clust); 
+        if (i>=8*512*(1+j)) {  alert(driveView[fat1+fat*4]); alert(clust); 
           var clustnext=clust+1; 
           cluho[0]=clustnext&0x000000FF; 
           cluho[1]=clustnext&0x0000FF00; 
