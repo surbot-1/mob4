@@ -50,8 +50,8 @@ function fileViewerDriveBmp(x,y,filedir,clust,size) {
       for (let i=0; i<size; i++) {  
         data[i]=driveView[clust0+clust*8*512+i]; 
         if (i>=8*512*(1+j)) {  alert(fat); alert(clust); 
-          var buf = new ArrayBuffer(4); 
-          var view = new Uint8Array(buf);
+          var bufView = new ArrayBuffer(4); 
+          var view = new Uint8Array(bufView);
           fath[0]=driveView[fat1+fat*4+0]; 
           fath[1]=driveView[fat1+fat*4+1]; 
           fath[2]=driveView[fat1+fat*4+2]; 
