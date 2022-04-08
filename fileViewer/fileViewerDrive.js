@@ -50,7 +50,7 @@ function fileViewerDriveBmp(x,y,filedir,clust,size) {
           j++; 
         }
       } alert(data); 
-     var buf=data.arrayBuffer; alert(buf.byteLength);
+     var buf=data.buffer; alert(buf.byteLength);
     // var blob = new Blob([data.buffer]); 
     // var buf = await blob.arrayBuffer; alert(buf.byteLength);
     drawImageBmp(x, y, buf);
