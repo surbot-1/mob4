@@ -49,10 +49,10 @@ function fileViewerDriveBmp(x,y,filedir,clust,size) {
           clust=driveView[fat1+fat*4]; 
           j++; 
         }
-      } alert(data);
+      } alert(data); 
     // var buf=data.buffer; 
     var blob = new Blob([data.buffer]); 
-    var buf = blob.arrayBuffer; 
+    var buf = blob.arrayBuffer; alert(buf.byteLength);
     drawImageBmp(x, y, buf);
   } 
 } 
