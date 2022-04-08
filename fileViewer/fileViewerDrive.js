@@ -52,7 +52,7 @@ function fileViewerDriveBmp(x,y,filedir,clust,size) {
       } alert(data); 
     // var buf=data.buffer; // alert(Uint8Array(buf)); 
     (async () => {
-     var blob = new Blob(data.buffer, {type: 'text/plain'}); 
+     var blob = new Blob([data.buffer], {type: 'text/plain'}); 
      var buf = await blob.arrayBuffer; alert(buf.byteLength);
      drawImageBmp(x, y, buf); 
       })(); 
