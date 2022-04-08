@@ -242,8 +242,7 @@ function openFile() {
   // document.getElementById("file").click(); 
   var element = document.getElementById("file");
   element.addEventListener("change", readFile);
-} 
-document.getElementById("file").click(); 
+}  
 	
 function readFile(e) { 
   var file = e.target.files[0];
@@ -257,6 +256,12 @@ function readFile(e) {
   }
   reader.readAsArrayBuffer(file)
 } 
+	
+setInterval(() => { 
+	if(touch){  
+          document.getElementById("file").click(); 
+	}
+},0100); 
 	
 </script> 
 	
