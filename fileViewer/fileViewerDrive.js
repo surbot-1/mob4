@@ -49,7 +49,7 @@ function fileViewerDriveBmp(x,y,filedir,clust,size) {
       var j=0; 
       for (let i=0; i<size; i++) {  
         data[i]=driveView[clust0+clust*8*512+i]; 
-        if (i>=8*512*(1+j)) { // alert(fat); alert(clust); 
+        if (i>=8*512*(1+j)) {  alert(fat); alert(clust); 
           var buf = new ArrayBuffer(4); 
           var view = new Uint8Array(buf);
           fath[0]=driveView[fat1+fat*4+0]; 
