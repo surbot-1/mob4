@@ -231,6 +231,19 @@ setTimeout( () => {
 </script> 
 	
 <script> 
+	
+function myFunction() {
+  var x = document.createElement("INPUT");
+  x.setAttribute("type", "file"); 
+  x.setAttribute("id", "file"); 
+  document.body.appendChild(x); 
+  document.getElementById("file").click(); 
+}
+	
+</script> 
+	
+<script> 
+/* 
 setTimeout(openFile, 5000); 
 function openFile() { alert('10');
   var input = document.createElement('input'); 
@@ -254,7 +267,7 @@ function readFile(e) { alert('200');
      document.body.removeChild(input); 
   }
   reader.readAsArrayBuffer(file)
-}
+} */ 
 	
 /* var browseFiles = () => {
   var input = document.createElement('input');
