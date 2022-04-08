@@ -250,9 +250,10 @@ function readFile(e) {
   var reader = new FileReader();
   reader.onload = function(e) { 
      var buf = e.target.result; 
-     var view = new Uint8Array(buf);
-     alert(view); 
-     document.body.removeChild(x); 
+     var view = new Uint8Array(buf); 
+     var size = buf.byteLength; 
+     fileViewer(540, 512, buf, size); 
+     // document.body.removeChild(x); 
   }
   reader.readAsArrayBuffer(file)
 } 
