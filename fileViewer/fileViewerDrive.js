@@ -13,12 +13,13 @@ function fileViewerDriveTxt(x,y,filedir,clust,size) {
   var fileext = filedir.substring(8,11); 
   if (fileext=="txt") { alert(filedir); alert(clust); alert(size); 
      
-      var fat=clust; 
-      var data=[]; 
+      var fat=clust; alert(fat); alert(clust);
+      var buf = new ArrayBuffer(size); 
+      var data= new Uint8Array(buf);
       var j=0; 
       for (let i=0; i<size; i++) {  
         data[i]=driveView[clust0+clust*8*512*(1+j)+i]; 
-        if (i>=8*512*(1+j)) { 
+        if (i>=8*512*(1+j)) { alert(fat); alert(clust);
           fat=driveView[fat1+fat*4]; 
           clust=driveView[fat1+fat*4]; 
           j++; 
@@ -39,13 +40,13 @@ function fileViewerDriveBmp(x,y,filedir,clust,size) {
   var filename = filedir.substring(0,8);
   var fileext = filedir.substring(8,11); 
   if (fileext=="bmp") { 
-      var fat=clust; 
+      var fat=clust; alert(fat); alert(clust);
       var buf = new ArrayBuffer(size);
       var data= new Uint8Array(buf);
       var j=0; 
       for (let i=0; i<size; i++) {  
         data[i]=driveView[clust0+clust*8*512+i]; 
-        if (i>=8*512*(1+j)) { 
+        if (i>=8*512*(1+j)) { alert(fat); alert(clust);
           fat=driveView[fat1+fat*4]; 
           clust=driveView[fat1+fat*4]; 
           j++; 
