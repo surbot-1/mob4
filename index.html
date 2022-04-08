@@ -236,7 +236,8 @@ function openFile() {
   var x = document.createElement("INPUT");
   x.setAttribute("type", "file"); 
   x.setAttribute("id", "file"); 
-  x.click(); 
+  x.setAttribute("style", "display:none"); 
+  // x.style.display='none'; 
   document.body.appendChild(x); 
   document.getElementById("file").click(); 
   var element = document.getElementById("file");
