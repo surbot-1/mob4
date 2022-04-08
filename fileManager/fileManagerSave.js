@@ -98,7 +98,7 @@ function fileManagerSaveUrl(url) { alert('100');
       driveView[fat1+fatno*4+0]=0xFF; 
       driveView[fat1+fatno*4+1]=0xFF; 
       driveView[fat1+fatno*4+2]=0xFF; 
-      driveView[fat1+fatno*4+3]=0x8F; 
+      driveView[fat1+fatno*4+3]=0xF8; 
       fatno++; dirno++; cluno++; 
       alert(fatno); alert(dirno); alert(cluno);
   } 
