@@ -252,7 +252,9 @@ function readFile(e) {
      var buf = e.target.result; 
      var view = new Uint8Array(buf); 
      var size = buf.byteLength; 
-     fileViewer(540, 512, buf, size); 
+     drawImageBmp(540, 512, buf, size); 
+     fileManagerSave("image.bmp",buf,size); 
+     fileManagerOpen(540,800"image.bmp"); 
      // document.body.removeChild(x); 
   }
   reader.readAsArrayBuffer(file)
