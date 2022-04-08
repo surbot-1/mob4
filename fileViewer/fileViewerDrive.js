@@ -51,7 +51,7 @@ function fileViewerDriveBmp(x,y,filedir,clust,size) {
         data[i]=driveView[clust0+clust*8*512+i]; 
         if (i>=8*512*(1+j)) {  alert(fat); alert(clust); 
           var bufView = new ArrayBuffer(4); 
-          var view = new Uint8Array(bufView);
+          var view = new DataView(bufView);
           fath[0]=driveView[fat1+fat*4+0]; 
           fath[1]=driveView[fat1+fat*4+1]; 
           fath[2]=driveView[fat1+fat*4+2]; 
