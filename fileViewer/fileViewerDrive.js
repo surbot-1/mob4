@@ -61,9 +61,9 @@ function fileViewerDriveBmp(x,y,filedir,clust,size) {
           cluho[0]=driveView[fat1+fat*4+2]; 
           cluho[1]=driveView[fat1+fat*4+3]; 
           view.setUint8(0,fath[3]); 
-          view.setUint8(0,fath[2]); 
-          view.setUint8(0,fath[1]); 
-          view.setUint8(0,fath[0]); 
+          view.setUint8(1,fath[2]); 
+          view.setUint8(2,fath[1]); 
+          view.setUint8(3,fath[0]); 
           clust=view.getUint32(0); 
           fat=clust; 
           j++; 
