@@ -1,7 +1,7 @@
 function fileViewerDrive(x,y,filedir,clust,size) { 
   var filename=filedir.substring(0,8); 
   var fileext=filedir.substring(8,11); 
-  if (fileext=="txt" || fileext=="TXT") { alert(filedir); alert(clust); alert(size);
+  if (fileext=="txt" || fileext=="TXT") { 
     fileViewerDriveTxt(x,y,filedir,clust,size); 
   } else if (fileext=="bmp" || fileext=="BMP") { 
     fileViewerDriveBmp(x,y,filedir,clust,size); 
@@ -11,9 +11,9 @@ function fileViewerDrive(x,y,filedir,clust,size) {
 function fileViewerDriveTxt(x,y,filedir,clust,size) { 
   var filename = filedir.substring(0,8);
   var fileext = filedir.substring(8,11); 
-  if (fileext=="txt" || fileext=="TXT") { alert(filedir); alert(clust); alert(size); 
+  if (fileext=="txt" || fileext=="TXT") { 
      
-      var fat=clust; alert(fat); alert(clust); 
+      var fat=clust; 
       var fath=[]; 
       var cluho=[]; 
       var clulo=[]; 
@@ -22,7 +22,7 @@ function fileViewerDriveTxt(x,y,filedir,clust,size) {
       var j=0; 
       for (let i=0; i<size; i++) {  
         data[i]=driveView[clust0+clust*8*512+i]; 
-        if (i>=8*512*(1+j)) { alert(fat); alert(clust);
+        if (i>=8*512*(1+j)) { 
           var bufView = new ArrayBuffer(4); 
           var view = new DataView(bufView);
           fath[0]=driveView[fat1+fat*4+0]; 
@@ -56,8 +56,8 @@ function fileViewerDriveTxt(x,y,filedir,clust,size) {
 function fileViewerDriveBmp(x,y,filedir,clust,size) { 
   var filename = filedir.substring(0,8);
   var fileext = filedir.substring(8,11); 
-  if (fileext=="bmp" || fileext=="BMP") { alert('fileViewrBmp'); alert(size);
-      var fat=clust; alert(fat); alert(clust); 
+  if (fileext=="bmp" || fileext=="BMP") { 
+      var fat=clust; 
       var fath=[]; 
       var cluho=[]; 
       var clulo=[]; 
@@ -66,7 +66,7 @@ function fileViewerDriveBmp(x,y,filedir,clust,size) {
       var j=0; 
       for (let i=0; i<size; i++) {  
         data[i]=driveView[clust0+clust*8*512+i]; 
-        if (i>=8*512*(1+j)) {  alert(fat); alert(clust); 
+        if (i>=8*512*(1+j)) {  
           var bufView = new ArrayBuffer(4); 
           var view = new DataView(bufView);
           fath[0]=driveView[fat1+fat*4+0]; 
@@ -85,19 +85,14 @@ function fileViewerDriveBmp(x,y,filedir,clust,size) {
           fat=clust; 
           j++; 
         }
-      } alert(data); 
-    // var buf=data.buffer; // alert(Uint8Array(buf)); 
-   // (async () => {
-    // var blob = new Blob([data.buffer], {type: 'text/plain'}); 
-   //  var buf = await blob.arrayBuffer; alert(buf.byteLength);
-     drawImageBmp(x, y, buf); 
-     // })(); 
+      }  
+      drawImageBmp(x, y, buf); 
   } 
 } 
                
                 
-                function drawImageBmp(x, y, buf) {  alert('drawImageBmp');
-                      var data = new Uint8Array(buf); alert(data);
+                function drawImageBmp(x, y, buf) {  
+                      var data = new Uint8Array(buf); 
                       var viewBuf = new ArrayBuffer(4);
                       var view = new DataView(viewBuf);
                       
