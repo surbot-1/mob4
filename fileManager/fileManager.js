@@ -48,7 +48,7 @@ function fileManager(op, file, buf, size) {
         clust=cluno;
         driveView[clust0+clust*8*512+i]=data[i]; 
         if (i>=8*512*(1+j)) { 
-          alert(dataByte); 
+          
           driveView[fat1+fat*4]=fat++; 
           fatno=fat++; cluno=clust++; j++; 
         } 
