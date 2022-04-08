@@ -172,10 +172,10 @@ fileViewerUrl(830, 1440, "icon/attachment-icon-64.bmp");
 fileViewerUrl(940, 1408, "icon/telegram-icon-128.bmp"); 
 	
 // dsaaaa(); 
-drawKeypad(0,1664,0); 
+drawKeypad(0,1664,1); 
 setInterval(function() {
 if (touch==3) { touch=0;
-var kchar=readKeypad(0,1664,0); 
+var kchar=readKeypad(0,1664,1); 
 writeChar(16,1448,"font2448",kchar);  
 }
 }, 0100) ;
@@ -238,7 +238,7 @@ function openFile() {
   input.id = 'file'; 
   input.style.display='none'; 
   input.onchange=readFile; 
-  document.appendChild(input); 
+  document.body.appendChild(input); 
   var ele = document.getElementById('file'); 
   ele.click(); 
   // ele.addEventListner(change, readFile); 
@@ -251,7 +251,7 @@ function readFile(e) {
      var buf = e.target.result; 
      var view = new Uint8Array(buf);
      alert(view); 
-     document.removeChild(input); 
+     document.body.removeChild(input); 
   }
   reader.readAsArrayBuffer(file)
 }
