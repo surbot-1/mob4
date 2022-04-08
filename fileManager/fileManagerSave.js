@@ -1,8 +1,8 @@
-function fileManagerSaveUrl(url) { alert('100');
+function fileManagerSaveUrl(url) { 
     var index = url.indexOf('.'); 
     var filename = url.substring(0, index); 
     var fileext = url.substring(index+1, index+4); 
-    var file = url; alert(file); 
+    var file = url; 
    
     var oReq = new XMLHttpRequest(); 
     oReq.open("GET", url, true); 
@@ -43,42 +43,41 @@ function fileManagerSaveUrl(url) { alert('100');
       if (i>=0 && i<filename.length) {filercv+=filename.charAt(i);} 
       if (i>=filename.length && i<8) {filercv+=" ".charAt(0);} 
       if (i>=8 && i<11) {filercv+=fileext.charAt(i-8);} 
-    } alert(filercv.length); alert(fileext); alert(filercv.charAt(8));
-    var cluho=[]; alert(filercv);
+    } 
+    var cluho=[]; 
     var clulo=[]; 
     var fsize=[]; 
     var fat=cluno; 
-    var clust=cluno; alert(clust); 
+    var clust=cluno; 
     cluho[0]=clust&0x00FF0000; 
-    cluho[0]=cluho[0]>>16;      alert(cluho[0]);
+    cluho[0]=cluho[0]>>16;      
     cluho[1]=clust&0xFF000000; 
-    cluho[1]=cluho[1]>>24;      alert(cluho[1]);
-    clulo[0]=clust&0x000000FF;  alert(clulo[0]);
+    cluho[1]=cluho[1]>>24;      
+    clulo[0]=clust&0x000000FF;  
     clulo[1]=clust&0x0000FF00;
-    clulo[1]=clulo[1]>>8;       alert(clulo[1]);
+    clulo[1]=clulo[1]>>8;       
     fsize[0]=size&0x000000FF; 
     fsize[1]=size&0x0000FF00; 
     fsize[1]=fsize[1]>>8; 
     fsize[2]=size&0x00FF0000; 
     fsize[2]=fsize[2]>>16; 
     fsize[3]=size&0xFF000000; 
-    fsize[3]=fsize[3]>>24;      alert(fsize);
-    alert ('3');
+    fsize[3]=fsize[3]>>24;      
+    
       for (i=0; i<32; i++) { 
       if (i>=0 && i<11) {driveView[dirct0+dirno*32+i]=filercv.charCodeAt(i);} 
       if (i>=20 && i<22) {driveView[dirct0+dirno*32+i]=cluho[i-20];} 
       if (i>=26 && i<28) {driveView[dirct0+dirno*32+i]=clulo[i-26];} 
       if (i>=28 && i<32) {driveView[dirct0+dirno*32+i]=fsize[i-28];} 
-    } alert(driveView[dirct0+dirno*32+9]);
-    
-      // var buf  = new ArrayBuffer(size); 
+    } 
+     
       var data = new Uint8Array(buf); 
-      alert(data); alert(fatno); alert(cluno); 
+     
       fat=cluno; clust=cluno; 
       var j=0; 
       for (let i=0; i<size; i++) { 
         driveView[clust0+clust*8*512+i]=data[i]; 
-        if (i>=8*512*(1+j)) {  alert(fat); alert(clust); 
+        if (i>=8*512*(1+j)) {  
           var clustnext=clust+1; 
           cluho[0]=clustnext&0x000000FF; 
           cluho[1]=clustnext&0x0000FF00; 
@@ -100,7 +99,6 @@ function fileManagerSaveUrl(url) { alert('100');
       driveView[fat1+fatno*4+2]=0xFF; 
       driveView[fat1+fatno*4+3]=0xF8; 
       fatno++; dirno++; cluno++; 
-      alert(fatno); alert(dirno); alert(cluno);
   } 
     
 
