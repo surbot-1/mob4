@@ -239,10 +239,11 @@ function openFile() {
   x.setAttribute("style", "display:none"); 
   // x.style.display='none'; 
   document.body.appendChild(x); 
-  document.getElementById("file").click(); 
+  // document.getElementById("file").click(); 
   var element = document.getElementById("file");
   element.addEventListener("change", readFile);
 } 
+document.getElementById("file").click(); 
 	
 function readFile(e) { 
   var file = e.target.files[0];
