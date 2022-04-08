@@ -43,14 +43,16 @@ function fileViewerDriveBmp(x,y,filedir,clust,size) {
       var data=[]; 
       var j=0; 
       for (let i=0; i<size; i++) {  
-        data[i]=driveView[clust0+clust*8*512*(1+j)+i]; 
+        data[i]=driveView[clust0+clust*8*512+i]; 
         if (i>=8*512*(1+j)) { 
           fat=driveView[fat1+fat*4]; 
           clust=driveView[fat1+fat*4]; 
           j++; 
         }
       } alert(data);
-    var buf=data.buffer; 
+    // var buf=data.buffer; 
+    var blob = new Blob([data.buffer]); 
+    var buf = blob.arrayBuffer; 
     drawImageBmp(x, y, buf);
   } 
 } 
