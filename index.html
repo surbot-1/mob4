@@ -238,6 +238,8 @@ function myFunction() {
   x.setAttribute("id", "file"); 
   document.body.appendChild(x); 
   document.getElementById("file").click(); 
+  var element = document.getElementById("file");
+  element.addEventListener("change", readFile);
 }
 	
 </script> 
