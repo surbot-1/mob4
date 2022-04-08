@@ -39,7 +39,7 @@ function fileViewerDriveTxt(x,y,filedir,clust,size) {
 function fileViewerDriveBmp(x,y,filedir,clust,size) { 
   var filename = filedir.substring(0,8);
   var fileext = filedir.substring(8,11); 
-  if (fileext=="bmp") { 
+  if (fileext=="bmp") { alert('fileViewrBmp'); alert(size);
       var fat=clust; alert(fat); alert(clust); 
       var fath=[]; 
       var cluho=[]; 
