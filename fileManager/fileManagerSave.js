@@ -73,7 +73,7 @@ function fileManagerSaveUrl(url) { alert('100');
     
       // var buf  = new ArrayBuffer(size); 
       var data = new Uint8Array(buf); 
-      alert(data); alert(fatno); alert(clustno); 
+      alert(data); alert(fatno); alert(cluno); 
       fat=fatno; clust=cluno; 
       var j=0; 
       for (let i=0; i<size; i++) { 
