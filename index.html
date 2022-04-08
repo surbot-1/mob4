@@ -231,19 +231,19 @@ setTimeout( () => {
 </script> 
 	
 <script> 
-         openFile(); 
+setTimeout(openFile, 5000); 
 function openFile() { alert('10');
   var input = document.createElement('input'); 
   input.type = 'file'; 
   input.id = 'file'; 
   input.style.display='none'; 
-  input.onchange=readFile; 
+  input.onchange=readFile; alert('20');
   document.body.appendChild(input); 
   var ele = document.getElementById('file'); 
-  ele.click(); 
+  ele.click(); alert('30');
   // ele.addEventListner(change, readFile); 
 }
-function readFile(e) { alert('20');
+function readFile(e) { alert('200');
   var file = e.target.files[0];
   if (!file) {return;}
   var reader = new FileReader();
