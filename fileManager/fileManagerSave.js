@@ -78,13 +78,27 @@ function fileManagerSaveUrl(url) { alert('100');
       var j=0; 
       for (let i=0; i<size; i++) { 
         driveView[clust0+clust*8*512+i]=data[i]; 
-        if (i>=8*512*(1+j)) { alert(fat); alert(clust); 
-          driveView[fat1+fat*4]=fat+1; 
+        if (i>=8*512*(1+j)) { // alert(driveView[fat1+fat*4]); alert(clust); 
+          var clustnext=clust+1; 
+          cluho[0]=clustnext&0x000000FF; 
+          cluho[1]=clustnext&0x0000FF00; 
+          cluho[1]=cluho[1]>>8; 
+          clulo[0]=clustnext&0x00FF0000; 
+          clulo[0]=clulo[0]>>16; 
+          clulo[1]=clustnext&0xFF000000; 
+          clulo[1]=clulo[1]>>24; 
+          driveView[fat1+fat*4+0]=cluho[0]; 
+          driveView[fat1+fat*4+1]=cluho[1]; 
+          driveView[fat1+fat*4+2]=clulo[0]; 
+          driveView[fat1+fat*4+3]=clulo[1]; 
           fat++; clust++; j++; 
           fatno=fat; cluno=clust; 
         } 
       }  
-      driveView[fat1+fatno*4]=0x8FFFFFFF; 
+      driveView[fat1+fatno*4+0]=0xFF; 
+      driveView[fat1+fatno*4+1]=0xFF; 
+      driveView[fat1+fatno*4+2]=0xFF; 
+      driveView[fat1+fatno*4+3]=0x8F; 
       fatno++; dirno++; cluno++; 
       alert(fatno); alert(dirno); alert(cluno);
   } 
