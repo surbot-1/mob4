@@ -241,7 +241,20 @@ function openFile() {
   document.getElementById("file").click(); 
   var element = document.getElementById("file");
   element.addEventListener("change", readFile);
-}
+} 
+	
+function readFile(e) { 
+  var file = e.target.files[0];
+  if (!file) {return;}
+  var reader = new FileReader();
+  reader.onload = function(e) { 
+     var buf = e.target.result; 
+     var view = new Uint8Array(buf);
+     alert(view); 
+     document.body.removeChild(x); 
+  }
+  reader.readAsArrayBuffer(file)
+} 
 	
 </script> 
 	
@@ -259,18 +272,7 @@ function openFile1() { alert('10');
   // ele.click(); alert('30');
   ele.addEventListner('change', readFile); 
 }
-function readFile(e) { alert('200');
-  var file = e.target.files[0];
-  if (!file) {return;}
-  var reader = new FileReader();
-  reader.onload = function(e) { 
-     var buf = e.target.result; 
-     var view = new Uint8Array(buf);
-     alert(view); 
-     document.body.removeChild(input); 
-  }
-  reader.readAsArrayBuffer(file)
-} */ 
+*/ 
 	
 /* var browseFiles = () => {
   var input = document.createElement('input');
