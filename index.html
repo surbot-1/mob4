@@ -257,8 +257,8 @@ function readFile(e) {
   reader.readAsArrayBuffer(file)
 } 
 	
-setInterval(() => { 
-	if(touch){  
+setInterval( function() { 
+	if(touch){ touch=0; 
           document.getElementById("file").click(); 
 	}
 },0100); 
