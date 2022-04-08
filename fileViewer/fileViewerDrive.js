@@ -1,7 +1,7 @@
 function fileViewerDrive(x,y,filedir,clust,size) { 
   var filename=filedir.substring(0,8); 
   var fileext=filedir.substring(8,11); 
-  if (fileext=="txt") { alert(filedir); alert(clust); alert(size);
+  if (fileext=="txt" || fileext=="TXT") { alert(filedir); alert(clust); alert(size);
     fileViewerDriveTxt(x,y,filedir,clust,size); 
   } else if (fileext=="bmp" || fileext=="BMP") { 
     fileViewerDriveBmp(x,y,filedir,clust,size); 
@@ -11,17 +11,34 @@ function fileViewerDrive(x,y,filedir,clust,size) {
 function fileViewerDriveTxt(x,y,filedir,clust,size) { 
   var filename = filedir.substring(0,8);
   var fileext = filedir.substring(8,11); 
-  if (fileext=="txt") { alert(filedir); alert(clust); alert(size); 
+  if (fileext=="txt" || fileext=="TXT") { alert(filedir); alert(clust); alert(size); 
      
-      var fat=clust; alert(fat); alert(clust);
+      var fat=clust; alert(fat); alert(clust); 
+      var fath=[]; 
+      var cluho=[]; 
+      var clulo=[]; 
       var buf = new ArrayBuffer(size); 
       var data= new Uint8Array(buf);
       var j=0; 
       for (let i=0; i<size; i++) {  
         data[i]=driveView[clust0+clust*8*512+i]; 
         if (i>=8*512*(1+j)) { alert(fat); alert(clust);
-          fat=driveView[fat1+fat*4]; 
-          clust=driveView[fat1+fat*4]; 
+          var bufView = new ArrayBuffer(4); 
+          var view = new DataView(bufView);
+          fath[0]=driveView[fat1+fat*4+0]; 
+          fath[1]=driveView[fat1+fat*4+1]; 
+          fath[2]=driveView[fat1+fat*4+2]; 
+          fath[3]=driveView[fat1+fat*4+3]; 
+          clulo[0]=driveView[fat1+fat*4+0]; 
+          clulo[1]=driveView[fat1+fat*4+1]; 
+          cluho[0]=driveView[fat1+fat*4+2]; 
+          cluho[1]=driveView[fat1+fat*4+3]; 
+          view.setUint8(0,fath[3]); 
+          view.setUint8(1,fath[2]); 
+          view.setUint8(2,fath[1]); 
+          view.setUint8(3,fath[0]); 
+          clust=view.getUint32(0); 
+          fat=clust; 
           j++; 
         }
       } 
@@ -39,7 +56,7 @@ function fileViewerDriveTxt(x,y,filedir,clust,size) {
 function fileViewerDriveBmp(x,y,filedir,clust,size) { 
   var filename = filedir.substring(0,8);
   var fileext = filedir.substring(8,11); 
-  if (fileext=="bmp") { alert('fileViewrBmp'); alert(size);
+  if (fileext=="bmp" || fileext=="BMP") { alert('fileViewrBmp'); alert(size);
       var fat=clust; alert(fat); alert(clust); 
       var fath=[]; 
       var cluho=[]; 
