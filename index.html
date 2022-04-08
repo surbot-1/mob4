@@ -236,12 +236,12 @@ function openFile() { alert('10');
   var input = document.createElement('input'); 
   input.type = 'file'; 
   input.id = 'file'; 
-  input.style.display='none'; 
-  input.onchange=readFile; alert('20');
+  input.style.display='none'; alert('20');
+  // input.onchange=readFile; 
   document.body.appendChild(input); 
-  document.getElementById('file').click(); 
+  var ele = document.getElementById('file'); 
   // ele.click(); alert('30');
-  // ele.addEventListner(change, readFile); 
+  ele.addEventListner('change', readFile); 
 }
 function readFile(e) { alert('200');
   var file = e.target.files[0];
