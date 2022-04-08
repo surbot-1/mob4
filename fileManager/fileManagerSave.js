@@ -71,16 +71,17 @@ function fileManagerSaveUrl(url) { alert('100');
       if (i>=28 && i<32) {driveView[dirct0+dirno*32+i]=fsize[i-28];} 
     } alert(driveView[dirct0+dirno*32+9]);
     
+      // var buf  = new ArrayBuffer(size); 
       var data = new Uint8Array(buf); 
-      alert(data); alert(fatno); alert(clustno);
+      alert(data); alert(fatno); alert(clustno); 
+      fat=fatno; clust=cluno; 
       var j=0; 
       for (let i=0; i<size; i++) { 
-        fat=fatno; 
-        clust=cluno;
         driveView[clust0+clust*8*512+i]=data[i]; 
-        if (i>=8*512*(1+j)) { alert(fat); alert(clust);
-          driveView[fat1+fat*4]=fat++; 
-          fatno=fat++; cluno=clust++; j++; 
+        if (i>=8*512*(1+j)) { alert(fat); alert(clust); 
+          driveView[fat1+fat*4]=fat+1; 
+          fat++; clust++; j++; 
+          fatno=fat; cluno=clust; 
         } 
       }  
       driveView[fat1+fatno*4]=0x8FFFFFFF; 
