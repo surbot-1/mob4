@@ -29,6 +29,12 @@ function readFile(e) {
   }
   reader.readAsArrayBuffer(file)
 } 
+	
+// setInterval( function() { 
+        // if(touch){ touch=0; 
+          document.getElementById("file").click(); 
+        // }
+// },0100);
   
 }
 
