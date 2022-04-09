@@ -21,7 +21,7 @@ writecStr(200,144*3+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],"Jiten
 ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue
 ctx.fillRect(0, 2048, 920, 128); 
 ctx.fillStyle = "rgba(255,255,255,1.0)"; // white
-ctx.fillRect(0+8, 2048+8, 920-16, 128-16); 
+ctx.fillRect(0+8, 2048+8, 920-16, 128-16);  
 fileViewerUrl(680, 2080, "icon/attachment-icon-64.bmp"); 
 fileViewerUrl(808, 2080, "icon/camera-icon-64.bmp"); 
 fileViewerUrl(936, 2048, "icon/microphone-icon-128.bmp"); 
