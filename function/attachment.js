@@ -24,7 +24,7 @@ function readFile(e) {
      var size = buf.byteLength; 
      drawImageBmp(540, 512, buf, size); 
      fileManagerSave("image.bmp",buf,size); 
-     fileManagerOpen(540,800,"image.bmp"); 
+     // fileManagerOpen(540,800,"image.bmp"); 
      document.body.removeChild(x); 
   }
   reader.readAsArrayBuffer(file)
