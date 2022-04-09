@@ -36,7 +36,7 @@ fileViewerUrl(936, 2048, "icon/microphone-icon-128.bmp");
               } else if (x>360*1 && x<360*2 && y>0 && y<144) { 
               } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
               } else if (x>0 && x<1080 && y>144*1 && y<144*2) { 
-		    //  clearInterval(timer); apphomechatsuser1(); 
+		    //  clearInterval(timer); appHomeChatsUser1(); 
               } else if (x>0 && x<1080 && y>144*2 && y<144*3) { 
               } else if (x>0 && x<1080 && y>144*3+8 && y<144*3+8+128) { 
               } else if (x>0 && x<1080 && y>160*4 && y<160*4+144) { 
@@ -46,8 +46,8 @@ fileViewerUrl(936, 2048, "icon/microphone-icon-128.bmp");
 	      } else if (x>0 && x<1080 && y>160*8 && y<160*8+144) { 
 	      } else if (x>0 && x<1080 && y>160*9 && y<160*9+144) { 
 	      } else if (x>0 && x<1080 && y>160*10 && y<160*10+144) { 
-	      } else if (x>0 && x<1080 && y>2032 && y<2176) { 
-		      
+	      } else if (x>0 && x<920 && y>2048 && y<2176) { 
+		      clearInterval(timer); appHomeChatsUser1Chat();
 	      }
 		      
            } 
@@ -66,15 +66,23 @@ fileViewerUrl(900, 48, "icon/telephone-icon-48.bmp");
   writecStr(200,48,480,128,"ubuntubold",[255,255,255,255],[0,0,128,255],"sAy");
 	
 ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; 
-ctx.fillRect(0, 144, 1080, 2032); 
+ctx.fillRect(0, 144, 1080, 1264); 
 	
 ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue
-ctx.fillRect(0, 2048, 920, 128); 
+ctx.fillRect(0, 1536, 920, 128); 
 ctx.fillStyle = "rgba(255,255,255,1.0)"; // white
-ctx.fillRect(0+8, 2048+8, 920-16, 128-16); 
-fileViewerUrl(680, 2080, "icon/attachment-icon-64.bmp"); 
-fileViewerUrl(808, 2080, "icon/camera-icon-64.bmp"); 
-fileViewerUrl(936, 2048, "icon/microphone-icon-128.bmp"); 
+ctx.fillRect(0+8, 1536+8, 920-16, 128-16); 
+fileViewerUrl(680, 1568, "icon/attachment-icon-64.bmp"); 
+fileViewerUrl(808, 1568, "icon/camera-icon-64.bmp"); 
+fileViewerUrl(936, 1536, "icon/microphone-icon-128.bmp"); 
+	
+drawKeypad(0,1664,1); 
+setInterval(function() {
+if (touch==3) { touch=0;
+var kchar=readKeypad(0,1664,1); 
+writeChar(16,1448,"font2448",kchar);  
+}
+}, 0100) ;
 	
 	
 	var timer;
