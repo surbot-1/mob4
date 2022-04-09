@@ -48,6 +48,12 @@ fileViewerUrl(936, 2048, "icon/microphone-icon-128.bmp");
 	      } else if (x>0 && x<1080 && y>160*10 && y<160*10+144) { 
 	      } else if (x>0 && x<920 && y>2048 && y<2176) { 
 		      clearInterval(timer); appHomeChatsUser1Chat();
+	      } else if (x>680 && x<680+64 && y>2080 && y<2080+64) { 
+		      attachment(); 
+	      } else if (x>808 && x<808+64 && y>2080 && y<2080+64) { 
+		      camera(); 
+	      } else if (x>936 && x<936+128 && y>2048 && y<2048+128) { 
+		      mic(); 
 	      }
 		      
            } 
@@ -104,8 +110,12 @@ writeChar(16,1448,"font2448",kchar);
 	      } else if (x>0 && x<1080 && y>160*8 && y<160*8+144) { 
 	      } else if (x>0 && x<1080 && y>160*9 && y<160*9+144) { 
 	      } else if (x>0 && x<1080 && y>160*10 && y<160*10+144) { 
-	      } else if (x>0 && x<1080 && y>2032 && y<2176) { 
-		      
+	      } else if (x>680 && x<680+64 && y>1440 && y<1440+64) { 
+		      attachment(); 
+	      } else if (x>808 && x<808+64 && y>1440 && y<1440+64) { 
+		      camera(); 
+	      } else if (x>936 && x<936+128 && y>1408 && y<1408+128) { 
+		      send(); 
 	      }
 		      
            } 
