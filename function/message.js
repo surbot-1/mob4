@@ -4,8 +4,7 @@ function message() {
     if (ktype==0 || ktype==2) { 
       ktype++; 
       drawdKeypad(0,1664,ktype);
-    } 
-    if (ktype==1 || ktype==3) { 
+    } else if (ktype==1 || ktype==3) { 
       ktype--; 
       drawKeypad(0,1664,ktype); 
     }
