@@ -69,12 +69,12 @@ ctx.fillStyle = "rgba(240, 240, 240, 1.0)";
 ctx.fillRect(0, 144, 1080, 1264); 
 	
 ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue
-ctx.fillRect(0, 1536, 920, 128); 
+ctx.fillRect(0, 1408, 920, 128); 
 ctx.fillStyle = "rgba(255,255,255,1.0)"; // white
-ctx.fillRect(0+8, 1536+8, 920-16, 128-16); 
-fileViewerUrl(680, 1568, "icon/attachment-icon-64.bmp"); 
-fileViewerUrl(808, 1568, "icon/camera-icon-64.bmp"); 
-fileViewerUrl(936, 1536, "icon/telegram-icon-128.bmp"); 
+ctx.fillRect(0+8, 1408+8, 920-16, 128-16); 
+fileViewerUrl(680, 1440, "icon/attachment-icon-64.bmp"); 
+fileViewerUrl(808, 1440, "icon/camera-icon-64.bmp"); 
+fileViewerUrl(936, 1408, "icon/telegram-icon-128.bmp"); 
 	
 drawKeypad(0,1664,1); 
 setInterval(function() {
