@@ -11,7 +11,7 @@ ctx.fillRect(0, 0, 1080, 144);
 // fileViewerUrl(900, 40, "icon/telephone-icon-48.bmp"); 
 	
 ctx.fillStyle = "rgba(240, 240, 240, 1.0)";  // lightgray 
-ctx.fillRect(0, 144, 1080, 2032); 
+ctx.fillRect(0, 144, 1080, 2032);  
 fileViewerUrl(64, 144*1+8, "icon/business-woman-icon-128.bmp"); 
 fileViewerUrl(64, 144*2+8, "icon/business-man-icon-128.bmp"); 
 fileViewerUrl(64, 144*3+8, "icon/business-man-icon-128.bmp"); 
