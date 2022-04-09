@@ -41,19 +41,32 @@ function fileManager(op, file, buf, size) {
     } 
     
       var data = new Uint8Array(buf); 
- 
+      
+      fat=fatno; clust=cluno; 
       var j=0; 
       for (let i=0; i<size; i++) { 
-        fat=fatno; 
-        clust=cluno;
         driveView[clust0+clust*8*512+i]=data[i]; 
         if (i>=8*512*(1+j)) { 
-          
-          driveView[fat1+fat*4]=fat++; 
-          fatno=fat++; cluno=clust++; j++; 
+          var clustnext=clust+1; 
+          cluho[0]=clustnext&0x000000FF; 
+          cluho[1]=clustnext&0x0000FF00; 
+          cluho[1]=cluho[1]>>8; 
+          clulo[0]=clustnext&0x00FF0000; 
+          clulo[0]=clulo[0]>>16; 
+          clulo[1]=clustnext&0xFF000000; 
+          clulo[1]=clulo[1]>>24; 
+          driveView[fat1+fat*4+0]=cluho[0]; 
+          driveView[fat1+fat*4+1]=cluho[1]; 
+          driveView[fat1+fat*4+2]=clulo[0]; 
+          driveView[fat1+fat*4+3]=clulo[1]; 
+          fat++; clust++; j++; 
+          fatno=fat; cluno=clust; 
         } 
       }  
-      driveView[fat1+fatno*4]=0x8FFFFFFF; 
+      driveView[fat1+fatno*4+0]=0xFF; 
+      driveView[fat1+fatno*4+1]=0xFF; 
+      driveView[fat1+fatno*4+2]=0xFF; 
+      driveView[fat1+fatno*4+3]=0xF8; 
       fatno++; dirno++; cluno++; 
   }
     
