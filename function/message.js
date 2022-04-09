@@ -18,7 +18,7 @@ function message() {
   } else if (kstr=="SPACE") { 
     writeChar(16+ci,1448+cj,"font2448"," ");
     ci+=24; 
-    if (ci>=24*16) {ci=0; cj=0;} 
+    if (ci>=24*24) {ci=0; cj=0;} 
     msgView[msgPtrj+msgPtri]=" ".charCodeAt(0); 
     msgPtri++; 
   } else if (kstr=="ENTER") { 
