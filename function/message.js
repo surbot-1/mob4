@@ -1,6 +1,6 @@
 function message() { 
   var kstr=readKeypad(0,1664,ktype); 
-  if (kstr=="SIFT") { 
+  if (kstr=="SHIFT") { 
     if (ktype==0 || ktype==2) { 
       ktype++; 
       drawdKeypad(0,1664,ktype);
