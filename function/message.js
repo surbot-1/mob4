@@ -26,7 +26,7 @@ function message() {
     var kchar=readKeypad(0,1664,ktype); 
     writeChar(16+ci,1448+cj,"font2448",kchar); 
     ci+=24; 
-    if (ci>=24*16) {ci=0; cj=0;} 
+    if (ci>=24*24) {ci=0; cj=0;} 
     msgView[msgPtrj+msgPtri]=kchar.charCodeAt(0); 
     msgPtri++; 
   }
