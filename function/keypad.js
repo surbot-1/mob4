@@ -1,4 +1,4 @@
-// drawKeypad(20, 1648); // 2160-512
+// drawKeypad(20, 1648); // 2160-512 
 function drawKeypad(x, y, t) {  // alert('1');
   var px=0; var py=0; 
   var pw=0; var ph=0;
