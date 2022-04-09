@@ -75,7 +75,8 @@ var dataBuf = new ArrayBuffer(4*1024*1024);
 var dataView = new Uint8Array(dataBuf); 
 	
 var msgBuf = new ArrayBuffer(512*2048); // 1mb
-var msgView = new Uint8Array(msgBuffer); 
+var msgView = new Uint8Array(msgBuf); 
+var msgPtr=0; 
 /* var msgView = new DataView(msgBuf); 
 msgView.setUint8(0, 125);
 msgView.getUint8(0); // 125 */ 
@@ -114,7 +115,8 @@ var cw=24; var ch=48; var oh=33;
 <script src="function/datetime.js"></script> 
 <script src="function/ipaddress.js"></script> 
 <script src="function/saveandresimage.js"></script> 
-<script src="function/attachment.js"></script>
+<script src="function/attachment.js"></script> 
+<script src="function/message.js"></script>
 <script src="database/asctochar.js"></script>
 <script src="database/chatbot.js"></script> 
 <script src="fileManager/fileManager.js"></script> 
