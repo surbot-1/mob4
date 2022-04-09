@@ -82,15 +82,8 @@ fileViewerUrl(680, 1440, "icon/attachment-icon-64.bmp");
 fileViewerUrl(808, 1440, "icon/camera-icon-64.bmp"); 
 fileViewerUrl(936, 1408, "icon/telegram-icon-128.bmp"); 
 	
-drawKeypad(0,1664,1); 
-setInterval(function() {
-if (touch==3) { touch=0;
-var kchar=readKeypad(0,1664,1); 
-writeChar(16,1448,"font2448",kchar);  
-}
-}, 0100) ;
-	
-	
+drawKeypad(0,1664,0); 
+
 	var timer;
 	function check() { 
 	var x = touchx;  var y = touchy; 
@@ -116,6 +109,8 @@ writeChar(16,1448,"font2448",kchar);
 		      /* clearInterval(timer); */ camera(); 
 	      } else if (x>936 && x<936+128 && y>1408 && y<1408+128) { 
 		      /* clearInterval(timer); */ send(); 
+	      } else if (x>0 && x<1080 && y>1664 && y<2176) { 
+		      /* clearInterval(timer); */ message(); 
 	      }
 		      
            } 
