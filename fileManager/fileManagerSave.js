@@ -10,7 +10,7 @@ function fileManagerSaveUrl(url) {
     
     oReq.onload = function (oEvent) { 
       var buf = oReq.response; 
-      var size = buf.byteLength; alert(size);
+      var size = buf.byteLength; 
       fileManagerSave(file, buf, size); 
      }; 
     oReq.send(null); 
