@@ -74,7 +74,7 @@ ctx.fillStyle = "rgba(255,255,255,1.0)"; // white
 ctx.fillRect(0+8, 1536+8, 920-16, 128-16); 
 fileViewerUrl(680, 1568, "icon/attachment-icon-64.bmp"); 
 fileViewerUrl(808, 1568, "icon/camera-icon-64.bmp"); 
-fileViewerUrl(936, 1536, "icon/microphone-icon-128.bmp"); 
+fileViewerUrl(936, 1536, "icon/telegram-icon-128.bmp"); 
 	
 drawKeypad(0,1664,1); 
 setInterval(function() {
