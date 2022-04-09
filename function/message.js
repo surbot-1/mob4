@@ -3,7 +3,7 @@ function message() {
   if (kstr=="SHIFT") {  
     if (ktype==0 || ktype==2) { 
       ktype++; 
-      drawdKeypad(0,1664,ktype);
+      drawKeypad(0,1664,ktype);
     } else if (ktype==1 || ktype==3) { 
       ktype--; 
       drawKeypad(0,1664,ktype); 
