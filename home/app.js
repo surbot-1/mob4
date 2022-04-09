@@ -1,4 +1,4 @@
-function apphome() {  
+function appHomeChats() { 
 var cnv = document.getElementById("canvas"); 
 var ctx = cnv.getContext('2d'); 
 ctx.fillStyle = "rgba(0, 0, 128, 1.0)"; // blue
@@ -48,3 +48,20 @@ fileViewerUrl(920, 1896, "icon/add-icon-128.bmp");
 	timer = setInterval(check, 0100); 
 
 }
+
+function appHomeStatus() { 
+} 
+
+function appHomeCalls() { 
+} 
+
+
+
+
+
+
+
+
+
+
+
