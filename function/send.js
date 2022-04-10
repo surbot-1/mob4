@@ -5,13 +5,13 @@ function sendMessage() {
     msgView[msgPtr*512+i] = msgByte[i]; 
   }  
   msgPtr++; 
+  ci=0; cj=0; msgByte[28]=0; // msize 
   send(); 
   clearCursor(16,1448); 
   var cnv = document.getElementById("canvas"); 
   var ctx = cnv.getContext('2d'); 
   ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white
   ctx.fillRect(16, 1448, 24*24, 48); 
-  ci=0; cj=0; msgByte[28]=0; // msize 
   writeCursor(16,1448); 
   showCursor(16,1448); 
   setTimeout(replyChatbot, 5000);  
@@ -43,6 +43,7 @@ function sendChatbot() {
     msgView[msgPtr*512+i] = botByte[i]; 
   }  
   msgPtr++; 
+  botByte[28]=0; 
   send(); 
 }  
 
