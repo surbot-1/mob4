@@ -59,7 +59,7 @@ var msgbot=[[[""],
 	var cbot=""; 
 	var mbot=""; // = new Uint8Array(512); 
 	var rbot=""; // = new Uint8Array(512); 
-	var ptr = msgPtrj-1; 
+	var ptr = msgPtr-1; 
 	var minfo = msgView[ptr+0];
 	var msize = msgView[ptr+28]; 
 	var b=false;
