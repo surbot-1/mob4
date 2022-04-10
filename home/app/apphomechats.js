@@ -83,6 +83,7 @@ fileViewerUrl(808, 1440, "icon/camera-icon-64.bmp");
 fileViewerUrl(936, 1408, "icon/telegram-icon-128.bmp"); 
 	
 drawKeypad(0,1664,ktype); 
+showCursor(16,1448); 
 
 	var timer;
 	function check() { 
