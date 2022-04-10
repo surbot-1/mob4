@@ -19,16 +19,28 @@ function sendMessage() {
 }  
 
 function send() { 
+  var cnv = document.getElementById("canvas"); 
+  var ctx = cnv.getContext('2d'); 
+  var buf = new ArrayBuffer(4); 
+  var view = new DataView(buf); 
   var minfo = msgView[(msgPtr-1)*512+0]; 
   var msize = msgView[(msgPtr-1)*512+28]; 
+  view.setUint8(0, msgView[(msgPtr-1)*512+17]); 
+  view.setUint8(1, msgView[(msgPtr-1)*512+16]); 
+  var w = view.getUint16(0); 
+  view.setUint8(0, msgView[(msgPtr-1)*512+19]); 
+  view.setUint8(1, msgView[(msgPtr-1)*512+18]); 
+  var h = view.getUint16(0); 
   var str = ""; 
   for (let i=0; i<msize; i++) { 
     str += ascChar(msgView[(msgPtr-1)*512+32+i]); 
   }  
   var x=0; var y=0; 
-  if (minfo==0) { x=600; y=200; 
-  } else if(minfo==1) { x=0; y=232; 
-  }
+  if (minfo==0) { x=608; y=200; 
+  } else if(minfo==1) { x=8; y=232; 
+  } 
+  ctx.fillStyle = "rgba(0, 0, 128, 1.0)"; // blue 
+  ctx.fillRect(x-8, y-8, w+16, h+16); 
   writecStr(x,y,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],str);
 }
 
