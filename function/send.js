@@ -14,7 +14,7 @@ function send () {
   var str = ""; 
   for (let i=0; i<msize; i++) { 
     str += ascChar(msgView[(msgPtr-1)*512+32+i]); 
-  } alert(str);
+  } 
   writecStr(540,200,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],str);
 }
 
