@@ -107,14 +107,13 @@ var msgbot=[[[""],
     }
 	
     function reply() { 
-	ptr++; 
 	if(!b) {rbot=msgbot[0][1];} 
 	rbot=rbot.toString(); 
 	for(let i=0; i<rbot.length; i++) {  
-		botArr[32+i]=rbot.charCodeAt(i); 
+		botByte[32+i]=rbot.charCodeAt(i); 
 	} 
-	botArr[0]=0x01;    // chatbot 
-	botArr[28]=rbot.length; 
+	botByte[0]=0x01;    // chatbot 
+	botByte[28]=rbot.length; 
 	//chatbot=true; 
     }
 	
