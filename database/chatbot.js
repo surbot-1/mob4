@@ -60,12 +60,12 @@ var msgbot=[[[""],
 	var mbot=""; // = new Uint8Array(512); 
 	var rbot=""; // = new Uint8Array(512); 
 	var ptr = msgPtr-1; 
-	var minfo = msgView[ptr+0];
-	var msize = msgView[ptr+28]; 
+	var minfo = msgView[ptr*512+0];
+	var msize = msgView[ptr*512+28]; 
 	var b=false;
 	
 	for(let i=0; i<msize; i++) { 
-		var charcode=msgView[ptr+32+i]; 
+		var charcode=msgView[ptr*512+32+i]; 
 		nbot += ascChar(charcode); 
 	} 
 	
