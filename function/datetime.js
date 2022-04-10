@@ -23,8 +23,7 @@
                               date = day +"."+ month +"."+ year ;
                               time = hours +":"+ minutes +":"+ seconds +" "+ gmt ;
                       }
-                      return datetime = date +" "+ time ;
-                   
+                      return datetime = date +" "+ time ; 
                  } 
 
           function getDate(h) { 
@@ -53,8 +52,7 @@
                               time = hours +":"+ minutes +":"+ seconds +" "+ gmt ;
                        }
                      datetime = date +" "+ time ; 
-                     return date;
-                   
+                     return date; 
                  } 
 
 
@@ -84,8 +82,7 @@
                               time = hours +":"+ minutes +":"+ seconds +" "+ gmt ;
                        }
                      datetime = date +" "+ time ; 
-                     return time;
-                   
+                     return time; 
                  } 
 
 
