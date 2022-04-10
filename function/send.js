@@ -1,4 +1,5 @@
 function sendMessage() { 
+  writeWH(msgByte); 
   var minfo = msgByte[0]; 
   var msize = msgByte[28]; 
   for (let i=0; i<msize+32; i++) { 
@@ -47,7 +48,7 @@ function sendChatbot() {
   send(); 
 }  
 
-function msgWH(view) { 
+function writeWH(view) { 
   var msize = view[28]; 
   var j=0; var w=24*24; var h=0; 
   for (let i=0; i<msize; i++) { 
