@@ -14,16 +14,7 @@ function sendMessage() {
   ci=0; cj=0; msgByte[28]=0; // msize 
   writeCursor(16,1448); 
   showCursor(16,1448); 
-}  
-
-function sendChatbot() { 
-  var minfo = botByte[0]; 
-  var msize = botByte[28]; 
-  for (let i=0; i<msize+32; i++) { 
-    msgView[msgPtr*512+i] = botByte[i]; 
-  }  
-  msgPtr++; 
-  send(); 
+  setTimeout(replyChatbot, 5000);  
 }  
 
 function send() { 
@@ -40,7 +31,20 @@ function send() {
   writecStr(x,y,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],str);
 }
 
+function replyChatbot() { 
+  chatbot(); 
+  sendChatbot(); 
+}
 
+function sendChatbot() { 
+  var minfo = botByte[0]; 
+  var msize = botByte[28]; 
+  for (let i=0; i<msize+32; i++) { 
+    msgView[msgPtr*512+i] = botByte[i]; 
+  }  
+  msgPtr++; 
+  send(); 
+}  
 
 
 
