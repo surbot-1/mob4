@@ -44,7 +44,12 @@ function message() {
     cpr++; 
     msgByte[0]=0x00;
     msgByte[28]=cpr; 
-  } 
+  } alert(msgByte); 
   writeCursor(16,1448); 
   showCursor(16,1448);
 } 
+
+
+
+
+
