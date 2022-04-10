@@ -28,7 +28,7 @@ function updateCursor() {
         ctx.fillRect(ci, cj, 4, 48);
         }
 	
-function clrCursor() {
+function clearCursor() {
         var cvs = document.getElementById("canvas");
         var ctx = cvs.getContext('2d');
         clearInterval(cursor);
