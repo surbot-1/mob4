@@ -63,10 +63,10 @@ function sendChatbot() {
 
 function writeWH(view) { 
   var msize = view[28]; 
-  var j=0; var w=24*24; var h=32; 
+  var j=0; var w=24*20; var h=32; 
   for (let i=0; i<msize; i++) { 
     if (view[i]==0x0A) {j=0; h+=32;} 
-    if (j>=24) {j=0; h+=32;} 
+    if (j>=20) {j=0; h+=32;} 
     j++; 
   }
     view[16] = w&0x00FF; 
