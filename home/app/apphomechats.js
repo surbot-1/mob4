@@ -69,7 +69,7 @@ ctx.fillRect(0, 0, 1080, 144);
 fileViewerUrl(64, 8, "icon/business-woman-icon-128.bmp");  
 fileViewerUrl(800, 48, "icon/video-icon-48.bmp"); 
 fileViewerUrl(900, 48, "icon/telephone-icon-48.bmp"); 
-  writecStr(200,48,480,128,"ubuntubold",[255,255,255,255],[0,0,128,255],"sAy");
+  writecStr(200,48,144,96,"ubuntubold",[255,255,255,255],[0,0,128,255],"sAy   online");
 	
 ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; 
 ctx.fillRect(0, 144, 1080, 1264); 
