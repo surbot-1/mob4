@@ -16,6 +16,16 @@ function sendMessage() {
   showCursor(16,1448); 
 }  
 
+function sendChatbot() { 
+  var minfo = botByte[0]; 
+  var msize = botByte[28]; 
+  for (let i=0; i<msize+32; i++) { 
+    msgView[msgPtr*512+i] = botByte[i]; 
+  }  
+  msgPtr++; 
+  send(); 
+}  
+
 function send() { 
   var minfo = msgView[(msgPtr-1)*512+0]; 
   var msize = msgView[(msgPtr-1)*512+28]; 
@@ -23,7 +33,11 @@ function send() {
   for (let i=0; i<msize; i++) { 
     str += ascChar(msgView[(msgPtr-1)*512+32+i]); 
   }  
-  writecStr(540,200,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],str);
+  var x=0; var y=0; 
+  if (minfo==0) { x=540; y=200; 
+  } else if(minfo==1) { x=0; y=232; 
+  }
+  writecStr(x,y,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],str);
 }
 
 
