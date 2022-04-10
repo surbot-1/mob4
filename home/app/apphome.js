@@ -30,7 +30,7 @@ fileViewerUrl(920, 1896, "icon/add-icon-128.bmp");
               } else if (x>360*1 && x<360*2 && y>0 && y<144) { 
               } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
               } else if (x>0 && x<1080 && y>144*1 && y<144*2) { 
-		      clearInterval(timer); appHomeChatsUser1(); 
+		      clearInterval(timer); appHomeChatsChatbot(); 
               } else if (x>0 && x<1080 && y>144*2 && y<144*3) { 
               } else if (x>0 && x<1080 && y>144*3+8 && y<144*3+8+128) { 
               } else if (x>0 && x<1080 && y>160*4 && y<160*4+144) { 
