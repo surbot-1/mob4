@@ -38,9 +38,9 @@ function send() {
   var x=0; var y=0; 
   if (minfo==0) { 
     x=600; y=200; 
-    ctx.fillStyle = "rgba(128, 128, 192, 0.25)"; // blue 
+    ctx.fillStyle = "rgba(128, 128, 192, 1.0)"; // blue 
     ctx.fillRect(x, y, w+32, h+32+32); 
-    writecStr(x+16,y+16,480-48,128,"ubuntubold",[0,0,0,255],[64,64,128,64],str);
+    writecStr(x+16,y+16,480-48,128,"ubuntubold",[0,0,0,255],[64,64,128,255],str);
   } else if(minfo==1) { 
     x=16; y=328; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // blue 
