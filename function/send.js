@@ -25,7 +25,7 @@ function send() {
     str += ascChar(msgView[(msgPtr-1)*512+32+i]); 
   }  
   var x=0; var y=0; 
-  if (minfo==0) { x=540; y=200; 
+  if (minfo==0) { x=600; y=200; 
   } else if(minfo==1) { x=0; y=232; 
   }
   writecStr(x,y,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],str);
