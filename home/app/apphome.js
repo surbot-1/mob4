@@ -32,8 +32,11 @@ fileViewerUrl(920, 1896, "icon/add-icon-128.bmp");
               } else if (x>0 && x<1080 && y>144*1 && y<144*2) { 
 		      clearInterval(timer); appHomeChatsChatbot(); 
               } else if (x>0 && x<1080 && y>144*2 && y<144*3) { 
-              } else if (x>0 && x<1080 && y>144*3+8 && y<144*3+8+128) { 
-              } else if (x>0 && x<1080 && y>160*4 && y<160*4+144) { 
+		      clearInterval(timer); appHomeChatsUser1(); 
+              } else if (x>0 && x<1080 && y>144*3 && y<144*4) { 
+		      clearInterval(timer); appHomeChatsUser2(); 
+              } else if (x>0 && x<1080 && y>144*4 && y<144*5) { 
+		      clearInterval(timer); appHomeChatsUser3(); 
               } else if (x>0 && x<1080 && y>160*5 && y<160*5+144) { 
 	      } else if (x>0 && x<1080 && y>160*6 && y<160*6+144) { 
 	      } else if (x>0 && x<1080 && y>160*7 && y<160*7+144) { 
