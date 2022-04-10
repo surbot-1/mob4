@@ -4,7 +4,7 @@ var ctx = cnv.getContext('2d');
 ctx.fillStyle = "rgba(0, 0, 128, 1.0)"; // blue
 ctx.fillRect(0, 0, 1080, 144); 
 fileViewerUrl(64, 8, "icon/business-woman-icon-128.bmp");  
-fileViewerUrl(824, 48, "icon/video-icon-48.bmp"); 
+fileViewerUrl(824, 48, "icon/video-icon-48.bmp");  
 fileViewerUrl(952, 48, "icon/telephone-icon-48.bmp"); 
   writecStr(200,48,144,96,"ubuntubold",[255,255,255,255],[0,0,128,255],"sAy   online");
 	
