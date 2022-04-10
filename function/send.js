@@ -43,7 +43,7 @@ function sendChatbot() {
     msgView[msgPtr*512+i] = botByte[i]; 
   }  
   msgPtr++; 
-  botByte[28]=0; 
+  botByte[28]=0;  
   send(); 
 }  
 
