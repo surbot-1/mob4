@@ -3,7 +3,7 @@ function sendMessage () {
   var msize = msgByte[28]; 
   for (let i=0; i<msize+32; i++) { 
     msgView[msgPtr*512+i] = msgByte[i]; 
-  } 
+  }  
   msgPtr++; 
   send(); 
 }  
