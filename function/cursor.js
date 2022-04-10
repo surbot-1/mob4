@@ -1,5 +1,5 @@
 function showCursor(x, y) { 
-    setInterval(f1, 1000); 
+    cursor = setInterval(f1, 1000); 
     function f1() {
         var cvs = document.getElementById("canvas");
         var ctx = cvs.getContext('2d'); 
