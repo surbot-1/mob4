@@ -205,7 +205,7 @@ function readKeypad(x, y, t) {
   }  
 	
    if (b) { 
-	show(kc, kr, kw, kh, kl, kt); 
+	if (t==ktype) {show(kc, kr, kw, kh, kl, kt);} 
 	return keyChar(kc, kr, t); 
    } else {return false;} 
 	
