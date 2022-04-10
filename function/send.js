@@ -12,6 +12,7 @@ function sendMessage() {
   ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white
   ctx.fillRect(16, 1448, 24*24, 48); 
   ci=0; cj=0; msgByte[28]=0; // msize 
+  writeCursor(16,1448); 
   showCursor(16,1448); 
 }  
 
