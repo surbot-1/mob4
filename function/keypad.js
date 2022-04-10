@@ -206,7 +206,7 @@ function readKeypad(x, y, t) {
 	
    if (b) { 
 	var kchar = keyChar(kc, kr, t); 
-	if (kchar=="ABC" && kchar=="?123") { 
+	if (kchar=="ABC" || kchar=="?123") { 
 	} else {show(kc, kr, kw, kh, kl, kt);} 
 	return keyChar(kc, kr, t); 
    } else {return false;} 
