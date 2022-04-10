@@ -1,4 +1,4 @@
-function saybot() { // alert(((["ABC"]).toString('utf8')));
+function chatbot() { // alert(((["ABC"]).toString('utf8')));
 	
 var msgbot=[[[""],
 	     ["Have a nice day. Thank you"]],
@@ -53,26 +53,24 @@ var msgbot=[[[""],
 	    [[],[]],
 	    [[],[]]]; 
 	
-        // var mcnt=22; 
+        // var mcnt=22; // msgbot.length
 	
 	var nbot=""; // = new Uint8Array(512); 
-	var cbot="";
-	var mbot=""; // = new Uint8Array(512);
-	var rbot=""; // = new Uint8Array(512);
-	var length=0;
-	var ptr = msgCntPtr-512*1; 
-	var minfo = msgCntArr[ptr+510];
-	var msize = msgCntArr[ptr+511]; 
+	var cbot=""; 
+	var mbot=""; // = new Uint8Array(512); 
+	var rbot=""; // = new Uint8Array(512); 
+	var ptr = msgPtrj-1; 
+	var minfo = msgView[ptr+0];
+	var msize = msgView[ptr+28]; 
 	var b=false;
 	
 	for(let i=0; i<msize; i++) { 
-		var charc=msgCntArr[ptr+i]; 
-		nbot += ascChar(charc); 
+		var charcode=msgView[ptr+32+i]; 
+		nbot += ascChar(charcode); 
 	} 
-	ptr = ptr+512*1; 
 	
-	for(let i=0; i<(nbot.length); i++) { 
-		var charc=(nbot.charCodeAt(i));
+	for(let i=0; i<nbot.length; i++) { 
+		var charc=nbot.charCodeAt(i);
 		if(i==0) { 
 			if(charc>=65 && charc<=90){
 			} else if(charc>=97 && charc<=112) {charc-=32;} 
@@ -83,7 +81,7 @@ var msgbot=[[[""],
 		cbot += ascChar(charc); 
 	} 
 	
-	if(cbot.charCodeAt((cbot.length)-1)==(" ".charCodeAt(0))) {  
+	if(cbot.charCodeAt((cbot.length)-1)==" ".charCodeAt(0)) {  
 		cbot = cbot.slice(0, (cbot.length)-1); 
 		mbot=cbot; 
 	} else {mbot=cbot;} 
@@ -98,7 +96,7 @@ var msgbot=[[[""],
 	}
 	
     function check() {
-	for(let i=0; i<(msgbot.length); i++) { 
+	for(let i=0; i<msgbot.length; i++) { 
 		for(let j=0; j<1; j++) { 
 			if(mbot==msgbot[i][0]) { 
 			rbot=msgbot[i][1]; b=true; break; 
@@ -108,15 +106,16 @@ var msgbot=[[[""],
 	} 
     }
 	
-    function reply() {
+    function reply() { 
+	ptr++; 
 	if(!b) {rbot=msgbot[0][1];} 
 	rbot=rbot.toString(); 
-	for(let i=0; i<(rbot.length); i++) {  
-		msgCntArr[ptr+i]=(rbot.charCodeAt(i)); 
+	for(let i=0; i<rbot.length; i++) {  
+		msgView[ptr*512+32+i]=rbot.charCodeAt(i); 
 	} 
-	msgCntArr[ptr+510]=0x01;
-	msgCntArr[ptr+511]=(rbot.length); 
-	saybotrpl=true; 
+	msgView[ptr*512+0]=0x01;    // chatbot
+	msgView[ptr*512+28]=rbot.length; 
+	chatbot=true; 
     }
 	
 }
