@@ -35,19 +35,20 @@ function send() {
   for (let i=0; i<msize; i++) { 
     str += ascChar(msgView[(msgPtr-1)*512+32+i]); 
   }  
+  var time = "09:30 am"; 
   var x=0; var y=0; 
   if (minfo==0) { 
     x=600; y=200; 
     ctx.fillStyle = "rgba(128, 128, 240, 1.0)"; // blue 
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,480-48,128,"ubuntubold",[0,0,0,255],[128,128,240,255],str); 
-    writecStr(x+192,h+32,480-48,128,"ubuntubold",[0,0,0,255],[128,128,240,255],getTime("12h")); 
+    writecStr(x+192,h+32,480-48,128,"ubuntubold",[0,0,0,255],[128,128,240,255],time); 
   } else if(minfo==1) { 
     x=16; y=328; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // blue 
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,480-48,128,"ubuntubold",[0,0,0,255],[255,255,255,255],str); 
-    writecStr(x+192,h+32,480-48,128,"ubuntubold",[0,0,0,255],[255,255,255,255],getTime("12h")); 
+    writecStr(x+192,h+32,480-48,128,"ubuntubold",[0,0,0,255],[255,255,255,255],time); 
   } 
 }
 
