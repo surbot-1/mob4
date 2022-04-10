@@ -6,10 +6,13 @@ function sendMessage () {
   }  
   msgPtr++; 
   send(); 
+  clearCursor(16,1448); 
   var cnv = document.getElementById("canvas"); 
   var ctx = cnv.getContext('2d'); 
   ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white
-  ctx.fillRect(16, 1448, 24*24, 48);
+  ctx.fillRect(16, 1448, 24*24, 48); 
+  ci=0; cj=0; msgByte[28]=0; // msize 
+  showCursor(16,1448); 
 }  
 
 function send () { 
