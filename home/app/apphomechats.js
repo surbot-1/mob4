@@ -1,4 +1,4 @@
-function appHomeChatsUser1() {  
+function appHomeChatsChatbot() {  
 var cnv = document.getElementById("canvas"); 
 var ctx = cnv.getContext('2d'); 
 ctx.fillStyle = "rgba(0, 0, 128, 1.0)"; // blue
@@ -47,7 +47,7 @@ fileViewerUrl(936, 2048, "icon/microphone-icon-128.bmp");
 	      } else if (x>0 && x<1080 && y>160*9 && y<160*9+144) { 
 	      } else if (x>0 && x<1080 && y>160*10 && y<160*10+144) { 
 	      } else if (x>0 && x<680 && y>2048 && y<2176) { 
-		      clearInterval(timer); appHomeChatsUser1Chat();
+		      clearInterval(timer); appHomeChatsChatbotChat();
 	      } else if (x>680 && x<680+64 && y>2080 && y<2080+64) { 
 		      /* clearInterval(timer); */ attachment(); 
 	      } else if (x>808 && x<808+64 && y>2080 && y<2080+64) { 
@@ -61,7 +61,7 @@ fileViewerUrl(936, 2048, "icon/microphone-icon-128.bmp");
 	timer = setInterval(check, 0100); 
 } 
 
-function appHomeChatsUser1Chat() {  
+function appHomeChatsChatbotChat() {  
 var cnv = document.getElementById("canvas"); 
 var ctx = cnv.getContext('2d'); 
 ctx.fillStyle = "rgba(0, 0, 128, 1.0)"; // blue
