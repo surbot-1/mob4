@@ -36,7 +36,7 @@ function send() {
     str += ascChar(msgView[(msgPtr-1)*512+32+i]); 
   }  
   var x=0; var y=0; 
-  if (minfo==0) { x=608; y=200; 
+  if (minfo==0) { x=600; y=200; 
   } else if(minfo==1) { x=8; y=232; 
   } 
   ctx.fillStyle = "rgba(0, 0, 128, 1.0)"; // blue 
