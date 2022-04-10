@@ -26,10 +26,10 @@ function send() {
   var minfo = msgView[(msgPtr-1)*512+0]; 
   var msize = msgView[(msgPtr-1)*512+28]; 
   view.setUint8(0, msgView[(msgPtr-1)*512+17]); 
-  view.setUint8(1, msgView[(msgPtr-1)*512+16]); 
+  view.setUint8(1, msgView[(msgPtr-1)*512+16]);  
   var w = view.getUint16(0); 
   view.setUint8(0, msgView[(msgPtr-1)*512+19]); 
-  view.setUint8(1, msgView[(msgPtr-1)*512+18]); 
+  view.setUint8(1, msgView[(msgPtr-1)*512+18]);  
   var h = view.getUint16(0); 
   var str = ""; 
   for (let i=0; i<msize; i++) { 
@@ -45,7 +45,7 @@ function send() {
     writecStr(x+192,y+h+32,480-48,128,"ubuntubold",[0,0,0,255],[128,128,240,255],time); 
   } else if(minfo==1) { 
     x=16; y=328; 
-    ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // blue 
+    ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // blue  
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,480-48,128,"ubuntubold",[0,0,0,255],[255,255,255,255],str); 
     writecStr(x+192,y+h+32,480-48,128,"ubuntubold",[0,0,0,255],[255,255,255,255],time); 
