@@ -17,7 +17,7 @@ function message() {
     ktype=0; 
     drawKeypad(0,1664,ktype); 
   } else if (kstr=="BS") { 
-    if (cpr==0) { 
+    if (ptr==0) { 
     } else { 
       if (ci==0) {ci=24*23;} else {ci-=24;} 
       writeChar(16+ci,1448+cj,"font2448"," "); 
