@@ -1,5 +1,6 @@
 function message() { 
   clearCursor(16,1448); 
+  writeCursor(16,1448); 
   // writeCursor(16,1448);
   var kstr=readKeypad(0,1664,ktype); 
   if (kstr=="SHIFT") {  
