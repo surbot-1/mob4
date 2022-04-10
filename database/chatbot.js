@@ -111,11 +111,11 @@ var msgbot=[[[""],
 	if(!b) {rbot=msgbot[0][1];} 
 	rbot=rbot.toString(); 
 	for(let i=0; i<rbot.length; i++) {  
-		msgView[ptr*512+32+i]=rbot.charCodeAt(i); 
+		botArr[32+i]=rbot.charCodeAt(i); 
 	} 
-	msgView[ptr*512+0]=0x01;    // chatbot
-	msgView[ptr*512+28]=rbot.length; 
-	chatbot=true; 
+	botArr[0]=0x01;    // chatbot 
+	botArr[28]=rbot.length; 
+	//chatbot=true; 
     }
 	
 }
