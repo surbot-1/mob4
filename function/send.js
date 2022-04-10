@@ -1,4 +1,4 @@
-function sendMessage () { 
+function sendMessage() { 
   var minfo = msgByte[0]; 
   var msize = msgByte[28]; 
   for (let i=0; i<msize+32; i++) { 
@@ -15,7 +15,7 @@ function sendMessage () {
   showCursor(16,1448); 
 }  
 
-function send () { 
+function send() { 
   var minfo = msgView[(msgPtr-1)*512+0]; 
   var msize = msgView[(msgPtr-1)*512+28]; 
   var str = ""; 
