@@ -1,4 +1,6 @@
-function writeCursor() {
+function writeCursor() { 
+    setInterval(f1, 1000); 
+    function f1() {
         var cvs = document.getElementById("canvas");
         var ctx = cvs.getContext('2d'); 
         ctx.fillStyle = "blue"; 
@@ -8,6 +10,7 @@ function writeCursor() {
         ctx.fillRect(ci, cj, 4, 48); 
         }, 0500); 
       }	 
+}
 
 function showCursor() {
         var cvs = document.getElementById("canvas");
