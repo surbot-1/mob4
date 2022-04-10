@@ -158,7 +158,7 @@ function readKeypad(x, y, t) {
 	   ctx.putImageData(imgData, kx+kl, ky+kt); 
 	   
 	   var font = "font2448";  
-	   var str = keyChar(kc, kr, t); 
+	   var str = keyChar(kc, kr, ktype); 
 	   var ki = kx+kl+(kw+pw-(str.length)*24)/2;  
 	   var kj = ky+kt+(kh+ph-48)/2; 
 	   writeStr(ki, kj, 24*5, 48*1, font, str); 
