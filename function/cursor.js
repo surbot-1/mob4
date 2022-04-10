@@ -23,7 +23,7 @@ function updateCursor(x, y) {
         var cvs = document.getElementById("canvas");
         var ctx = cvs.getContext('2d');
         ctx.fillStyle = "white";
-        ctx.fillRect(16+cip, 1448+cjp, 4, 48);
+        ctx.fillRect(x+cip, y+cjp, 4, 48);
 	ctx.fillStyle = "blue";
         ctx.fillRect(x+ci, y+cj, 4, 48);
         }
