@@ -1,13 +1,12 @@
 function writeCursor() {
         var cvs = document.getElementById("canvas");
-        var ctx = cvs.getContext('2d');
-	
-        ctx.fillStyle = "blue";
-        ctx.fillRect(cx, cy, 4, 48);
-	setTimeout( function() {
-	ctx.fillStyle = "white";
-        ctx.fillRect(cx, cy, 4, 48);
-        }, 0500);
+        var ctx = cvs.getContext('2d'); 
+        ctx.fillStyle = "blue"; 
+        ctx.fillRect(cx, cy, 4, 48); 
+	setTimeout( function() { 
+	ctx.fillStyle = "white"; 
+        ctx.fillRect(cx, cy, 4, 48); 
+        }, 0500); 
       }	 
 
 function showCursor() {
