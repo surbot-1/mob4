@@ -56,8 +56,10 @@ function writeWH(view) {
     if (view[i]==0x0A) {j=0; h++;} 
     if (j>=24) {j=0; h++;} 
     h = h*32; 
-    view[16] = w; 
-    view[18] = h; 
+    view[16] = w&0x00FF; 
+    view[17] = (w&0xFF00)>>8; 
+    view[18] = h&0x00FF; 
+    view[19] = (h&0xFF00)>>8; 
   }
 }
 
