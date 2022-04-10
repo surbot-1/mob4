@@ -67,6 +67,7 @@ function writeWH(view) {
   for (let i=0; i<msize; i++) { 
     if (view[i]==0x0A) {j=0; h++;} 
     if (j>=24) {j=0; h++;} 
+    j++; 
     h = h*32; 
     view[16] = w&0x00FF; 
     view[17] = (w&0xFF00)>>8; 
