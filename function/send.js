@@ -65,15 +65,14 @@ function writeWH(view) {
   var msize = view[28]; 
   var j=0; var w=24*24; var h=0; 
   for (let i=0; i<msize; i++) { 
-    if (view[i]==0x0A) {j=0; h++;} 
-    if (j>=24) {j=0; h++;} 
+    if (view[i]==0x0A) {j=0; h+=32;} 
+    if (j>=24) {j=0; h+=32;} 
     j++; 
-    h = h*32; 
+  }
     view[16] = w&0x00FF; 
     view[17] = (w&0xFF00)>>8; 
     view[18] = h&0x00FF; 
     view[19] = (h&0xFF00)>>8; 
-  }
 }
 
 
