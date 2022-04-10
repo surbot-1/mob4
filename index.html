@@ -88,6 +88,9 @@ var ipsts=false; var ipads;
 var name; var message; 
 var username; var password; 
 	
+var botBfr = new ArrayBuffer(512); 
+var botArr = new Uint8Array(botBfr); 
+	
 var msgBfr = new ArrayBuffer(512); 
 var msgArr = new Uint8Array(msgBfr);
 var msgStr=""; 
