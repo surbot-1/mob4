@@ -47,6 +47,16 @@ function sendChatbot() {
   send(); 
 }  
 
-
+function msgWH(view) { 
+  var msize = view[28]; 
+  var j=0; var w=24*24; var h=0; 
+  for (let i=0; i<msize; i++) { 
+    if (view[i]==0x0A) {j=0; h++;} 
+    if (j>=24) {j=0; h++;} 
+    h = h*32; 
+    view[16] = w; 
+    view[18] = h; 
+  }
+}
 
 
