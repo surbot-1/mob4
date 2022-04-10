@@ -27,7 +27,7 @@
                  } 
 
           function getDate(h) { 
-                    var ampm=true, sec=false; 
+                    // var ampm=true, sec=false; 
                     var datetime; var date; var time; 
                      let  today = new Date();
                      var day   = today.getDate() < 10 ? "0" + today.getDate() : today.getDate() ; 
