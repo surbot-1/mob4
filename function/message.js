@@ -19,19 +19,19 @@ function message() {
     writeChar(16+ci,1448+cj,"font2448"," ");
     ci+=24; 
     if (ci>=24*24) {ci=0; cj=0;} 
-    msgArr[32+cpr]=" ".charCodeAt(0); 
+    msgByte[32+cpr]=" ".charCodeAt(0); 
     cpr++; 
-    msgArr[0]=0x00;
-    msgArr[28]=cpr; 
+    msgByte[0]=0x00;
+    msgByte[28]=cpr; 
   } else if (kstr=="ENTER") { 
   } else { 
     var kchar=readKeypad(0,1664,ktype); 
     writeChar(16+ci,1448+cj,"font2448",kchar); 
     ci+=24; 
     if (ci>=24*24) {ci=0; cj=0;} 
-    msgArr[32+cpr]=kchar.charCodeAt(0); 
+    msgByte[32+cpr]=kchar.charCodeAt(0); 
     cpr++; 
-    msgArr[0]=0x00;
-    msgArr[28]=cpr; 
+    msgByte[0]=0x00;
+    msgByte[28]=cpr; 
   }
 } 
