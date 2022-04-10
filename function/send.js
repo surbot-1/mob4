@@ -39,13 +39,13 @@ function send() {
   if (minfo==0) { 
     x=600; y=200; 
     ctx.fillStyle = "rgba(0, 0, 128, 1.0)"; // blue 
-    ctx.fillRect(x-16, y-16, w+32, h+32+32); 
-    writecStr(x+8,y,480-48,128,"ubuntubold",[0,0,0,255],[0,0,128,255],str);
+    ctx.fillRect(x, y, w+32, h+32+32); 
+    writecStr(x+16,y+16,480-48,128,"ubuntubold",[0,0,0,255],[0,0,128,255],str);
   } else if(minfo==1) { 
     x=16; y=328; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // blue 
-    ctx.fillRect(x-16, y-16, w+32, h+32+32); 
-    writecStr(x+8,y,480-48,128,"ubuntubold",[0,0,0,255],[255,255,255,255],str);
+    ctx.fillRect(x, y, w+32, h+32+32); 
+    writecStr(x+16,y+16,480-48,128,"ubuntubold",[0,0,0,255],[255,255,255,255],str);
   } 
 }
 
@@ -68,10 +68,10 @@ function sendChatbot() {
 
 function writeWH(view) { 
   var msize = view[28]; 
-  var j=0; var w=24*20; var h=32; 
+  var j=0; var w=24*18; var h=32; 
   for (let i=0; i<msize; i++) { 
     if (view[i]==0x0A) {j=0; h+=32;} 
-    if (j>=20) {j=0; h+=32;} 
+    if (j>=18) {j=0; h+=32;} 
     j++; 
   }
     view[16] = w&0x00FF; 
