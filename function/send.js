@@ -38,6 +38,7 @@ function replyChatbot() {
 }
 
 function sendChatbot() { 
+  writeWH(botByte); 
   var minfo = botByte[0]; 
   var msize = botByte[28]; 
   for (let i=0; i<msize+32; i++) { 
