@@ -6,6 +6,10 @@ function sendMessage () {
   }  
   msgPtr++; 
   send(); 
+  var cnv = document.getElementById("canvas"); 
+  var ctx = cnv.getContext('2d'); 
+  ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white
+  ctx.fillRect(16, 1448, 24*24, 48);
 }  
 
 function send () { 
