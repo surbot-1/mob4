@@ -84,7 +84,7 @@ fileViewerUrl(936, 1408, "icon/telegram-icon-128.bmp");
 	
 drawKeypad(0,1664,ktype); 
 showCursor(16,1448); 
-chatbot=true; 
+chatbot=true;  
 
 	var timer;
 	function check() { 
