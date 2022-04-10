@@ -36,12 +36,17 @@ function send() {
     str += ascChar(msgView[(msgPtr-1)*512+32+i]); 
   }  
   var x=0; var y=0; 
-  if (minfo==0) { x=600; y=200; 
-  } else if(minfo==1) { x=8; y=232; 
+  if (minfo==0) { 
+    x=600; y=200; 
+    ctx.fillStyle = "rgba(0, 0, 32, 1.0)"; // blue 
+    ctx.fillRect(x-16, y-16, w+32, h+32+32); 
+    writecStr(x+8,y,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],str);
+  } else if(minfo==1) { 
+    x=16; y=232; 
+    ctx.fillStyle = "rgba(244, 255, 255, 1.0)"; // blue 
+    ctx.fillRect(x-16, y-16, w+32, h+32+32); 
+    writecStr(x+8,y,480-48,128,"ubuntubold",[0,0,0,255],[240,240,240,255],str);
   } 
-  ctx.fillStyle = "rgba(0, 0, 128, 1.0)"; // blue 
-  ctx.fillRect(x-8, y-8, w+16, h+16); 
-  writecStr(x,y,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],str);
 }
 
 function replyChatbot() { 
