@@ -35,7 +35,7 @@ function send() {
   for (let i=0; i<msize; i++) { 
     str += ascChar(msgView[(msgPtr-1)*512+32+i]); 
   }  
-  var time = "09:30 am"; 
+  var time = getTime("12h"); 
   var x=0; var y=0; 
   if (minfo==0) { 
     x=600; y=200; 
