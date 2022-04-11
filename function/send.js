@@ -83,7 +83,7 @@ function writeWH(view) {
     view[19] = (h&0xFF00)>>8; 
 } 
 
-function msgStatus(x, y, s) { 
+function msgStatus(x,y,w,h,s) { 
   var status=""; 
   if (s=="send") {status="send";} 
   if (s=="uploaded") {status="sent";} 
