@@ -106,16 +106,16 @@ function getWH(view) {
 function updateMsgSts(x,y,mView,s) { 
   var w = getWH(mView).width; alert(w);
   var h = getWH(mView).height; alert(h); 
-  msgStatus(x,y,w,h,s); 
+  msgStatus(x+432,y+h+32,s); 
 }
 
-function msgStatus(x,y,w,h,s) { 
+function msgStatus(x,y,s) { 
   var status=""; 
   if (s=="send") {status="send";} 
   else if (s=="uploaded") {status="sent";} 
   else if (s=="delivered") {status="dlvd";} 
   else if (s=="seen") {status="seen";} 
-  writecStr(x+432,y+h+32,480-48,128,"ubuntubold",[0,0,0,255],[200,240,200,255],status); 
+  writecStr(x,y,480-48,128,"ubuntubold",[0,0,0,255],[200,240,200,255],status); 
 } 
 
 
