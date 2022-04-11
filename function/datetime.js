@@ -72,7 +72,7 @@
                      hours = hours % 12; 
                      hours = hours ? hours : 12 ; hours = hours<10 ? "0"+hours : hours;
                      date = day +"."+ month +"."+ year ;
-                     time = hours +":"+ minutes +" "+ part ;
+                     time = hours +":"+ minutes + part ;
                             /* if(sec) {   
                                 date = day +"."+ month +"."+ year ;
                                 time = hours +":"+ minutes +":"+ seconds +" "+ part  +" "+ gmt ;
