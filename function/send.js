@@ -81,6 +81,15 @@ function writeWH(view) {
     view[17] = (w&0xFF00)>>8; 
     view[18] = h&0x00FF; 
     view[19] = (h&0xFF00)>>8; 
-}
+} 
+
+function msgStatus(x, y, s) { 
+  if (s=="send") {} 
+  if (s=="uploaded") {} 
+  if (s=="delivered") {} 
+  if (s=="read") {}
+} 
+
+
 
 
