@@ -104,8 +104,8 @@ function getWH(view) {
 } 
 
 function updateMsgSts(x,y,mView,s) { 
-  var w = getWH(mView).width; 
-  var w = getWH(mView).height; 
+  var w = getWH(mView).width; alert(w);
+  var h = getWH(mView).height; alert(h); 
   msgStatus(x,y,w,h,s); 
 }
 
