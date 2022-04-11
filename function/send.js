@@ -43,7 +43,10 @@ function send() {
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,480-48,128,"ubuntubold",[0,0,0,255],[200,240,200,255],str); 
     writecStr(x+168,y+h+32,480-48,128,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
-    msgStatus(x+360,y+h+32,"uploaded");  
+    setTimeout(() => {msgStatus(x+360,y+h+32,"send");},1000); 
+    setTimeout(() => {msgStatus(x+360,y+h+32,"sent");},2000); 
+    setTimeout(() => {msgStatus(x+360,y+h+32,"dlvd");},3000); 
+    setTimeout(() => {msgStatus(x+360,y+h+32,"seen");},4000); 
   } else if(minfo==1) { 
     x=16; y=328; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // blue  
@@ -112,8 +115,8 @@ function updateMsgSts(x,y,mView,s) {
 function msgStatus(x,y,s) { 
   var status=""; 
   if (s=="send") {status="send";} 
-  else if (s=="uploaded") {status="sent";} 
-  else if (s=="delivered") {status="dlvd";} 
+  else if (s=="sent") {status="sent";} 
+  else if (s=="dlvd") {status="dlvd";} 
   else if (s=="seen") {status="seen";} 
   writecStr(x,y,480-48,128,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
 } 
