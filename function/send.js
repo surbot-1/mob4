@@ -52,7 +52,7 @@ function send() {
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // blue  
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,480-48,128,"ubuntubold",[0,0,0,255],[255,255,255,255],str); 
-    writecStr(x+192,y+h+32,480-48,128,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
+    writecStr(x+288,y+h+32,480-48,128,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
   } 
 }
 
