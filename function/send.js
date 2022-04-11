@@ -99,7 +99,7 @@ function getWH(view) {
   var obj = { 
     width: w, 
     height: h
-  } 
+  }; 
   return obj; 
 } 
 
