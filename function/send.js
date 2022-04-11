@@ -98,7 +98,8 @@ function getWH(view) {
   var obj = { 
     width: w, 
     height: h
-  }
+  } 
+  return obj; 
 } 
 
 function msgStatus(x,y,w,h,s) { 
