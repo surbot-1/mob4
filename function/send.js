@@ -83,6 +83,24 @@ function writeWH(view) {
     view[19] = (h&0xFF00)>>8; 
 } 
 
+function getWH(view) { 
+  var msize = view[28]; 
+  var j=0; var w=24*18; var h=32; 
+  for (let i=0; i<msize; i++) { 
+    if (view[i]==0x0A) {j=0; h+=32;} 
+    if (j>=18) {j=0; h+=32;} 
+    j++; 
+  }
+    view[16] = w&0x00FF; 
+    view[17] = (w&0xFF00)>>8; 
+    view[18] = h&0x00FF; 
+    view[19] = (h&0xFF00)>>8; 
+  var obj = { 
+    width: w, 
+    height: h
+  }
+} 
+
 function msgStatus(x,y,w,h,s) { 
   var status=""; 
   if (s=="send") {status="send";} 
