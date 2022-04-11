@@ -102,6 +102,12 @@ function getWH(view) {
   return obj; 
 } 
 
+function updateMsgSts(x,y,mView,s) { 
+  var w = getWH(msgView).width; 
+  var w = getWH(msgView).height; 
+  msgStatus(x,y,w,h,s); 
+}
+
 function msgStatus(x,y,w,h,s) { 
   var status=""; 
   if (s=="send") {status="send";} 
