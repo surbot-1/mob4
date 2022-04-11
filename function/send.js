@@ -43,7 +43,7 @@ function send() {
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,480-48,128,"ubuntubold",[0,0,0,255],[200,240,200,255],str); 
     writecStr(x+192,y+h+32,480-48,128,"ubuntubold",[0,0,0,255],[200,240,200,255],time); 
-    msgStatus(x,y,w,h,"sent"); 
+    msgStatus(x,y,w,h,"uploaded"); 
   } else if(minfo==1) { 
     x=16; y=328; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // blue  
@@ -112,9 +112,9 @@ function updateMsgSts(x,y,mView,s) {
 function msgStatus(x,y,w,h,s) { 
   var status=""; 
   if (s=="send") {status="send";} 
-  if (s=="uploaded") {status="sent";} 
-  if (s=="delivered") {status="dlvd";} 
-  if (s=="seen") {status="seen";} 
+  else if (s=="uploaded") {status="sent";} 
+  else if (s=="delivered") {status="dlvd";} 
+  else if (s=="seen") {status="seen";} 
   writecStr(x+232,y+h+32,480-48,128,"ubuntubold",[0,0,0,255],[200,240,200,255],status); 
 } 
 
