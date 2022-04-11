@@ -1,7 +1,7 @@
                function getDateTime(h) { 
                      // var ampm=true, sec=false; 
                      var datetime; var date; var time;
-                     let  today = new Date();
+                     var  today = new Date();
                      var day   = today.getDate() < 10 ? "0" + today.getDate() : today.getDate() ; 
                      var month = today.getMonth() < 9 ? "0" + (today.getMonth() + 1) : (today.getMonth() + 1) ;              
                      var year   = today.getFullYear() < 10 ? "0" + today.getFullYear() : today.getFullYear() ;    
@@ -28,8 +28,8 @@
 
           function getDate(h) { 
                     // var ampm=true, sec=false; 
-                    var datetime; var date; var time; 
-                     let  today = new Date();
+                     var datetime; var date; var time; 
+                     var  today = new Date();
                      var day   = today.getDate() < 10 ? "0" + today.getDate() : today.getDate() ; 
                      var month = today.getMonth() < 9 ? "0" + (today.getMonth() + 1) : (today.getMonth() + 1) ;              
                      var year   = today.getFullYear() < 10 ? "0" + today.getFullYear() : today.getFullYear() ;    
@@ -58,8 +58,8 @@
 
            function getTime(h) { 
                     // var ampm=true, sec=false; 
-                    var datetime; var date; var time; 
-                     let  today = new Date();
+                     var datetime; var date; var time; 
+                     var  today = new Date();
                      var day   = today.getDate() < 10 ? "0" + today.getDate() : today.getDate() ; 
                      var month = today.getMonth() < 9 ? "0" + (today.getMonth() + 1) : (today.getMonth() + 1) ;              
                      var year   = today.getFullYear() < 10 ? "0" + today.getFullYear() : today.getFullYear() ;    
