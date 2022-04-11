@@ -115,7 +115,7 @@ function msgStatus(x,y,w,h,s) {
   else if (s=="uploaded") {status="sent";} 
   else if (s=="delivered") {status="dlvd";} 
   else if (s=="seen") {status="seen";} 
-  writecStr(x+232,y+h+32,480-48,128,"ubuntubold",[0,0,0,255],[200,240,200,255],status); 
+  writecStr(x+432,y+h+32,480-48,128,"ubuntubold",[0,0,0,255],[200,240,200,255],status); 
 } 
 
 
