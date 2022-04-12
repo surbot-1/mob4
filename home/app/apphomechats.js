@@ -195,9 +195,9 @@ fileViewerUrl(936, 1408, "icon/telegram-icon-128.bmp");
 drawKeypad(0,1664,ktype); 
 showCursor(16,1448); 
 bot=false; 
+if (user=="Yash Shiv") {appuser="Jitendra"} 
+else if (user=="Jitendra") {appuser="Yash Shiv"}
 	
-    var userBuf = new ArrayBuffer(512); 
-    var userView = new Uint8(userBuf); 
     var tmr; var msgid=""; var b=false; 
     function chk() { 
         var rcv = receiveAppMessage(user); 
