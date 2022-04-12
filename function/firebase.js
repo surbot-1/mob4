@@ -1,11 +1,11 @@
-function writeAppMessage(user,msgid,name,message,status,date,ip) { 
+function writeAppMessage(user,msgid,name,message,status,time,ip) { 
   var ref = firebase.database().ref("App").child(user); 
   ref.set({ 
     Msgid: msgid, 
     Name: name, 
     Message: message, 
     Status: status, 
-    Date: date, 
+    Time: time, 
     Ip: ip 
   }); 
 } 
@@ -17,7 +17,7 @@ function readAppMessage(user) {
     var name = snapshot.child("Name").val(); 
     var message = snapshot.child("Message").val(); 
     var status = snapshot.child("Status").val(); 
-    var date = snapshot.child("Date").val(); 
+    var time = snapshot.child("Time").val(); 
     var ip = snapshot.child("Ip").val(); 
     // snapshot.forEach(function(element) { 
     for (let i=0; i<name.length; i++) {
