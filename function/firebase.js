@@ -13,7 +13,7 @@ function writeAppMessage(user,msgid,name,message,status,date,ip) {
 function readAppMessage(user) { 
   var ref = firebase.database().ref("App").child(user); 
   ref.once("value", function(snapshot) { 
-    var msgid = snapshot.child("Msgid").val();  alert(msgid);
+    var msgid = snapshot.child("Msgid").val(); 
     var name = snapshot.child("Name").val(); 
     var message = snapshot.child("Message").val(); 
     var status = snapshot.child("Status").val(); 
@@ -27,7 +27,7 @@ function readAppMessage(user) {
        usrByte[32+i]=message.charCodeAt(i); 
     } 
     usrByte[0]=0x02; 
-    usrByte[28]=message.length; 
+    usrByte[28]=message.length; alert((message.length));
     sendUserMessage(); 
     
     /* var obj = { 
