@@ -14,7 +14,7 @@ function sendMessage() {
   ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white
   ctx.fillRect(16, 1448, 24*24, 48); 
   writeCursor(16,1448); 
-  showCursor(16,1448);  
+  showCursor(16,1448);   
   if (bot) {setTimeout(replyChatbot, 5000);}
 }  
 
@@ -43,6 +43,7 @@ function send() {
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,432,128,"ubuntubold",[0,0,0,255],[200,240,200,255],str); 
     writecStr(x+168,y+h+32,432,128,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
+    writeAppMessage(user,msgID,name,str,"status",time,"ip"); msgID++; 
     // setTimeout(() => {msgStatus(x+360,y+h+32,"send");},1000); 
     setTimeout(() => {msgStatus(x+360,y+h+32,"sent");},2000); 
     setTimeout(() => {msgStatus(x+360,y+h+32,"dlvd");},3000); 
