@@ -196,6 +196,16 @@ drawKeypad(0,1664,ktype);
 showCursor(16,1448); 
 bot=false; 
 	
+    var tmr; 
+    function chk() { 
+        /* var Ref = "App/"+user; 
+        var Data = "Status"; 
+	readAppMessage(Ref,Data); */ 
+        var rcv = receiveAppMessage(Ref,"Name","Message","Status","Date","IP"); 
+    }
+    tmr = setInterval(chk, 0050); 
+
+	
 	var timer;
 	function check() { 
 	var x = touchx;  var y = touchy; 
