@@ -133,10 +133,7 @@ ctx.fillStyle = "rgba(255,255,255,1.0)"; // white
 ctx.fillRect(0+8, 2048+8, 920-16, 128-16);  
 fileViewerUrl(680, 2080, "icon/attachment-icon-64.bmp"); 
 fileViewerUrl(808, 2080, "icon/camera-icon-64.bmp"); 
-fileViewerUrl(936, 2048, "icon/microphone-icon-128.bmp"); 
-	
-if (user="User1") {appuser="User2"} 
-else if (user="User2") {appuser="User1"} 
+fileViewerUrl(936, 2048, "icon/microphone-icon-128.bmp");  
 	
 	var timer;
 	function check() { 
