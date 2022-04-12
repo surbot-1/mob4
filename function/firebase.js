@@ -27,7 +27,7 @@ function readAppMessage(user) {
        usrByte[32+i]=message.charCodeAt(i); 
     } 
     usrByte[0]=0x02; 
-    usrByte[28]=message.length; alert((message.length));
+    usrByte[28]=message.length; 
     sendUserMessage(); 
     
     /* var obj = { 
