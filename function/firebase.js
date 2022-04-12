@@ -1,4 +1,4 @@
-function sendAppMessage(Ref,msgid,name,message,status,date,ip) { 
+function writeAppMessage(Ref,msgid,name,message,status,date,ip) { 
   var ref = firebase.database().ref("App").child(Ref); 
   ref.set({ 
     Msgid: msgid, 
