@@ -1,6 +1,7 @@
-function sendAppMessage(Ref,name,message,status,date,ip) { 
+function sendAppMessage(Ref,msgid,name,message,status,date,ip) { 
   var ref = firebase.database().ref("App").child(Ref); 
   ref.set({ 
+    Msgid: msgid, 
     Name: name, 
     Message: message, 
     Status: status, 
@@ -9,16 +10,18 @@ function sendAppMessage(Ref,name,message,status,date,ip) {
   }); 
 } 
 
-function receiveAppMessage(Ref,Name,Message,Status,Date,Ip) { 
-  var ref = firebase.database().ref("App").child(Ref); 
+function receiveAppMessage(user) { 
+  var ref = firebase.database().ref("App").child(user); 
   ref.once("value", function(snapshot) { 
-    var name = snapshot.child(Name).val(); 
-    var message = snapshot.child(Message).val(); 
-    var status = snapshot.child(Status).val(); 
-    var date = snapshot.child(Date).val(); 
-    var ip = snapshot.child(Ip).val(); 
+    var msgid = snapshot.child("Msgid").val(); 
+    var name = snapshot.child("Name").val(); 
+    var message = snapshot.child("Message").val(); 
+    var status = snapshot.child("Status").val(); 
+    var date = snapshot.child("Date").val(); 
+    var ip = snapshot.child("Ip").val(); 
     // snapshot.forEach(function(element) { 
     var obj = { 
+      msgid: msgid, 
       name: name, 
       massage: message, 
       status: status, 
@@ -26,7 +29,8 @@ function receiveAppMessage(Ref,Name,Message,Status,Date,Ip) {
       ip: ip 
     } 
     return obj; 
-  });
+  }); 
+  return false; 
 } 
 
 function readAppMessage(Ref,Data) { 
