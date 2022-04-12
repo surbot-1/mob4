@@ -167,24 +167,6 @@ function handleEnd(evt) {
 writeAppMessage("User","msgid","name","messagewwrtyuiiigfddddddbnmkgryugcfgggi","status","date","ip"); 
 readAppMessage("User"); 
 	
-var timerb; var msgidb=""; var bb=false; 
-    function checkb() { 
-        var rcv = readAppMessage(appuser); 
-        if (bb) { 
-            for (let i=0; i<(rcv.name).length; i++) {
-              msgView[1+i]=(rcv.name).charCodeAt(i); 
-	    } 
-            for (let i=0; i<(rcv.message).length; i++) {
-              msgView[32+i]=(rcv.message).charCodeAt(i); 
-	    } 
-            msgView[0]=0x02; 
-            msgView[28]=(rcv.message).length; 
-	} 
-        var mid=rcv.msgidb; 
-        if (mid!=msgid) {msgidb=mid; bb=true;} else {bb=false;} 
-    }
-    // timerb = setInterval(checkb, 0050); 
-	
 </script> 
 	
 <script> 
