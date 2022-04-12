@@ -49,7 +49,7 @@ fileViewerUrl(920, 1896, "icon/add-icon-128.bmp");
 		      
            } 
 	}
-	timer = setInterval(check, 0100); 
+	timer = setInterval(check, 0020); 
 
 }
 
