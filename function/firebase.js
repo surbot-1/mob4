@@ -1,5 +1,5 @@
-function writeAppMessage(Ref,msgid,name,message,status,date,ip) { 
-  var ref = firebase.database().ref("App").child(Ref); 
+function writeAppMessage(user,msgid,name,message,status,date,ip) { 
+  var ref = firebase.database().ref("App").child(user); 
   ref.set({ 
     Msgid: msgid, 
     Name: name, 
