@@ -31,9 +31,9 @@ function send() {
   view.setUint8(0, msgView[(msgPtr-1)*512+19]); 
   view.setUint8(1, msgView[(msgPtr-1)*512+18]);  
   var h = view.getUint16(0); 
-  var str = ""; 
+  var msgstr = ""; 
   for (let i=0; i<msize; i++) { 
-    str += ascChar(msgView[(msgPtr-1)*512+32+i]); 
+    msgstr += ascChar(msgView[(msgPtr-1)*512+32+i]); 
   }  
   var time = getTime("12h"); 
   var x=0; var y=0; 
@@ -41,7 +41,7 @@ function send() {
     x=600; y=200; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue 
     ctx.fillRect(x, y, w+32, h+32+32); 
-    writecStr(x+16,y+16,432,128,"ubuntubold",[0,0,0,255],[200,240,200,255],str); 
+    writecStr(x+16,y+16,432,128,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
     writecStr(x+168,y+h+24,432,128,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
     // setTimeout(() => {msgStatus(x+360,y+h+24,"send");},1000); 
     setTimeout(() => {msgStatus(x+360,y+h+24,"sent");},2000); 
@@ -51,13 +51,13 @@ function send() {
     x=16; y=328; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // blue  
     ctx.fillRect(x, y, w+32, h+32+32); 
-    writecStr(x+16,y+16,432,128,"ubuntubold",[0,0,0,255],[255,255,255,255],str); 
+    writecStr(x+16,y+16,432,128,"ubuntubold",[0,0,0,255],[255,255,255,255],msgstr); 
     writecStr(x+288,y+h+24,432,128,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
   } else if(minfo==2) { 
     x=16; y=328; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // blue  
     ctx.fillRect(x, y, w+32, h+32+32); 
-    writecStr(x+16,y+16,432,128,"ubuntubold",[0,0,0,255],[255,255,255,255],str); 
+    writecStr(x+16,y+16,432,128,"ubuntubold",[0,0,0,255],[255,255,255,255],msgstr); 
     writecStr(x+288,y+h+24,432,128,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
   } 
 }
