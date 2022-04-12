@@ -35,8 +35,8 @@ fileViewerUrl(920, 1896, "icon/add-icon-128.bmp");
 		      clearInterval(timer); user = "Yash Shiv";
 		      appHomeChatsUser("Yash Shiv"); 
               } else if (x>0 && x<1080 && y>144*3 && y<144*4) { 
-		      clearInterval(timer); user = ""; 
-		      appHomeChatsUser("Jitendra"); user = "Jitendra";
+		      clearInterval(timer); user = "Jitendra"; 
+		      appHomeChatsUser("Jitendra"); 
               } else if (x>0 && x<1080 && y>144*4 && y<144*5) { 
 		      // clearInterval(timer); appHomeChatsUser(""); 
               } else if (x>0 && x<1080 && y>160*5 && y<160*5+144) { 
