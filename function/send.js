@@ -79,7 +79,7 @@ function sendChatbot() {
   send(); 
 }  
 
-function sendUsrMsg() { 
+function sendUserMessage() { 
   writeWH(usrByte); 
   var minfo = usrByte[0]; 
   var msize = usrByte[28]; 
