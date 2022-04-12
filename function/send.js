@@ -99,8 +99,8 @@ function sendOnServer(user) {
     msgstr += ascChar(msgView[(msgPtr-1)*512+32+i]); 
   }  
   var time = getTime("12h"); 
-  var ip = getIP(); 
-  writeAppMessage(user,msgid,"name",msgstr,"status",time,ip); 
+  // var ip = getIP(); 
+  writeAppMessage(user,msgid,"name",msgstr,"status",time,"ip"); 
   msgid++; 
 } 
 
