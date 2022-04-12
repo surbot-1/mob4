@@ -27,7 +27,7 @@ function receiveAppMessage(user) {
       status: status, 
       date: date, 
       ip: ip 
-    } 
+    }; 
     return obj; 
   }); 
 } 
