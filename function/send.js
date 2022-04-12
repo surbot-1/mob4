@@ -92,16 +92,8 @@ function sendUserMessage() {
 } 
 
 function sendOnServer() { 
-  var buf = new ArrayBuffer(4); 
-  var view = new DataView(buf); 
   var minfo = msgView[(msgPtr-1)*512+0]; 
   var msize = msgView[(msgPtr-1)*512+28]; 
-  view.setUint8(0, msgView[(msgPtr-1)*512+17]); 
-  view.setUint8(1, msgView[(msgPtr-1)*512+16]);  
-  var w = view.getUint16(0); 
-  view.setUint8(0, msgView[(msgPtr-1)*512+19]); 
-  view.setUint8(1, msgView[(msgPtr-1)*512+18]);  
-  var h = view.getUint16(0); 
   var msgstr = ""; 
   for (let i=0; i<msize; i++) { 
     msgstr += ascChar(msgView[(msgPtr-1)*512+32+i]); 
