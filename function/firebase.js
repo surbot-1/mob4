@@ -30,7 +30,6 @@ function receiveAppMessage(user) {
     } 
     return obj; 
   }); 
-  return false; 
 } 
 
 function readAppMessage(Ref,Data) { 
