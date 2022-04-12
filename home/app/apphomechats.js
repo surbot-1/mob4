@@ -219,7 +219,7 @@ bot=false;
 	      } else if (x>808 && x<808+64 && y>1440 && y<1440+64) { 
 		      camera(); 
 	      } else if (x>936 && x<936+128 && y>1408 && y<1408+128) { 
-		      sendMessage(); sendOnServer(user); 
+		      sendMessage(); sendOnServer(name); 
 	      } else if (x>0 && x<1080 && y>1664 && y<2176) { 
 		      message(); 
 	      }
