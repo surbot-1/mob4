@@ -47,7 +47,7 @@ function send() {
     setTimeout(() => {msgStatus(x+360,y+h+32,"sent");},2000); 
     setTimeout(() => {msgStatus(x+360,y+h+32,"dlvd");},3000); 
     setTimeout(() => {msgStatus(x+360,y+h+32,"seen");},4000); 
-  } else if(minfo==1) { 
+  } else if(minfo==1 || minfo==2) { 
     x=16; y=328; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // blue  
     ctx.fillRect(x, y, w+32, h+32+32); 
