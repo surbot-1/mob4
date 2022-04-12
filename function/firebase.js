@@ -35,7 +35,7 @@ function readAppMessage(user) {
 function getAppMessage(user,data) { 
   var ref = firebase.database().ref("App").child(user); 
   ref.once("value", function(snapshot) { 
-    var read = snapshot.child(data).val(); 
-    return read; 
+    var get = snapshot.child(data).val(); 
+    return get; 
   }); 
 }
