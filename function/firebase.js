@@ -10,8 +10,8 @@ function writeAppMessage(user,msgid,name,message,status,date,ip) {
   }); 
 } 
 
-function receiveAppMessage(user) { 
-  var ref = firebase.database().ref("App").child(user); 
+function receiveAppMessage(User) { 
+  var ref = firebase.database().ref("App").child(User); 
   ref.once("value", function(snapshot) { 
     var msgid = snapshot.child("Msgid").val(); 
     var name = snapshot.child("Name").val(); 
@@ -32,8 +32,8 @@ function receiveAppMessage(user) {
   }); 
 } 
 
-function readAppMessage(Ref,Data) { 
-  var ref = firebase.database().ref(Ref /* "App/Chatbot/Message" */); 
+function readAppMessage(User,Data) { 
+  var ref = firebase.database().ref(User); 
   ref.once("value", function(snapshot) { 
     var data = snapshot.child(Data).val(); 
     return data; 
