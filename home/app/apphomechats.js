@@ -198,7 +198,7 @@ bot=false;
 	
     var userBuf = new ArrayBuffer(512); 
     var userView = new Uint8(userBuf); 
-    var tmr; var msgID=""; var b=false; 
+    var tmr; var msgid=""; var b=false; 
     function chk() { 
         var rcv = receiveAppMessage(user); 
         if (b) { 
@@ -211,8 +211,8 @@ bot=false;
             msgView[0]=0x02; 
             msgView[28]=(rcv.message).length; 
 	} 
-        var mID=rcv.msgID; 
-        if (mID!=msgID) {msgID=mID; b=true;} else {b=false;} 
+        var mid=rcv.msgid; 
+        if (mid!=msgid) {msgid=mid; b=true;} else {b=false;} 
     }
     tmr = setInterval(chk, 0050); 
 
