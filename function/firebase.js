@@ -1,5 +1,5 @@
 function sendAppMessage(Ref,name,message,status,date,ip) { 
-  var ref = firebase.database().ref(Ref /* "App/Chatbot/Message" */); 
+  var ref = firebase.database().ref("App").child(Ref); 
   ref.set({ 
     Name: name, 
     Message: message, 
@@ -10,7 +10,7 @@ function sendAppMessage(Ref,name,message,status,date,ip) {
 } 
 
 function receiveAppMessage(Ref,Name,Message,Status,Date,Ip) { 
-  var ref = firebase.database().ref(Ref /* "App/Chatbot/Message" */); 
+  var ref = firebase.database().ref("App").child(Ref); 
   ref.once("value", function(snapshot) { 
     var name = snapshot.child(Name).val(); 
     var message = snapshot.child(Message).val(); 
