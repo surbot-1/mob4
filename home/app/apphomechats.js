@@ -51,7 +51,7 @@ fileViewerUrl(936, 2048, "icon/microphone-icon-128.bmp");
 		      
            } 
 	}
-	timer = setInterval(check, 0100); 
+	timer = setInterval(check, 0020); 
 } 
 
 function appHomeChatsChatbotChat() {  
@@ -111,7 +111,7 @@ bot=true;
 		      
            } 
 	}
-	timer = setInterval(check, 0100); 
+	timer = setInterval(check, 0020); 
 } 
 
 function appHomeChatsUser(user) {  
@@ -167,7 +167,7 @@ fileViewerUrl(936, 2048, "icon/microphone-icon-128.bmp");
 		      
            } 
 	}
-	timer = setInterval(check, 0100); 
+	timer = setInterval(check, 0020); 
 } 
 
 function appHomeChatsUserChat(user) {  
@@ -227,7 +227,7 @@ bot=false;
 		      
            } 
 	}
-	timer = setInterval(check, 0100); 
+	timer = setInterval(check, 0020); 
 } 
 
 /* function appHomeChatsUser2Chat() {  
