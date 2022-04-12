@@ -43,12 +43,17 @@ function send() {
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,432,128,"ubuntubold",[0,0,0,255],[200,240,200,255],str); 
     writecStr(x+168,y+h+32,432,128,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
-    writeAppMessage(appuser,msgid,"name",str,"status",time,"ip"); msgid++; 
     // setTimeout(() => {msgStatus(x+360,y+h+32,"send");},1000); 
     setTimeout(() => {msgStatus(x+360,y+h+32,"sent");},2000); 
     setTimeout(() => {msgStatus(x+360,y+h+32,"dlvd");},3000); 
     setTimeout(() => {msgStatus(x+360,y+h+32,"seen");},4000); 
-  } else if(minfo==1 || minfo==2) { 
+  } else if(minfo==1) { 
+    x=16; y=328; 
+    ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // blue  
+    ctx.fillRect(x, y, w+32, h+32+32); 
+    writecStr(x+16,y+16,432,128,"ubuntubold",[0,0,0,255],[255,255,255,255],str); 
+    writecStr(x+288,y+h+32,432,128,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
+  } else if(minfo==2) { 
     x=16; y=328; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // blue  
     ctx.fillRect(x, y, w+32, h+32+32); 
