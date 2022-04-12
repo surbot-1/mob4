@@ -5,18 +5,18 @@ function sendAppMessage(Ref,name,message,status,date,ip) {
     Message: message, 
     Status: status, 
     Date: date, 
-    IP: ip 
+    Ip: ip 
   }); 
 } 
 
-function receiveAppMessage(Ref,Name,Message,Status,Date,IP) { 
+function receiveAppMessage(Ref,Name,Message,Status,Date,Ip) { 
   var ref = firebase.database().ref(Ref /* "App/Chatbot/Message" */); 
   ref.once("value", function(snapshot) { 
     var name = snapshot.child(Name).val(); 
     var message = snapshot.child(Message).val(); 
     var status = snapshot.child(Status).val(); 
     var date = snapshot.child(Date).val(); 
-    var ip = snapshot.child(IP).val(); 
+    var ip = snapshot.child(Ip).val(); 
     // snapshot.forEach(function(element) { 
     var obj = { 
       name: name, 
