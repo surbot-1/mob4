@@ -195,27 +195,6 @@ fileViewerUrl(936, 1408, "icon/telegram-icon-128.bmp");
 drawKeypad(0,1664,ktype); 
 showCursor(16,1448); 
 bot=false; 
-if (user=="Yash Shiv") {appuser="Jitendra"} 
-else if (user=="Jitendra") {appuser="Yash Shiv"}
-	
-    var tmr; var msgid=""; var b=false; 
-    function chk() { 
-        var rcv = receiveAppMessage(user); 
-        if (b) { 
-            for (let i=0; i<(rcv.name).length; i++) {
-              msgView[1+i]=(rcv.name).charCodeAt(i); 
-	    } 
-            for (let i=0; i<(rcv.message).length; i++) {
-              msgView[32+i]=(rcv.message).charCodeAt(i); 
-	    } 
-            msgView[0]=0x02; 
-            msgView[28]=(rcv.message).length; 
-	} 
-        var mid=rcv.msgid; 
-        if (mid!=msgid) {msgid=mid; b=true;} else {b=false;} 
-    }
-    tmr = setInterval(chk, 0050); 
-
 	
 	var timer;
 	function check() { 
