@@ -158,11 +158,11 @@ fileViewerUrl(936, 2048, "icon/microphone-icon-128.bmp");
 	      } else if (x>0 && x<680 && y>2048 && y<2176) { 
 		      clearInterval(timer); appHomeChatsUserChat(user); 
 	      } else if (x>680 && x<680+64 && y>2080 && y<2080+64) { 
-		      /* clearInterval(timer); */ attachment(); 
+		      attachment(); 
 	      } else if (x>808 && x<808+64 && y>2080 && y<2080+64) { 
-		      /* clearInterval(timer); */ camera(); 
+		      camera(); 
 	      } else if (x>936 && x<936+128 && y>2048 && y<2048+128) { 
-		      /* clearInterval(timer); */ mic(); 
+		      mic(); 
 	      }
 		      
            } 
@@ -216,13 +216,13 @@ bot=true;
 	      } else if (x>0 && x<1080 && y>160*3 && y<160*3+144) { 
 	      } else if (x>0 && x<1080 && y>160*3 && y<160*3+144) { 
 	      } else if (x>680 && x<680+64 && y>1440 && y<1440+64) { 
-		      /* clearInterval(timer); */ attachment(); 
+		      attachment(); 
 	      } else if (x>808 && x<808+64 && y>1440 && y<1440+64) { 
-		      /* clearInterval(timer); */ camera(); 
+		      camera(); 
 	      } else if (x>936 && x<936+128 && y>1408 && y<1408+128) { 
-		      /* clearInterval(timer); */ sendMessage(); 
+		      sendMessage(); 
 	      } else if (x>0 && x<1080 && y>1664 && y<2176) { 
-		      /* clearInterval(timer); */ message(); 
+		      message(); 
 	      }
 		      
            } 
@@ -230,7 +230,7 @@ bot=true;
 	timer = setInterval(check, 0100); 
 } 
 
-function appHomeChatsUser2Chat() {  
+/* function appHomeChatsUser2Chat() {  
 var cnv = document.getElementById("canvas"); 
 var ctx = cnv.getContext('2d'); 
 ctx.fillStyle = "rgba(0, 0, 128, 1.0)"; // blue
@@ -276,19 +276,19 @@ bot=true;
 	      } else if (x>0 && x<1080 && y>160*3 && y<160*3+144) { 
 	      } else if (x>0 && x<1080 && y>160*3 && y<160*3+144) { 
 	      } else if (x>680 && x<680+64 && y>1440 && y<1440+64) { 
-		      /* clearInterval(timer); */ attachment(); 
+		      attachment(); 
 	      } else if (x>808 && x<808+64 && y>1440 && y<1440+64) { 
-		      /* clearInterval(timer); */ camera(); 
+		      camera(); 
 	      } else if (x>936 && x<936+128 && y>1408 && y<1408+128) { 
-		      /* clearInterval(timer); */ sendMessage(); 
+		      sendMessage(); 
 	      } else if (x>0 && x<1080 && y>1664 && y<2176) { 
-		      /* clearInterval(timer); */ message(); 
+		      message(); 
 	      }
 		      
            } 
 	}
 	timer = setInterval(check, 0100); 
-} 
+} */ 
 
 
 
