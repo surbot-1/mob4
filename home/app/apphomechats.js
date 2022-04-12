@@ -196,12 +196,23 @@ drawKeypad(0,1664,ktype);
 showCursor(16,1448); 
 bot=false; 
 	
-    var tmr; 
+    var userBuf = new ArrayBuffer(512); 
+    var userView = new Uint8(userBuf); 
+    var tmr; var msgID=""; var b=false; 
     function chk() { 
-        /* var Ref = "App/"+user; 
-        var Data = "Status"; 
-	readAppMessage(Ref,Data); */ 
-        var rcv = receiveAppMessage(Ref,"Name","Message","Status","Date","IP"); 
+        var rcv = receiveAppMessage(user); 
+        if (b) { 
+            for (let i=0; i<(rcv.name).length; i++) {
+              msgView[1+i]=(rcv.name).charCodeAt(i); 
+	    } 
+            for (let i=0; i<(rcv.message).length; i++) {
+              msgView[32+i]=(rcv.message).charCodeAt(i); 
+	    } 
+            msgView[0]=0x02; 
+            msgView[28]=(rcv.message).length; 
+	} 
+        var mID=rcv.msgID; 
+        if (mID!=msgID) {msgID=mID; b=true;} else {b=false;} 
     }
     tmr = setInterval(chk, 0050); 
 
