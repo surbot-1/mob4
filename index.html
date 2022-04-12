@@ -163,7 +163,7 @@ function handleEnd(evt) {
 	 
 var timerb; var msgidb=""; var bb=false; 
     function checkb() { 
-        var rcv = readAppMessage(user); 
+        var rcv = readAppMessage(appuser); 
         if (bb) { 
             for (let i=0; i<(rcv.name).length; i++) {
               msgView[1+i]=(rcv.name).charCodeAt(i); 
