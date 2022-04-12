@@ -79,6 +79,18 @@ function sendChatbot() {
   send(); 
 }  
 
+function sendAppMsg() { 
+  writeWH(usrByte); 
+  var minfo = usrByte[0]; 
+  var msize = usrByte[28]; 
+  for (let i=0; i<msize+32; i++) { 
+    msgView[msgPtr*512+i] = usrByte[i]; 
+  }  
+  msgPtr++; 
+  usrByte[28]=0;  
+  send(); 
+}
+
 function writeWH(view) { 
   var msize = view[28]; 
   var j=0; var w=24*18; var h=32; 
