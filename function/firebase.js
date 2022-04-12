@@ -10,7 +10,7 @@ function writeAppMessage(user,msgid,name,message,status,date,ip) {
   }); 
 } 
 
-function receiveAppMessage(user) { 
+function readAppMessage(user) { 
   var ref = firebase.database().ref("App").child(user); 
   ref.once("value", function(snapshot) { 
     var msgid = snapshot.child("Msgid").val(); 
@@ -32,7 +32,7 @@ function receiveAppMessage(user) {
   }); 
 } 
 
-function readAppMessage(user,data) { 
+function getAppMessage(user,data) { 
   var ref = firebase.database().ref(user); 
   ref.once("value", function(snapshot) { 
     var read = snapshot.child(data).val(); 
