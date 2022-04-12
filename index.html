@@ -161,6 +161,8 @@ function handleEnd(evt) {
 	
 <script> 
 	 
+writeAppMessage("User","msgid","name","message","status","date","ip"); 
+	
 var timerb; var msgidb=""; var bb=false; 
     function checkb() { 
         var rcv = readAppMessage(appuser); 
@@ -177,7 +179,7 @@ var timerb; var msgidb=""; var bb=false;
         var mid=rcv.msgidb; 
         if (mid!=msgid) {msgidb=mid; bb=true;} else {bb=false;} 
     }
-    timerb = setInterval(checkb, 0050); 
+    // timerb = setInterval(checkb, 0050); 
 	
 </script> 
 	
