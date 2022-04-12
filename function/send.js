@@ -104,6 +104,10 @@ function sendOnServer(user) {
   msgid++; 
 } 
 
+function receiveFromServer(user) { 
+  
+}
+
 function writeWH(view) { 
   var msize = view[28]; 
   var j=0; var w=24*18; var h=32; 
