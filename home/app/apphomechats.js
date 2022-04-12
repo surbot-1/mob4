@@ -204,7 +204,7 @@ bot=false;
               } else if (x>360*1 && x<360*2 && y>0 && y<144) { 
               } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
               } else if (x>0 && x<1080 && y>144*1 && y<144*2) { 
-		    //  clearInterval(timer); apphomechatsuser1(); 
+		    //  clearInterval(timer); apphomechatsUser(); 
               } else if (x>0 && x<1080 && y>144*2 && y<144*3) { 
               } else if (x>0 && x<1080 && y>144*3+8 && y<144*3+8+128) { 
               } else if (x>0 && x<1080 && y>144*3 && y<144*3+144) { 
@@ -219,7 +219,7 @@ bot=false;
 	      } else if (x>808 && x<808+64 && y>1440 && y<1440+64) { 
 		      camera(); 
 	      } else if (x>936 && x<936+128 && y>1408 && y<1408+128) { 
-		      sendMessage(); 
+		      sendMessage(); sendOnServer(user); 
 	      } else if (x>0 && x<1080 && y>1664 && y<2176) { 
 		      message(); 
 	      }
