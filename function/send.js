@@ -91,7 +91,7 @@ function sendUserMessage() {
   send(); 
 } 
 
-function sendOnServer() { 
+function sendOnServer(user) { 
   var minfo = msgView[(msgPtr-1)*512+0]; 
   var msize = msgView[(msgPtr-1)*512+28]; 
   var msgstr = ""; 
