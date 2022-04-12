@@ -100,7 +100,7 @@ function sendOnServer() {
   }  
   var time = getTime("12h"); 
   var ip = getIP(); 
-  writeAppMessage("User",msgid,"name",msgstr,"status",time,ip); 
+  writeAppMessage(user,msgid,"name",msgstr,"status",time,ip); 
   msgid++; 
 } 
 
