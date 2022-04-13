@@ -165,7 +165,18 @@ function handleEnd(evt) {
 	
 <script> 
 	  
-// readAppMessage("User"); 
+var timerb; var midpb=""; 
+function rcvMsg() { 
+ if (user) {
+  var mid = getAppMessage(user+"To"+sender,"Msgid"); 
+  if (mid!=midpb) { 
+  readAppMessage(user+"To"+sender); 
+  sendUserMessage(); 
+  midpb=mid; 
+  } 
+ }
+} 
+timerb = setInterval(rcvMsg, 0100); 
 	
 </script> 
 	
