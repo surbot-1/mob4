@@ -19,6 +19,7 @@ fileViewerUrl(680, 2080, "icon/attachment-icon-64.bmp");
 fileViewerUrl(808, 2080, "icon/camera-icon-64.bmp"); 
 fileViewerUrl(936, 2048, "icon/microphone-icon-128.bmp"); 
 	
+bot=true; useractive=false; 
 	
 	var timer;
 	function check() { 
@@ -134,6 +135,8 @@ ctx.fillRect(0+8, 2048+8, 920-16, 128-16);
 fileViewerUrl(680, 2080, "icon/attachment-icon-64.bmp"); 
 fileViewerUrl(808, 2080, "icon/camera-icon-64.bmp"); 
 fileViewerUrl(936, 2048, "icon/microphone-icon-128.bmp");  
+	
+bot=false; useractive=true; 
 	
 	var timer;
 	function check() { 
