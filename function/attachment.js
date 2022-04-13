@@ -29,12 +29,12 @@ function readFile(e) {
        image.src = url; 
        image.onload = function (e) { 
     var x=480; var y=1408-512-64-32; 
-    ctx.fillStyle = "rgba(200,240,200,1.0)"; // blue
-    ctx.fillRect(x,y,512+32,512+64); 
     var w = image.naturalWidth; 
     var h = image.naturalHeight; 
   ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // white
   ctx.fillRect(x, y, 1080, 512+64+32); 
+  ctx.fillStyle = "rgba(200,240,200,1.0)"; // blue
+    ctx.fillRect(x,y,512+32,512+64); 
     ctx.createImageData(1080, 1264-(h+64)); 
     var imgData = ctx.getImageData(0,144,1080,1408-512-64-32); 
     ctx.putImageData(imgData,0,144); 
