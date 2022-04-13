@@ -28,7 +28,6 @@ function readAppMessage(user) {
     } 
     usrByte[0]=0x02; 
     usrByte[28]=message.length;  
-    sendUserMessage(); 
     
     /* var obj = { 
       msgid: msgid, 
