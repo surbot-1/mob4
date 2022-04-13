@@ -41,6 +41,13 @@ function readFile(e) {
     ctx.drawImage(image,x+8,y+8,512,512);
     window.URL.revokeObjectURL(url); 
     document.body.removeChild(ele); 
+  for (let i=0; i<1080*4*(1264-32-512-64+8); i+=4) { 
+	  appView[appPtr*1080*4+i+0]=imgData.data[i+0]; 
+	  appView[appPtr*1080*4+i+1]=imgData.data[i+1];
+	  appView[appPtr*1080*4+i+2]=imgData.data[i+2];
+	  appView[appPtr*1080*4+i+3]=imgData.data[i+3];
+          } 
+	  appPtr += (512+64+8);
     };  
   }
  /* var reader = new FileReader(); 
