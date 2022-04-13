@@ -169,14 +169,14 @@ var timerb; var midpb="";
 function rcvMsg() { 
  if (useractive) { 
   var mid = getAppMessage(receiver+"To"+sender,"Msgid"); 
-  if (mid!=midpb) { 
+  // if (mid!=midpb) { 
   readAppMessage(receiver+"To"+sender); 
   sendUserMessage(); 
-  midpb=mid; 
-  } 
+  midpb=mid; alert(mid);
+  //} 
  }
 } 
-timerb = setInterval(rcvMsg, 0100); 
+timerb = setInterval(rcvMsg, 1000); 
 	
 </script> 
 	
