@@ -1,5 +1,6 @@
 function attachment() { 
-  
+  var cnv = document.getElementById("canvas"); 
+  var ctx = cnv.getContext('2d');
   var x; 
          openFile(); 
 function openFile() {
@@ -15,7 +16,11 @@ function openFile() {
 }  
 	
 function readFile(e) { 
-  var file = e.target.files[0];
+  var file = e.target.files[0]; 
+  var name = file.name; 
+  var index = name.indexOf("."); 
+  var fname = name.substring(0,index);
+  var fext = name.substring(index+1,index+4); 
   if (!file) {return;}
   var reader = new FileReader(); 
   reader.onload = function(e) { 
