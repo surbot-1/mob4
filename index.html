@@ -97,7 +97,7 @@ var bot=false;
 var usrBfr = new ArrayBuffer(512); 
 var usrByte = new Uint8Array(usrBfr); 
 var msgid=0; 
-var user=false; 
+var useractive=false; 
 var sender=""; var receiver=""; 
 	
 var msgBfr = new ArrayBuffer(512); 
@@ -167,7 +167,7 @@ function handleEnd(evt) {
 	  
 var timerb; var midpb=""; 
 function rcvMsg() { 
- if (user) {
+ if (useractive) { 
   var mid = getAppMessage(receiver+"To"+sender,"Msgid"); 
   if (mid!=midpb) { 
   readAppMessage(receiver+"To"+sender); 
