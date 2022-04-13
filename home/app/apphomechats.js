@@ -195,7 +195,7 @@ drawKeypad(0,1664,ktype);
 showCursor(16,1448); 
 bot=false; 
 	
-var tmr; var midp; 
+var tmr; var midp=""; 
 function rcv() { 
   var mid = getAppMessage(user+"To"+sender,"Msgid"); 
   if (mid!=midp) { 
