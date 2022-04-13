@@ -78,7 +78,7 @@ fileViewerUrl(936, 1408, "icon/telegram-icon-128.bmp");
 	
 drawKeypad(0,1664,ktype); 
 showCursor(16,1448); 
-bot=true;  
+bot=true; user=false; 
 	
 	var timer;
 	function check() { 
@@ -193,7 +193,7 @@ fileViewerUrl(936, 1408, "icon/telegram-icon-128.bmp");
 	
 drawKeypad(0,1664,ktype); 
 showCursor(16,1448); 
-bot=false; 
+bot=false; user=true; 
 	
 /* var tmr; var midp=""; 
 function rcv() { 
