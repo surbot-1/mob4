@@ -28,7 +28,12 @@ function readFile(e) {
        var url = window.URL.createObjectURL(file); 
        image.src = url; 
        image.onload = function (e) { 
-    ctx.drawImage(image,0,200,32,32);
+    var x=600; var y=1408-512-32-32; 
+    ctx.fillStyle = "rgba(200,240,200,1.0)"; // blue
+    ctx.fillRect(x, y, 512+16, 512+16); 
+    var w = image.naturalWidth; 
+    var h = image.naturalHeight; 
+    ctx.drawImage(image,x+16,y+16,512,512);
     window.URL.revokeObjectURL(url); 
     document.body.removeChild(x); 
     }; 
