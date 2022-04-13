@@ -12,7 +12,7 @@ function writeAppMessage(user,msgid,name,message,status,time,ip) {
 
 function readAppMessage(user) { 
   var ref = firebase.database().ref("App").child(user); 
-  ref.on("value", function(snapshot) { 
+  ref.once("value", function(snapshot) { 
     var msgid = snapshot.child("Msgid").val(); 
     var name = snapshot.child("Name").val(); 
     var message = snapshot.child("Message").val(); 
