@@ -105,8 +105,14 @@ function sendOnServer(user) {
 } 
 
 function receiveFromServer(user) { 
+  setInterval( ()=> { 
+  var mid = getAppMessage(user+"To"+sender,"Msgid"); 
+  if (mid!=msgidp) { 
   readAppMessage(user+"To"+sender); 
   sendUserMessage(); 
+  msgidp=mid; 
+    }  
+  }, 0100); 
 }
 
 function writeWH(view) { 
