@@ -21,6 +21,8 @@ function sendMessage() {
 function send() { 
   var cnv = document.getElementById("canvas"); 
   var ctx = cnv.getContext('2d'); 
+  // var imgBuf = new ArrayBuffer(4*1080*2032); 
+  // var imgData = new Uint8Array(imgBuf); 
   var buf = new ArrayBuffer(4); 
   var view = new DataView(buf); 
   var minfo = msgView[(msgPtr-1)*512+0]; 
@@ -32,8 +34,10 @@ function send() {
   view.setUint8(1, msgView[(msgPtr-1)*512+18]);  
   var h = view.getUint16(0); 
   ctx.createImageData(1080, 1264-(h+64)); 
-  ctx.getImageData(0,144+h+64,1080,1264-(h+64)); 
-  ctx.putImageData(0,144); 
+  var imgData = ctx.getImageData(0,144+h+64,1080,1264-(h+64)); 
+  /* for (let i=0; i<1080*4*(1264-h-64); i+=4) { 
+  } */ 
+  ctx.putImageData(imgData,0,144); 
   ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // white
   ctx.fillRect(0, 144+1264-(h+64), 1080, h+64); 
   var msgstr = ""; 
