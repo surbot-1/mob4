@@ -20,18 +20,18 @@ fileViewerUrl(680, 2080, "icon/attachment-icon-64.bmp");
 fileViewerUrl(808, 2080, "icon/camera-icon-64.bmp"); 
 fileViewerUrl(936, 2048, "icon/microphone-icon-128.bmp"); 
 	
-var x=0; var y; var w=1080; var h; 
-if (appPtr<1880) {y=144+1880-appPtr; h=appPtr;} 
-else if (appPtr>=1880) {y=144; h=1880;} 
-var imgData = ctx.createImageData(w,h); 
-var appPtrs=0; var appPtre=h; 
-for (let i=0; i<w*4*h; i+=4) { 
+var ax=0; var ay; var aw=1080; var ah; 
+if (appPtr<1880) {appy=144+1880-appPtr; ah=appPtr;} 
+else if (appPtr>=1880) {ay=144; ah=1880;} 
+var imgData = ctx.createImageData(aw,ah); 
+var appPtrs=0; var appPtre=ah; 
+for (let i=0; i<aw*4*ah; i+=4) { 
     imgData.data[i+0]=appView[appPtrs+i+0]; 
     imgData.data[i+1]=appView[appPtrs+i+1]; 
     imgData.data[i+2]=appView[appPtrs+i+2]; 
     imgData.data[i+3]=appView[appPtrs+i+3]; 
 } 
-ctx.putImageData(imgData,x,y); 
+ctx.putImageData(imgData,ax,ay); 
 	
 bot=true; useractive=false; 
 	
