@@ -68,11 +68,14 @@ var fatno=2+2048;
 var dirno=2; 
 var cluno=2+2048; 
 	
-var imgBuf = new ArrayBuffer(1080*4*2400); 
+var imgBuf = new ArrayBuffer(1080*4*2400); // for copy image
 var imgView = new Uint8Array(imgBuf); 
 	
 var dataBuf = new ArrayBuffer(4*1024*1024); 
 var dataView = new Uint8Array(dataBuf); 
+	
+var appBuf = new ArrayBuffer(32*1024*1024); 
+var appView = new Uint8Array(appBuf); 
 	
 var msgBuf = new ArrayBuffer(512*2048); // 1mb
 var msgView = new Uint8Array(msgBuf); 
