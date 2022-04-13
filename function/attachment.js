@@ -25,10 +25,11 @@ function readFile(e) {
   if (fext=="jpg"||fext=="jpe"||fext=="png"||fext=="bmp") { 
        var reader = new FileReader(); 
        var image = new Image(); 
-       image.src=URL.createObjectURL(file); 
+       var url = window.URL.createObjectURL(file); 
+       image.src = url; 
        image.onload = function (e) { 
     ctx.drawImage(image,0,200);
-    URL.revokeObjectURL(image.src); 
+    window.URL.revokeObjectURL(url); 
     document.body.removeChild(x); 
     }; 
   }
