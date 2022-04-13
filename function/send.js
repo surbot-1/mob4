@@ -105,7 +105,7 @@ function sendOnServer(user) {
 } 
 
 function receiveFromServer(user) { 
-  function readAppMessage(user+"To"+sender); 
+  readAppMessage(user+"To"+sender); 
   sendUserMessage(); 
 }
 
