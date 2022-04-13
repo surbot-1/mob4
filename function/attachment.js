@@ -22,7 +22,7 @@ function readFile(e) {
   var index = name.indexOf("."); 
   var fname = name.substring(0,index);
   var fext = name.substring(index+1,index+4);  
-  if (fext=="jpg"||fext=="jpe"||fext=="png"fext=="bmp") { 
+  if (fext=="jpg"||fext=="jpe"||fext=="png"||fext=="bmp") { 
        var reader = new FileReader(); 
        var image = new Image(); 
        image.src=URL.createObjectURL(file); 
