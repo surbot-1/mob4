@@ -196,7 +196,7 @@ showCursor(16,1448);
 bot=false; 
 	
 var tmr; var midp; 
-function rcv { 
+function rcv() { 
   var mid = getAppMessage(user+"To"+sender,"Msgid"); 
   if (mid!=midp) { 
   readAppMessage(user+"To"+sender); 
