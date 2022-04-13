@@ -36,6 +36,13 @@ function send() {
   ctx.createImageData(1080, 1264-32-(h+64)); 
   var imgData = ctx.getImageData(0,144+h+64+8,1080,1264-32-(h+64)); 
   ctx.putImageData(imgData,0,144); 
+  for (let i=0; i<1080*4*(h+64+8); i+=4) { 
+	  appView[appPtr*1080*4+i+0]=imgData.data[i+0]; 
+	  appView[appPtr*1080*4+i+1]=imgData.data[i+1];
+	  appView[appPtr*1080*4+i+2]=imgData.data[i+2];
+	  appView[appPtr*1080*4+i+3]=imgData.data[i+3];
+   } 
+	 appPtr += (h+64+8); 
   ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // white
   ctx.fillRect(0, 1408-(h+64)-32, 1080, h+64+32); 
   var msgstr = ""; 
