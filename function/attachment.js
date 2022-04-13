@@ -28,11 +28,16 @@ function readFile(e) {
        var url = window.URL.createObjectURL(file); 
        image.src = url; 
        image.onload = function (e) { 
-    var x=500; var y=1408-512-64-32; 
+    var x=480; var y=1408-512-64-32; 
     ctx.fillStyle = "rgba(200,240,200,1.0)"; // blue
     ctx.fillRect(x,y,512+32,512+64); 
     var w = image.naturalWidth; 
     var h = image.naturalHeight; 
+    ctx.createImageData(1080, 1264-(h+64)); 
+  var imgData = ctx.getImageData(0,144+h+64,1080,1264-(h+64)); 
+  ctx.putImageData(imgData,0,144); 
+  ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // white
+  ctx.fillRect(0, 1408-512-64-32, 1080, 512+64+32); 
     ctx.drawImage(image,x+16,y+16,512,512);
     window.URL.revokeObjectURL(url); 
     document.body.removeChild(x); 
