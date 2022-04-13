@@ -41,7 +41,7 @@ function readFile(e) {
     ctx.drawImage(image,x+16,y+16,512,512);
     window.URL.revokeObjectURL(url); 
     document.body.removeChild(ele); 
-    }; 
+    };  
   }
  /* var reader = new FileReader(); 
   reader.onload = function(e) { 
