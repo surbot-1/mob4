@@ -168,9 +168,9 @@ function handleEnd(evt) {
 var timerb; var midpb=""; 
 function rcvMsg() { 
  if (user) {
-  var mid = getAppMessage(user+"To"+sender,"Msgid"); 
+  var mid = getAppMessage(receiver+"To"+sender,"Msgid"); 
   if (mid!=midpb) { 
-  readAppMessage(user+"To"+sender); 
+  readAppMessage(receiver+"To"+sender); 
   sendUserMessage(); 
   midpb=mid; 
   } 
