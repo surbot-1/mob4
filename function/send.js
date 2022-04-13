@@ -35,8 +35,6 @@ function send() {
   var h = view.getUint16(0); 
   ctx.createImageData(1080, 1264-(h+64)); 
   var imgData = ctx.getImageData(0,144+h+64,1080,1264-(h+64)); 
-  /* for (let i=0; i<1080*4*(1264-h-64); i+=4) { 
-  } */ 
   ctx.putImageData(imgData,0,144); 
   ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // white
   ctx.fillRect(0, 144+1264-(h+64), 1080, h+64); 
@@ -49,8 +47,8 @@ function send() {
   if (minfo==0) { 
     x=600; y=1408-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue 
-    ctx.fillRect(x, y, w+32, h+32+32); 
-    writecStr(x+16,y+16,432,128,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
+    ctx.fillRect(x, y+8, w+32, h+32+32-8); 
+    writecStr(x+16,y+16+8,432,128,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
     writecStr(x+168,y+h+24,432,128,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
     // setTimeout(() => {msgStatus(x+360,y+h+24,"send");},1000); 
     setTimeout(() => {msgStatus(x+360,y+h+24,"sent");},2000); 
@@ -59,20 +57,20 @@ function send() {
   } else if(minfo==1) { 
     x=16; y=1408-(h+64)-32; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white 
-    ctx.fillRect(x, y, w+32, h+32+32); 
-    writecStr(x+16,y+16,432,128,"ubuntubold",[0,0,0,255],[255,255,255,255],msgstr); 
+    ctx.fillRect(x, y+8, w+32, h+32+32-8); 
+    writecStr(x+16,y+16+8,432,128,"ubuntubold",[0,0,0,255],[255,255,255,255],msgstr); 
     writecStr(x+288,y+h+24,432,128,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
   } else if(minfo==2) { 
     x=16; y=1408-(h+64)-32; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white 
-    ctx.fillRect(x, y, w+32, h+32+32); 
-    writecStr(x+16,y+16,432,128,"ubuntubold",[0,0,0,255],[255,255,255,255],msgstr); 
+    ctx.fillRect(x, y+8, w+32, h+32+32-8); 
+    writecStr(x+16,y+16+8,432,128,"ubuntubold",[0,0,0,255],[255,255,255,255],msgstr); 
     writecStr(x+288,y+h+24,432,128,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
   } else if(minfo==3) { 
     x=600; y=1408-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue  
-    ctx.fillRect(x, y, w+32, h+32+32); 
-    writecStr(x+16,y+16,432,128,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
+    ctx.fillRect(x, y+8, w+32, h+32+32-8); 
+    writecStr(x+16,y+16+8,432,128,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
     writecStr(x+168,y+h+24,432,128,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
   } 
 }
