@@ -28,7 +28,7 @@ function readFile(e) {
        var url = window.URL.createObjectURL(file); 
        image.src = url; 
        image.onload = function (e) { 
-    ctx.drawImage(image,0,200);
+    ctx.drawImage(image,0,200,32,32);
     window.URL.revokeObjectURL(url); 
     document.body.removeChild(x); 
     }; 
