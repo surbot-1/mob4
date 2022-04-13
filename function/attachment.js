@@ -38,7 +38,7 @@ function readFile(e) {
   ctx.fillRect(0, y, 1080, 512+64+32); 
   ctx.fillStyle = "rgba(200,240,200,1.0)"; // blue
     ctx.fillRect(x,y,512+16,512+64); 
-    ctx.drawImage(image,x,y+16,512,512);
+    ctx.drawImage(image,x+8,y+8,512,512);
     window.URL.revokeObjectURL(url); 
     document.body.removeChild(ele); 
     };  
