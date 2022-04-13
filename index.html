@@ -100,6 +100,9 @@ var msgid=0;
 var useractive=false; 
 var sender=""; var receiver=""; 
 	
+var sndBfr = new ArrayBuffer(512); 
+var sndByte = new Uint8Array(sndBfr); 
+	
 var msgBfr = new ArrayBuffer(512); 
 var msgByte = new Uint8Array(msgBfr); 
 var msgStr=""; 
