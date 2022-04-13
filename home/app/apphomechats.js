@@ -24,8 +24,8 @@ var x=0; var y; var w=1080; var h;
 if (appPtr<1880) {y=144+1880-appPtr; h=appPtr;} 
 else if (appPtr>=1880) {y=144; h=1880;} 
 var imgData = ctx.createImageData(w,h); 
-var appPtrs=0; var appPtre=1880; 
-for (let i=appPtrs; i<appPtre*1080*4; i+=4) { 
+var appPtrs=0; var appPtre=h; 
+for (let i=0; i<w*4*h; i+=4) { 
     imgData.data[i+0]=appView[appPtrs+i+0]; 
     imgData.data[i+1]=appView[appPtrs+i+1]; 
     imgData.data[i+2]=appView[appPtrs+i+2]; 
