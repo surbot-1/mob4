@@ -31,7 +31,7 @@ function send() {
   view.setUint8(0, msgView[(msgPtr-1)*512+19]); 
   view.setUint8(1, msgView[(msgPtr-1)*512+18]);  
   var h = view.getUint16(0); 
-  ctx.createImageData(180, 1264-(h+64)); 
+  ctx.createImageData(1080, 1264-(h+64)); 
   ctx.getImageData(0,144+h+64,1080,1264-(h+64)); 
   ctx.putImageData(0,144); 
   ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // white
