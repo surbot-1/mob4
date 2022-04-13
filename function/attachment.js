@@ -28,7 +28,7 @@ function readFile(e) {
        var url = window.URL.createObjectURL(file); 
        image.src = url; 
        image.onload = function (e) { 
-    var x=520; var y=1264-512-64-32; 
+    var x=536; var y=1264-512-64-32; 
     var w = image.naturalWidth; 
     var h = image.naturalHeight; 
     ctx.createImageData(1080, 1264-512-64-32); 
@@ -37,8 +37,8 @@ function readFile(e) {
   ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // white
   ctx.fillRect(x, y, 1080, 512+64+32); 
   ctx.fillStyle = "rgba(200,240,200,1.0)"; // blue
-    ctx.fillRect(x,y,512+32,512+64); 
-    ctx.drawImage(image,x+16,y+16,512,512);
+    ctx.fillRect(x,y,512+16,512+64); 
+    ctx.drawImage(image,x+8,y+8,512,512);
     window.URL.revokeObjectURL(url); 
     document.body.removeChild(ele); 
     };  
