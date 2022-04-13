@@ -37,7 +37,7 @@ function send() {
   var imgData = ctx.getImageData(0,144+h+64+8,1080,1264-32-(h+64)); 
   ctx.putImageData(imgData,0,144); 
   ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // white
-  ctx.fillRect(0, 144+1264-(h+64), 1080, h+64); 
+  ctx.fillRect(0, 1408-(h+64)-32, 1080, h+64+32); 
   var msgstr = ""; 
   for (let i=0; i<msize; i++) { 
     msgstr += ascChar(msgView[(msgPtr-1)*512+32+i]); 
