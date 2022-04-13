@@ -63,8 +63,8 @@ function send() {
     x=600; y=200; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // blue  
     ctx.fillRect(x, y, w+32, h+32+32); 
-    writecStr(x+16,y+16,432,128,"ubuntubold",[0,0,0,255],[255,255,255,255],msgstr); 
-    writecStr(x+168,y+h+24,432,128,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
+    writecStr(x+16,y+16,432,128,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
+    writecStr(x+168,y+h+24,432,128,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
   } 
 }
 
