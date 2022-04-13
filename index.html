@@ -174,7 +174,7 @@ function rcvMsg() {
   var mid = getAppMessage(receiver+"To"+sender,"Msgid"); 
   if (mid!=midp) { 
   readAppMessage(receiver+"To"+sender); 
-  // sendUserMessage(); 
+  readSenderMessage(sender+"To"+receiver); 
   midp=mid; 
   } 
  }
