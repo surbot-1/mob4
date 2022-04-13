@@ -31,7 +31,7 @@ function readFile(e) {
     var x=480; var y=1264-512-64-32; 
     var w = image.naturalWidth; 
     var h = image.naturalHeight; 
-    ctx.createImageData(1080, 1264-512-64); 
+    ctx.createImageData(1080, 1264-512-64-32); 
     var imgData = ctx.getImageData(0,144+512+64+32,1080,1264-512-64-32); 
     ctx.putImageData(imgData,0,144); 
   ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // white
