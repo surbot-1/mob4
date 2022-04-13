@@ -106,6 +106,9 @@ bot=true; useractive=false;
 		      /* clearInterval(timer); */ camera(); 
 	      } else if (x>936 && x<936+128 && y>1408 && y<1408+128) { 
 		      /* clearInterval(timer); */ sendMessage(); 
+              } else if (x>1080-128 && x<1080 && y>1536 && y<1664) { 
+		      clearInterval(timer); clearCursor(16,1448); 
+		      appHomeChatsChatbot(); 
 	      } else if (x>0 && x<1080 && y>1664 && y<2176) { 
 		      /* clearInterval(timer); */ message(); 
 	      }
