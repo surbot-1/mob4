@@ -195,6 +195,17 @@ drawKeypad(0,1664,ktype);
 showCursor(16,1448); 
 bot=false; 
 	
+var tmr; var midp; 
+function rcv { 
+  var mid = getAppMessage(user+"To"+sender,"Msgid"); 
+  if (mid!=midp) { 
+  readAppMessage(user+"To"+sender); 
+  sendUserMessage(); 
+  midp=mid; 
+  }  
+} 
+tmr = setInterval(rcv, 0100); 
+	
 	var timer;
 	function check() { 
 	var x = touchx;  var y = touchy; 
