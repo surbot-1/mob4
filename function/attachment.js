@@ -9,7 +9,7 @@ function openFile() {
   ele.setAttribute("id", "file"); 
   // ele.setAttribute("style", "display:none"); 
   // ele.style.display='none';  
-  document.body.appendChild(x); 
+  document.body.appendChild(ele); 
   // document.getElementById("file").click(); 
   var element = document.getElementById("file");
   element.addEventListener("change", readFile);
