@@ -105,7 +105,7 @@ function sendOnServer(user) {
 } 
 
 function receiveFromServer(user) { 
-  var mid = getAppMessage(user+"To"+sender,"Msgid"); 
+  readAppMessage(user+"To"+sender); 
   sendUserMessage(); 
 }
 
