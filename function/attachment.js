@@ -1,14 +1,14 @@
 function attachment() { 
   var cnv = document.getElementById("canvas"); 
   var ctx = cnv.getContext('2d');
-  var x; 
+  var ele; 
          openFile(); 
 function openFile() {
-  x = document.createElement("INPUT");
-  x.setAttribute("type", "file"); 
-  x.setAttribute("id", "file"); 
-  // x.setAttribute("style", "display:none"); 
-  // x.style.display='none';  
+  ele = document.createElement("INPUT");
+  ele.setAttribute("type", "file"); 
+  ele.setAttribute("id", "file"); 
+  // ele.setAttribute("style", "display:none"); 
+  // ele.style.display='none';  
   document.body.appendChild(x); 
   // document.getElementById("file").click(); 
   var element = document.getElementById("file");
@@ -33,14 +33,14 @@ function readFile(e) {
     ctx.fillRect(x,y,512+32,512+64); 
     var w = image.naturalWidth; 
     var h = image.naturalHeight; 
-    ctx.createImageData(1080, 1264-(h+64)); 
-  var imgData = ctx.getImageData(0,144+h+64,1080,1264-(h+64)); 
-  ctx.putImageData(imgData,0,144); 
   ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // white
-  ctx.fillRect(0, 1408-512-64-32, 1080, 512+64+32); 
+  ctx.fillRect(x, y, 1080, 512+64+32); 
+    ctx.createImageData(1080, 1264-(h+64)); 
+    var imgData = ctx.getImageData(0,144,1080,1408-512-64-32); 
+    ctx.putImageData(imgData,0,144); 
     ctx.drawImage(image,x+16,y+16,512,512);
     window.URL.revokeObjectURL(url); 
-    document.body.removeChild(x); 
+    document.body.removeChild(ele); 
     }; 
   }
  /* var reader = new FileReader(); 
@@ -51,7 +51,7 @@ function readFile(e) {
      drawImageBmp(540, 512, buf, size); 
      fileManagerSave("image.bmp",buf,size); 
      // fileManagerOpen(540,800,"image.bmp"); 
-     document.body.removeChild(x);  
+     document.body.removeChild(ele);  
   }; 
   reader.readAsArrayBuffer(file) */ 
 } 
