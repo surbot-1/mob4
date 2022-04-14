@@ -190,8 +190,11 @@ function rcvMsg() {
           } 
        }, 0020); 
     } else if (rcvmsgid) { 
-       readAppMessage(receiver+"To"+sender); 
-       rcvmsgidp=rcvmsgid; rcvmsgid=0; 
+	if (rcvmsgid!=rcvmsgidp) { 
+           readAppMessage(receiver+"To"+sender); 
+           rcvmsgidp=rcvmsgid; rcvmsgid=0; 
+	} 
+	rcvmsgidp=rcvmsgid; rcvmsgid=0; 
     }
  } 
 } 
