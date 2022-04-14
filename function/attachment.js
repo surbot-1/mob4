@@ -34,6 +34,7 @@ function readFile(e) {
     // var imgData = ctx.createImageData(1080, 1264-32-512-64+8); 
     var imgData = ctx.getImageData(0,144+512+64+8,1080,1264-32-512-64); 
     ctx.putImageData(imgData,0,144); 
+    imgData = ctx.getImageData(0,1408-512-64-32,1080,512+64+8); 
     for (let i=0; i<1080*4*(1264-32-512-64+8); i+=4) { 
 	  appView[appPtr*1080*4+i+0]=imgData.data[i+0]; 
 	  appView[appPtr*1080*4+i+1]=imgData.data[i+1];
