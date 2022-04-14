@@ -2,6 +2,11 @@ function appHomeChatsChatbot() {
 var cnv = document.getElementById("canvas"); 
 var ctx = cnv.getContext('2d'); 
 
+var ax=0; var ay=0; var aw=1080; var ah=0; alert(aw);
+if (appPtr<1880) {ay=144+1880-appPtr; ah=appPtr;} 
+else if (appPtr>=1880) {ay=144; ah=1880;} alert(appPtr); 
+var imgData = ctx.createImageData(1080, 1880);    alert('4'); 
+
 ctx.fillStyle = "rgba(0, 0, 128, 1.0)"; // blue
 ctx.fillRect(0, 0, 1080, 144); 
 fileViewerUrl(64, 8, "icon/business-woman-icon-128.bmp");  
@@ -20,10 +25,6 @@ fileViewerUrl(680, 2080, "icon/attachment-icon-64.bmp");
 fileViewerUrl(808, 2080, "icon/camera-icon-64.bmp"); 
 fileViewerUrl(936, 2048, "icon/microphone-icon-128.bmp"); 
 	
-var ax=0; var ay=0; var aw=1080; var ah=0; alert(aw);
-if (appPtr<1880) {ay=144+1880-appPtr; ah=appPtr;} 
-else if (appPtr>=1880) {ay=144; ah=1880;} alert(appPtr); 
-var imgData = ctx.createImageData(1080, 1880);    alert('4'); 
 appPtri=0; appPtrf=ah; alert(appPtr); alert('4'); 
 for (let i=0; i<aw*4*ah; i+=4) { 
     imgData.data[i+0]=appView[appPtri+i+0]; 
