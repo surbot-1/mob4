@@ -182,7 +182,7 @@ function rcvMsg() {
        var tmr = setInterval( ()=> {
           if (rcvmsgid) { 
               clearInterval(tmr); 
-              if (rcvmsgid!=rcvmsgidp) { 
+              if (rcvmsgid!=rcvmsgidp) { alert((rcvmsgid+" "+rcvmsgidp)); 
 		 readAppMessage(receiver+"To"+sender); 
 		 rcvmsgidp=rcvmsgid; rcvmsgid=0; 
 	      } 
