@@ -180,9 +180,9 @@ function rcvMsg() {
     var mid = getAppMessage(receiver+"To"+sender,"Msgid"); 
     if (!rcvmsgid) { 
        var tmr = setInterval( ()=> {
-          if (rcvmsgid) { 
+          if (rcvmsgid) { alert((rcvmsgid+" "+rcvmsgidp)); alert('1');
               clearInterval(tmr); 
-              if (rcvmsgid!=rcvmsgidp) { alert((rcvmsgid+" "+rcvmsgidp)); 
+              if (rcvmsgid!=rcvmsgidp) { 
 		 readAppMessage(receiver+"To"+sender); 
 		 rcvmsgidp=rcvmsgid; rcvmsgid=0; 
 	      } 
@@ -190,8 +190,8 @@ function rcvMsg() {
           } 
        }, 0020); 
        setTimeout( ()=> {clearInterval(tmr);}, 1000); 
-    } else if (rcvmsgid) { 
-	if (rcvmsgid!=rcvmsgidp) { alert((rcvmsgid+" "+rcvmsgidp)); 
+    } else if (rcvmsgid) { alert((rcvmsgid+" "+rcvmsgidp)); alert('2');
+	if (rcvmsgid!=rcvmsgidp) { 
            readAppMessage(receiver+"To"+sender); 
            rcvmsgidp=rcvmsgid; rcvmsgid=0; 
 	} 
