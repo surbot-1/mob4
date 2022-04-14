@@ -102,7 +102,7 @@ var bot=false;
 var usrBfr = new ArrayBuffer(512); 
 var usrByte = new Uint8Array(usrBfr); 
 var msgid=1; 
-var rcvmsgid=0; 
+var rcvmsgid=0; var rcvmsgidp=0; 
 var useractive=false; 
 var sender=""; var receiver=""; 
 	
@@ -174,18 +174,18 @@ function handleEnd(evt) {
 	
 <script> 
 	  
-var timer; var midp=0; 
+var timer; 
 function rcvMsg() { 
  if (useractive) { 
   clearInterval(timer); 
-  var mid = getAppMessage(receiver+"To"+sender,"Msgid"); alert(mid); 
-  if (!mid) {
+  var mid = getAppMessage(receiver+"To"+sender,"Msgid"); alert(rcvmsgid); 
+  if (!rcvmsgid) {
     var tmr = setInterval( ()=> {
-       if (mid) {
+       if (rcvmsgid) {
 	 clearInterval(tmr); 
-	 if (mid!=midp) { 
+	 if (rcvmsgid!=rcvmsgidp) { 
 	   readAppMessage(receiver+"To"+sender); 
-           midp=mid; 
+           rcvmsgidp=rcvmsgid; 
 	 } 
        } 
     }, 0020); 
