@@ -176,15 +176,21 @@ function handleEnd(evt) {
 var timer; var midp=0; 
 function rcvMsg() { 
  if (useractive) { 
-  (async () => { clearInterval(timer); 
+  clearInterval(timer); 
   var mid = await getAppMessage(receiver+"To"+sender,"Msgid"); alert(mid); 
-  if (mid!=midp) { 
-  readAppMessage(receiver+"To"+sender); 
-  // readSenderMessage(sender+"To"+receiver); 
-  midp=mid; 
-  } timer = setInterval(rcvMsg, 0020); 
-  })(); 
- }
+  if (!mid) {
+    var tmr = setInterval( ()=> {
+       if (mid) {
+	 clearInterval(tmr); 
+	 if (mid!=midp) { 
+	   readAppMessage(receiver+"To"+sender); 
+           midp=mid; 
+	 } 
+       } 
+    }, 0020); 
+   } 
+   timer = setInterval(rcvMsg, 0020); 
+ } 
 } 
 timer = setInterval(rcvMsg, 0020); 
 	
