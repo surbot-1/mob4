@@ -186,7 +186,7 @@ function rcvMsg() {
 		 rcvmsgidp=rcvmsgid; rcvmsgid=0; 
 		 readAppMessage(receiver+"To"+sender); 
 	      } 
-	      rcvmsgidp=rcvmsgid; rcvmsgid=0; 
+	      // rcvmsgidp=rcvmsgid; rcvmsgid=0; 
           } 
        }, 0020); 
        setTimeout( ()=> {clearInterval(tmr);}, 1000); 
@@ -195,7 +195,7 @@ function rcvMsg() {
            rcvmsgidp=rcvmsgid; rcvmsgid=0; 
            readAppMessage(receiver+"To"+sender); 
 	} 
-        rcvmsgidp=rcvmsgid; rcvmsgid=0; 
+        // rcvmsgidp=rcvmsgid; rcvmsgid=0; 
     }
  } 
 } 
