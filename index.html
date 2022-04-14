@@ -77,6 +77,7 @@ var dataView = new Uint8Array(dataBuf);
 var appBuf = new ArrayBuffer(64*1024*1024); 
 var appView = new Uint8Array(appBuf); 
 var appPtr=0; // multiple of 1080*4 
+var appPtri=0; var appPtrf=0;
 	
 var msgBuf = new ArrayBuffer(512*2048); // 1mb
 var msgView = new Uint8Array(msgBuf); 
