@@ -39,6 +39,7 @@ function readFile(e) {
   ctx.fillStyle = "rgba(200,240,200,1.0)"; // blue
     ctx.fillRect(x,y,512+16,512+64); 
     ctx.drawImage(image,x+8,y+8,512,512); 
+    writecStr(x+64+168,y+h+24,432,128,"ubuntufont",[0,0,0,255],[200,240,200,255],getTime()); 
     imgData = ctx.getImageData(0,1408-512-64-32,1080,512+64+8); 
     for (let i=0; i<1080*4*(1264-32-512-64+8); i+=4) { 
 	  appView[appPtr*1080*4+i+0]=imgData.data[i+0]; 
