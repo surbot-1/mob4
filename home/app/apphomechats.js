@@ -5,9 +5,9 @@ var ctx = cnv.getContext('2d');
 var ax=0; var ay=0; var aw=1080; var ah=0; 
 if (appPtr<1880) {ay=144+1880-appPtr; ah=appPtr;} 
 else if (appPtr>=1880) {ay=144; ah=1880;} 
-var imgData = ctx.createImageData(aw, ah); 
+var imgData = ctx.createImageData(1080, 1880); 
 appPtri=0; appPtrf=ah; 
-for (let i=0; i<aw*4*ah; i+=4) { 
+for (let i=0; i<1080*4*1800; i+=4) { 
     imgData.data[i+0]=appView[appPtri+i+0]; 
     imgData.data[i+1]=appView[appPtri+i+1]; 
     imgData.data[i+2]=appView[appPtri+i+2]; 
