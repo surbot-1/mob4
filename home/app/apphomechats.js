@@ -6,6 +6,14 @@ var ax=0; var ay=0; var aw=1080; var ah=0;
 if (appPtr<1880) {ay=144+1880-appPtr; ah=appPtr;} 
 else if (appPtr>=1880) {ay=144; ah=1880;} 
 var imgData = ctx.createImageData(aw, ah); 
+appPtri=0; appPtrf=ah; 
+for (let i=0; i<aw*4*ah; i+=4) { 
+    imgData.data[i+0]=appView[appPtri+i+0]; 
+    imgData.data[i+1]=appView[appPtri+i+1]; 
+    imgData.data[i+2]=appView[appPtri+i+2]; 
+    imgData.data[i+3]=appView[appPtri+i+3]; 
+} 
+ctx.putImageData(imgData,ax,ay); 
 
 ctx.fillStyle = "rgba(0, 0, 128, 1.0)"; // blue
 ctx.fillRect(0, 0, 1080, 144); 
@@ -24,15 +32,6 @@ ctx.fillRect(0+8, 2048+8, 920-16, 128-16);
 fileViewerUrl(680, 2080, "icon/attachment-icon-64.bmp"); 
 fileViewerUrl(808, 2080, "icon/camera-icon-64.bmp"); 
 fileViewerUrl(936, 2048, "icon/microphone-icon-128.bmp"); 
-	
-appPtri=0; appPtrf=ah; 
-for (let i=0; i<aw*4*ah; i+=4) { 
-    imgData.data[i+0]=appView[appPtri+i+0]; 
-    imgData.data[i+1]=appView[appPtri+i+1]; 
-    imgData.data[i+2]=appView[appPtri+i+2]; 
-    imgData.data[i+3]=appView[appPtri+i+3]; 
-} 
-ctx.putImageData(imgData,ax,ay); 
 	
 bot=true; useractive=false; 
 	
