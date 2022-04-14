@@ -175,10 +175,10 @@ function handleEnd(evt) {
 <script> 
 	  
 var timer; 
-function rcvMsg() { 
+function rcvMsg() { clearInterval(timer); 
  if (useractive) { rcvmsgid=0; 
     var mid = getAppMessage(receiver+"To"+sender,"Msgid"); 
-    if (!rcvmsgid) {
+    if (!rcvmsgid) { 
        var tmr = setInterval( ()=> {
           if (rcvmsgid) { 
               clearInterval(tmr); 
@@ -187,6 +187,7 @@ function rcvMsg() {
 		 rcvmsgidp=rcvmsgid; rcvmsgid=0; 
 	      } 
 	      rcvmsgidp=rcvmsgid; rcvmsgid=0; 
+              timer = setInterval(rcvMsg, 2000); 
           } 
        }, 0020); 
        setTimeout( ()=> {clearInterval(tmr);}, 1000); 
@@ -196,6 +197,7 @@ function rcvMsg() {
            rcvmsgidp=rcvmsgid; rcvmsgid=0; 
 	} 
 	rcvmsgidp=rcvmsgid; rcvmsgid=0; 
+	timer = setInterval(rcvMsg, 2000); 
     }
  } 
 } 
