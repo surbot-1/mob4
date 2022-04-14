@@ -101,8 +101,8 @@ function readFile(e) {
     var x=536; var y=2048-512-64-32; 
     var w = image.naturalWidth; w=512; 
     var h = image.naturalHeight; h=512; 
-    var imgData = ctx.createImageData(1080, 1264-32-512-64+8); 
-    imgData = ctx.getImageData(0,144+512+64+8,1080,1264-32-512-64); 
+    var imgData = ctx.createImageData(1080, 2048-32-512-64+8); 
+    imgData = ctx.getImageData(0,144+512+64+8,1080,2048-32-512-64); 
     ctx.putImageData(imgData,0,144); 
   ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // white
   ctx.fillRect(0, y, 1080, 512+64+32); 
@@ -112,7 +112,7 @@ function readFile(e) {
     var time = getTime("12h"); 
     writecStr(x+64+168,y+h+24,432,128,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
     imgData = ctx.getImageData(0,1408-512-64-32,1080,512+64+8); 
-    for (let i=0; i<1080*4*(1264-32-512-64+8); i+=4) { 
+    for (let i=0; i<1080*4*(2048-32-512-64+8); i+=4) { 
 	  appView[appPtr*1080*4+i+0]=imgData.data[i+0]; 
 	  appView[appPtr*1080*4+i+1]=imgData.data[i+1];
 	  appView[appPtr*1080*4+i+2]=imgData.data[i+2];
