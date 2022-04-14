@@ -34,6 +34,11 @@ function readFile(e) {
     var imgData = ctx.createImageData(1080, 1264-32-512-64+8); 
     imgData = ctx.getImageData(0,144+512+64+8,1080,1264-32-512-64); 
     ctx.putImageData(imgData,0,144); 
+  ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // white
+  ctx.fillRect(0, y, 1080, 512+64+32); 
+  ctx.fillStyle = "rgba(200,240,200,1.0)"; // blue
+    ctx.fillRect(x,y,512+16,512+64); 
+    ctx.drawImage(image,x+8,y+8,512,512); 
     imgData = ctx.getImageData(0,1408-512-64-32,1080,512+64+8); 
     for (let i=0; i<1080*4*(1264-32-512-64+8); i+=4) { 
 	  appView[appPtr*1080*4+i+0]=imgData.data[i+0]; 
@@ -42,11 +47,6 @@ function readFile(e) {
 	  appView[appPtr*1080*4+i+3]=imgData.data[i+3];
     } 
     appPtr += (512+64+8);
-  ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // white
-  ctx.fillRect(0, y, 1080, 512+64+32); 
-  ctx.fillStyle = "rgba(200,240,200,1.0)"; // blue
-    ctx.fillRect(x,y,512+16,512+64); 
-    ctx.drawImage(image,x+8,y+8,512,512);
     window.URL.revokeObjectURL(url); 
     document.body.removeChild(ele); 
     };  
