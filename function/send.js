@@ -55,18 +55,21 @@ function send() {
     setTimeout(() => {msgStatus(x+360,y+h+24,"dlvd");},3000); 
     setTimeout(() => {msgStatus(x+360,y+h+24,"seen");},4000);  
   } else if(minfo==1) { 
+    var time = getTime("12h"); 
     x=16; y=1408-(h+64)-32; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white 
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,432,128,"ubuntubold",[0,0,0,255],[255,255,255,255],msgstr); 
     writecStr(x+288,y+h+24,432,128,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
   } else if(minfo==2) { 
+    var time = getTime("12h"); 
     x=16; y=1408-(h+64)-32; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white 
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,432,128,"ubuntubold",[0,0,0,255],[255,255,255,255],msgstr); 
     writecStr(x+288,y+h+24,432,128,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
   } else if(minfo==3) { 
+    var time = getTime("12h"); 
     x=600; y=1408-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue  
     ctx.fillRect(x, y, w+32, h+32+32); 
