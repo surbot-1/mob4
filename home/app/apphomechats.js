@@ -172,6 +172,21 @@ fileViewerUrl(680, 2080, "icon/attachment-icon-64.bmp");
 fileViewerUrl(808, 2080, "icon/camera-icon-64.bmp"); 
 fileViewerUrl(936, 2048, "icon/microphone-icon-128.bmp");  
 	
+if (appPtr) {
+var ax=0; var ay=0; var aw=1080; var ah=0; 
+if (appPtr<1880) {ay=144+1880-appPtr; ah=appPtr;} 
+else if (appPtr>=1880) {ay=144; ah=1880;} 
+appPtri=0; appPtrf=ah; 
+var imgData = ctx.createImageData(aw, ah); 
+for (let i=0; i<aw*4*ah; i+=4) { 
+    imgData.data[i+0]=appView[appPtri*1080*4+i+0]; 
+    imgData.data[i+1]=appView[appPtri*1080*4+i+1]; 
+    imgData.data[i+2]=appView[appPtri*1080*4+i+2]; 
+    imgData.data[i+3]=appView[appPtri*1080*4+i+3]; 
+} 
+ctx.putImageData(imgData,0,ay); 
+}
+	
 bot=false; useractive=true; 
 	
 	var timer;
@@ -229,6 +244,21 @@ ctx.fillRect(0+8, 1408+8, 920-16, 128-16);
 fileViewerUrl(680, 1440, "icon/attachment-icon-64.bmp"); 
 fileViewerUrl(808, 1440, "icon/camera-icon-64.bmp"); 
 fileViewerUrl(936, 1408, "icon/telegram-icon-128.bmp"); 
+	
+if (appPtr) {
+var ax=0; var ay=0; var aw=1080; var ah=0; 
+if (appPtr<1240) {ay=144+1240-appPtr; ah=appPtr;} 
+else if (appPtr>=1240) {ay=144; ah=1240;} 
+appPtri=appPtr-ah; appPtrf=ah; 
+var imgData = ctx.createImageData(aw, ah); 
+for (let i=0; i<aw*4*ah; i+=4) { 
+    imgData.data[i+0]=appView[appPtri*1080*4+i+0]; 
+    imgData.data[i+1]=appView[appPtri*1080*4+i+1]; 
+    imgData.data[i+2]=appView[appPtri*1080*4+i+2]; 
+    imgData.data[i+3]=appView[appPtri*1080*4+i+3]; 
+} 
+ctx.putImageData(imgData,0,ay); 
+}
 	
 drawKeypad(0,1664,ktype); 
 showCursor(16,1448); 
