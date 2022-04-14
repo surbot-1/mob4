@@ -31,7 +31,7 @@ for (let i=0; i<1080*4*1800; i+=4) {
     imgData.data[i+2]=appView[appPtri*1080*4+i+2]; 
     imgData.data[i+3]=appView[appPtri*1080*4+i+3]; 
 } 
-ctx.putImageData(imgData,0,144); 
+ctx.putImageData(imgData,0,ay); 
 	
 bot=true; useractive=false; 
 	
