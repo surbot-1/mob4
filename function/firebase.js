@@ -58,7 +58,7 @@ function getAppMessage(user,data) {
   var ref = firebase.database().ref("App").child(user); 
   ref.once("value", function(snapshot) { 
     var get = snapshot.child(data).val(); 
+    rcvmsgid = get; 
     return get; 
   }); 
-  return false; 
 }
