@@ -8,10 +8,10 @@ else if (appPtr>=1880) {ay=144; ah=1880;}
 var imgData = ctx.createImageData(1080, 1880); 
 appPtri=0; appPtrf=ah; 
 for (let i=0; i<1080*4*1800; i+=4) { 
-    imgData.data[i+0]=appView[appPtri+i+0]; 
-    imgData.data[i+1]=appView[appPtri+i+1]; 
-    imgData.data[i+2]=appView[appPtri+i+2]; 
-    imgData.data[i+3]=appView[appPtri+i+3]; 
+    imgData.data[i+0]=appView[appPtri*1080*4+i+0]; 
+    imgData.data[i+1]=appView[appPtri*1080*4+i+1]; 
+    imgData.data[i+2]=appView[appPtri*1080*4+i+2]; 
+    imgData.data[i+3]=appView[appPtri*1080*4+i+3]; 
 } 
 ctx.putImageData(imgData,ax,ay); 
 
