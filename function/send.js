@@ -33,17 +33,10 @@ function send() {
   view.setUint8(0, msgView[(msgPtr-1)*512+19]); 
   view.setUint8(1, msgView[(msgPtr-1)*512+18]);  
   var h = view.getUint16(0); 
-  ctx.createImageData(1080, 1264-32-(h+64)); 
-  var imgData = ctx.getImageData(0,144+h+64+8,1080,1264-32-(h+64)); 
+  var imgData = ctx.createImageData(1080, 1264-32-(h+64)); 
+  imgData = ctx.getImageData(0,144+h+64+8,1080,1264-32-(h+64)); 
   ctx.putImageData(imgData,0,144); 
-  for (let i=0; i<1080*4*(h+64+8); i+=4) { 
-	  appView[appPtr*1080*4+i+0]=imgData.data[i+0]; 
-	  appView[appPtr*1080*4+i+1]=imgData.data[i+1];
-	  appView[appPtr*1080*4+i+2]=imgData.data[i+2];
-	  appView[appPtr*1080*4+i+3]=imgData.data[i+3];
-   } 
-	 appPtr += (h+64+8); 
-  ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // white
+  ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // lightgray
   ctx.fillRect(0, 1408-(h+64)-32, 1080, h+64+32); 
   var msgstr = ""; 
   for (let i=0; i<msize; i++) { 
@@ -80,6 +73,14 @@ function send() {
     writecStr(x+16,y+16,432,128,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
     writecStr(x+168,y+h+24,432,128,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
   } 
+  imgData = ctx.getImageData(0,1408-(h+64)-32,1080,h+64+8); 
+  for (let i=0; i<1080*4*(h+64+8); i+=4) { 
+	  appView[appPtr*1080*4+i+0]=imgData.data[i+0]; 
+	  appView[appPtr*1080*4+i+1]=imgData.data[i+1];
+	  appView[appPtr*1080*4+i+2]=imgData.data[i+2];
+	  appView[appPtr*1080*4+i+3]=imgData.data[i+3];
+  } 
+  appPtr += (h+64+8); 
 }
 
 function replyChatbot() { 
