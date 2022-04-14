@@ -180,22 +180,22 @@ function rcvMsg() {
     var mid = getAppMessage(receiver+"To"+sender,"Msgid"); 
     if (!rcvmsgid) { 
        var tmr = setInterval( ()=> {
-          if (rcvmsgid) { alert((rcvmsgid+" "+rcvmsgidp)); alert('1');
+          if (rcvmsgid) { // alert((rcvmsgid+" "+rcvmsgidp)); alert('1');
               clearInterval(tmr); 
               if (rcvmsgid!=rcvmsgidp) { 
-		 readAppMessage(receiver+"To"+sender); 
 		 rcvmsgidp=rcvmsgid; rcvmsgid=0; 
+		 readAppMessage(receiver+"To"+sender); 
 	      } 
-	      // rcvmsgidp=rcvmsgid; rcvmsgid=0; 
+	      rcvmsgidp=rcvmsgid; rcvmsgid=0; 
           } 
        }, 0020); 
        setTimeout( ()=> {clearInterval(tmr);}, 1000); 
-    } else if (rcvmsgid) { alert((rcvmsgid+" "+rcvmsgidp)); alert('2');
+    } else if (rcvmsgid) { // alert((rcvmsgid+" "+rcvmsgidp)); alert('2');
 	if (rcvmsgid!=rcvmsgidp) { 
-           readAppMessage(receiver+"To"+sender); 
            rcvmsgidp=rcvmsgid; rcvmsgid=0; 
+           readAppMessage(receiver+"To"+sender); 
 	} 
-        // rcvmsgidp=rcvmsgid; rcvmsgid=0; 
+        rcvmsgidp=rcvmsgid; rcvmsgid=0; 
     }
  } 
 } 
