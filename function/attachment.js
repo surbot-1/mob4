@@ -29,8 +29,8 @@ function readFile(e) {
        image.src = url; 
        image.onload = function (e) { 
     var x=536; var y=1408-512-64-32; 
-    var w = image.naturalWidth; w=512+16; 
-    var h = image.naturalHeight; h=512+64; 
+    var w = image.naturalWidth; w=512; 
+    var h = image.naturalHeight; h=512; 
     var imgData = ctx.createImageData(1080, 1264-32-512-64+8); 
     imgData = ctx.getImageData(0,144+512+64+8,1080,1264-32-512-64); 
     ctx.putImageData(imgData,0,144); 
