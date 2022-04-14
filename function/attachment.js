@@ -98,7 +98,7 @@ function readFile(e) {
        var url = window.URL.createObjectURL(file); 
        image.src = url; 
        image.onload = function (e) { 
-    var x=536; var y=1408-512-64-32; 
+    var x=536; var y=2048-512-64-32; 
     var w = image.naturalWidth; w=512; 
     var h = image.naturalHeight; h=512; 
     var imgData = ctx.createImageData(1080, 1264-32-512-64+8); 
