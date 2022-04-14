@@ -179,7 +179,7 @@ function rcvMsg() {
   (async () => { cleatInterval(timer); 
   var mid = await getAppMessage(receiver+"To"+sender,"Msgid"); 
   if (mid!=midp) { 
-  readAppMessage(receiver+"To"+sender); 
+  // readAppMessage(receiver+"To"+sender); 
   readSenderMessage(sender+"To"+receiver); 
   midp=mid; 
   } timer = setInterval(rcvMsg, 1000); 
