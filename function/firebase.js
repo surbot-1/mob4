@@ -60,4 +60,5 @@ function getAppMessage(user,data) {
     var get = snapshot.child(data).val(); 
     return get; 
   }); 
+  return false; 
 }
