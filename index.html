@@ -181,16 +181,17 @@ function rcvMsg() {
     if (!rcvmsgid) { 
        var tmr = setInterval( ()=> {
           if (rcvmsgid) { 
+              clearInterval(tmr); 
               if (rcvmsgid!=rcvmsgidp) { 
 		 readAppMessage(receiver+"To"+sender); 
 		 rcvmsgidp=rcvmsgid; rcvmsgid=0; 
 	      } 
-	      rcvmsgidp=rcvmsgid; rcvmsgid=0; clearInterval(tmr); 
+	      rcvmsgidp=rcvmsgid; rcvmsgid=0; 
           } 
        }, 0020); 
        setTimeout( ()=> {clearInterval(tmr);}, 1000); 
     } else if (rcvmsgid) { 
-	if (rcvmsgid!=rcvmsgidp) { 
+	if (rcvmsgid!=rcvmsgidp) { alert((rcvmsgid+" "+rcvmsgidp)); 
            readAppMessage(receiver+"To"+sender); 
            rcvmsgidp=rcvmsgid; rcvmsgid=0; 
 	} 
