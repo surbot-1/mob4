@@ -85,7 +85,7 @@ fileViewerUrl(952, 48, "icon/telephone-icon-48.bmp");
 ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // light gray
 ctx.fillRect(0, 144, 1080, 1264); 
 	
-ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white
+ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // lightgray
 ctx.fillRect(0, 1408, 1080, 128); 
 ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue
 ctx.fillRect(0, 1408, 920, 128); 
@@ -234,8 +234,11 @@ fileViewerUrl(952, 48, "icon/telephone-icon-48.bmp");
   writecStr(200,48,480,32,"ubuntubold",[255,255,255,255],[0,0,128,255],user); 
   writecStr(200,80,480,32,"ubuntufont",[255,255,255,255],[0,0,128,255],"online");
 	
-ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; 
+ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // lightgrsy
 ctx.fillRect(0, 144, 1080, 1264); 
+	
+ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // lightgray
+ctx.fillRect(0, 1408, 1080, 128); 
 	
 ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue
 ctx.fillRect(0, 1408, 920, 128); 
