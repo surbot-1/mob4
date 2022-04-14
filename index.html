@@ -189,6 +189,7 @@ function rcvMsg() {
 	      rcvmsgidp=rcvmsgid; rcvmsgid=0; 
           } 
        }, 0020); 
+       setTimeout( ()=> {clearInterval(tmr);}, 1000); 
     } else if (rcvmsgid) { 
 	if (rcvmsgid!=rcvmsgidp) { 
            readAppMessage(receiver+"To"+sender); 
