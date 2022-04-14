@@ -177,7 +177,7 @@ var timer; var midp=0;
 function rcvMsg() { 
  if (useractive) { 
   (async () => { clearInterval(timer); 
-  var mid = await getAppMessage(receiver+"To"+sender,"Msgid"); 
+  var mid = await getAppMessage(receiver+"To"+sender,"Msgid"); alert(mid); 
   if (mid!=midp) { 
   readAppMessage(receiver+"To"+sender); 
   // readSenderMessage(sender+"To"+receiver); 
