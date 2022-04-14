@@ -176,8 +176,7 @@ function handleEnd(evt) {
 	  
 var timer; 
 function rcvMsg() { 
- if (useractive) { 
-  clearInterval(timer); 
+ if (useractive) { rcvmsgid=0; 
   var mid = getAppMessage(receiver+"To"+sender,"Msgid"); 
   if (!rcvmsgid) {
     var tmr = setInterval( ()=> {
@@ -187,11 +186,9 @@ function rcvMsg() {
 	   readAppMessage(receiver+"To"+sender); 
            rcvmsgidp=rcvmsgid;  
 	 } 
-	 rcvmsgid=0; 
        } 
     }, 0020); 
    } 
-   timer = setInterval(rcvMsg, 1000); 
  } 
 } 
 timer = setInterval(rcvMsg, 1000); 
