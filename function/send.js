@@ -41,13 +41,13 @@ function send() {
   var msgstr = ""; 
   for (let i=0; i<msize; i++) { 
     msgstr += ascChar(msgView[(msgPtr-1)*512+32+i]); 
-  }  
-  var time = getTime("12h"); 
+  } 
   var x=0; var y=0; 
   if (minfo==0) { 
     x=600; y=1408-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue 
     ctx.fillRect(x, y, w+32, h+32+32); 
+    var time = getTime("12h"); 
     writecStr(x+16,y+16,432,128,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
     writecStr(x+168,y+h+24,432,128,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
     // setTimeout(() => {msgStatus(x+360,y+h+24,"send");},1000); 
