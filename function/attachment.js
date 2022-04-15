@@ -29,26 +29,29 @@ function readFile(e) {
        image.src = url; 
        image.onload = function (e) { 
     var x=536; var y=1408-512-64-32; 
-    var w = image.naturalWidth; w=512; 
-    var h = image.naturalHeight; h=512; 
-    var imgData = ctx.createImageData(1080, 1264-32-512-64+8); 
-    imgData = ctx.getImageData(0,144+512+64+8,1080,1264-32-512-64); 
+    var w = image.naturalWidth; 
+    var h = image.naturalHeight; 
+    if (w<h) {if (h>512) {w=w*(512/h); h=512;}} 
+    else if (w>h) {if (w>512) {h=h*(512/w); w=512;}} 
+    x=536; var y=1408-h-64-32; 
+    var imgData = ctx.createImageData(1080, 1264-32-h-64+8); 
+    imgData = ctx.getImageData(0,144+h+64+8,1080,1264-32-h-64); 
     ctx.putImageData(imgData,0,144); 
   ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // white
-  ctx.fillRect(0, y, 1080, 512+64+32); 
+  ctx.fillRect(0, y, 1080, h+64+32); 
   ctx.fillStyle = "rgba(200,240,200,1.0)"; // blue
-    ctx.fillRect(x,y,512+16,512+64); 
-    ctx.drawImage(image,x+8,y+8,512,512); 
+    ctx.fillRect(x,y,w+16,h+64); 
+    ctx.drawImage(image,x+8,y+8,w,h); 
     var time = getTime("12h"); 
     writecStr(x+64+168,y+h+24,432,128,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
-    imgData = ctx.getImageData(0,1408-512-64-32,1080,512+64+8); 
-    for (let i=0; i<1080*4*(1264-32-512-64+8); i+=4) { 
+    imgData = ctx.getImageData(0,1408-h-64-32,1080,h+64+8); 
+    for (let i=0; i<1080*4*(1264-32-h-64+8); i+=4) { 
 	  appView[appPtr*1080*4+i+0]=imgData.data[i+0]; 
 	  appView[appPtr*1080*4+i+1]=imgData.data[i+1];
 	  appView[appPtr*1080*4+i+2]=imgData.data[i+2];
 	  appView[appPtr*1080*4+i+3]=imgData.data[i+3];
     } 
-    appPtr += (512+64+8);
+    appPtr += (h+64+8);
     window.URL.revokeObjectURL(url); 
     document.body.removeChild(ele); 
     };  
