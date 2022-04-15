@@ -51,7 +51,7 @@ function readFile(e) {
 	  appView[appPtr*1080*4+i+2]=imgData.data[i+2];
 	  appView[appPtr*1080*4+i+3]=imgData.data[i+3];
     } 
-    appPtr += (h+64+8);
+    appPtr += (h+64+8); 
     window.URL.revokeObjectURL(url); 
     document.body.removeChild(ele); 
     };  
