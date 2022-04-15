@@ -106,7 +106,7 @@ function readFile(e) {
     var h = image.naturalHeight; h=512; 
     if (w<512) {h=h*(512/w); w=512;} 
     else if (w>512) {h=h*(512/w); w=512;} 
-    x=536; var y=1408-h-64-32; 
+    x=536; var y=2048-h-64-32; 
     var imgData = ctx.createImageData(1080, 2048-32-h-64+8); 
     imgData = ctx.getImageData(0,144+h+64+8,1080,2048-32-h-64); 
     ctx.putImageData(imgData,0,144); 
