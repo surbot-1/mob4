@@ -124,7 +124,8 @@ function sendUserMessage() {
   }  
   msgPtr++; 
   usrByte[28]=0;  
-  send(); 
+  if (usersctive==1) {send2();} 
+  else if (usersctive==2) {send();} 
 } 
 
 function sendOnServer(user) { 
