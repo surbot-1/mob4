@@ -176,7 +176,7 @@ function handleEnd(evt) {
 	  
 var timer; 
 function rcvMsg() { 
- if (useractive) { rcvmsgid=0; 
+ if (useractive==1 || useractive==2) { rcvmsgid=0; 
     var mid = getAppMessage(receiver+"To"+sender,"Msgid"); 
     if (!rcvmsgid) { 
        var tmr = setInterval( ()=> {
