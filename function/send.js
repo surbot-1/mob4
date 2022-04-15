@@ -62,8 +62,7 @@ function send() {
     writecStr(x+16,y+16,432,128,"ubuntubold",[0,0,0,255],[255,255,255,255],msgstr); 
     writecStr(x+288,y+h+24,432,128,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
   } else if(minfo==2) { 
-    if (useractive==1) {x=16; y=2048-(h+64)-32;} 
-    else if (useractive==2) {x=16; y=1408-(h+64)-32;}
+    x=16; y=1408-(h+64)-32;
     var time = getTime("12h"); 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white 
     ctx.fillRect(x, y, w+32, h+32+32); 
