@@ -102,8 +102,8 @@ function readFile(e) {
        image.src = url; 
        image.onload = function (e) { 
     var x=536; var y=2048-512-64-32; 
-    var w = image.naturalWidth; w=512; 
-    var h = image.naturalHeight; h=512; 
+    var w = image.naturalWidth; 
+    var h = image.naturalHeight; 
     if (w<512) {h=h*(512/w); w=512;} 
     else if (w>512) {h=h*(512/w); w=512;} 
     x=536; var y=2048-h-64-32; 
