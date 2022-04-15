@@ -33,18 +33,18 @@ function send1() {
   view.setUint8(0, msgView[(msgPtr-1)*512+19]); 
   view.setUint8(1, msgView[(msgPtr-1)*512+18]);  
   var h = view.getUint16(0); 
-  var imgData = ctx.createImageData(1080, 1264-32-(h+64)); 
-  imgData = ctx.getImageData(0,144+h+64+8,1080,1264-32-(h+64)); 
+  var imgData = ctx.createImageData(1080, 2048-32-(h+64)); 
+  imgData = ctx.getImageData(0,144+h+64+8,1080,2048-32-(h+64)); 
   ctx.putImageData(imgData,0,144); 
   ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // lightgray
-  ctx.fillRect(0, 1408-(h+64)-32, 1080, h+64+32); 
+  ctx.fillRect(0, 2048-(h+64)-32, 1080, h+64+32); 
   var msgstr = ""; 
   for (let i=0; i<msize; i++) { 
     msgstr += ascChar(msgView[(msgPtr-1)*512+32+i]); 
   } 
   var x=0; var y=0; 
   if (minfo==0) { 
-    x=600; y=1408-(h+64)-32; 
+    x=600; y=2048-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue 
     ctx.fillRect(x, y, w+32, h+32+32); 
     var time = getTime("12h"); 
@@ -56,13 +56,13 @@ function send1() {
     setTimeout(() => {msgStatus(x+360,y+h+24,"seen");},4000);  
   } else if(minfo==1) { 
     var time = getTime("12h"); 
-    x=16; y=1408-(h+64)-32; 
+    x=16; y=2048-(h+64)-32; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white 
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,432,128,"ubuntubold",[0,0,0,255],[255,255,255,255],msgstr); 
     writecStr(x+288,y+h+24,432,128,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
   } else if(minfo==2) { 
-    x=16; y=1408-(h+64)-32;
+    x=16; y=2048-(h+64)-32;
     var time = getTime("12h"); 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white 
     ctx.fillRect(x, y, w+32, h+32+32); 
@@ -70,13 +70,13 @@ function send1() {
     writecStr(x+288,y+h+24,432,128,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
   } else if(minfo==3) { 
     var time = getTime("12h");  
-    x=600; y=1408-(h+64)-32; 
+    x=600; y=2048-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue  
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,432,128,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
     writecStr(x+168,y+h+24,432,128,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
   } 
-  imgData = ctx.getImageData(0,1408-(h+64)-32,1080,h+64+8); 
+  imgData = ctx.getImageData(0,2048-(h+64)-32,1080,h+64+8); 
   for (let i=0; i<1080*4*(h+64+8); i+=4) { 
 	  appView[appPtr*1080*4+i+0]=imgData.data[i+0]; 
 	  appView[appPtr*1080*4+i+1]=imgData.data[i+1];
