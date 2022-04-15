@@ -35,7 +35,7 @@ for (let i=0; i<aw*4*ah; i+=4) {
 ctx.putImageData(imgData,0,ay); 
 }
 	
-bot=true; useractive=0; 
+chatbotactive=true; useractive=false; sendactive=1; 
 	
 	var timer;
 	function check() { 
@@ -112,7 +112,7 @@ ctx.putImageData(imgData,0,ay);
 	
 drawKeypad(0,1664,ktype); 
 showCursor(16,1448); 
-bot=true; useractive=0; 
+chatbotactive=true; useractive=0; sendactive=2; 
 	
 	var timer;
 	function check() { 
@@ -187,7 +187,7 @@ for (let i=0; i<aw*4*ah; i+=4) {
 ctx.putImageData(imgData,0,ay); 
 }
 	
-bot=false; useractive=1; 
+chatbotactive=false; useractive=true; sendactive=1; 
 	
 	var timer;
 	function check() { 
@@ -265,7 +265,7 @@ ctx.putImageData(imgData,0,ay);
 	
 drawKeypad(0,1664,ktype); 
 showCursor(16,1448); 
-bot=false; useractive=2; 
+chatbotactive=false; useractive=true; sendactive=2; 
 	
 	var timer;
 	function check() { 
