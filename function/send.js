@@ -15,7 +15,7 @@ function sendMessage() {
   ctx.fillRect(16, 1448, 24*24, 48); 
   writeCursor(16,1448); 
   showCursor(16,1448);   
-  if (bot) {setTimeout(replyChatbot, 5000);}
+  if (chatbotactive) {setTimeout(replyChatbot, 5000);}
 }  
 
 function send1() { 
