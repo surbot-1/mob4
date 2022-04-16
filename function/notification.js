@@ -1,5 +1,6 @@
 function notification() { 
   
+  askNotificationPermission(); 
   function askNotificationPermission() {
   // function to actually ask the permissions
   function handlePermission(permission) {
