@@ -44,7 +44,7 @@ function send1() {
   } 
   var x=0; var y=0; 
   if (minfo==0) { 
-    x=600; y=2048-(h+64)-32; 
+    x=1080-16-w; y=2048-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue 
     ctx.fillRect(x, y, w+32, h+32+32); 
     var time = getTime("12h"); 
@@ -112,7 +112,7 @@ function send() {
   } 
   var x=0; var y=0; 
   if (minfo==0) { 
-    x=600; y=1408-(h+64)-32; 
+    x=1080-16-w; y=1408-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue 
     ctx.fillRect(x, y, w+32, h+32+32); 
     var time = getTime("12h"); 
