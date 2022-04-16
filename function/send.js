@@ -168,7 +168,8 @@ function sendChatbot() {
   }  
   msgPtr++; 
   botByte[28]=0;  
-  send(); 
+  if (sendactive==1) {send1();} 
+  else if (sendactive==2) {send();} 
 }  
 
 function sendSenderMessage() { 
