@@ -44,7 +44,7 @@ function send1() {
   } 
   var x=0; var y=0; 
   if (minfo==0) { 
-    x=1080-16-w; y=2048-(h+64)-32; 
+    x=1080-16-w-32; y=2048-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue 
     ctx.fillRect(x, y, w+32, h+32+32); 
     var time = getTime("12h"); 
@@ -70,7 +70,7 @@ function send1() {
     writecStr(x+288,y+h+24,w,h,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
   } else if(minfo==3) { 
     var time = getTime("12h");  
-    x=600; y=2048-(h+64)-32; 
+    x=1080-16-w-32; y=2048-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue  
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
@@ -138,7 +138,7 @@ function send() {
     writecStr(x+288,y+h+24,w,h,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
   } else if(minfo==3) { 
     var time = getTime("12h");  
-    x=600; y=1408-(h+64)-32; 
+    x=1080-16-w-32; y=1408-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue  
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
