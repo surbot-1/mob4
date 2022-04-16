@@ -42,7 +42,7 @@ function send1() {
   for (let i=0; i<msize; i++) { 
     msgstr += ascChar(msgView[(msgPtr-1)*512+32+i]); 
   } 
-  var x=0; var y=0; if (w<12) {w=12;} 
+  var x=0; var y=0; if (w<12) {w=12*24;} 
   if (minfo==0) { 
     x=1080-w-32-16; y=2048-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue 
@@ -110,7 +110,7 @@ function send() {
   for (let i=0; i<msize; i++) { 
     msgstr += ascChar(msgView[(msgPtr-1)*512+32+i]); 
   } 
-  var x=0; var y=0; if (w<12) {w=12;} 
+  var x=0; var y=0; if (w<12) {w=12*24;} 
   if (minfo==0) { 
     x=1080-w-32-16; y=1408-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue 
