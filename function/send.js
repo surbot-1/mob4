@@ -218,7 +218,7 @@ function writeWH(view) {
   var msize = view[28]; 
   var j=0; var w=0; var h=32; 
   for (let i=0; i<msize; i++) {  
-    if (i>=36) {w=24*40;} else {w+=24;} 
+    if (i>=36) {w=24*36;} else {w+=24;} 
     if (view[i]==0x0A) {j=0; h+=32;} 
     if (j>=36) {j=0; h+=32;} 
     j++; 
@@ -231,10 +231,11 @@ function writeWH(view) {
 
 function getWH(view) { 
   var msize = view[28]; 
-  var j=0; var w=24*18; var h=32; 
+  var j=0; var w=0; var h=32; 
   for (let i=0; i<msize; i++) { 
+    if (i>=36) {w=24*36;} else {w+=24;} 
     if (view[i]==0x0A) {j=0; h+=32;} 
-    if (j>=18) {j=0; h+=32;} 
+    if (j>=36) {j=0; h+=32;} 
     j++; 
   }
     view[16] = w&0x00FF; 
