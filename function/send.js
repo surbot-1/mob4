@@ -42,14 +42,14 @@ function send1() {
   for (let i=0; i<msize; i++) { 
     msgstr += ascChar(msgView[(msgPtr-1)*512+32+i]); 
   } 
-  var x=0; var y=0; 
+  var x=0; var y=0; if (w<12) {w=12;} 
   if (minfo==0) { 
     x=1080-w-32-16; y=2048-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue 
     ctx.fillRect(x, y, w+32, h+32+32); 
     var time = getTime("12h"); 
     writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
-    writecStr(x+168,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
+    writecStr(1080-w-16-16,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
     // setTimeout(() => {msgStatus(x+360,y+h+24,"send");},1000); 
     setTimeout(() => {msgStatus(x+360,y+h+24,"sent");},2000); 
     setTimeout(() => {msgStatus(x+360,y+h+24,"dlvd");},3000); 
@@ -60,21 +60,21 @@ function send1() {
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white 
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[255,255,255,255],msgstr); 
-    writecStr(x+288,y+h+24,w,h,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
+    writecStr(w-16-16,y+h+24,w,h,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
   } else if(minfo==2) { 
     x=16; y=2048-(h+64)-32;
     var time = getTime("12h"); 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white 
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[255,255,255,255],msgstr); 
-    writecStr(x+288,y+h+24,w,h,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
+    writecStr(w-16-16,y+h+24,w,h,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
   } else if(minfo==3) { 
     var time = getTime("12h");  
     x=1080-w-32-16; y=2048-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue  
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
-    writecStr(x+168,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
+    writecStr(1080-w-16-16,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
   } 
   imgData = ctx.getImageData(0,2048-(h+64)-32,1080,h+64+8); 
   for (let i=0; i<1080*4*(h+64+8); i+=4) { 
