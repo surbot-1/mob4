@@ -50,10 +50,10 @@ function send1() {
     var time = getTime("12h"); 
     writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
     writecStr(1080-16-16-12*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
-    // setTimeout(() => {msgStatus(x+360,y+h+24,"send");},1000); 
-    setTimeout(() => {msgStatus(x+360,y+h+24,"sent");},2000); 
-    setTimeout(() => {msgStatus(x+360,y+h+24,"dlvd");},3000); 
-    setTimeout(() => {msgStatus(x+360,y+h+24,"seen");},4000);  
+    // setTimeout(() => {msgStatus(1080-16-16-4*24,y+h+24,"send");},1000); 
+    setTimeout(() => {msgStatus(1080-16-16-4*24,y+h+24,"sent");},2000); 
+    setTimeout(() => {msgStatus(1080-16-16-4*24,y+h+24,"dlvd");},3000); 
+    setTimeout(() => {msgStatus(1080-16-16-4*24,y+h+24,"seen");},4000);  
   } else if(minfo==1) { 
     var time = getTime("12h"); 
     x=16; y=2048-(h+64)-32; 
