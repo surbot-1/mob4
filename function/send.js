@@ -213,7 +213,7 @@ function sendOnServer(user) {
 
 function sendOnServerReceive(msgstr) { 
   var time = getTime("12h"); 
-  writeAppMessage(sender,receiver,msgid,receiver,msgstr,"sent",time,"ip"); 
+  writeAppMessage(sender,receiver,msgid,receiver,msgstr,"seen",time,"ip"); 
   writeAppMessageCount(sender,receiver,msgid); 
   msgid++; 	
 }
