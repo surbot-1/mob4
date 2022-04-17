@@ -268,8 +268,8 @@ function msgStatus(x,y,s) {
 function showMessage(x,y,w,h,vi,vf) { 
      if (appPtr) { 
         var ax=0; var ay=0; var aw=w; var ah=0; var ai=0; 
-	if (appPtr<h) {ay=h-appPtr; ah=appPtr; ai=0;} 
-	else if (appPtr>=h) {ay=0; ah=h; ai=ai-h;} 
+	if (appPtr<=h) {ay=h-appPtr; ah=appPtr; ai=0;} 
+	else if (appPtr>h) {ay=0; ah=h; ai=vf-h;} 
 	var cnv = document.getElementById("canvas"); 
         var ctx = cnv.getContext('2d'); 
 	var imgData = ctx.createImageData(aw, ah); 
