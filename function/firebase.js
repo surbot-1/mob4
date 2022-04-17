@@ -19,8 +19,8 @@ function writeAppMessage(user,sndrcv,msgid,name,message,status,time,ip) {
   }); 
 } 
 
-function readAppMessage(user) { 
-  var ref = firebase.database().ref("App").child(user); 
+function readAppMessage(user,sndrcv,msgid) { 
+  var ref = firebase.database().ref("App").child(user).child(sndrcv).child(msgid); 
   ref.once("value", function(snapshot) { 
     var msgid = snapshot.child("Msgid").val(); 
     var name = snapshot.child("Name").val(); 
@@ -63,8 +63,8 @@ function readSenderMessage(user) {
   }); 
 } 
 
-function getAppMessage(user,data) { 
-  var ref = firebase.database().ref("App").child(user); 
+function getAppMessage(user,sndrcv,msgid,data) { 
+  var ref = firebase.database().ref("App").child(user).child(sndrcv).child(msgid)  ; 
   ref.once("value", function(snapshot) { 
     var get = snapshot.child(data).val(); 
     rcvmsgid = get; 
