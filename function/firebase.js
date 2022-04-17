@@ -64,6 +64,13 @@ function readSenderMessage(user) {
   }); 
 } 
 
+function putAppMessage(sndr,rcvr,msgid,status,data) { 
+  var ref = firebase.database().ref("App").child(sndr).child(rcvr).child(msgid); 
+  ref.child(status).set({ 
+    Status: data
+  }); 
+}
+
 function getAppMessage(user,sndrcv,msgid,data) { 
   var ref = firebase.database().ref("App").child(user).child(sndrcv).child(msgid)  ; 
   ref.once("value", function(snapshot) { 
