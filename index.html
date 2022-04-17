@@ -180,11 +180,12 @@ var timer;
 function rcvMsg() { 
  if (useractive) { if (rcvmsgidp<128) {rcvmsgid=rcvmsgidp+1;} else {rcvmsgid=0;} rcvmsgsts="Null"; 
     var mid = readAppMessageStatus(receiver,sender,rcvmsgid); 
+    var name = getAppMessage(receiver,sender,rcvmsgid,"Name"); 
     if (rcvmsgsts=="Null") { 
        var tmr = setInterval( ()=> {
           if (rcvmsgsts!="Null") { 
               clearInterval(tmr); 
-              if (rcvmsgsts=="sent") {  
+              if (rcvmsgsts=="sent"&& name==sender) {  
 		 rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
 		 rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
 		 readAppMessage(receiver,sender,rcvmsgidp); 
@@ -194,7 +195,7 @@ function rcvMsg() {
        }, 0020); 
        setTimeout( ()=> {clearInterval(tmr);}, 1000); 
     } else if (rcvmsgsts!="Null") { 
-	if (rcvmsgsts=="sent") { 
+	if (rcvmsgsts=="sent" && name==sender) { 
            rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
            rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
            readAppMessage(receiver,sender,rcvmsgid); 
