@@ -1,5 +1,5 @@
-function writeAppMessage(user,sndrcv,msgid,name,message,status,time,ip) { 
-  var ref = firebase.database().ref("App").child(user).child(sndrcv).child(msgid); 
+function writeAppMessage(sndr,rcvr,msgid,name,message,status,time,ip) { 
+  var ref = firebase.database().ref("App").child(sndr).child(rcvr).child(msgid); 
   ref.child.(msgid)set({ 
     Msgid: msgid  
   }); 
@@ -19,15 +19,15 @@ function writeAppMessage(user,sndrcv,msgid,name,message,status,time,ip) {
   }); 
 } 
 
-function readAppMessage(user,sndrcv,msgid) { 
-  var ref = firebase.database().ref("App").child(user).child(sndrcv).child(msgid); 
+function readAppMessage(sndr,rcvr,msgid) { 
+  var ref = firebase.database().ref("App").child(sndr).child(rcvr).child(msgid); 
   ref.once("value", function(snapshot) { 
-    var msgid = snapshot.child("Msgid").val(); 
-    var name = snapshot.child("Name").val(); 
-    var message = snapshot.child("Message").val(); 
-    var status = snapshot.child("Status").val(); 
-    var time = snapshot.child("Time").val(); 
-    var ip = snapshot.child("Ip").val(); 
+    var msgid = snapshot.child("Msgid").child("Msgid").val(); 
+    var name = snapshot.child("Name").child("Name").val(); 
+    var message = snapshot.child("Message").child("Message").val(); 
+    var status = snapshot.child("Status").child("Status").val(); 
+    var time = snapshot.child("Time").child("Time").val(); 
+    var ip = snapshot.child("Ip").child("Ip").val(); 
     // snapshot.forEach(function(element) { 
     for (let i=0; i<name.length; i++) {
        usrByte[1+i]=name.charCodeAt(i); 
@@ -66,7 +66,7 @@ function readSenderMessage(user) {
 function getAppMessage(user,sndrcv,msgid,data) { 
   var ref = firebase.database().ref("App").child(user).child(sndrcv).child(msgid)  ; 
   ref.once("value", function(snapshot) { 
-    var get = snapshot.child(data).val(); 
+    var get = snapshot.child(data).child(data).val(); 
     rcvmsgid = get; 
     return get; 
   }); 
