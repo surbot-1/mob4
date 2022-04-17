@@ -189,6 +189,9 @@ function rcvMsg() {
 		 rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
 		 readAppMessage(receiver,sender,rcvmsgidp); 
 		 writeAppMessageStatus(receiver,sender,rcvmsgidp,"seen"); 
+	      } else if (rcvmsgsts=="seen") { 
+                 rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
+		 rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
 	      }
           } 
        }, 0020); 
@@ -199,7 +202,10 @@ function rcvMsg() {
            rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
            readAppMessage(receiver,sender,rcvmsgid); 
            writeAppMessageStatus(receiver,sender,rcvmsgidp,"seen"); 
-	} 
+	} else if (rcvmsgsts=="seen") { 
+           rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
+           rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
+	}
     }
  } 
 } 
