@@ -22,8 +22,8 @@ fileViewerUrl(936, 2048, "icon/microphone-icon-128.bmp");
 
 if (appPtr) {
 var ax=0; var ay=0; var aw=1080; var ah=0; 
-if (appPtr<1880) {ay=144+1880-appPtr; ah=appPtr;} 
-else if (appPtr>=1880) {ay=144; ah=1880;} 
+if (appPtr<=1872) {ay=144+1872-appPtr; ah=appPtr;} 
+else if (appPtr>1872) {ay=144; ah=1872;} 
 appPtri=0; appPtrf=ah; 
 var imgData = ctx.createImageData(aw, ah); 
 for (let i=0; i<aw*4*ah; i+=4) { 
