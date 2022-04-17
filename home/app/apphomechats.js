@@ -117,6 +117,7 @@ ctx.putImageData(imgData,0,ay);
 drawKeypad(0,1664,ktype); 
 showCursor(16,1448); 
 chatbotactive=true; useractive=0; sendactive=2; 
+var ptr=appPtr; 
 	
 	var timer;
 	function check() { 
@@ -126,8 +127,9 @@ chatbotactive=true; useractive=0; sendactive=2;
               if (x>0 && x<360*1 && y>0 && y<144) { 
               } else if (x>360*1 && x<360*2 && y>0 && y<144) { 
               } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
-              } else if (x>0 && x<1080 && y>144*1 && y<144*2) { 
-		    //  clearInterval(timer); apphomechatsuser1(); 
+              } else if (x>1080-128 && x<1080 && y>144*1 && y<144*2) { 
+		      if (ptr>=32) {ptr-=32;} 
+		      showMessage(0,144,1080,1880,0,ptr); 
               } else if (x>0 && x<1080 && y>144*2 && y<144*3) { 
               } else if (x>0 && x<1080 && y>144*3+8 && y<144*3+8+128) { 
               } else if (x>0 && x<1080 && y>144*3 && y<144*3+144) { 
@@ -136,13 +138,18 @@ chatbotactive=true; useractive=0; sendactive=2;
 	      } else if (x>0 && x<1080 && y>160*3 && y<160*3+144) { 
 	      } else if (x>0 && x<1080 && y>160*3 && y<160*3+144) { 
 	      } else if (x>0 && x<1080 && y>160*3 && y<160*3+144) { 
-	      } else if (x>0 && x<1080 && y>160*3 && y<160*3+144) { 
+	      } else if (x>1080-128 && x<1080 && y>1280 && y<1408) { 
+		      if (ptr<appPtr) {ptr+=32;}  
+		      showMessage(0,144,1080,1880,0,ptr); 
 	      } else if (x>680 && x<680+64 && y>1440 && y<1440+64) { 
 		      /* clearInterval(timer); */ attachment(); 
 	      } else if (x>808 && x<808+64 && y>1440 && y<1440+64) { 
 		      /* clearInterval(timer); */ camera(); 
 	      } else if (x>936 && x<936+128 && y>1408 && y<1408+128) { 
-		      /* clearInterval(timer); */ sendMessage(); 
+		      if (ptr!=appPtr) { 
+			      ptr=appPtr; showMessage(0,144,1080,1880,0,ptr); 
+		      } else if (ptr==appPtr) {}
+		      sendMessage(); ptr=appPtr; 
               } else if (x>1080-128 && x<1080 && y>1536 && y<1664) { 
 		      clearInterval(timer); clearCursor(16,1448); 
 		      appHomeChatsChatbot(); 
