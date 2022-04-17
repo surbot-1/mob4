@@ -211,12 +211,19 @@ function sendOnServer(user) {
   msgid++; 
 } 
 
-function sendOnServerReceive(msgstr) { 
+function sendOnServerRcv(user) { 
+  var minfo = msgView[(msgPtr-1)*512+0]; 
+  var msize = msgView[(msgPtr-1)*512+28]; 
+  var msgstr = ""; 
+  for (let i=0; i<msize; i++) { 
+    msgstr += ascChar(msgView[(msgPtr-1)*512+32+i]); 
+  }  
   var time = getTime("12h"); 
-  writeAppMessage(sender,receiver,msgid,receiver,msgstr,"seen",time,"ip"); 
+  // var ip = getIP(); 
+  writeAppMessage(sender,receiver,msgid,sender,msgstr,"sent",time,"ip"); 
   writeAppMessageCount(sender,receiver,msgid); 
-  msgid++; 	
-}
+  msgid++; 
+} 
 
 function receiveFromServer(user) { 
   readAppMessage(user+"To"+sender); 
