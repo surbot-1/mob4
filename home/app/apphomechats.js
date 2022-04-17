@@ -147,7 +147,7 @@ var ptr=appPtr;
 		      /* clearInterval(timer); */ camera(); 
 	      } else if (x>936 && x<936+128 && y>1408 && y<1408+128) { 
 		      if (ptr!=appPtr) { 
-			      ptr=appPtr; showMessage(0,144,1080,1880,0,ptr); 
+			      ptr=appPtr; showMessage(0,144,1080,1232,0,ptr); 
 		      } else if (ptr==appPtr) {}
 		      sendMessage(); ptr=appPtr; 
               } else if (x>1080-128 && x<1080 && y>1536 && y<1664) { 
