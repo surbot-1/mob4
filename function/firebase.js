@@ -1,21 +1,21 @@
 function writeAppMessage(sndr,rcvr,msgid,name,message,status,time,ip) { 
   var ref = firebase.database().ref("App").child(sndr).child(rcvr).child(msgid); 
-  ref.child(msgid).set({ 
+  ref.child("Msgid").set({ 
     Msgid: msgid  
   }); 
-  ref.child(name).set({ 
+  ref.child("Name").set({ 
     Name: name 
   }); 
-  ref.child(message).set({ 
+  ref.child("Message").set({ 
     Message: message
   }); 
-  ref.child(status).set({ 
+  ref.child("Status").set({ 
     Status: status 
   }); 
-  ref.child(time).set({ 
+  ref.child("Time").set({ 
     Time: time  
   }); 
-  ref.child(ip).set({ 
+  ref.child("Ip").set({ 
     Ip: ip 
   }); 
 } 
@@ -64,12 +64,28 @@ function readSenderMessage(user) {
   }); 
 } 
 
-function putAppMessage(sndr,rcvr,msgid,status,data) { 
+function writeAppMessageStatus(sndr,rcvr,msgid,status) { 
   var ref = firebase.database().ref("App").child(sndr).child(rcvr).child(msgid); 
-  ref.child(status).set({ 
+  ref.child("Status").set({ 
+    Status: status
+  }); 
+} 
+
+function readAppMessageStatus(user,sndrcv,msgid) { 
+  var ref = firebase.database().ref("App").child(user).child(sndrcv).child(msgid)  ; 
+  ref.once("value", function(snapshot) { 
+    var get = snapshot.child("Status").child("Status").val(); 
+    rcvmsgid = get; 
+    return get; 
+  }); 
+} 
+
+function putAppMessage(sndr,rcvr,msgid,aref,data) { 
+  var ref = firebase.database().ref("App").child(sndr).child(rcvr).child(msgid); 
+  ref.child(aref).set({ 
     Status: data
   }); 
-}
+} 
 
 function getAppMessage(user,sndrcv,msgid,data) { 
   var ref = firebase.database().ref("App").child(user).child(sndrcv).child(msgid)  ; 
