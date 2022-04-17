@@ -220,7 +220,7 @@ function sendOnServerRcv(user) {
   }  
   var time = getTime("12h"); 
   // var ip = getIP(); 
-  writeAppMessage(sender,receiver,msgid,sender,msgstr,"sent",time,"ip"); 
+  writeAppMessage(sender,receiver,msgid,receiver,msgstr,"sent",time,"ip"); 
   writeAppMessageCount(sender,receiver,msgid); 
   msgid++; 
 } 
