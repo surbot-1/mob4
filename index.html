@@ -185,7 +185,7 @@ function rcvMsg() {
        var tmr = setInterval( ()=> {
           if (rcvmsgsts!="Null") { 
               clearInterval(tmr); 
-              if (rcvmsgsts=="sent" && name==sender) {  
+              if (rcvmsgsts=="sent" && name==receiver) {  
 		 rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
 		 rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
 		 readAppMessage(receiver,sender,rcvmsgidp); 
@@ -195,7 +195,7 @@ function rcvMsg() {
        }, 0020); 
        setTimeout( ()=> {clearInterval(tmr);}, 1000); 
     } else if (rcvmsgsts!="Null") { 
-	if (rcvmsgsts=="sent" && name==sender) { 
+	if (rcvmsgsts=="sent" && name==receiver) { 
            rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
            rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
            readAppMessage(receiver,sender,rcvmsgid); 
