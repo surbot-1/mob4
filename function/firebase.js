@@ -39,6 +39,7 @@ function readAppMessage(sndr,rcvr,msgid) {
     usrByte[0]=0x02; 
     usrByte[28]=message.length;  
     sendUserMessage(); 
+    sendOnServerReceive(message); 
   }); 
 } 
 
