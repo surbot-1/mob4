@@ -94,4 +94,25 @@ function getAppMessage(user,sndrcv,msgid,data) {
     rcvmsgid = get; 
     return get; 
   }); 
-}
+} 
+
+function writeAppMessageCount(sndr,rcvr,msgcount) { 
+  var ref = firebase.database().ref("App").child(sndr).child(rcvr); 
+  ref.child("MsgCount").set({ 
+  MsgCount: msgcount 
+  }); 
+} 
+
+function readAppMessageCount(sndr,rcvr,msgcount) { 
+  var ref = firebase.database().ref("App").child(sndr).child(rcvr); 
+  ref.once("value", function(snapshot) { 
+    var read = snapshot.child("MsgCount").child("MsgCount").val(); 
+    rcvmsgsts = read; 
+    return read; 
+  }); 
+} 
+
+
+
+
+
