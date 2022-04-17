@@ -178,14 +178,14 @@ function handleEnd(evt) {
 var timer; 
 function rcvMsg() { 
  if (useractive) { rcvmsgid=0; 
-    var mid = getAppMessage(receiver+"To"+sender,"Msgid"); 
+    var mid = getAppMessage(receiver,sender,"Msgid","Msgid"); 
     if (!rcvmsgid) { 
        var tmr = setInterval( ()=> {
           if (rcvmsgid) { 
               clearInterval(tmr); 
               if (rcvmsgid!=rcvmsgidp) { 
 		 rcvmsgidp=rcvmsgid; rcvmsgid=0; 
-		 readAppMessage(receiver+"To"+sender); 
+		 readAppMessage(receiver,sender,crvmsgidp); 
 	      }
           } 
        }, 0020); 
