@@ -197,10 +197,35 @@ for (let i=0; i<aw*4*ah; i+=4) {
 } 
 ctx.putImageData(imgData,0,ay); 
 } else if (!appPtr) { 
-   for (let i=0; i<128; i++) { 
-      readAppMessage(receiver,sender,i); 
-   }
+   var timer; var count=0;
+function rcvMsg() { count++; if (count==128) {clearInterval(timer);}
+ if (useractive) { if (rcvmsgidp<128) {rcvmsgid=rcvmsgidp+1;} else {rcvmsgid=0;} rcvmsgsts="Null"; 
+    var mid = readAppMessageStatus(receiver,sender,rcvmsgid); 
+    if (rcvmsgsts=="Null") { 
+       var tmr = setInterval( ()=> {
+          if (rcvmsgsts!="Null") { 
+              clearInterval(tmr); 
+              if (rcvmsgsts=="sent") {  
+		 rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
+		 rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
+		 readAppMessage(receiver,sender,rcvmsgidp); 
+		 writeAppMessageStatus(receiver,sender,rcvmsgidp,"seen"); 
+	      }
+          } 
+       }, 0020); 
+       setTimeout( ()=> {clearInterval(tmr);}, 1000); 
+    } else if (rcvmsgsts!="Null") { 
+	if (rcvmsgsts!="sent") { 
+           rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
+           rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
+           readAppMessage(receiver,sender,rcvmsgid); 
+           writeAppMessageStatus(receiver,sender,rcvmsgidp,"seen"); 
+	} 
+    }
+ } 
 } 
+timer = setInterval(rcvMsg, 2000); 
+}
 	
 chatbotactive=false; useractive=true; sendactive=1; 
 	
