@@ -178,23 +178,25 @@ function handleEnd(evt) {
 	  
 var timer; 
 function rcvMsg() { 
- if (useractive) { rcvmsgid=0; 
-    var mid = readAppMessageStatus(receiver,sender,msgid); 
-    if (!rcvmsgid) { 
+ if (useractive) { rcvmsgsts="Null"; 
+    var mid = readAppMessageStatus(receiver,sender,rcvmsgid); 
+    if (rcvmsgsts=="Null") { 
        var tmr = setInterval( ()=> {
-          if (rcvmsgid) { 
+          if (rcvmsgsts!="Null") { 
               clearInterval(tmr); 
-              if (rcvmsgid!=rcvmsgidp) { 
-		 rcvmsgidp=rcvmsgid; rcvmsgid=0; 
+              if (rcvmsgsts=="sent") {  
+		 rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
 		 readAppMessage(receiver,sender,rcvmsgidp); 
+		 writeAppMessageStatus(receiver,sender,rcvmsgid,"seen"); 
 	      }
           } 
        }, 0020); 
        setTimeout( ()=> {clearInterval(tmr);}, 1000); 
-    } else if (rcvmsgid) { 
-	if (rcvmsgid!=rcvmsgidp) { 
-           rcvmsgidp=rcvmsgid; rcvmsgid=0; 
-           readAppMessage(receiver,sender,rcvmsgidp); 
+    } else if (rcvmsgsts!="Null") { 
+	if (rcvmsgsts!="sent") { 
+           rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
+           readAppMessage(receiver,sender,rcvmsgid); 
+           writeAppMessageStatus(receiver,sender,rcvmsgid,"seen"); 
 	} 
     }
  } 
