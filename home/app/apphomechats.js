@@ -33,6 +33,10 @@ for (let i=0; i<aw*4*ah; i+=4) {
     imgData.data[i+3]=appView[appPtri*1080*4+i+3]; 
 } 
 ctx.putImageData(imgData,0,ay); 
+} else if (!appPtr) { 
+   for (let i=0; i<128; i++) { 
+      readAppMessage(receiver,sender,i); 
+   }
 }
 	
 chatbotactive=true; useractive=false; sendactive=1; 
