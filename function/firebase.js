@@ -67,16 +67,16 @@ function readSenderMessage(user) {
 function writeAppMessageStatus(sndr,rcvr,msgid,status) { 
   var ref = firebase.database().ref("App").child(sndr).child(rcvr).child(msgid); 
   ref.child("Status").set({ 
-    Status: status
+  Status: status
   }); 
 } 
 
-function readAppMessageStatus(user,sndrcv,msgid) { 
-  var ref = firebase.database().ref("App").child(user).child(sndrcv).child(msgid)  ; 
+function readAppMessageStatus(sndr,rcvr,msgid) { 
+  var ref = firebase.database().ref("App").child(sndr).child(rcvr).child(msgid)  ; 
   ref.once("value", function(snapshot) { 
-    var get = snapshot.child("Status").child("Status").val(); 
-    rcvmsgid = get; 
-    return get; 
+    var read = snapshot.child("Status").child("Status").val(); 
+    msgsts = read; 
+    return read; 
   }); 
 } 
 
