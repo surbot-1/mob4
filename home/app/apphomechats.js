@@ -312,7 +312,7 @@ ctx.putImageData(imgData,0,ay);
 } else if (!appPtr) { 
    var timer; var count=0; msgcount=0; msgcountp=0; 
       var countf = readAppMessageCount(sender,receiver); 
-function rcvMsg() { 
+function rcvMsg() { alert(msgcount); 
  if (msgcount) { if (rcvmsgidp<msgcount) {rcvmsgid=rcvmsgidp+1;} else {rcvmsgid=0;} rcvmsgsts="Null"; 
     var mid = readAppMessageStatus(sender,receiver,rcvmsgid); 
     if (rcvmsgsts=="Null") { 
