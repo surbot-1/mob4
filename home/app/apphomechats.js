@@ -37,7 +37,7 @@ ctx.putImageData(imgData,0,ay);
 	
 chatbotactive=true; useractive=false; sendactive=1; 
 	
-	var timer;
+	var timer; var ptr=0; 
 	function check() { 
 	var x = touchx;  var y = touchy; 
 	var tend = touch;  
@@ -45,17 +45,20 @@ chatbotactive=true; useractive=false; sendactive=1;
               if (x>0 && x<360*1 && y>0 && y<144) { 
               } else if (x>360*1 && x<360*2 && y>0 && y<144) { 
               } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
-              } else if (x>0 && x<1080 && y>144*1 && y<144*2) { 
-		    //  clearInterval(timer); appHomeChatsUser1(); 
+              } else if (x>1080-128 && x<1080 && y>144*1 && y<144*2) { 
+		      if (ptr>=8) {ptr-=8;} 
+		      showMessage(0,144,1080,1880,ptr,0); 
               } else if (x>0 && x<1080 && y>144*2 && y<144*3) { 
               } else if (x>0 && x<1080 && y>144*3+8 && y<144*3+8+128) { 
               } else if (x>0 && x<1080 && y>160*4 && y<160*4+144) { 
-              } else if (x>0 && x<1080 && y>160*5 && y<160*5+144) { 
-	      } else if (x>0 && x<1080 && y>160*6 && y<160*6+144) { 
-	      } else if (x>0 && x<1080 && y>160*7 && y<160*7+144) { 
-	      } else if (x>0 && x<1080 && y>160*8 && y<160*8+144) { 
-	      } else if (x>0 && x<1080 && y>160*9 && y<160*9+144) { 
-	      } else if (x>0 && x<1080 && y>160*10 && y<160*10+144) { 
+              } else if (x>0 && x<1080 && y>160*4 && y<160*4+144) { 
+	      } else if (x>0 && x<1080 && y>160*4 && y<160*4+144) { 
+	      } else if (x>0 && x<1080 && y>160*4 && y<160*4+144) { 
+	      } else if (x>0 && x<1080 && y>160*4 && y<160*4+144) { 
+	      } else if (x>0 && x<1080 && y>160*4 && y<160*4+144) { 
+	      } else if (x>1080-128 && x<1080 && y>1920 && y<2048) { 
+		      if (ptr<=appPtr-1880) {ptr+=8;}  
+		      showMessage(0,144,1080,1880,ptr,0); 
 	      } else if (x>0 && x<680 && y>2048 && y<2176) { 
 		      clearInterval(timer); appHomeChatsChatbotChat();
 	      } else if (x>680 && x<680+64 && y>2080 && y<2080+64) { 
