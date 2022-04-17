@@ -178,7 +178,7 @@ function handleEnd(evt) {
 	  
 var timer; 
 function rcvMsg() { 
- if (useractive) { if (rcvmsgidp<128) { } else {rcvmsgid=0;} rcvmsgsts="Null"; 
+ if (useractive) { if (rcvmsgidp<128) {rcvmsgid=rcvmsgidp+1;} else {rcvmsgid=0;} rcvmsgsts="Null"; 
     var mid = readAppMessageStatus(receiver,sender,rcvmsgid); 
     if (rcvmsgsts=="Null") { 
        var tmr = setInterval( ()=> {
@@ -195,7 +195,7 @@ function rcvMsg() {
        setTimeout( ()=> {clearInterval(tmr);}, 1000); 
     } else if (rcvmsgsts!="Null") { 
 	if (rcvmsgsts=="sent") { 
-           rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
+           rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1; 
            rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
            readAppMessage(receiver,sender,rcvmsgid); 
            writeAppMessageStatus(receiver,sender,rcvmsgidp,"seen"); 
