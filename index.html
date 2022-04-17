@@ -193,7 +193,7 @@ function rcvMsg() {
     } else if (rcvmsgid) { 
 	if (rcvmsgid!=rcvmsgidp) { 
            rcvmsgidp=rcvmsgid; rcvmsgid=0; 
-           readAppMessage(receiver+"To"+sender); 
+           readAppMessage(receiver,sender,rcvmsgidp); 
 	} 
     }
  } 
