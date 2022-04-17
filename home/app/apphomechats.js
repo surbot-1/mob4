@@ -313,7 +313,7 @@ ctx.putImageData(imgData,0,ay);
    var timer; var count=0; msgcount=0; msgcountp=0; 
       var countf = readAppMessageCount(sender,receiver); 
 function rcvMsg() { 
- if (msgcount) { if (rcvmsgidp<msgcount) {rcvmsgid=rcvmsgidp+1;} else {clearInterval(timer);} rcvmsgsts="Null"; 
+ if (msgcount) { if (rcvmsgidp>=msgcount) {clearInterval(timer);} else {rcvmsgid=rcvmsgidp+1;} rcvmsgsts="Null"; 
     var mid = readAppMessageStatus(sender,receiver,rcvmsgid); 
     if (rcvmsgsts=="Null") { 
        var tmr = setInterval( ()=> {
@@ -324,7 +324,7 @@ function rcvMsg() {
 		 rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
 		 readAppMessageOnce(sender,receiver,rcvmsgidp); 
 		 writeAppMessageStatus(sender,receiver,rcvmsgidp,"seen"); 
-		 if (count==msgcount) {clearInterval(timer); msgcountp=msgcount;} 
+		 if (count>=msgcount) {clearInterval(timer); msgcountp=msgcount;} 
 		 count++; 
 	      }
           } 
@@ -336,7 +336,7 @@ function rcvMsg() {
            rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
            readAppMessageOnce(sender,receiver,rcvmsgidp); 
            writeAppMessageStatus(sender,receiver,rcvmsgidp,"seen"); 
-           if (count==msgcount) {clearInterval(timer); msgcountp=msgcount;} 
+           if (count>=msgcount) {clearInterval(timer); msgcountp=msgcount;} 
            count++; 
 	} 
     }
