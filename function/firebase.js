@@ -14,7 +14,8 @@ function writeAppMessage(sndr,rcvr,msgid,name,message,status,time,ip) {
   }); 
   ref.child.(time)set({ 
     Time: time  
-  }); ref.child.(ip)set({ 
+  }); 
+  ref.child.(ip)set({ 
     Ip: ip 
   }); 
 } 
