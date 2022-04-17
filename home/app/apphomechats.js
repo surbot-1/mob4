@@ -197,7 +197,7 @@ for (let i=0; i<aw*4*ah; i+=4) {
 } 
 ctx.putImageData(imgData,0,ay); 
 } else if (!appPtr) { 
-   var timer; var count=0; msgcount=0; 
+   var timer; var count=0; msgcount=0; msgcountp=0; 
    var countf = readAppMessageCount(sender,receiver); 
    /* var tmr = setInterval( ()=> { 
    if (msgcount) {clearInterval(tmr);} 
@@ -214,7 +214,8 @@ function rcvMsg() {
 		 rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
 		 readAppMessageOnce(sender,receiver,rcvmsgidp); 
 		 writeAppMessageStatus(sender,receiver,rcvmsgidp,"seen"); 
-		 count++; if (count==msgcount) {clearInterval(timer);} 
+		 if (count==msgcount) {clearInterval(timer); msgcountp=msgcount;} 
+		 count++; 
 	      }
           } 
        }, 0020); 
@@ -225,7 +226,8 @@ function rcvMsg() {
            rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
            readAppMessageOnce(sender,receiver,rcvmsgidp); 
            writeAppMessageStatus(sender,receiver,rcvmsgidp,"seen"); 
-           count++; if (count==msgcount) {clearInterval(timer);} 
+           if (count==msgcount) {clearInterval(timer); msgcountp=msgcount;} 
+           count++; 
 	} 
     }
  } 
@@ -308,7 +310,7 @@ for (let i=0; i<aw*4*ah; i+=4) {
 } 
 ctx.putImageData(imgData,0,ay); 
 } else if (!appPtr) { 
-   var timer; var count=0; 
+   var timer; var count=0; msgcount=0; msgcountp=0; 
       var countf = readAppMessageCount(sender,receiver); 
 function rcvMsg() { 
  if (msgcount) { if (rcvmsgidp<msgcount) {rcvmsgid=rcvmsgidp+1;} else {rcvmsgid=0;} rcvmsgsts="Null"; 
@@ -322,7 +324,8 @@ function rcvMsg() {
 		 rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
 		 readAppMessageOnce(sender,receiver,rcvmsgidp); 
 		 writeAppMessageStatus(sender,receiver,rcvmsgidp,"seen"); 
-		 count++; if (count==msgcount) {clearInterval(timer);} 
+		 if (count==msgcount) {clearInterval(timer); msgcountp=msgcount;} 
+		 count++; 
 	      }
           } 
        }, 0020); 
@@ -333,7 +336,8 @@ function rcvMsg() {
            rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
            readAppMessageOnce(sender,receiver,rcvmsgidp); 
            writeAppMessageStatus(sender,receiver,rcvmsgidp,"seen"); 
-           count++; if (count==msgcount) {clearInterval(timer);} 
+           if (count==msgcount) {clearInterval(timer); msgcountp=msgcount;} 
+           count++; 
 	} 
     }
  } 
