@@ -208,7 +208,7 @@ function rcvMsg() { count++; if (count==128) {clearInterval(timer);}
               if (true) {  
 		 rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
 		 rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
-		 readAppMessage(receiver,sender,rcvmsgidp); 
+		 readAppMessageOnce(receiver,sender,rcvmsgidp); 
 		 writeAppMessageStatus(receiver,sender,rcvmsgidp,"seen"); 
 	      }
           } 
@@ -218,7 +218,7 @@ function rcvMsg() { count++; if (count==128) {clearInterval(timer);}
 	if (true) { 
            rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
            rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
-           readAppMessage(receiver,sender,rcvmsgid); 
+           readAppMessageOnce(receiver,sender,rcvmsgid); 
            writeAppMessageStatus(receiver,sender,rcvmsgidp,"seen"); 
 	} 
     }
@@ -313,7 +313,7 @@ function rcvMsg() { count++; if (count==128) {clearInterval(timer);}
               if (true) {  
 		 rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
 		 rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
-		 readAppMessage(receiver,sender,rcvmsgidp); 
+		 readAppMessageOnce(receiver,sender,rcvmsgidp); 
 		 writeAppMessageStatus(receiver,sender,rcvmsgidp,"seen"); 
 	      }
           } 
@@ -323,7 +323,7 @@ function rcvMsg() { count++; if (count==128) {clearInterval(timer);}
 	if (true) { 
            rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
            rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
-           readAppMessage(receiver,sender,rcvmsgid); 
+           readAppMessageOnce(receiver,sender,rcvmsgid); 
            writeAppMessageStatus(receiver,sender,rcvmsgidp,"seen"); 
 	} 
     }
