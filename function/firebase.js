@@ -75,7 +75,7 @@ function readAppMessageStatus(sndr,rcvr,msgid) {
   var ref = firebase.database().ref("App").child(sndr).child(rcvr).child(msgid)  ; 
   ref.once("value", function(snapshot) { 
     var read = snapshot.child("Status").child("Status").val(); 
-    msgsts = read; 
+    rcvmsgsts = read; 
     return read; 
   }); 
 } 
