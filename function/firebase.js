@@ -127,11 +127,11 @@ function writeAppMessageCount(sndr,rcvr,msgcount) {
   }); 
 } 
 
-function readAppMessageCount(sndr,rcvr,msgcount) { 
+function readAppMessageCount(sndr,rcvr) { 
   var ref = firebase.database().ref("App").child(sndr).child(rcvr); 
   ref.once("value", function(snapshot) { 
     var read = snapshot.child("MsgCount").child("MsgCount").val(); 
-    rcvmsgsts = read; 
+    msgcount = read; 
     return read; 
   }); 
 } 
