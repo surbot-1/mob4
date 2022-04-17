@@ -267,17 +267,17 @@ function msgStatus(x,y,s) {
 
 function showMessage(x,y,w,h,vi,vf) { 
      if (appPtr) { 
-        var ax=0; var ay=0; var aw=w; var ah=0; 
-	if (appPtr<h) {ay=h-appPtr; ah=appPtr;} 
-	else if (appPtr>=h) {ay=0; ah=h;} 
+        var ax=0; var ay=0; var aw=w; var ah=0; var ai=0; 
+	if (appPtr<h) {ay=h-appPtr; ah=appPtr; ai=0;} 
+	else if (appPtr>=h) {ay=0; ah=h; ai=ai-h;} 
 	var cnv = document.getElementById("canvas"); 
         var ctx = cnv.getContext('2d'); 
 	var imgData = ctx.createImageData(aw, ah); 
 	for (let i=0; i<aw*4*ah; i+=4) { 
-            imgData.data[i+0]=appView[vi*1080*4+i+0]; 
-            imgData.data[i+1]=appView[vi*1080*4+i+1]; 
-            imgData.data[i+2]=appView[vi*1080*4+i+2]; 
-            imgData.data[i+3]=appView[vi*1080*4+i+3]; 
+            imgData.data[i+0]=appView[ai*1080*4+i+0]; 
+            imgData.data[i+1]=appView[ai*1080*4+i+1]; 
+            imgData.data[i+2]=appView[ai*1080*4+i+2]; 
+            imgData.data[i+3]=appView[ai*1080*4+i+3]; 
 	} 
 	ctx.putImageData(imgData,x+ax,y+ay); 
      }
