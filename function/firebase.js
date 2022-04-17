@@ -1,11 +1,20 @@
-function writeAppMessage(user,msgid,name,message,status,time,ip) { 
-  var ref = firebase.database().ref("App").child(user); 
-  ref.set({ 
-    Msgid: msgid, 
-    Name: name, 
-    Message: message, 
-    Status: status, 
-    Time: time, 
+function writeAppMessage(user,sndrcv,msgid,name,message,status,time,ip) { 
+  var ref = firebase.database().ref("App").child(user).child(sndrcv).child(msgid); 
+  ref.child.(msgid)set({ 
+    Msgid: msgid  
+  }); 
+  ref.child.(name)set({ 
+    Name: name 
+  }); 
+  ref.child.(message)set({ 
+    Message: message
+  }); 
+  ref.child.(status)set({ 
+    Status: status 
+  }); 
+  ref.child.(time)set({ 
+    Time: time  
+  }); ref.child.(ip)set({ 
     Ip: ip 
   }); 
 } 
