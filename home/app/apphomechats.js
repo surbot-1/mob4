@@ -197,13 +197,13 @@ for (let i=0; i<aw*4*ah; i+=4) {
 } 
 ctx.putImageData(imgData,0,ay); 
 } else if (!appPtr) { 
-   var timer; var count=0; 
+   var timer; var count=0; msgcount=0; 
    var countf = readAppMessageCount(sender,receiver); 
    /* var tmr = setInterval( ()=> { 
    if (msgcount) {clearInterval(tmr);} 
    }, 0200); */ 
 function rcvMsg() { 
- if (true) { if (rcvmsgidp<msgcount) {rcvmsgid=rcvmsgidp+1;} else {rcvmsgid=0;} rcvmsgsts="Null"; 
+ if (msgcount) { if (rcvmsgidp<msgcount) {rcvmsgid=rcvmsgidp+1;} else {rcvmsgid=0;} rcvmsgsts="Null"; 
     var mid = readAppMessageStatus(sender,receiver,rcvmsgid); 
     if (rcvmsgsts=="Null") { 
        var tmr = setInterval( ()=> {
@@ -311,7 +311,7 @@ ctx.putImageData(imgData,0,ay);
    var timer; var count=0; 
       var countf = readAppMessageCount(sender,receiver); 
 function rcvMsg() { 
- if (true) { if (rcvmsgidp<msgcount) {rcvmsgid=rcvmsgidp+1;} else {rcvmsgid=0;} rcvmsgsts="Null"; 
+ if (msgcount) { if (rcvmsgidp<msgcount) {rcvmsgid=rcvmsgidp+1;} else {rcvmsgid=0;} rcvmsgsts="Null"; 
     var mid = readAppMessageStatus(sender,receiver,rcvmsgid); 
     if (rcvmsgsts=="Null") { 
        var tmr = setInterval( ()=> {
