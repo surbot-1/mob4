@@ -185,7 +185,7 @@ function rcvMsg() {
        var tmr = setInterval( ()=> {
           if (rcvmsgsts!="Null") { 
               clearInterval(tmr); 
-              if (rcvmsgsts=="sent"&& name==sender) {  
+              if (rcvmsgsts=="sent" && name==sender) {  
 		 rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
 		 rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
 		 readAppMessage(receiver,sender,rcvmsgidp); 
