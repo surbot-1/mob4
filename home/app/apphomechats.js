@@ -36,8 +36,9 @@ ctx.putImageData(imgData,0,ay);
 }
 	
 chatbotactive=true; useractive=false; sendactive=1; 
+var ptr; if (appPtr<1880) {ptr=0} else if (appPtr>=1880) {ptr=appPtr-1880;}
 	
-	var timer; var ptr=0; 
+	var timer; 
 	function check() { 
 	var x = touchx;  var y = touchy; 
 	var tend = touch;  
@@ -46,7 +47,7 @@ chatbotactive=true; useractive=false; sendactive=1;
               } else if (x>360*1 && x<360*2 && y>0 && y<144) { 
               } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
               } else if (x>1080-128 && x<1080 && y>144*1 && y<144*2) { 
-		      if (ptr>=8) {ptr-=8;} 
+		      if (ptr>=8) {ptr-=32;} 
 		      showMessage(0,144,1080,1880,ptr,0); 
               } else if (x>0 && x<1080 && y>144*2 && y<144*3) { 
               } else if (x>0 && x<1080 && y>144*3+8 && y<144*3+8+128) { 
@@ -57,7 +58,7 @@ chatbotactive=true; useractive=false; sendactive=1;
 	      } else if (x>0 && x<1080 && y>160*4 && y<160*4+144) { 
 	      } else if (x>0 && x<1080 && y>160*4 && y<160*4+144) { 
 	      } else if (x>1080-128 && x<1080 && y>1920 && y<2048) { 
-		      if (ptr<=appPtr-1880) {ptr+=8;}  
+		      if (ptr<=appPtr-1880) {ptr+=32;}  
 		      showMessage(0,144,1080,1880,ptr,0); 
 	      } else if (x>0 && x<680 && y>2048 && y<2176) { 
 		      clearInterval(timer); appHomeChatsChatbotChat();
