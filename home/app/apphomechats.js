@@ -197,7 +197,11 @@ for (let i=0; i<aw*4*ah; i+=4) {
 } 
 ctx.putImageData(imgData,0,ay); 
 } else if (!appPtr) { 
-   var timer; var count=0;
+   var timer; var count=0; 
+   var countf = readAppMessageCount(sender,receiver,"MsgCount"); 
+   /* var tmr = setInterval( ()=> { 
+   if (msgcount) {clearInterval(tmr);} 
+   }, 0200); */ 
 function rcvMsg() { 
  if (useractive) { if (rcvmsgidp<128) {rcvmsgid=rcvmsgidp+1;} else {rcvmsgid=0;} rcvmsgsts="Null"; 
     var mid = readAppMessageStatus(receiver,sender,rcvmsgid); 
@@ -210,7 +214,7 @@ function rcvMsg() {
 		 rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
 		 readAppMessageOnce(receiver,sender,rcvmsgidp); 
 		 writeAppMessageStatus(receiver,sender,rcvmsgidp,"seen"); 
-		 count++; if (count==128) {clearInterval(timer);} 
+		 count++; if (count==msgcount) {clearInterval(timer);} 
 	      }
           } 
        }, 0020); 
@@ -221,7 +225,7 @@ function rcvMsg() {
            rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
            readAppMessageOnce(receiver,sender,rcvmsgid); 
            writeAppMessageStatus(receiver,sender,rcvmsgidp,"seen"); 
-           count++; if (count==128) {clearInterval(timer);} 
+           count++; if (count==msgcount) {clearInterval(timer);} 
 	} 
     }
  } 
