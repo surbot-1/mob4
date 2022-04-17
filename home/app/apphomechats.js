@@ -196,20 +196,21 @@ for (let i=0; i<aw*4*ah; i+=4) {
     imgData.data[i+3]=appView[appPtri*1080*4+i+3]; 
 } 
 ctx.putImageData(imgData,0,ay); 
-} /* else if (!appPtr) { 
+} else if (!appPtr) { 
    var timer; var count=0;
-function rcvMsg() { count++; if (count==128) {clearInterval(timer);}
+function rcvMsg() { 
  if (useractive) { if (rcvmsgidp<128) {rcvmsgid=rcvmsgidp+1;} else {rcvmsgid=0;} rcvmsgsts="Null"; 
     var mid = readAppMessageStatus(receiver,sender,rcvmsgid); 
     if (rcvmsgsts=="Null") { 
        var tmr = setInterval( ()=> {
           if (rcvmsgsts!="Null") { 
               clearInterval(tmr); 
-              if (true) {  
+              if (true) { 
 		 rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
 		 rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
 		 readAppMessageOnce(receiver,sender,rcvmsgidp); 
 		 writeAppMessageStatus(receiver,sender,rcvmsgidp,"seen"); 
+		 count++; if (count==128) {clearInterval(timer);} 
 	      }
           } 
        }, 0020); 
@@ -220,12 +221,13 @@ function rcvMsg() { count++; if (count==128) {clearInterval(timer);}
            rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
            readAppMessageOnce(receiver,sender,rcvmsgid); 
            writeAppMessageStatus(receiver,sender,rcvmsgidp,"seen"); 
+           count++; if (count==128) {clearInterval(timer);} 
 	} 
     }
  } 
 } 
 timer = setInterval(rcvMsg, 2000); 
-} */
+} 
 	
 chatbotactive=false; useractive=true; sendactive=1; 
 	
