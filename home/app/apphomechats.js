@@ -205,7 +205,7 @@ function rcvMsg() { count++; if (count==128) {clearInterval(timer);}
        var tmr = setInterval( ()=> {
           if (rcvmsgsts!="Null") { 
               clearInterval(tmr); 
-              if (rcvmsgsts=="sent") {  
+              if (true) {  
 		 rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
 		 rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
 		 readAppMessage(receiver,sender,rcvmsgidp); 
@@ -215,7 +215,7 @@ function rcvMsg() { count++; if (count==128) {clearInterval(timer);}
        }, 0020); 
        setTimeout( ()=> {clearInterval(tmr);}, 1000); 
     } else if (rcvmsgsts!="Null") { 
-	if (rcvmsgsts!="sent") { 
+	if (true) { 
            rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
            rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
            readAppMessage(receiver,sender,rcvmsgid); 
@@ -310,7 +310,7 @@ function rcvMsg() { count++; if (count==128) {clearInterval(timer);}
        var tmr = setInterval( ()=> {
           if (rcvmsgsts!="Null") { 
               clearInterval(tmr); 
-              if (rcvmsgsts=="sent") {  
+              if (true) {  
 		 rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
 		 rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
 		 readAppMessage(receiver,sender,rcvmsgidp); 
@@ -320,7 +320,7 @@ function rcvMsg() { count++; if (count==128) {clearInterval(timer);}
        }, 0020); 
        setTimeout( ()=> {clearInterval(tmr);}, 1000); 
     } else if (rcvmsgsts!="Null") { 
-	if (rcvmsgsts!="sent") { 
+	if (true) { 
            rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
            rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
            readAppMessage(receiver,sender,rcvmsgid); 
