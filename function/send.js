@@ -265,6 +265,28 @@ function msgStatus(x,y,s) {
   writecStr(x,y,432,128,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
 } 
 
+function showMessage(x,y,w,h,vi,vf) { 
+     if (appPtr) { 
+        var ax=0; var ay=0; var aw=w; var ah=0; 
+	if (appPtr<1880) {ay=h-appPtr; ah=appPtr;} 
+	else if (appPtr>=1880) {ay=0; ah=h;} 
+	var cnv = document.getElementById("canvas"); 
+        var ctx = cnv.getContext('2d'); 
+	var imgData = ctx.createImageData(aw, ah); 
+	for (let i=0; i<aw*4*ah; i+=4) { 
+            imgData.data[i+0]=appView[vi*1080*4+i+0]; 
+            imgData.data[i+1]=appView[vi*1080*4+i+1]; 
+            imgData.data[i+2]=appView[vi*1080*4+i+2]; 
+            imgData.data[i+3]=appView[vi*1080*4+i+3]; 
+	} 
+	ctx.putImageData(imgData,x+ax,y+ay); 
+     }
+}
+
+
+
+
+
 
 
 
