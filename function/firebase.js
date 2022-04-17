@@ -2,7 +2,7 @@ function writeAppMessage(sndr,rcvr,msgid,name,message,status,time,ip) {
   var ref = firebase.database().ref("App").child(sndr).child(rcvr).child(msgid); 
   ref.child(msgid).set({ 
     Msgid: msgid  
-  }); alert('1');
+  }); 
   ref.child(name).set({ 
     Name: name 
   }); 
