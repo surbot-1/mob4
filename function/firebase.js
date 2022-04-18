@@ -134,6 +134,15 @@ function readAppMessageStatus(sndr,rcvr,msgid) {
   }); 
 } 
 
+function readAppMessageRcvStatus(sndr,rcvr,msgid) { 
+  var ref = firebase.database().ref("App").child(sndr).child(rcvr).child(msgid)  ; 
+  ref.once("value", function(snapshot) { 
+    var read = snapshot.child("Status").child("Status").val(); 
+    // rcvmsgsts = read; 
+    return read; 
+  }); 
+} 
+
 function putAppMessage(sndr,rcvr,msgid,aref,data) { 
   var ref = firebase.database().ref("App").child(sndr).child(rcvr).child(msgid); 
   ref.child(aref).set({ 
@@ -145,7 +154,7 @@ function getAppMessage(user,sndrcv,msgid,data) {
   var ref = firebase.database().ref("App").child(user).child(sndrcv).child(msgid)  ; 
   ref.once("value", function(snapshot) { 
     var get = snapshot.child(data).child(data).val(); 
-    rcvmsgid = get; 
+    // rcvmsgid = get; 
     return get; 
   }); 
 } 
