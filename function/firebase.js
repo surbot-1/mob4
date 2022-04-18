@@ -134,11 +134,11 @@ function readAppMessageStatus(sndr,rcvr,msgid) {
   }); 
 } 
 
-function readAppMessageRcvStatus(sndr,rcvr,msgid) { 
+function readAppMessageReadStatus(sndr,rcvr,msgid) { 
   var ref = firebase.database().ref("App").child(sndr).child(rcvr).child(msgid)  ; 
   ref.once("value", function(snapshot) { 
     var read = snapshot.child("Status").child("Status").val(); 
-    // rcvmsgsts = read; 
+    readmsgsts = read; 
     return read; 
   }); 
 } 
