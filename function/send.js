@@ -273,11 +273,14 @@ function receiveFromServer(user) {
 
 function writeReadStatus(sndr,rcvr,mid) { 
   var tmr; readmsgsts="Null"; 
+  var x=0; var y=0; var w=24*4; var h=32; 
   var readsts = readAppMessageReadStatus(sndr,rcvr,mid);  
   setInterval( ()=> {
   if (readmsgsts=="seen") { 
      clearInterval(tmr); 
-     writecStr(1080-16-16-4*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],"seen"); 
+     if (sendactive==1) {x=1080-16-16-4*24; y=2048-32-32-8;} 
+     else if (sendactive==2) {x=1080-16-16-4*24; y=1208-32-32-8;} 
+     writecStr(x,y,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],"seen"); 
   } 
   },0100); 
 }
