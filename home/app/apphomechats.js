@@ -199,9 +199,9 @@ ctx.putImageData(imgData,0,ay);
 } else if (!appPtr) { 
    var timer; var count=0; msgcount=0; msgcountp=0; 
    var countf = readAppMessageCount(sender,receiver); 
-   /* var tmr = setInterval( ()=> { 
-   if (msgcount) {clearInterval(tmr);} 
-   }, 0200); */ 
+   var tmr = setInterval( ()=> { 
+   if (msgcount) {clearInterval(tmr); timer = setInterval(rcvMsg, 2000);} 
+   }, 0200); 
 function rcvMsg() { 
  if (msgcount) { if (rcvmsgidp<msgcount) {rcvmsgid=rcvmsgidp+1;} else {rcvmsgid=0;} rcvmsgsts="Null"; 
     var mid = readAppMessageStatus(sender,receiver,rcvmsgid); 
@@ -232,7 +232,7 @@ function rcvMsg() {
     }
  } 
 } 
-timer = setInterval(rcvMsg, 2000); 
+// timer = setInterval(rcvMsg, 2000); 
 } 
 	
 chatbotactive=false; useractive=true; sendactive=1; 
@@ -311,7 +311,10 @@ for (let i=0; i<aw*4*ah; i+=4) {
 ctx.putImageData(imgData,0,ay); 
 } else if (!appPtr) { 
    var timer; var count=0; msgcount=0; msgcountp=0; 
-      var countf = readAppMessageCount(sender,receiver); 
+   var countf = readAppMessageCount(sender,receiver); 
+   var tmr = setInterval( ()=> { 
+   if (msgcount) {clearInterval(tmr); timer = setInterval(rcvMsg, 2000);} 
+   }, 0200); 
 function rcvMsg() { 
  if (msgcount) { if (rcvmsgidp>=msgcount) {clearInterval(timer);} else {rcvmsgid=rcvmsgidp+1;} rcvmsgsts="Null"; 
     var mid = readAppMessageStatus(sender,receiver,rcvmsgid); 
@@ -342,7 +345,7 @@ function rcvMsg() {
     }
  } 
 } 
-timer = setInterval(rcvMsg, 2000); 
+// timer = setInterval(rcvMsg, 2000); 
 } 
 	
 drawKeypad(0,1664,ktype); 
