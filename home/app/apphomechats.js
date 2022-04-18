@@ -201,42 +201,12 @@ ctx.putImageData(imgData,0,ay);
    var countf = readAppMessageCount(sender,receiver); 
    var tmr = setInterval( ()=> { 
    if (msgcount) { 
-       clearInterval(tmr); // timer = setInterval(rcvMsg, 2000); 
+       clearInterval(tmr); rcvmsgidp=msgcount; 
        for (let i=0; i<msgcount+1; i++) {readAppMessageOnce(sender,receiver,i);} 
    } 
    }, 0200); 
-function rcvMsg() { 
- if (msgcount) { if (rcvmsgidp<msgcount) {rcvmsgid=rcvmsgidp+1;} else {rcvmsgid=0;} rcvmsgsts="Null"; 
-    var mid = readAppMessageStatus(sender,receiver,rcvmsgid); 
-    if (rcvmsgsts=="Null") { 
-       var tmr = setInterval( ()=> {
-          if (rcvmsgsts!="Null") { 
-              clearInterval(tmr); 
-              if (true) { 
-		 rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
-		 rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
-		 readAppMessageOnce(sender,receiver,rcvmsgidp); 
-		 writeAppMessageStatus(sender,receiver,rcvmsgidp,"seen"); 
-		 if (count==msgcount) {clearInterval(timer); msgcountp=msgcount;} 
-		 count++; 
-	      }
-          } 
-       }, 0020); 
-       setTimeout( ()=> {clearInterval(tmr);}, 1000); 
-    } else if (rcvmsgsts!="Null") { 
-	if (true) { 
-           rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
-           rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
-           readAppMessageOnce(sender,receiver,rcvmsgidp); 
-           writeAppMessageStatus(sender,receiver,rcvmsgidp,"seen"); 
-           if (count==msgcount) {clearInterval(timer); msgcountp=msgcount;} 
-           count++; 
-	} 
-    }
- } 
-} 
-// timer = setInterval(rcvMsg, 2000); 
-} 
+}
+
 	
 chatbotactive=false; useractive=true; sendactive=1; 
 	
@@ -317,42 +287,12 @@ ctx.putImageData(imgData,0,ay);
    var countf = readAppMessageCount(sender,receiver); 
    var tmr = setInterval( ()=> { 
    if (msgcount) {
-      clearInterval(tmr); // timer = setInterval(rcvMsg, 2000); 
+      clearInterval(tmr); rcvmsgidp=msgcount; 
       for (let i=0; i<msgcount+1; i++) {readAppMessageOnce(sender,receiver,i);}
    } 
    }, 0200); 
-function rcvMsg() { 
- if (msgcount) { if (rcvmsgidp>=msgcount) {clearInterval(timer);} else {rcvmsgid=rcvmsgidp+1;} rcvmsgsts="Null"; 
-    var mid = readAppMessageStatus(sender,receiver,rcvmsgid); 
-    if (rcvmsgsts=="Null") { 
-       var tmr = setInterval( ()=> {
-          if (rcvmsgsts!="Null") { 
-              clearInterval(tmr); 
-              if (true) {  
-		 rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
-		 rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
-		 readAppMessageOnce(sender,receiver,rcvmsgidp); 
-		 writeAppMessageStatus(sender,receiver,rcvmsgidp,"seen"); 
-		 if (count>=msgcount) {clearInterval(timer); msgcountp=msgcount;} 
-		 count++; 
-	      }
-          } 
-       }, 0020); 
-       setTimeout( ()=> {clearInterval(tmr);}, 1000); 
-    } else if (rcvmsgsts!="Null") { 
-	if (true) { 
-           rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
-           rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
-           readAppMessageOnce(sender,receiver,rcvmsgidp); 
-           writeAppMessageStatus(sender,receiver,rcvmsgidp,"seen"); 
-           if (count>=msgcount) {clearInterval(timer); msgcountp=msgcount;} 
-           count++; 
-	} 
-    }
- } 
-} 
-// timer = setInterval(rcvMsg, 2000); 
-} 
+}
+
 	
 drawKeypad(0,1664,ktype); 
 showCursor(16,1448); 
