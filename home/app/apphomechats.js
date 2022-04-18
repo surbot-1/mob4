@@ -24,7 +24,7 @@ if (appPtr) {
 var ax=0; var ay=0; var aw=1080; var ah=0; 
 if (appPtr<=1880) {ay=144+1880-appPtr; ah=appPtr;} 
 else if (appPtr>1880) {ay=144; ah=1880;} 
-appPtri=0; appPtrf=ah; 
+appPtri=appPtr-ah; appPtrf=ah; 
 var imgData = ctx.createImageData(aw, ah); 
 for (let i=0; i<aw*4*ah; i+=4) { 
     imgData.data[i+0]=appView[appPtri*1080*4+i+0]; 
@@ -187,7 +187,7 @@ if (appPtr) {
 var ax=0; var ay=0; var aw=1080; var ah=0; 
 if (appPtr<1880) {ay=144+1880-appPtr; ah=appPtr;} 
 else if (appPtr>=1880) {ay=144; ah=1880;} 
-appPtri=0; appPtrf=ah; 
+appPtri=appPtr-ah; appPtrf=ah; 
 var imgData = ctx.createImageData(aw, ah); 
 for (let i=0; i<aw*4*ah; i+=4) { 
     imgData.data[i+0]=appView[appPtri*1080*4+i+0]; 
