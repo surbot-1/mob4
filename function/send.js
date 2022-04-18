@@ -272,10 +272,10 @@ function receiveFromServer(user) {
 } 
 
 function writeReadStatus(sndr,rcvr,mid) { alert('1'); 
-  var tmr; readmsgsts="Null"; 
+  readmsgsts="Null"; 
   var x=0; var y=0; var w=24*4; var h=32; 
   var readsts = readAppMessageReadStatus(sndr,rcvr,mid);  
-  tmr = setInterval( ()=> {
+  var tmr = setInterval( ()=> {
   if (readmsgsts=="seen") { alert(readmsgsts);
      clearInterval(tmr); 
      if (sendactive==1) {x=1080-16-16-4*24; y=2048-32-32-8;} 
