@@ -147,7 +147,7 @@ var ptr=appPtr;
 		      /* clearInterval(timer); */ camera(); 
 	      } else if (x>936 && x<936+128 && y>1408 && y<1408+128) { 
 		      if (ptr!=appPtr) { 
-			      ptr=appPtr; showMessage(0,144,1080,1240,0,ptr); 
+			  ptr=appPtr; showMessage(0,144,1080,1240,0,ptr); 
 		      } else if (ptr==appPtr) {}
 		      sendMessage(); ptr=appPtr; 
               } else if (x>1080-128 && x<1080 && y>1536 && y<1664) { 
@@ -202,13 +202,16 @@ ctx.putImageData(imgData,0,ay);
    var tmr = setInterval( ()=> { 
    if (msgcount) { 
        clearInterval(tmr); msgid=msgcount+1; 
-       for (let i=0; i<msgcount+1; i++) {readAppMessageOnce(sender,receiver,i);} 
+       for (let i=0; i<msgcount+1; i++) { 
+	   readAppMessageOnce(sender,receiver,i); 
+       } 
    } 
    }, 0200); 
 }
 
 	
 chatbotactive=false; useractive=true; sendactive=1; 
+var ptr=appPtr; 
 	
 	var timer;
 	function check() { 
@@ -218,8 +221,9 @@ chatbotactive=false; useractive=true; sendactive=1;
               if (x>0 && x<360*1 && y>0 && y<144) { 
               } else if (x>360*1 && x<360*2 && y>0 && y<144) { 
               } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
-              } else if (x>0 && x<1080 && y>144*1 && y<144*2) { 
-		    //  clearInterval(timer); appHomeChatsUser1(); 
+              } else if (x>1080-128 && x<1080 && y>144*1 && y<144*2) { 
+		      if (ptr>=32) {ptr-=32;} 
+		      showMessage(0,144,1080,1880,0,ptr); 
               } else if (x>0 && x<1080 && y>144*2 && y<144*3) { 
               } else if (x>0 && x<1080 && y>144*3+8 && y<144*3+8+128) { 
               } else if (x>0 && x<1080 && y>160*4 && y<160*4+144) { 
@@ -229,6 +233,9 @@ chatbotactive=false; useractive=true; sendactive=1;
 	      } else if (x>0 && x<1080 && y>160*8 && y<160*8+144) { 
 	      } else if (x>0 && x<1080 && y>160*9 && y<160*9+144) { 
 	      } else if (x>0 && x<1080 && y>160*10 && y<160*10+144) { 
+	      } else if (x>1080-128 && x<1080 && y>1920 && y<2048) { 
+		      if (ptr<appPtr) {ptr+=32;}  
+		      showMessage(0,144,1080,1880,0,ptr); 
 	      } else if (x>0 && x<680 && y>2048 && y<2176) { 
 		      clearInterval(timer); appHomeChatsUserChat(user); 
 	      } else if (x>680 && x<680+64 && y>2080 && y<2080+64) { 
@@ -297,6 +304,7 @@ ctx.putImageData(imgData,0,ay);
 drawKeypad(0,1664,ktype); 
 showCursor(16,1448); 
 chatbotactive=false; useractive=true; sendactive=2; 
+var ptr=appPtr; 
 	
 	var timer;
 	function check() { 
@@ -306,8 +314,9 @@ chatbotactive=false; useractive=true; sendactive=2;
               if (x>0 && x<360*1 && y>0 && y<144) { 
               } else if (x>360*1 && x<360*2 && y>0 && y<144) { 
               } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
-              } else if (x>0 && x<1080 && y>144*1 && y<144*2) { 
-		    //  clearInterval(timer); apphomechatsUser(); 
+	      } else if (x>1080-128 && x<1080 && y>144*1 && y<144*2) { 
+		      if (ptr>=32) {ptr-=32;} 
+		      showMessage(0,144,1080,1240,0,ptr); 
               } else if (x>0 && x<1080 && y>144*2 && y<144*3) { 
               } else if (x>0 && x<1080 && y>144*3+8 && y<144*3+8+128) { 
               } else if (x>0 && x<1080 && y>144*3 && y<144*3+144) { 
@@ -317,6 +326,9 @@ chatbotactive=false; useractive=true; sendactive=2;
 	      } else if (x>0 && x<1080 && y>160*3 && y<160*3+144) { 
 	      } else if (x>0 && x<1080 && y>160*3 && y<160*3+144) { 
 	      } else if (x>0 && x<1080 && y>160*3 && y<160*3+144) { 
+	      } else if (x>1080-128 && x<1080 && y>1280 && y<1408) { 
+		      if (ptr<appPtr) {ptr+=32;}  
+		      showMessage(0,144,1080,1240,0,ptr); 
 	      } else if (x>680 && x<680+64 && y>1440 && y<1440+64) { 
 		      attachment(); 
 	      } else if (x>808 && x<808+64 && y>1440 && y<1440+64) { 
