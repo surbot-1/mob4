@@ -279,7 +279,7 @@ function writeReadStatus(sndr,rcvr,mid) {
     if (readmsgsts=="seen") { 
        clearInterval(tmr); clearInterval(tmr2); 
        if (sendactive==1) {x=1080-16-16-4*24; y=2048-32-32-8;} 
-       else if (sendactive==2) {x=1080-16-16-4*24; y=1208-32-32-8;} 
+       else if (sendactive==2) {x=1080-16-16-4*24; y=1408-32-32-8;} 
        writecStr(x,y,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],"seen"); 
     } 
   }
