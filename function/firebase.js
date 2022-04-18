@@ -12,6 +12,9 @@ function writeAppMessage(sndr,rcvr,msgid,name,message,status,time,ip) {
   ref.child("Status").set({ 
     Status: status 
   }); 
+  /* ref.child("Date").set({ 
+    Date: date  
+  }); */ 
   ref.child("Time").set({ 
     Time: time  
   }); 
@@ -79,13 +82,16 @@ function readSenderMessage(user) {
     var name = snapshot.child("Name").val(); 
     var message = snapshot.child("Message").val(); 
     var status = snapshot.child("Status").val(); 
-    var time = snapshot.child("Time").val(); 
+    var datetime = snapshot.child("Time").val(); 
     var ip = snapshot.child("Ip").val(); 
     // snapshot.forEach(function(element) { 
     for (let i=0; i<name.length; i++) {
        usrByte[i]=name.charCodeAt(i); 
     } 
-    for (let i=0; i<time.length; i++) { 
+    for (let i=0; i<status.length; i++) { 
+       usrByte[36+i]=status.charCodeAt(i); 
+    } 
+    for (let i=0; i<datetime.length; i++) { 
        usrByte[40+i]=name.charCodeAt(i); 
     } 
     for (let i=0; i<message.length; i++) {
