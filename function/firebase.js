@@ -83,13 +83,16 @@ function readSenderMessage(user) {
     var ip = snapshot.child("Ip").val(); 
     // snapshot.forEach(function(element) { 
     for (let i=0; i<name.length; i++) {
-       sndByte[1+i]=name.charCodeAt(i); 
+       usrByte[i]=name.charCodeAt(i); 
+    } 
+    for (let i=0; i<time.length; i++) { 
+       usrByte[40+i]=name.charCodeAt(i); 
     } 
     for (let i=0; i<message.length; i++) {
-       sndByte[32+i]=message.charCodeAt(i); 
+       usrByte[64+i]=message.charCodeAt(i); 
     } 
-    sndByte[0]=0x03; 
-    sndByte[28]=message.length;  
+    usrByte[28]=message.length;  
+    usrByte[32]=0x03; 
     sendSenderMessage(); 
   }); 
 } 
