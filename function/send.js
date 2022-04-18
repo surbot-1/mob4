@@ -2,6 +2,18 @@ function sendMessage() {
   writeWH(msgByte); 
   var minfo = msgByte[32]; 
   var msize = msgByte[28]; 
+  var status="sent"; 
+  for (let i=0; i<status.length; i++) { 
+    msgByte[36+i] = status.charCodeAt(i);
+  }  
+  var date = getDate("mmddyyyy"); 
+  for (let i=0; i<date.length; i++) { 
+    msgByte[40+i] = date.charCodeAt(i);
+  }  
+  var time = getTime("12h"); 
+  for (let i=0; i<time.length; i++) { 
+    msgByte[50+i] = time.charCodeAt(i);
+  }  
   for (let i=0; i<msize+64; i++) { 
     msgView[msgPtr*512+i] = msgByte[i]; 
   }  
