@@ -214,11 +214,14 @@ function sendOnServer(user) {
 function sendOnServerRcv(user) { 
   var minfo = msgView[(msgPtr-1)*512+32]; 
   var msize = msgView[(msgPtr-1)*512+28]; 
-  var msgstr = ""; 
+  var msgstr =""; 
   for (let i=0; i<msize; i++) { 
     msgstr += ascChar(msgView[(msgPtr-1)*512+64+i]); 
   }  
-  var time = getDateTime("12h"); 
+  var time =""; 
+  for (let i=0; i<8; i++) { 
+    time += ascChar(msgView[(msgPtr-1)*512+50+i]); 
+  }  
   // var ip = getIP(); 
   writeAppMessage(sender,receiver,msgid,receiver,msgstr,"seen",time,"ip"); 
   writeAppMessageCount(sender,receiver,msgid); 
