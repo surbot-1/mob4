@@ -271,7 +271,7 @@ function receiveFromServer(user) {
   sendUserMessage(); 
 } 
 
-function writeReadStatus(sndr,rcvr,mid) { 
+function writeReadStatus(sndr,rcvr,mid) { alert('1'); 
   var tmr; readmsgsts="Null"; 
   var x=0; var y=0; var w=24*4; var h=32; 
   var readsts = readAppMessageReadStatus(sndr,rcvr,mid);  
