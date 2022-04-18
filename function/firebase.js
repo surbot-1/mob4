@@ -31,13 +31,16 @@ function readAppMessage(sndr,rcvr,msgid) {
     var ip = snapshot.child("Ip").child("Ip").val(); 
     // snapshot.forEach(function(element) { 
     for (let i=0; i<name.length; i++) {
-       usrByte[1+i]=name.charCodeAt(i); 
+       usrByte[i]=name.charCodeAt(i); 
+    } 
+    for (let i=0; i<time.length; i++) { 
+       usrByte[40+i]=name.charCodeAt(i); 
     } 
     for (let i=0; i<message.length; i++) {
-       usrByte[32+i]=message.charCodeAt(i); 
+       usrByte[64+i]=message.charCodeAt(i); 
     } 
-    usrByte[0]=0x02; 
     usrByte[28]=message.length;  
+    usrByte[32]=0x02; 
     sendUserMessage(); 
     sendOnServerRcv(sender); 
   }); 
@@ -54,14 +57,17 @@ function readAppMessageOnce(sndr,rcvr,msgid) {
     var ip = snapshot.child("Ip").child("Ip").val(); 
     // snapshot.forEach(function(element) { 
     for (let i=0; i<name.length; i++) {
-       usrByte[1+i]=name.charCodeAt(i); 
+       usrByte[i]=name.charCodeAt(i); 
+    } 
+    for (let i=0; i<time.length; i++) {
+       usrByte[40+i]=name.charCodeAt(i); 
     } 
     for (let i=0; i<message.length; i++) {
-       usrByte[32+i]=message.charCodeAt(i); 
+       usrByte[64+i]=message.charCodeAt(i); 
     } 
-    if (name==sender) {usrByte[0]=0x03;} 
-    else if (name==receiver) {usrByte[0]=0x02;}
     usrByte[28]=message.length;  
+    if (name==sender) {usrByte[32]=0x03;} 
+    else if (name==receiver) {usrByte[32]=0x02;} 
     sendUserMessage(); 
   }); 
 } 
