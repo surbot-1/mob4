@@ -1,8 +1,8 @@
 function sendMessage() { 
   writeWH(msgByte); 
-  var minfo = msgByte[0]; 
+  var minfo = msgByte[32]; 
   var msize = msgByte[28]; 
-  for (let i=0; i<msize+32; i++) { 
+  for (let i=0; i<msize+64; i++) { 
     msgView[msgPtr*512+i] = msgByte[i]; 
   }  
   msgPtr++; 
@@ -25,7 +25,7 @@ function send1() {
   // var imgData = new Uint8Array(imgBuf); 
   var buf = new ArrayBuffer(4); 
   var view = new DataView(buf); 
-  var minfo = msgView[(msgPtr-1)*512+0]; 
+  var minfo = msgView[(msgPtr-1)*512+32]; 
   var msize = msgView[(msgPtr-1)*512+28]; 
   view.setUint8(0, msgView[(msgPtr-1)*512+17]); 
   view.setUint8(1, msgView[(msgPtr-1)*512+16]);  
@@ -42,12 +42,15 @@ function send1() {
   for (let i=0; i<msize; i++) { 
     msgstr += ascChar(msgView[(msgPtr-1)*512+32+i]); 
   } 
+  var time=""; 
+  for (let i=0; i<8; i++) { 
+    time += ascChar(msgView[(msgPtr-1)*512+50+i]); 
+  } 
   var x=0; var y=0; if (w<12*24) {w=12*24;} 
   if (minfo==0) { 
     x=1080-w-32-16; y=2048-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue 
     ctx.fillRect(x, y, w+32, h+32+32); 
-    var time = getTime("12h"); 
     writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
     writecStr(1080-16-16-12*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
     // setTimeout(() => {msgStatus(1080-16-16-4*24,y+h+24,"send");},1000); 
@@ -55,21 +58,18 @@ function send1() {
     setTimeout(() => {msgStatus(1080-16-16-4*24,y+h+24,"dlvd");},3000); 
     setTimeout(() => {msgStatus(1080-16-16-4*24,y+h+24,"seen");},4000);  
   } else if(minfo==1) { 
-    var time = getTime("12h"); 
     x=16; y=2048-(h+64)-32; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white 
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[255,255,255,255],msgstr); 
     writecStr(w+32-7*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
   } else if(minfo==2) { 
-    x=16; y=2048-(h+64)-32;
-    var time = getTime("12h"); 
+    x=16; y=2048-(h+64)-32; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white 
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[255,255,255,255],msgstr); 
     writecStr(w+32-7*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
   } else if(minfo==3) { 
-    var time = getTime("12h");  
     x=1080-w-32-16; y=2048-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue  
     ctx.fillRect(x, y, w+32, h+32+32); 
@@ -93,7 +93,7 @@ function send() {
   // var imgData = new Uint8Array(imgBuf); 
   var buf = new ArrayBuffer(4); 
   var view = new DataView(buf); 
-  var minfo = msgView[(msgPtr-1)*512+0]; 
+  var minfo = msgView[(msgPtr-1)*512+32]; 
   var msize = msgView[(msgPtr-1)*512+28]; 
   view.setUint8(0, msgView[(msgPtr-1)*512+17]); 
   view.setUint8(1, msgView[(msgPtr-1)*512+16]);  
@@ -110,12 +110,15 @@ function send() {
   for (let i=0; i<msize; i++) { 
     msgstr += ascChar(msgView[(msgPtr-1)*512+32+i]); 
   } 
+  var time=""; 
+  for (let i=0; i<8; i++) { 
+    time += ascChar(msgView[(msgPtr-1)*512+50+i]); 
+  } 
   var x=0; var y=0; if (w<12*24) {w=12*24;} 
   if (minfo==0) { 
     x=1080-w-32-16; y=1408-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue 
-    ctx.fillRect(x, y, w+32, h+32+32); 
-    var time = getTime("12h"); 
+    ctx.fillRect(x, y, w+32, h+32+32);  
     writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
     writecStr(1080-16-16-12*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
     // setTimeout(() => {msgStatus(1080-16-16-4*24,y+h+24,"send");},1000); 
@@ -123,21 +126,18 @@ function send() {
     // setTimeout(() => {msgStatus(1080-16-16-4*24,y+h+24,"dlvd");},3000); 
     setTimeout(() => {msgStatus(1080-16-16-4*24,y+h+24,"seen");},4000);  
   } else if(minfo==1) { 
-    var time = getTime("12h"); 
     x=16; y=1408-(h+64)-32; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white 
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[255,255,255,255],msgstr); 
     writecStr(w+32-7*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
   } else if(minfo==2) { 
-    x=16; y=1408-(h+64)-32;
-    var time = getTime("12h"); 
+    x=16; y=1408-(h+64)-32; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white 
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[255,255,255,255],msgstr); 
     writecStr(w+32-7*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
   } else if(minfo==3) { 
-    var time = getTime("12h");  
     x=1080-w-32-16; y=1408-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue  
     ctx.fillRect(x, y, w+32, h+32+32); 
@@ -204,7 +204,7 @@ function sendOnServer(user) {
   for (let i=0; i<msize; i++) { 
     msgstr += ascChar(msgView[(msgPtr-1)*512+64+i]); 
   }  
-  var time = getTime("12h"); 
+  var time = getDateTime("12h"); 
   // var ip = getIP(); 
   writeAppMessage(sender,receiver,msgid,sender,msgstr,"sent",time,"ip"); 
   writeAppMessageCount(sender,receiver,msgid); 
@@ -218,7 +218,7 @@ function sendOnServerRcv(user) {
   for (let i=0; i<msize; i++) { 
     msgstr += ascChar(msgView[(msgPtr-1)*512+64+i]); 
   }  
-  var time = getTime("12h"); 
+  var time = getDateTime("12h"); 
   // var ip = getIP(); 
   writeAppMessage(sender,receiver,msgid,receiver,msgstr,"seen",time,"ip"); 
   writeAppMessageCount(sender,receiver,msgid); 
