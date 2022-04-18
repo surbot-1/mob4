@@ -237,6 +237,7 @@ function sendOnServer(user) {
   // var ip = getIP(); 
   writeAppMessage(sender,receiver,msgid,sender,msgstr,"sent",date,time,"ip"); 
   writeAppMessageCount(sender,receiver,msgid); 
+  writeReadStatus(sender,receiver,msgid); 
   msgid++; 
 } 
 
@@ -268,6 +269,17 @@ function sendOnServerRcv(user) {
 function receiveFromServer(user) { 
   readAppMessage(user+"To"+sender); 
   sendUserMessage(); 
+} 
+
+function writeReadStatus(sndr,rcvr,mid) { 
+  var tmr; readmsgsts="Null"; 
+  var readsts = readAppMessageReadStatus(sndr,rcvr,mid);  
+  setInterval( ()=> {
+  if (readmsgsts=="seen") { 
+     clearInterval(tmr); 
+     writecStr(1080-16-16-4*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],"seen"); 
+  } 
+  },0100); 
 }
 
 function writeWH(view) { 
