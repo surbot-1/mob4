@@ -1,4 +1,4 @@
-function sendMessage() { 
+function sendMessage() { alert('1');
   writeWH(msgByte); 
   var minfo = msgByte[32]; 
   var msize = msgByte[28]; 
@@ -17,9 +17,9 @@ function sendMessage() {
   for (let i=0; i<msize+64; i++) { 
     msgView[msgPtr*512+i] = msgByte[i]; 
   }  
-  msgPtr++; 
+  msgPtr++; alert('2');
   ci=0; cj=0; msgByte[28]=0; // msize 
-  send(); 
+  send(); alert('3');
   clearCursor(16,1448); 
   var cnv = document.getElementById("canvas"); 
   var ctx = cnv.getContext('2d'); 
@@ -104,7 +104,7 @@ function send1() {
   appPtr += (h+64+8); 
 }
 
-function send() { 
+function send() { alert('10');
   var cnv = document.getElementById("canvas"); 
   var ctx = cnv.getContext('2d'); 
   // var imgBuf = new ArrayBuffer(4*1080*2032); 
@@ -135,7 +135,7 @@ function send() {
   var time=""; 
   for (let i=0; i<7; i++) { 
     time += ascChar(msgView[(msgPtr-1)*512+50+i]); 
-  } 
+  } alert('11');
   var x=0; var y=0; if (w<12*24) {w=12*24;} 
   if (minfo==0) { 
     x=1080-w-32-16; y=1408-(h+64)-32; 
@@ -167,7 +167,7 @@ function send() {
     writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
     writecStr(1080-16-16-12*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
     writecStr(1080-16-16-4*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
-    
+  }
   imgData = ctx.getImageData(0,1408-(h+64)-32,1080,h+64+8); 
   for (let i=0; i<1080*4*(h+64+8); i+=4) { 
 	  appView[appPtr*1080*4+i+0]=imgData.data[i+0]; 
