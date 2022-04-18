@@ -282,7 +282,7 @@ for (let i=0; i<aw*4*ah; i+=4) {
     imgData.data[i+3]=appView[appPtri*1080*4+i+3]; 
 } 
 ctx.putImageData(imgData,0,ay); 
-} else if (!appPtr) { 
+} /* else if (!appPtr) { 
    var timer; var count=0; msgcount=0; msgcountp=0; 
    var countf = readAppMessageCount(sender,receiver); 
    var tmr = setInterval( ()=> { 
@@ -291,7 +291,7 @@ ctx.putImageData(imgData,0,ay);
       for (let i=0; i<msgcount+1; i++) {readAppMessageOnce(sender,receiver,i);}
    } 
    }, 0200); 
-}
+} */ 
 
 	
 drawKeypad(0,1664,ktype); 
