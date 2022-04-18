@@ -60,12 +60,12 @@ var msgbot=[[[""],
 	var mbot=""; // = new Uint8Array(512); 
 	var rbot=""; // = new Uint8Array(512); 
 	var ptr = msgPtr-1; 
-	var minfo = msgView[ptr*512+0];
+	var minfo = msgView[ptr*512+32];
 	var msize = msgView[ptr*512+28]; 
 	var b=false;
 	
 	for(let i=0; i<msize; i++) { 
-		var charcode=msgView[ptr*512+32+i]; 
+		var charcode=msgView[ptr*512+64+i]; 
 		nbot += ascChar(charcode); 
 	} 
 	
@@ -110,11 +110,22 @@ var msgbot=[[[""],
 	if(!b) {rbot=msgbot[0][1];} 
 	rbot=rbot.toString(); 
 	for(let i=0; i<rbot.length; i++) {  
-		botByte[32+i]=rbot.charCodeAt(i); 
+            botByte[64+i]=rbot.charCodeAt(i); 
 	} 
-	botByte[0]=0x01;    // chatbot 
+	botByte[32]=0x01;    // chatbot 
 	botByte[28]=rbot.length; 
-	//chatbot=true; 
+	var status="sent"; 
+	for(let i=0; i<status.length; i++) {  
+            botByte[36+i]=status.charCodeAt(i); 
+	} 
+        var date=getDate("ddmmyyyy");  
+	for(let i=0; i<date.length; i++) {  
+            botByte[40+i]=date.charCodeAt(i); 
+	} 
+	var time=getDate("12h"); 
+	for(let i=0; i<time.length; i++) {  
+            botByte[50+i]=time.charCodeAt(i); 
+	} 
     }
 	
 }
