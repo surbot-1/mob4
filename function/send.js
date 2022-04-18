@@ -42,8 +42,12 @@ function send1() {
   for (let i=0; i<msize; i++) { 
     msgstr += ascChar(msgView[(msgPtr-1)*512+32+i]); 
   } 
+  var status=""; 
+  for (let i=0; i<4; i++) { 
+    status += ascChar(msgView[(msgPtr-1)*512+36+i]); 
+  } 
   var time=""; 
-  for (let i=0; i<8; i++) { 
+  for (let i=0; i<7; i++) { 
     time += ascChar(msgView[(msgPtr-1)*512+50+i]); 
   } 
   var x=0; var y=0; if (w<12*24) {w=12*24;} 
@@ -53,6 +57,7 @@ function send1() {
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
     writecStr(1080-16-16-12*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
+    writecStr(1080-16-16-4*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
     // setTimeout(() => {msgStatus(1080-16-16-4*24,y+h+24,"send");},1000); 
     setTimeout(() => {msgStatus(1080-16-16-4*24,y+h+24,"sent");},2000); 
     setTimeout(() => {msgStatus(1080-16-16-4*24,y+h+24,"dlvd");},3000); 
@@ -75,6 +80,7 @@ function send1() {
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
     writecStr(1080-16-16-12*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
+    writecStr(1080-16-16-4*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
   } 
   imgData = ctx.getImageData(0,2048-(h+64)-32,1080,h+64+8); 
   for (let i=0; i<1080*4*(h+64+8); i+=4) { 
