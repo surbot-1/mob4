@@ -161,9 +161,9 @@ function replyChatbot() {
 
 function sendChatbot() { 
   writeWH(botByte); 
-  var minfo = botByte[0]; 
+  var minfo = botByte[32]; 
   var msize = botByte[28]; 
-  for (let i=0; i<msize+32; i++) { 
+  for (let i=0; i<msize+64; i++) { 
     msgView[msgPtr*512+i] = botByte[i]; 
   }  
   msgPtr++; 
@@ -174,9 +174,9 @@ function sendChatbot() {
 
 function sendSenderMessage() { 
   writeWH(sndByte); 
-  var minfo = sndByte[0]; 
+  var minfo = sndByte[32]; 
   var msize = sndByte[28]; 
-  for (let i=0; i<msize+32; i++) { 
+  for (let i=0; i<msize+64; i++) { 
     msgView[msgPtr*512+i] = sndByte[i]; 
   }  
   msgPtr++; 
@@ -186,9 +186,9 @@ function sendSenderMessage() {
 
 function sendUserMessage() { 
   writeWH(usrByte); 
-  var minfo = usrByte[0]; 
+  var minfo = usrByte[32]; 
   var msize = usrByte[28]; 
-  for (let i=0; i<msize+32; i++) { 
+  for (let i=0; i<msize+64; i++) { 
     msgView[msgPtr*512+i] = usrByte[i]; 
   }  
   msgPtr++; 
@@ -198,11 +198,11 @@ function sendUserMessage() {
 } 
 
 function sendOnServer(user) { 
-  var minfo = msgView[(msgPtr-1)*512+0]; 
+  var minfo = msgView[(msgPtr-1)*512+32]; 
   var msize = msgView[(msgPtr-1)*512+28]; 
   var msgstr = ""; 
   for (let i=0; i<msize; i++) { 
-    msgstr += ascChar(msgView[(msgPtr-1)*512+32+i]); 
+    msgstr += ascChar(msgView[(msgPtr-1)*512+64+i]); 
   }  
   var time = getTime("12h"); 
   // var ip = getIP(); 
@@ -212,11 +212,11 @@ function sendOnServer(user) {
 } 
 
 function sendOnServerRcv(user) { 
-  var minfo = msgView[(msgPtr-1)*512+0]; 
+  var minfo = msgView[(msgPtr-1)*512+32]; 
   var msize = msgView[(msgPtr-1)*512+28]; 
   var msgstr = ""; 
   for (let i=0; i<msize; i++) { 
-    msgstr += ascChar(msgView[(msgPtr-1)*512+32+i]); 
+    msgstr += ascChar(msgView[(msgPtr-1)*512+64+i]); 
   }  
   var time = getTime("12h"); 
   // var ip = getIP(); 
