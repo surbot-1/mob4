@@ -1,4 +1,4 @@
-function sendMessage() { alert('1');
+function sendMessage() { 
   writeWH(msgByte); 
   var minfo = msgByte[32]; 
   var msize = msgByte[28]; 
@@ -17,9 +17,9 @@ function sendMessage() { alert('1');
   for (let i=0; i<msize+64; i++) { 
     msgView[msgPtr*512+i] = msgByte[i]; 
   }  
-  msgPtr++; alert('2');
+  msgPtr++; 
   ci=0; cj=0; msgByte[28]=0; // msize 
-  send(); alert('3');
+  send(); 
   clearCursor(16,1448); 
   var cnv = document.getElementById("canvas"); 
   var ctx = cnv.getContext('2d'); 
@@ -104,7 +104,7 @@ function send1() {
   appPtr += (h+64+8); 
 }
 
-function send() { alert('10');
+function send() { 
   var cnv = document.getElementById("canvas"); 
   var ctx = cnv.getContext('2d'); 
   // var imgBuf = new ArrayBuffer(4*1080*2032); 
@@ -135,7 +135,7 @@ function send() { alert('10');
   var time=""; 
   for (let i=0; i<7; i++) { 
     time += ascChar(msgView[(msgPtr-1)*512+50+i]); 
-  } alert('11');
+  } 
   var x=0; var y=0; if (w<12*24) {w=12*24;} 
   if (minfo==0) { 
     x=1080-w-32-16; y=1408-(h+64)-32; 
