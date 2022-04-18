@@ -139,6 +139,7 @@ function send() {
     ctx.fillRect(x, y, w+32, h+32+32);  
     writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
     writecStr(1080-16-16-12*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
+    writecStr(1080-16-16-4*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
     // setTimeout(() => {msgStatus(1080-16-16-4*24,y+h+24,"send");},1000); 
     setTimeout(() => {msgStatus(1080-16-16-4*24,y+h+24,"sent");},2000); 
     // setTimeout(() => {msgStatus(1080-16-16-4*24,y+h+24,"dlvd");},3000); 
@@ -161,7 +162,8 @@ function send() {
     ctx.fillRect(x, y, w+32, h+32+32); 
     writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
     writecStr(1080-16-16-12*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
-  } 
+    writecStr(1080-16-16-4*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
+    
   imgData = ctx.getImageData(0,1408-(h+64)-32,1080,h+64+8); 
   for (let i=0; i<1080*4*(h+64+8); i+=4) { 
 	  appView[appPtr*1080*4+i+0]=imgData.data[i+0]; 
