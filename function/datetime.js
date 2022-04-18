@@ -26,7 +26,7 @@
                       return datetime = date +" "+ time ; 
                  } 
 
-          function getDate(h) { 
+          function getDate(d) { 
                     // var ampm=true, sec=false; 
                      var datetime; var date; var time; 
                      var  today = new Date();
@@ -37,7 +37,7 @@
                      var minutes   = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes() ;     
                      var seconds   = today.getSeconds() < 10 ? "0" + today.getSeconds() : today.getSeconds() ; 
                      var gmt = "+0530"
-                     if(h="12h") { 
+                     if(d="ddmmyyyy") { 
                      var part = hours < 12 ? 'am' : 'pm' ;
                      hours = hours % 12; 
                      hours = hours ? hours : 12 ; hours = hours<10 ? "0"+hours : hours;
