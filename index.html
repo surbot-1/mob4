@@ -102,6 +102,7 @@ var chatbotactive=false;
 var usrBfr = new ArrayBuffer(512); 
 var usrByte = new Uint8Array(usrBfr); 
 var msgid=1; 
+var readmsgsts=""; var readmsgstsp=""; 
 var msgcount=0; var msgcountp=0;
 var rcvmsgid=0; var rcvmsgidp=0; 
 var rcvmsgsts=""; var rcvmsgstsp=""; 
@@ -211,7 +212,10 @@ function rcvMsg() {
  } 
 } 
 timer = setInterval(rcvMsg, 2000); 
-// setTimeout( ()=> {rcvmsgidp=0; rcvmsgid=0;},15000); 
+
+/* (async () => {
+    var status = await readAppMessageRcvStatus(sender,receiver,msgid); 
+})(); */
 	
 </script> 
 	
