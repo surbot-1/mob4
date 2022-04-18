@@ -122,7 +122,7 @@ var msgbot=[[[""],
 	for(let i=0; i<date.length; i++) {  
             botByte[40+i]=date.charCodeAt(i); 
 	} 
-	var time=getTime("12h"); 
+	var time=getTime("12h");  
 	for(let i=0; i<time.length; i++) {  
             botByte[50+i]=time.charCodeAt(i); 
 	} 
