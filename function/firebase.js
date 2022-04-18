@@ -1,4 +1,4 @@
-function writeAppMessage(sndr,rcvr,msgid,name,message,status,time,ip) { 
+function writeAppMessage(sndr,rcvr,msgid,name,message,status,date,time,ip) { 
   var ref = firebase.database().ref("App").child(sndr).child(rcvr).child(msgid); 
   ref.child("Msgid").set({ 
     Msgid: msgid  
@@ -12,9 +12,9 @@ function writeAppMessage(sndr,rcvr,msgid,name,message,status,time,ip) {
   ref.child("Status").set({ 
     Status: status 
   }); 
-  /* ref.child("Date").set({ 
+  ref.child("Date").set({ 
     Date: date  
-  }); */ 
+  }); 
   ref.child("Time").set({ 
     Time: time  
   }); 
@@ -30,14 +30,18 @@ function readAppMessage(sndr,rcvr,msgid) {
     var name = snapshot.child("Name").child("Name").val(); 
     var message = snapshot.child("Message").child("Message").val(); 
     var status = snapshot.child("Status").child("Status").val(); 
+    var date = snapshot.child("Date").child("Date").val();
     var time = snapshot.child("Time").child("Time").val(); 
     var ip = snapshot.child("Ip").child("Ip").val(); 
     // snapshot.forEach(function(element) { 
     for (let i=0; i<name.length; i++) {
        usrByte[i]=name.charCodeAt(i); 
     } 
-    for (let i=0; i<time.length; i++) { 
+    for (let i=0; i<date.length; i++) { 
        usrByte[40+i]=name.charCodeAt(i); 
+    } 
+    for (let i=0; i<time.length; i++) { 
+       usrByte[50+i]=name.charCodeAt(i); 
     } 
     for (let i=0; i<message.length; i++) {
        usrByte[64+i]=message.charCodeAt(i); 
