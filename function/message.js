@@ -22,16 +22,16 @@ function message() {
       if (ci==0) {ci=24*23;} else {ci-=24;} 
       writeChar(16+ci,1448+cj,"font2448"," "); 
       ptr--; 
-      msgByte[0]=0x00; 
+      msgByte[32]=0x00; 
       msgByte[28]=ptr; 
     }
   } else if (kstr=="SPACE") { 
     writeChar(16+ci,1448+cj,"font2448"," ");
     ci+=24; 
     if (ci>=24*24) {ci=0; cj=0;} 
-    msgByte[32+ptr]=" ".charCodeAt(0); 
+    msgByte[64+ptr]=" ".charCodeAt(0); 
     ptr++; 
-    msgByte[0]=0x00;
+    msgByte[32]=0x00;
     msgByte[28]=ptr; 
   } else if (kstr=="ENTER") { 
   } else { 
@@ -39,9 +39,9 @@ function message() {
     writeChar(16+ci,1448+cj,"font2448",kchar); 
     ci+=24; 
     if (ci>=24*24) {ci=0; cj=0;} 
-    msgByte[32+ptr]=kchar.charCodeAt(0); 
+    msgByte[64+ptr]=kchar.charCodeAt(0); 
     ptr++; 
-    msgByte[0]=0x00;
+    msgByte[32]=0x00;
     msgByte[28]=ptr; 
   } 
   writeCursor(16,1448); 
