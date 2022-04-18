@@ -210,9 +210,14 @@ function sendOnServer(user) {
   for (let i=0; i<msize; i++) { 
     msgstr += ascChar(msgView[(msgPtr-1)*512+64+i]); 
   }  
-  var time = getDateTime("12h"); 
+  var status =""; 
+  for (let i=0; i<4; i++) { 
+    status += ascChar(msgView[(msgPtr-1)*512+36+i]); 
+  }  
+  var date = getDate("ddmmyyyy"); 
+  var time = getTime("12h"); 
   // var ip = getIP(); 
-  writeAppMessage(sender,receiver,msgid,sender,msgstr,"sent",time,"ip"); 
+  writeAppMessage(sender,receiver,msgid,sender,msgstr,"sent",date,time,"ip"); 
   writeAppMessageCount(sender,receiver,msgid); 
   msgid++; 
 } 
@@ -224,12 +229,20 @@ function sendOnServerRcv(user) {
   for (let i=0; i<msize; i++) { 
     msgstr += ascChar(msgView[(msgPtr-1)*512+64+i]); 
   }  
+  var status =""; 
+  for (let i=0; i<4; i++) { 
+    status += ascChar(msgView[(msgPtr-1)*512+36+i]); 
+  }  
+  var date =""; 
+  for (let i=0; i<8; i++) { 
+    date += ascChar(msgView[(msgPtr-1)*512+40+i]); 
+  }  
   var time =""; 
   for (let i=0; i<8; i++) { 
     time += ascChar(msgView[(msgPtr-1)*512+50+i]); 
   }  
   // var ip = getIP(); 
-  writeAppMessage(sender,receiver,msgid,receiver,msgstr,"seen",time,"ip"); 
+  writeAppMessage(sender,receiver,msgid,receiver,msgstr,"seen",date,time,"ip"); 
   writeAppMessageCount(sender,receiver,msgid); 
   msgid++; 
 } 
