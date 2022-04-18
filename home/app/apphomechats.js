@@ -47,7 +47,7 @@ var ptr=appPtr;
               } else if (x>360*1 && x<360*2 && y>0 && y<144) { 
               } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
               } else if (x>1080-128 && x<1080 && y>144*1 && y<144*2) { 
-		      if (ptr>=32) {ptr-=32;} 
+		      if (ptr>1880) {ptr-=32;} 
 		      showMessage(0,144,1080,1880,0,ptr); 
               } else if (x>0 && x<1080 && y>144*2 && y<144*3) { 
               } else if (x>0 && x<1080 && y>144*3+8 && y<144*3+8+128) { 
@@ -128,7 +128,7 @@ var ptr=appPtr;
               } else if (x>360*1 && x<360*2 && y>0 && y<144) { 
               } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
               } else if (x>1080-128 && x<1080 && y>144*1 && y<144*2) { 
-		      if (ptr>=32) {ptr-=32;} 
+		      if (ptr>1240) {ptr-=32;} 
 		      showMessage(0,144,1080,1240,0,ptr); 
               } else if (x>0 && x<1080 && y>144*2 && y<144*3) { 
               } else if (x>0 && x<1080 && y>144*3+8 && y<144*3+8+128) { 
@@ -185,8 +185,8 @@ fileViewerUrl(936, 2048, "icon/microphone-icon-128.bmp");
 	
 if (appPtr) {
 var ax=0; var ay=0; var aw=1080; var ah=0; 
-if (appPtr<1880) {ay=144+1880-appPtr; ah=appPtr;} 
-else if (appPtr>=1880) {ay=144; ah=1880;} 
+if (appPtr<=1880) {ay=144+1880-appPtr; ah=appPtr;} 
+else if (appPtr>1880) {ay=144; ah=1880;} 
 appPtri=appPtr-ah; appPtrf=ah; 
 var imgData = ctx.createImageData(aw, ah); 
 for (let i=0; i<aw*4*ah; i+=4) { 
@@ -222,7 +222,7 @@ var ptr=appPtr;
               } else if (x>360*1 && x<360*2 && y>0 && y<144) { 
               } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
               } else if (x>1080-128 && x<1080 && y>144*1 && y<144*2) { 
-		      if (ptr>=32) {ptr-=32;} 
+		      if (ptr>1880) {ptr-=32;} 
 		      showMessage(0,144,1080,1880,0,ptr); 
               } else if (x>0 && x<1080 && y>144*2 && y<144*3) { 
               } else if (x>0 && x<1080 && y>144*3+8 && y<144*3+8+128) { 
@@ -278,8 +278,8 @@ fileViewerUrl(936, 1408, "icon/telegram-icon-128.bmp");
 	
 if (appPtr) {
 var ax=0; var ay=0; var aw=1080; var ah=0; 
-if (appPtr<1240) {ay=144+1240-appPtr; ah=appPtr;} 
-else if (appPtr>=1240) {ay=144; ah=1240;} 
+if (appPtr<=1240) {ay=144+1240-appPtr; ah=appPtr;} 
+else if (appPtr>1240) {ay=144; ah=1240;} 
 appPtri=appPtr-ah; appPtrf=ah; 
 var imgData = ctx.createImageData(aw, ah); 
 for (let i=0; i<aw*4*ah; i+=4) { 
@@ -315,7 +315,7 @@ var ptr=appPtr;
               } else if (x>360*1 && x<360*2 && y>0 && y<144) { 
               } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
 	      } else if (x>1080-128 && x<1080 && y>144*1 && y<144*2) { 
-		      if (ptr>=32) {ptr-=32;} 
+		      if (ptr>1240) {ptr-=32;} 
 		      showMessage(0,144,1080,1240,0,ptr); 
               } else if (x>0 && x<1080 && y>144*2 && y<144*3) { 
               } else if (x>0 && x<1080 && y>144*3+8 && y<144*3+8+128) { 
