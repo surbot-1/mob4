@@ -291,7 +291,7 @@ ctx.putImageData(imgData,0,ay);
       for (let i=0; i<msgcount+1; i++) {readAppMessageOnce(sender,receiver,i);}
    } 
    }, 0200); 
-} */ 
+} */  
 
 	
 drawKeypad(0,1664,ktype); 
