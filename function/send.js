@@ -52,7 +52,7 @@ function send1() {
   ctx.fillRect(0, 2048-(h+64)-32, 1080, h+64+32); 
   var msgstr = ""; 
   for (let i=0; i<msize; i++) { 
-    msgstr += ascChar(msgView[(msgPtr-1)*512+32+i]); 
+    msgstr += ascChar(msgView[(msgPtr-1)*512+64+i]); 
   } 
   var status=""; 
   for (let i=0; i<4; i++) { 
@@ -126,10 +126,14 @@ function send() {
   ctx.fillRect(0, 1408-(h+64)-32, 1080, h+64+32); 
   var msgstr = ""; 
   for (let i=0; i<msize; i++) { 
-    msgstr += ascChar(msgView[(msgPtr-1)*512+32+i]); 
+    msgstr += ascChar(msgView[(msgPtr-1)*512+64+i]); 
+  } 
+  var status=""; 
+  for (let i=0; i<4; i++) { 
+    status += ascChar(msgView[(msgPtr-1)*512+36+i]); 
   } 
   var time=""; 
-  for (let i=0; i<8; i++) { 
+  for (let i=0; i<7; i++) { 
     time += ascChar(msgView[(msgPtr-1)*512+50+i]); 
   } 
   var x=0; var y=0; if (w<12*24) {w=12*24;} 
