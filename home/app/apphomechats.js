@@ -201,7 +201,7 @@ ctx.putImageData(imgData,0,ay);
    var countf = readAppMessageCount(sender,receiver); 
    var tmr = setInterval( ()=> { 
    if (msgcount) { 
-       clearInterval(tmr); rcvmsgidp=0; rcvmsgid=0; 
+       clearInterval(tmr); msgid=msgcount+1; 
        for (let i=0; i<msgcount+1; i++) {readAppMessageOnce(sender,receiver,i);} 
    } 
    }, 0200); 
@@ -287,7 +287,7 @@ ctx.putImageData(imgData,0,ay);
    var countf = readAppMessageCount(sender,receiver); 
    var tmr = setInterval( ()=> { 
    if (msgcount) {
-      clearInterval(tmr); rcvmsgidp=0; rcvmsgid=0; 
+      clearInterval(tmr); msgid=msgcount+1; 
       for (let i=0; i<msgcount+1; i++) {readAppMessageOnce(sender,receiver,i);}
    } 
    }, 0200); 
