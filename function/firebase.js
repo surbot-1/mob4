@@ -134,8 +134,8 @@ function readAppMessageStatus(sndr,rcvr,msgid) {
   }); 
 } 
 
-function readAppMessageReadStatus(sndr,rcvr,msgid) { 
-  var ref = firebase.database().ref("App").child(sndr).child(rcvr).child(msgid)  ; 
+function readAppMessageReadStatus(sndr,rcvr,mid) { 
+  var ref = firebase.database().ref("App").child(sndr).child(rcvr).child(mid)  ; 
   ref.once("value", function(snapshot) { 
     var read = snapshot.child("Status").child("Status").val(); 
     readmsgsts = read; 
