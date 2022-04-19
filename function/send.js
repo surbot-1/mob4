@@ -184,9 +184,6 @@ function replyChatbot() {
 }
 
 function sendChatbot() { 
-  if (appPtrf!=appPtr) { 
-      var ptr=appPtr; showMessage(0,144,1080,1240,0,ptr); 
-  } else if (appPtrf==appPtr) {}
   writeWH(botByte); 
   var minfo = botByte[32]; 
   var msize = botByte[28]; 
@@ -195,8 +192,18 @@ function sendChatbot() {
   }  
   msgPtr++; 
   botByte[28]=0;  
-  if (sendactive==1) {send1();} 
-  else if (sendactive==2) {send();} 
+  if (sendactive==1) { 
+      if (appPtrf!=appPtr) { 
+      var ptr=appPtr; showMessage(0,144,1080,1880,0,ptr); 
+      } else if (appPtrf==appPtr) {}
+      send1(); 
+  } 
+  else if (sendactive==2) { 
+      if (appPtrf!=appPtr) { 
+      var ptr=appPtr; showMessage(0,144,1080,1240,0,ptr); 
+      } else if (appPtrf==appPtr) {} 
+      send(); 
+  } 
 }  
 
 function sendSenderMessage() { 
