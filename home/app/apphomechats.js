@@ -24,13 +24,13 @@ if (appPtr) {
 var ax=0; var ay=0; var aw=1080; var ah=0; 
 if (appPtr<=1880) {ay=144+1880-appPtr; ah=appPtr;} 
 else if (appPtr>1880) {ay=144; ah=1880;} 
-appPtri=appPtr-ah; appPtrf=ah; 
+var ptri=appPtr-ah; var ptrf=ah; 
 var imgData = ctx.createImageData(aw, ah); 
 for (let i=0; i<aw*4*ah; i+=4) { 
-    imgData.data[i+0]=appView[appPtri*1080*4+i+0]; 
-    imgData.data[i+1]=appView[appPtri*1080*4+i+1]; 
-    imgData.data[i+2]=appView[appPtri*1080*4+i+2]; 
-    imgData.data[i+3]=appView[appPtri*1080*4+i+3]; 
+    imgData.data[i+0]=appView[ptri*1080*4+i+0]; 
+    imgData.data[i+1]=appView[ptri*1080*4+i+1]; 
+    imgData.data[i+2]=appView[ptri*1080*4+i+2]; 
+    imgData.data[i+3]=appView[ptri*1080*4+i+3]; 
 } 
 ctx.putImageData(imgData,0,ay); 
 } 
@@ -103,13 +103,13 @@ if (appPtr) {
 var ax=0; var ay=0; var aw=1080; var ah=0; 
 if (appPtr<=1240) {ay=144+1240-appPtr; ah=appPtr;} 
 else if (appPtr>1240) {ay=144; ah=1240;} 
-appPtri=appPtr-ah; appPtrf=ah; 
+var ptri=appPtr-ah; var ptrf=ah; 
 var imgData = ctx.createImageData(aw, ah); 
 for (let i=0; i<aw*4*ah; i+=4) { 
-    imgData.data[i+0]=appView[appPtri*1080*4+i+0]; 
-    imgData.data[i+1]=appView[appPtri*1080*4+i+1]; 
-    imgData.data[i+2]=appView[appPtri*1080*4+i+2]; 
-    imgData.data[i+3]=appView[appPtri*1080*4+i+3]; 
+    imgData.data[i+0]=appView[ptri*1080*4+i+0]; 
+    imgData.data[i+1]=appView[ptri*1080*4+i+1]; 
+    imgData.data[i+2]=appView[ptri*1080*4+i+2]; 
+    imgData.data[i+3]=appView[ptri*1080*4+i+3]; 
 } 
 ctx.putImageData(imgData,0,ay); 
 }
@@ -187,13 +187,13 @@ if (appPtr) {
 var ax=0; var ay=0; var aw=1080; var ah=0; 
 if (appPtr<=1880) {ay=144+1880-appPtr; ah=appPtr;} 
 else if (appPtr>1880) {ay=144; ah=1880;} 
-appPtri=appPtr-ah; appPtrf=ah; 
+var ptri=appPtr-ah; var ptrf=ah; 
 var imgData = ctx.createImageData(aw, ah); 
 for (let i=0; i<aw*4*ah; i+=4) { 
-    imgData.data[i+0]=appView[appPtri*1080*4+i+0]; 
-    imgData.data[i+1]=appView[appPtri*1080*4+i+1]; 
-    imgData.data[i+2]=appView[appPtri*1080*4+i+2]; 
-    imgData.data[i+3]=appView[appPtri*1080*4+i+3]; 
+    imgData.data[i+0]=appView[ptri*1080*4+i+0]; 
+    imgData.data[i+1]=appView[ptri*1080*4+i+1]; 
+    imgData.data[i+2]=appView[ptri*1080*4+i+2]; 
+    imgData.data[i+3]=appView[ptri*1080*4+i+3]; 
 } 
 ctx.putImageData(imgData,0,ay); 
 } else if (!appPtr) { 
@@ -280,13 +280,13 @@ if (appPtr) {
 var ax=0; var ay=0; var aw=1080; var ah=0; 
 if (appPtr<=1240) {ay=144+1240-appPtr; ah=appPtr;} 
 else if (appPtr>1240) {ay=144; ah=1240;} 
-appPtri=appPtr-ah; appPtrf=ah; 
+var ptri=appPtr-ah; var ptrf=ah; 
 var imgData = ctx.createImageData(aw, ah); 
 for (let i=0; i<aw*4*ah; i+=4) { 
-    imgData.data[i+0]=appView[appPtri*1080*4+i+0]; 
-    imgData.data[i+1]=appView[appPtri*1080*4+i+1]; 
-    imgData.data[i+2]=appView[appPtri*1080*4+i+2]; 
-    imgData.data[i+3]=appView[appPtri*1080*4+i+3]; 
+    imgData.data[i+0]=appView[ptri*1080*4+i+0]; 
+    imgData.data[i+1]=appView[ptri*1080*4+i+1]; 
+    imgData.data[i+2]=appView[ptri*1080*4+i+2]; 
+    imgData.data[i+3]=appView[ptri*1080*4+i+3]; 
 } 
 ctx.putImageData(imgData,0,ay); 
 } /* else if (!appPtr) { 
