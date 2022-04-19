@@ -227,8 +227,18 @@ function sendUserMessage() {
   }  
   msgPtr++; 
   usrByte[28]=0;  
-  if (sendactive==1) {send1();} 
-  else if (sendactive==2) {send();} 
+  if (sendactive==1) { 
+      if (appPtrf!=appPtr) { 
+      var ptr=appPtr; showMessage(0,144,1080,1880,0,ptr); 
+      } else if (appPtrf==appPtr) {}
+      send1(); 
+  } 
+  else if (sendactive==2) { 
+      if (appPtrf!=appPtr) { 
+      var ptr=appPtr; showMessage(0,144,1080,1240,0,ptr); 
+      } else if (appPtrf==appPtr) {} 
+      send(); 
+  } 
 } 
 
 function sendOnServer(user) { 
