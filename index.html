@@ -194,7 +194,7 @@ function rcvMsg() {
 	      } else if (rcvmsgsts=="dlvd") {  
 		 rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
 		 rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
-		 readAppMessage(receiver,sender,rcvmsgidp); 
+		 // readAppMessage(receiver,sender,rcvmsgidp); 
 		 // writeAppMessageStatus(receiver,sender,rcvmsgidp,"dlvd"); 
 	      } else if (rcvmsgsts=="seen") { 
                  rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
@@ -212,7 +212,7 @@ function rcvMsg() {
 	} else if (rcvmsgsts=="dlvd") { 
            rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
            rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
-           readAppMessage(receiver,sender,rcvmsgidp); 
+           // readAppMessage(receiver,sender,rcvmsgidp); 
            // writeAppMessageStatus(receiver,sender,rcvmsgidp,"dlvd"); 
 	} else if (rcvmsgsts=="seen") { 
            rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
