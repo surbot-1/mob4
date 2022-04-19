@@ -184,6 +184,9 @@ function replyChatbot() {
 }
 
 function sendChatbot() { 
+  if (appPtrf!=appPtr) { 
+      var ptr=appPtr; showMessage(0,144,1080,1240,0,ptr); 
+  } else if (appPtrf==appPtr) {}
   writeWH(botByte); 
   var minfo = botByte[32]; 
   var msize = botByte[28]; 
