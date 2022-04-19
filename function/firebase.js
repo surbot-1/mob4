@@ -53,7 +53,7 @@ function readAppMessage(sndr,rcvr,msgid) {
     usrByte[32]=0x02; 
     sendUserMessage(); 
     sendOnServerRcv(sender); 
-    writeAppMessageStatus(sndr,rcvr,msgid,"seen"); 
+    // writeAppMessageStatus(sndr,rcvr,msgid,"seen"); 
   }); 
 } 
 
