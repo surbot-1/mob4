@@ -6,7 +6,7 @@ function sendMessage() {
   for (let i=0; i<status.length; i++) { 
     msgByte[36+i] = status.charCodeAt(i);
   }  
-  var date = getDate("mmddyyyy"); 
+  var date = getDate("ddmmyyyy"); 
   for (let i=0; i<date.length; i++) { 
     msgByte[40+i] = date.charCodeAt(i);
   }  
