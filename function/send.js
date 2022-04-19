@@ -253,11 +253,11 @@ function sendOnServerRcv(user) {
     status += ascChar(msgView[(msgPtr-1)*512+36+i]); 
   }  
   var date =""; 
-  for (let i=0; i<8; i++) { 
+  for (let i=0; i<10; i++) { 
     date += ascChar(msgView[(msgPtr-1)*512+40+i]); 
   }  
   var time =""; 
-  for (let i=0; i<8; i++) { 
+  for (let i=0; i<7; i++) { 
     time += ascChar(msgView[(msgPtr-1)*512+50+i]); 
   }  
   // var ip = getIP(); 
