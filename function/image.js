@@ -31,24 +31,15 @@ function restoreImage(x, y, w, h) {
   ctx.putImageData(imgData, x, y); 
 }
 
+function createImage(str) { 
+  
+}
+
+function insertImage(x,y,w,h,buf) { 
+  
+}
 
 
-/*  var cvs4 = document.getElementById('canvas');
-            var ctx4 = cvs4.getContext('2d'); 
-       
-                  var img4 = new Image();
-                  img4.src = 'logo/Turbo-Snail-icon-_1_.bmp';
-                  img4.onload = function (e4)
-                      { 
-                    
-                      ctx4.drawImage(img4, 20, 400, 128, 128); 
-                      var imgData4 = ctx4.getImageData(20, 400, 128, 128); 
-                      ctx4.putImageData(imgData4, 20, 600); 
-                      
-                      var imgData41 = ctx4.getImageData(20, 200, 128, 128); 
-                      ctx4.putImageData(imgData41, 20, 800); 
-                      
-                       }; */
 
 
 
