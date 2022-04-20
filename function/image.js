@@ -49,7 +49,7 @@ function insertImagecStr(x,y,w,h,font, fcolor, bcolor, str, buf) {
 	var i=0; var j=0;
 	for (let k=0; k<(str.length); k++) { 
 		var char=str.charAt(k); 
-    insertImagecChar(x+i, y+j, font, fcolor, bcolor, char, buf); 
+        createImagecChar(x+i, y+j, font, fcolor, bcolor, char); 
 		i+=cw; 
 		if (i>=w) {i=0; j+=ch;} 
 		if(j>=h) {i=0; j=0;}
@@ -57,7 +57,7 @@ function insertImagecStr(x,y,w,h,font, fcolor, bcolor, str, buf) {
 	
 }
   
- function insertImagecChar(x, y, font, fcolor, bcolor, char, buf) { 
+ function createImagecChar(x, y, font, fcolor, bcolor, char, buf) { 
 	var cw=24; var ch=32; 
 	var oh = (char.charCodeAt(0))-32; 
 			      
@@ -132,10 +132,12 @@ function insertImagecStr(x,y,w,h,font, fcolor, bcolor, str, buf) {
                  }
 		  
               }
-          }
-        for (let i=0; i<cw*4*ch; i++) {
-          view[i] = fontView[i]; 
+          } 
+        for (let i=0; i<cw*4*ch; i+=cw*4) { 
+          for (let j=0; i<cw*4; i++) {
+          view[x+y*i+j] = fontView[i]; 
         } 
+        // return fontView; 
   }
 
 }
