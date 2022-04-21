@@ -29,9 +29,11 @@ function restoreImage(x, y, w, h) {
     imgData.data[i+3] = imgView[i+3]; 
   } 
   ctx.putImageData(imgData, x, y); 
-}
+} 
 
-// function insertImagecStr(x,y,w,h,font, fcolor, bcolor, str, view) { 
+function insertImage(x,y,w,h,buf) { 
+  
+} 
   
 function insertImagecStr(x,y,w,h,font, fcolor, bcolor, str, view) {  
 	var cw=24; var ch=32; var sw=0; var sh=0; 
@@ -145,11 +147,8 @@ function insertImagecChar(x, y, font, fcolor, bcolor, char, view) {
 	} 
 }
 
-// }
 
-function insertImage(x,y,w,h,buf) { 
-  
-}
+
 
 
 
