@@ -31,9 +31,9 @@ function restoreImage(x, y, w, h) {
   ctx.putImageData(imgData, x, y); 
 }
 
-function insertImagecStr(x,y,w,h,font, fcolor, bcolor, str, view) { 
+// function insertImagecStr(x,y,w,h,font, fcolor, bcolor, str, view) { 
   
-  function createImagecStr(x,y,w,h,font, fcolor, bcolor, str) {  
+function insertImagecStr(x,y,w,h,font, fcolor, bcolor, str, view) {  
 	var cw=24; var ch=32; var sw=0; var sh=0; 
 
 	if (font=="font1632") { cw=16; ch=32; 
@@ -61,7 +61,7 @@ function insertImagecStr(x,y,w,h,font, fcolor, bcolor, str, view) {
 	
 }
   
- function insertImagecChar(x, y, font, fcolor, bcolor, char, view) { 
+function insertImagecChar(x, y, font, fcolor, bcolor, char, view) { 
 	var cw=24; var ch=32; 
 	var oh = (char.charCodeAt(0))-32; 
 			      
@@ -140,11 +140,12 @@ function insertImagecStr(x,y,w,h,font, fcolor, bcolor, str, view) {
         for (let i=0; i<cw*4*ch; i+=cw*4) { 
           for (let j=0; j<cw*4; j++) {
           view[x+cw*4*y+i+j] = fontView[j]; 
-        } 
+	  } 
         // return fontView; 
-  }
-
+	} 
 }
+
+// }
 
 function insertImage(x,y,w,h,buf) { 
   
