@@ -138,8 +138,8 @@ function insertImagecStr(x,y,w,h,font, fcolor, bcolor, str, view) {
               }
           } 
         for (let i=0; i<cw*4*ch; i+=cw*4) { 
-          for (let j=0; i<cw*4; i++) {
-          view[x+cw*4*y+cw*4*i+j] = fontView[i]; 
+          for (let j=0; j<cw*4; j++) {
+          view[x+cw*4*y+i+j] = fontView[j]; 
         } 
         // return fontView; 
   }
