@@ -123,7 +123,7 @@ function insertImagecStr(x,y,w,h,font, fcolor, bcolor, str, view) {
                  fb = fView[i] & cb[j]; 
                  if (fb) {
 		   fontView[k+0] = fcolor[0];  // 0x00;
-       fontView[k+1] = fcolor[1];  // 0x00;
+                   fontView[k+1] = fcolor[1];  // 0x00;
 		   fontView[k+2] = fcolor[2];  // 0x00;
 		   fontView[k+3] = fcolor[3];  // 0xFF;
 		    k+=4; 
