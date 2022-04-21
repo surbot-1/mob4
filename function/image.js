@@ -31,7 +31,7 @@ function restoreImage(x, y, w, h) {
   ctx.putImageData(imgData, x, y); 
 } 
 
-function insertImage(x,y,w,h,buf) { 
+function insertImage(x,y,w,h,view) { 
   
 } 
   
