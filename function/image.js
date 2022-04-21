@@ -31,7 +31,7 @@ function restoreImage(x, y, w, h) {
   ctx.putImageData(imgData, x, y); 
 }
 
-function insertImagecStr(x,y,w,h,font, fcolor, bcolor, str, buf) { 
+function insertImagecStr(x,y,w,h,font, fcolor, bcolor, str, view) { 
   
   function createImagecStr(x,y,w,h,font, fcolor, bcolor, str) {  
 	var cw=24; var ch=32; var sw=0; var sh=0; 
@@ -46,10 +46,14 @@ function insertImagecStr(x,y,w,h,font, fcolor, bcolor, str, buf) {
 	} else if (font=="arialround1624") { cw=16; ch=24; 
 	} 
 	
+	
+        /* var ibuf = new ArrayBuffer(cw*4*ch);
+        var iview = new Uint8Array(ibuf); */ 
+	
 	var i=0; var j=0;
 	for (let k=0; k<(str.length); k++) { 
 		var char=str.charAt(k); 
-        createImagecChar(x+i, y+j, font, fcolor, bcolor, char); 
+        insertImagecChar(x+i, y+j, font, fcolor, bcolor, char, view); 
 		i+=cw; 
 		if (i>=w) {i=0; j+=ch;} 
 		if(j>=h) {i=0; j=0;}
@@ -57,7 +61,7 @@ function insertImagecStr(x,y,w,h,font, fcolor, bcolor, str, buf) {
 	
 }
   
- function createImagecChar(x, y, font, fcolor, bcolor, char, buf) { 
+ function insertImagecChar(x, y, font, fcolor, bcolor, char, view) { 
 	var cw=24; var ch=32; 
 	var oh = (char.charCodeAt(0))-32; 
 			      
@@ -106,8 +110,8 @@ function insertImagecStr(x,y,w,h,font, fcolor, bcolor, str, buf) {
 		}
 	} 
 	 
-       // var imgBuf = new ArrayBuffer(cw*4*ch);
-        var view = new Uint8Array(buf); 
+        /* var buf = new ArrayBuffer(cw*4*ch);
+        var view = new Uint8Array(buf); */ 
    
         var fontBuf = new ArrayBuffer(cw*4*ch);
         var fontView = new Uint8Array(fontBuf); 
@@ -135,7 +139,7 @@ function insertImagecStr(x,y,w,h,font, fcolor, bcolor, str, buf) {
           } 
         for (let i=0; i<cw*4*ch; i+=cw*4) { 
           for (let j=0; i<cw*4; i++) {
-          view[x+y*i+j] = fontView[i]; 
+          view[x+cw*4*y+cw*4*i+j] = fontView[i]; 
         } 
         // return fontView; 
   }
