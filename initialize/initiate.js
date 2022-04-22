@@ -24,7 +24,7 @@ ctx.fillStyle = "rgba(255,255,255,1.0)"; // white
 ctx.fillRect(200+8, 288+144+8+8, 680-16, 128-16); 
 ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue 
 ctx.fillRect(200, 288+144*2+8, 680, 128); 
-writecStr(200+128,288+144*2+40,32*7,64,"font3264",[255,255,255,255],[0,0,128,255],"Sign in"); 
+writecStr(200+128,288+144*2+40,32*7,64,"font2448",[255,255,255,255],[0,0,128,255],"Sign in"); 
 
 ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue
 ctx.fillRect(0, 2048, 920, 128); 
