@@ -15,13 +15,16 @@ ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // light gray
 ctx.fillRect(0, 144, 1080, 2032); 
 
 ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue 
-ctx.fillRect(200, 288, 680, 128); 
+ctx.fillRect(200, 288+8, 680, 128); 
 ctx.fillStyle = "rgba(255,255,255,1.0)"; // white
-ctx.fillRect(200+8, 288+8, 680-16, 128-16); 
+ctx.fillRect(200+8, 288+8+8, 680-16, 128-16); 
 ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue 
-ctx.fillRect(200, 288+144, 680, 128); 
+ctx.fillRect(200, 288+144+8, 680, 128); 
 ctx.fillStyle = "rgba(255,255,255,1.0)"; // white
-ctx.fillRect(200+8, 288+144+8, 680-16, 128-16); 
+ctx.fillRect(200+8, 288+144+8+8, 680-16, 128-16); 
+ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue 
+ctx.fillRect(200, 288+144*2+8, 680, 128); 
+writecStr(200+424,288+144*2+48,480,32,"ubuntubold",[255,255,255,255],[0,0,128,255],"Sign in"); 
 
 ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue
 ctx.fillRect(0, 2048, 920, 128); 
