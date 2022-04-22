@@ -17,7 +17,11 @@ ctx.fillRect(0, 144, 1080, 2032);
 ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue 
 ctx.fillRect(200, 288, 680, 128); 
 ctx.fillStyle = "rgba(255,255,255,1.0)"; // white
-ctx.fillRect(200+8, 288+64+8, 680-16, 128-16); 
+ctx.fillRect(200+8, 288+8, 680-16, 128-16); 
+ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue 
+ctx.fillRect(200, 288+144, 680, 128); 
+ctx.fillStyle = "rgba(255,255,255,1.0)"; // white
+ctx.fillRect(200+8, 288+144+8, 680-16, 128-16); 
 
 ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue
 ctx.fillRect(0, 2048, 920, 128); 
