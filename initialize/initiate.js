@@ -76,12 +76,12 @@ var ptr=0; var ptrp=0;
   showCursor(x+ci,y+cj); 
  }
 	
- function storekeyvalue(viewByte,ptrRef) { 
-  var x=0; var y=0; var ci=0; var cj=0; 
-  if (ptrRef==0) {x=200+16; y=144*2+8+40;} 
-  else if (ptrRef==512) {x=200+16; y=144*3+8+40;} 
+ function storekeyvalue(viewByte,rptr) { 
+  var x=0; var y=0; var ci=0; var cj=0; var ptr=0; 
+  if (rptr==0) {x=200+16; y=144*2+8+40;} 
+  else if (rptr==512) {x=200+16; y=144*3+8+40;} 
   var kstr = readKeypad(0,1664,ktype); 
-  var ptr = viewByte[ptrRef+28]; 
+  var ptr = viewByte[rptr+28]; 
   ci=ptr*24; cj=0; 
   clearCursor(x+ci,y+cj); 
   if (kstr=="SHIFT") {  
@@ -104,27 +104,27 @@ var ptr=0; var ptrp=0;
       if (ci==0) {ci=24*23;} else {ci-=24;} 
       writeChar(x+ci,y+cj,"font2448"," "); 
       ptr--; 
-      viewByte[ptrRef+32]=0x00; 
-      viewByte[ptrRef+28]=ptr; 
+      viewByte[rptr+32]=0x00; 
+      viewByte[rptr+28]=ptr; 
     }
   } else if (kstr=="SPACE") { 
     writeChar(x+ci,y+cj,"font2448"," ");
     ci+=24; 
     if (ci>=24*24) {ci=0; cj=0;} 
-    viewByte[ptrRef+64+ptr]=" ".charCodeAt(0); 
+    viewByte[rptr+64+ptr]=" ".charCodeAt(0); 
     ptr++; 
-    viewByte[ptrRef+32]=0x00;
-    viewByte[ptrRef+28]=ptr; 
+    viewByte[rptr+32]=0x00;
+    viewByte[rptr+28]=ptr; 
   } else if (kstr=="ENTER") { 
   } else { 
     var kchar=readKeypad(0,1664,ktype); 
     writeChar(x+ci,y+cj,"font2448",kchar); 
     ci+=24; 
     if (ci>=24*24) {ci=0; cj=0;} 
-    viewByte[ptrRef+64+ptr]=kchar.charCodeAt(0); 
+    viewByte[rptr+64+ptr]=kchar.charCodeAt(0); 
     ptr++; 
-    viewByte[ptrRef+32]=0x00;
-    viewByte[ptrRef+28]=ptr; 
+    viewByte[rptr+32]=0x00;
+    viewByte[rptr+28]=ptr; 
   } 
   writeCursor(x+ci,y+cj); 
   showCursor(x+ci,y+cj); 
