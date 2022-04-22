@@ -44,9 +44,9 @@ var ptr=0; var ptrp=0;
               } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
 	      } else if (x>0 && x<1080 && y>144*1+8 && y<144*1+8+128) { 
               } else if (x>200 && x<880 && y>144*2+8 && y<144*2+8+128) { 
-		      ptrp=ptr; ptr=0; updtCursor(); 
+		      ptrp=ptr; ptr=0; updtCursor(ptr, ptrp); 
               } else if (x>200 && x<880 && y>144*3+8 && y<144*3+8+128) { 
-		      ptrp=ptr; ptr=512; updtCursor(); 
+		      ptrp=ptr; ptr=512; updtCursor(ptr, ptrp); 
               } else if (x>200 && x<880 && y>144*4+8 && y<144*4+8+128) { 
 		      sin(); 
 	      } else if (x>200 && x<1080 && y>160*5+8 && y<144*6+128) { 
@@ -61,17 +61,17 @@ var ptr=0; var ptrp=0;
       timer = setInterval(check, 0020); 
 	
 	
- function updtCursor() { 
-  var ci=0; var cj=0; var pr=0; 
-  if (ptrp==0) {x=200+16; y=144*2+8+40;} 
-  else if (ptrp==512) {x=200+16; y=144*3+8+40;} 
-  pr = viewByte[ptrp+28]; 
-  ci=pr*24; cj=0; 
+ function updtCursor(rptr, rptrp) { 
+  var ci=0; var cj=0; var ptr=0; 
+  if (rptrp==0) {x=200+16; y=144*2+8+40;} 
+  else if (rptrp==512) {x=200+16; y=144*3+8+40;} 
+  ptr = viewByte[rptrp+28]; 
+  ci=ptr*24; cj=0; 
   clearCursor(x+ci,y+cj); 
-  if (ptr==0) {x=200+16; y=144*2+8+40;} 
-  else if (ptr==512) {x=200+16; y=144*3+8+40;} 
-  pr = viewByte[ptr+28]; 
-  ci=pr*24; cj=0; 
+  if (rptr==0) {x=200+16; y=144*2+8+40;} 
+  else if (rptr==512) {x=200+16; y=144*3+8+40;} 
+  ptr = viewByte[rptr+28]; 
+  ci=ptr*24; cj=0; 
   writeCursor(x+ci,y+cj);
   showCursor(x+ci,y+cj); 
  }
