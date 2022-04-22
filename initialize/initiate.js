@@ -30,6 +30,7 @@ ctx.fillRect(200, 144*4+8, 680, 128);
 
 drawKeypad(0,1664,ktype); 
 showCursor(200+16,144*2+8+40); 
+var ptr=0; var ptrp=0; 
   
   
       var timer;
@@ -42,17 +43,17 @@ showCursor(200+16,144*2+8+40);
               } else if (x>360*1 && x<360*2 && y>0 && y<144) { 
               } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
 	      } else if (x>0 && x<1080 && y>144*1 && y<144*2) { 
-              } else if (x>200 && x<1080 && y>144*2+8 && y<144*3+128) { 
-		      uname(); 
-              } else if (x>200 && x<1080 && y>144*3+8 && y<144*4+128) { 
-		      pass(); 
-              } else if (x>200 && x<1080 && y>144*4+8 && y<144*5+128) { 
+              } else if (x>200 && x<880 && y>144*2+8 && y<144*3+128) { 
+		      ptrp=ptr; ptr=0; updateCursor(); 
+              } else if (x>200 && x<880 && y>144*3+8 && y<144*4+128) { 
+		      ptrp=ptr; ptr=512; updateCursor(); 
+              } else if (x>200 && x<880 && y>144*4+8 && y<144*5+128) { 
 		      sin(); 
 	      } else if (x>200 && x<1080 && y>160*5+8 && y<144*6+128) { 
 	      } else if (x>0 && x<1080 && y>144*6+8 && y<144*7+128) { 
 	      } else if (x>0 && x<1080 && y>144*7+8 && y<144*8+128) {  
 	      } else if (x>0 && x<1080 && y>1664 && y<2176) { 
-		      readkpad(); 
+		      storekeyvalue(signByte,ptr); 
 	      } 
            
          } 
@@ -60,10 +61,28 @@ showCursor(200+16,144*2+8+40);
       timer = setInterval(check, 0020); 
 	
 	
- function readkpad() { 
-  clearCursor(16,1448); 
+ function updateCursor() { 
+  var ci=0; var cj=0; var ptr=0; 
+  if (ptrp==0) {x=200+16; y=144*2+8+40;} 
+  else if (ptrp==512) {x=200+16; y=144*3+8+40;} 
+  ptr = viewByte[ptrp+28]; 
+  ci=ptr*24; cj=0; 
+  clearCursor(x+ci,y+cj); 
+  if (ptr==0) {x=200+16; y=144*2+8+40;} 
+  else if (ptr==512) {x=200+16; y=144*3+8+40;} 
+  ptr = viewByte[ptr+28]; 
+  ci=ptr*24; cj=0; 
+  showCursor(x+ci,y+cj); 
+ }
+	
+ function storekeyvalue(viewByte,ptrRef) { 
+  var x=0; var y=0; var ci=0; var cj=0; 
+  if (ptrRef==0) {x=200+16; y=144*2+8+40;} 
+  else if (ptrRef==512) {x=200+16; y=144*3+8+40;} 
   var kstr = readKeypad(0,1664,ktype); 
-  var ptr = msgByte[28]; 
+  var ptr = viewByte[ptrRef+28]; 
+  ci=ptr*24; cj=0; 
+  clearCursor(x+ci,y+cj); 
   if (kstr=="SHIFT") {  
     if (ktype==0 || ktype==2) { 
       ktype++; 
@@ -82,32 +101,32 @@ showCursor(200+16,144*2+8+40);
     if (ptr==0) { 
     } else { 
       if (ci==0) {ci=24*23;} else {ci-=24;} 
-      writeChar(16+ci,1448+cj,"font2448"," "); 
+      writeChar(x+ci,y+cj,"font2448"," "); 
       ptr--; 
-      msgByte[32]=0x00; 
-      msgByte[28]=ptr; 
+      viewByte[ptrRef+32]=0x00; 
+      viewByte[ptrRef+28]=ptr; 
     }
   } else if (kstr=="SPACE") { 
-    writeChar(16+ci,1448+cj,"font2448"," ");
+    writeChar(x+ci,y+cj,"font2448"," ");
     ci+=24; 
     if (ci>=24*24) {ci=0; cj=0;} 
-    msgByte[64+ptr]=" ".charCodeAt(0); 
+    viewByte[ptrRef+64+ptr]=" ".charCodeAt(0); 
     ptr++; 
-    msgByte[32]=0x00;
-    msgByte[28]=ptr; 
+    viewByte[ptrRef+32]=0x00;
+    viewByte[ptrRef+28]=ptr; 
   } else if (kstr=="ENTER") { 
   } else { 
     var kchar=readKeypad(0,1664,ktype); 
-    writeChar(16+ci,1448+cj,"font2448",kchar); 
+    writeChar(x+ci,y+cj,"font2448",kchar); 
     ci+=24; 
     if (ci>=24*24) {ci=0; cj=0;} 
-    msgByte[64+ptr]=kchar.charCodeAt(0); 
+    viewByte[ptrRef+64+ptr]=kchar.charCodeAt(0); 
     ptr++; 
-    msgByte[32]=0x00;
-    msgByte[28]=ptr; 
+    viewByte[ptrRef+32]=0x00;
+    viewByte[ptrRef+28]=ptr; 
   } 
-  writeCursor(16,1448); 
-  showCursor(16,1448); 
+  writeCursor(x,y); 
+  showCursor(x,y); 
  } 
 
 } 
