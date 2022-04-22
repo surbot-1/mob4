@@ -125,8 +125,8 @@ var ptr=0; var ptrp=0;
     viewByte[ptrRef+32]=0x00;
     viewByte[ptrRef+28]=ptr; 
   } 
-  writeCursor(x,y); 
-  showCursor(x,y); 
+  writeCursor(x+ci,y+cj); 
+  showCursor(x+ci,y+cj); 
  } 
 
 } 
