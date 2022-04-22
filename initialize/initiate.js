@@ -1,3 +1,5 @@
+function initiate() { 
+
 var cnv = document.getElementById("canvas"); 
 var ctx = cnv.getContext('2d'); 
 
@@ -26,3 +28,4 @@ fileViewerUrl(680, 2080, "icon/attachment-icon-64.bmp");
 fileViewerUrl(808, 2080, "icon/camera-icon-64.bmp"); 
 fileViewerUrl(936, 2048, "icon/microphone-icon-128.bmp"); 
 
+} 
