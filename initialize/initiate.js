@@ -62,16 +62,16 @@ var ptr=0; var ptrp=0;
 	
 	
  function updateCursor() { 
-  var ci=0; var cj=0; var ptr=0; 
+  var ci=0; var cj=0; var pr=0; 
   if (ptrp==0) {x=200+16; y=144*2+8+40;} 
   else if (ptrp==512) {x=200+16; y=144*3+8+40;} 
-  ptr = viewByte[ptrp+28]; 
-  ci=ptr*24; cj=0; 
+  pr = viewByte[ptrp+28]; 
+  ci=pr*24; cj=0; 
   clearCursor(x+ci,y+cj); 
   if (ptr==0) {x=200+16; y=144*2+8+40;} 
   else if (ptr==512) {x=200+16; y=144*3+8+40;} 
-  ptr = viewByte[ptr+28]; 
-  ci=ptr*24; cj=0; 
+  pr = viewByte[ptr+28]; 
+  ci=pr*24; cj=0; 
   showCursor(x+ci,y+cj); 
  }
 	
