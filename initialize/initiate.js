@@ -26,6 +26,9 @@ ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue
 ctx.fillRect(200, 288+144*2+8, 680, 128); 
 writecStr(200+128,288+144*2+40,32*7,64,"font2448",[255,255,255,255],[0,0,128,255],"Sign in"); 
 
+drawKeypad(0,1664,ktype); 
+showCursor(200+16,288+8+40); 
+/*   
 ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue
 ctx.fillRect(0, 2048, 920, 128); 
 ctx.fillStyle = "rgba(255,255,255,1.0)"; // white
@@ -33,5 +36,5 @@ ctx.fillRect(0+8, 2048+8, 920-16, 128-16);
 fileViewerUrl(680, 2080, "icon/attachment-icon-64.bmp"); 
 fileViewerUrl(808, 2080, "icon/camera-icon-64.bmp"); 
 fileViewerUrl(936, 2048, "icon/microphone-icon-128.bmp"); 
-
+*/ 
 } 
