@@ -62,7 +62,7 @@ var ptr=0; var ptrp=0;
 	
 	
  function updtCursor(rptr, rptrp) { 
-  var ci=0; var cj=0; var ptr=0; 
+  var x=0; var y=0; var ci=0; var cj=0; var ptr=0; 
   if (rptrp==0) {x=200+16; y=144*2+8+40;} 
   else if (rptrp==512) {x=200+16; y=144*3+8+40;} 
   ptr = viewByte[rptrp+28]; 
