@@ -197,9 +197,9 @@ for (let i=0; i<aw*4*ah; i+=4) {
 } 
 ctx.putImageData(imgData,0,ay); 
 } else if (!appPtr) { 
-   var timer; var count=0; msgcount=0; msgcountp=0; 
+   var tmr; var count=0; msgcount=0; msgcountp=0; 
    var countf = readAppMessageCount(sender,receiver); 
-   var tmr = setInterval( ()=> { 
+   tmr = setInterval( ()=> { 
    if (msgcount) { 
        clearInterval(tmr); msgid=msgcount+1; 
        for (let i=0; i<msgcount+1; i++) { 
