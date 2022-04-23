@@ -222,12 +222,14 @@ if (true) {
    var tmr; appfriendcount=0; 
    var fcount = readAppFriendCount(sender); 
    tmr = setInterval( ()=> { 
-   if (appfriendcount) { 
-       clearInterval(tmr); 
-       for (let i=1; i<appfriendcount+1; i++) { 
-	   readAppFriend(sender, i); 
-       } 
-   } 
+      if (appfriendcount) { 
+          clearInterval(tmr); 
+          for (let i=1; i<appfriendcount+1; i++) { 
+	     readAppFriend(sender, i); 
+          } 
+      } else if (!appfriengcount) { 
+         fcount = readAppFriendCount(sender); 
+      }
    }, 0200); 
 } 
 	
