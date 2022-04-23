@@ -63,13 +63,27 @@ var ptr=0; var ptrp=0;
 	
  function sin() { 
       var usize= signByte[0+28]; 
-      var psize= signByte[512+28];
+      var psize= signByte[512+28]; 
+      var uname=""; var pass=""; 
       for (let i=0; i<usize; i++) { 
-	   username += ascChar(signByte[0+64]); 
+	   uname += ascChar(signByte[0+64]); 
       } 
       for (let i=0; i<psize; i++) { 
-	   password += ascChar(signByte[512+64]);
+	   pass += ascChar(signByte[512+64]);
       } 
+      if (uname=="sAy1" && pass=="s@1234") { 
+	  username=uname; password=pass; 
+	  sender=uname; 
+      } else if (uname=="sAy2" && pass=="k@1234") { 
+	  username=uname; password=pass; 
+	  sender=uname; 
+      } else if (uname=="Yash Shiv" && pass=="ys@1234") { 
+	  username=uname; password=pass; 
+	  sender=uname; 
+      } else if (uname=="Jitendra" && pass=="j@1234") { 
+	  username=uname; password=pass; 
+	  sender=uname; 
+      }
  }
 	
  function updtCursor(viewByte, rptr, rptrp) { 
