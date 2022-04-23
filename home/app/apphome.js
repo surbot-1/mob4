@@ -39,6 +39,12 @@ function addFriend() {
 	drawKeypad(0,1664,ktype); 
         showCursor(200+16,144*2+8+40); 
 	
+      signByte[0+28]=0; 
+      signByte[0+32]=0; 
+      signByte[0+33]=0; 
+      signByte[0+34]=0; 
+      signByte[0+35]=0; 
+	
  function storekeyvalue(viewByte,rptr) { 
   var x=0; var y=0; var ptr=0; var ci=0; var cj=0; 
   var buf = new ArrayBuffer(4); 
@@ -77,7 +83,7 @@ function addFriend() {
       viewByte[rptr+28]=ptr; 
       viewByte[rptr+32]=(ci&0xFF00)>>8; 
       viewByte[rptr+33]=ci&0x00FF; 
-      viewByte[rptr+34]==(cj&0xFF00)>>8; 
+      viewByte[rptr+34]=(cj&0xFF00)>>8; 
       viewByte[rptr+35]=cj&0x00FF; 
     }
   } else if (kstr=="SPACE") { 
@@ -89,7 +95,7 @@ function addFriend() {
     viewByte[rptr+28]=ptr; 
     viewByte[rptr+32]=(ci&0xFF00)>>8; 
     viewByte[rptr+33]=ci&0x00FF; 
-    viewByte[rptr+34]==(cj&0xFF00)>>8; 
+    viewByte[rptr+34]=(cj&0xFF00)>>8; 
     viewByte[rptr+35]=cj&0x00FF; 
   } else if (kstr=="ENTER") { 
   } else { 
@@ -102,12 +108,49 @@ function addFriend() {
     viewByte[rptr+28]=ptr; 
     viewByte[rptr+32]=(ci&0xFF00)>>8; 
     viewByte[rptr+33]=ci&0x00FF; 
-    viewByte[rptr+34]==(cj&0xFF00)>>8; 
+    viewByte[rptr+34]=(cj&0xFF00)>>8; 
     viewByte[rptr+35]=cj&0x00FF; 
   } 
   writeCursor(x+ci,y+cj); 
   showCursor(x+ci,y+cj); 
  } 
+	
+ function add() { 
+      var usize= signByte[0+28]; 
+      var uname=""; 
+      for (let i=0; i<usize; i++) { 
+	   uname += ascChar(signByte[0+64+i]); 
+      }
+ }
+	
+ var ptr=0; var ptrp=0; 
+
+      var timer;
+      function check() { 
+      var x = touchx;  var y = touchy; 
+      var tend = touch;  
+         if (tend == 3) { 
+              touch = 0; 
+              if (x>0 && x<360*1 && y>0 && y<144) { 
+              } else if (x>360*1 && x<360*2 && y>0 && y<144) { 
+              } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
+	      } else if (x>0 && x<1080 && y>144*1+8 && y<144*1+8+128) { 
+              } else if (x>200 && x<880 && y>144*2+8 && y<144*2+8+128) { 
+		      ptrp=ptr; ptr=0; updtCursor(signByte,ptr, ptrp); 
+              } else if (x>200 && x<880 && y>144*3+8 && y<144*3+8+128) { 
+		      clrCursor(signByte, ptr); clearInterval(timer); add(); 
+              } else if (x>200 && x<880 && y>144*4+8 && y<144*4+8+128) { 
+		      // clrCursor(signByte, ptr); clearInterval(timer); sin(); 
+	      } else if (x>200 && x<1080 && y>160*5+8 && y<144*6+128) { 
+	      } else if (x>0 && x<1080 && y>144*6+8 && y<144*7+128) { 
+	      } else if (x>0 && x<1080 && y>144*7+8 && y<144*8+128) {  
+	      } else if (x>0 && x<1080 && y>1664 && y<2176) { 
+		      storekeyvalue(signByte,ptr); 
+	      } 
+           
+         } 
+      } 
+      timer = setInterval(check, 0020); 
 	
 }
 	
