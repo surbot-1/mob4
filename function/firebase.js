@@ -73,6 +73,9 @@ function readAppFriend(sndr,fcount) {
   var ref = firebase.database().ref("App").child(sndr).child("Friend").child(fcount); 
   ref.once("value", function(snapshot) { 
   var fname = snapshot.child("Friend").child("Username").val(); 
+  for (let i=0; i<fname.length; i++) { 
+    fndView[32*fcount+i] = fname.charCodeAt(i); 
+  }
   appfriendname = fname; 
   return fname; 
   }); 
