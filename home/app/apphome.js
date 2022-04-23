@@ -37,7 +37,78 @@ function addFriend() {
      imageRect(200,144*3+8,680,128,"rgba(0,0,128,1.0)"); 
      writecStr(200+268+36,144*3+8+40,24*3,48,"font2448",[255,255,255,255],[0,0,128,255],"Add"); 
 	drawKeypad(0,1664,ktype); 
-        showCursor(200+16,144*2+8+40);
+        showCursor(200+16,144*2+8+40); 
+	
+ function storekeyvalue(viewByte,rptr) { 
+  var x=0; var y=0; var ptr=0; var ci=0; var cj=0; 
+  var buf = new ArrayBuffer(4); 
+  var view = new DataView(buf); 
+  if (rptr==0) {x=200+16; y=144*2+8+40;} 
+  else if (rptr==512) {x=200+16; y=144*3+8+40;} 
+  var kstr = readKeypad(0,1664,ktype); 
+  var ptr = viewByte[rptr+28]; 
+  view.setUint8(0,viewByte[rptr+32]); 
+  view.setUint8(1,viewByte[rptr+33]); 
+  ci = view.getUint16(0); 
+  view.setUint8(0,viewByte[rptr+34]); 
+  view.setUint8(1,viewByte[rptr+35]); 
+  cj = view.getUint16(0); 
+  clearCursor(x+ci,y+cj); 
+  if (kstr=="SHIFT") {  
+    if (ktype==0 || ktype==2) { 
+      ktype++; 
+      drawKeypad(0,1664,ktype);
+    } else if (ktype==1 || ktype==3) { 
+      ktype--; 
+      drawKeypad(0,1664,ktype); 
+    }
+  } else if (kstr=="?123") { 
+    ktype=2; 
+    drawKeypad(0,1664,ktype);
+  } else if (kstr=="ABC") { 
+    ktype=0; 
+    drawKeypad(0,1664,ktype); 
+  } else if (kstr=="BS") { 
+    if (ptr==0) { 
+    } else { 
+      if (ci==0) {ci=24*23;} else {ci-=24;} 
+      writeChar(x+ci,y+cj,"font2448"," "); 
+      ptr--; 
+      viewByte[rptr+28]=ptr; 
+      viewByte[rptr+32]=(ci&0xFF00)>>8; 
+      viewByte[rptr+33]=ci&0x00FF; 
+      viewByte[rptr+34]==(cj&0xFF00)>>8; 
+      viewByte[rptr+35]=cj&0x00FF; 
+    }
+  } else if (kstr=="SPACE") { 
+    writeChar(x+ci,y+cj,"font2448"," ");
+    ci+=24; 
+    if (ci>=24*24) {ci=0; cj=0;} 
+    viewByte[rptr+64+ptr]=" ".charCodeAt(0); 
+    ptr++; 
+    viewByte[rptr+28]=ptr; 
+    viewByte[rptr+32]=(ci&0xFF00)>>8; 
+    viewByte[rptr+33]=ci&0x00FF; 
+    viewByte[rptr+34]==(cj&0xFF00)>>8; 
+    viewByte[rptr+35]=cj&0x00FF; 
+  } else if (kstr=="ENTER") { 
+  } else { 
+    var kchar=readKeypad(0,1664,ktype); 
+    writeChar(x+ci,y+cj,"font2448",kchar); 
+    ci+=24; 
+    if (ci>=24*24) {ci=0; cj=0;} 
+    viewByte[rptr+64+ptr]=kchar.charCodeAt(0); 
+    ptr++; 
+    viewByte[rptr+28]=ptr; 
+    viewByte[rptr+32]=(ci&0xFF00)>>8; 
+    viewByte[rptr+33]=ci&0x00FF; 
+    viewByte[rptr+34]==(cj&0xFF00)>>8; 
+    viewByte[rptr+35]=cj&0x00FF; 
+  } 
+  writeCursor(x+ci,y+cj); 
+  showCursor(x+ci,y+cj); 
+ } 
+	
 }
 	
 if (true) { 
