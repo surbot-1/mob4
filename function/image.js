@@ -31,6 +31,13 @@ function restoreImage(x, y, w, h) {
   ctx.putImageData(imgData, x, y); 
 } 
 
+
+function imageRect(x,y,w,h,rgba) { 
+     var can = document.getElementById('canvas'); 
+     var ctx = can.getContext('2d'); 
+     ctx.fillStyle = rgba; 
+     ctx.fillRect(x,y,w,h); 
+} 
 function insertImage(x,y,w,h,view) { 
   
 } 
