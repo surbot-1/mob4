@@ -83,8 +83,28 @@ var ptr=0; var ptrp=0;
       } else if (uname=="Jitendra" && pass=="j@1234") { 
 	  username=uname; password=pass; 
 	  sender=uname; appHomeChats(); 
+      } else { 
+	  shwCursor(signByte, ptr); 
+	  timer = setInterval(check, 0020); 
       }
  } 
+	
+ function shwCursor(viewByte, rptr) { 
+  var x=0; var y=0; var ptr=0; var ci=0; var cj=0; 
+  var buf = new ArrayBuffer(4); 
+  var view = new DataView(buf); 
+  if (rptr==0) {x=200+16; y=144*2+8+40;} 
+  else if (rptr==512) {x=200+16; y=144*3+8+40;} 
+  ptr = viewByte[rptr+28]; 
+  view.setUint8(0,viewByte[rptr+32]); 
+  view.setUint8(1,viewByte[rptr+33]); 
+  ci = view.getUint16(0); 
+  view.setUint8(0,viewByte[rptr+34]); 
+  view.setUint8(1,viewByte[rptr+35]); 
+  cj = view.getUint16(0); 
+  writeCursor(x+ci,y+cj); 
+  showCursor(x+ci,y+cj); 
+ }
 	
  function clrCursor(viewByte, rptr) { 
   var x=0; var y=0; var ptr=0; var ci=0; var cj=0; 
