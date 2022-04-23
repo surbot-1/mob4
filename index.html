@@ -108,11 +108,13 @@ var usrBfr = new ArrayBuffer(512);
 var usrByte = new Uint8Array(usrBfr); 
 var msgid=1; 
 var readmsgsts=""; var readmsgstsp=""; 
-var msgcount=0; var msgcountp=0;
+var msgcount=0; var msgcountp=0; 
 var rcvmsgid=0; var rcvmsgidp=0; 
 var rcvmsgsts=""; var rcvmsgstsp=""; 
 var useractive=false; var sendactive=0; 
 var sender=""; var receiver=""; 
+var usercount=0; var usercountp=0;
+var friendcount=0; var friendcountp=0;
 	
 var sndBfr = new ArrayBuffer(512); 
 var sndByte = new Uint8Array(sndBfr); 
