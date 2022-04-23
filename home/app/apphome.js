@@ -19,7 +19,7 @@ writecStr(200,144*1+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],"sAy")
 writecStr(200,144*2+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],"Yash Shiv"); 
 writecStr(200,144*3+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],"Jitendra"); 
 	
-fileViewerUrl(920, 1896, "icon/add-icon-128.bmp"); 
+fileViewerUrl(936, 2024, "icon/add-icon-128.bmp"); 
 	
 	var timer;
 	function check() { 
