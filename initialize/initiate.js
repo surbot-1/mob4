@@ -66,10 +66,10 @@ var ptr=0; var ptrp=0;
       var psize= signByte[512+28]; 
       var uname=""; var pass=""; 
       for (let i=0; i<usize; i++) { 
-	   uname += ascChar(signByte[0+64]); 
+	   uname += ascChar(signByte[0+64+i]); 
       } 
       for (let i=0; i<psize; i++) { 
-	   pass += ascChar(signByte[512+64]);
+	   pass += ascChar(signByte[512+64+i]);
       } 
       if (uname=="sAy1" && pass=="s@1234") { 
 	  username=uname; password=pass; 
