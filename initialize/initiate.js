@@ -48,7 +48,7 @@ var ptr=0; var ptrp=0;
               } else if (x>200 && x<880 && y>144*3+8 && y<144*3+8+128) { 
 		      ptrp=ptr; ptr=512; updtCursor(signByte, ptr, ptrp); 
               } else if (x>200 && x<880 && y>144*4+8 && y<144*4+8+128) { 
-		      sin(); 
+		      clrCursor(signByte, ptr); sin(); 
 	      } else if (x>200 && x<1080 && y>160*5+8 && y<144*6+128) { 
 	      } else if (x>0 && x<1080 && y>144*6+8 && y<144*7+128) { 
 	      } else if (x>0 && x<1080 && y>144*7+8 && y<144*8+128) {  
@@ -84,6 +84,22 @@ var ptr=0; var ptrp=0;
 	  username=uname; password=pass; 
 	  sender=uname; appHomeChats(); 
       }
+ } 
+	
+ function clrCursor(viewByte, rptr) { 
+  var x=0; var y=0; var ptr=0; var ci=0; var cj=0; 
+  var buf = new ArrayBuffer(4); 
+  var view = new DataView(buf); 
+  if (rptr==0) {x=200+16; y=144*2+8+40;} 
+  else if (rptr==512) {x=200+16; y=144*3+8+40;} 
+  ptr = viewByte[rptr+28]; 
+  view.setUint8(0,viewByte[rptr+32]); 
+  view.setUint8(1,viewByte[rptr+33]); 
+  ci = view.getUint16(0); 
+  view.setUint8(0,viewByte[rptr+34]); 
+  view.setUint8(1,viewByte[rptr+35]); 
+  cj = view.getUint16(0); 
+  clearCursor(x+ci,y+cj); 
  }
 	
  function updtCursor(viewByte, rptr, rptrp) { 
