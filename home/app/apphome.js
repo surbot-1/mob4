@@ -116,11 +116,16 @@ function addFriend() {
  } 
 	
  function add() { 
-      var usize= signByte[0+28]; 
-      var uname=""; 
-      for (let i=0; i<usize; i++) { 
-	   uname += ascChar(signByte[0+64+i]); 
-      }
+      var fsize= signByte[0+28]; 
+      var fname=""; 
+      for (let i=0; i<fsize; i++) { 
+	   fname += ascChar(signByte[0+64+i]); 
+      } 
+      appfriendcount++; 
+      writeAppFriend(sender,appfcount,fname); 
+      writeAppFriendCount(sender,appfriendcount); 
+      restoreImage(0,144,1080,2032); 
+      appHomeUser(); 
  }
 	
  var ptr=0; var ptrp=0; 
