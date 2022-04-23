@@ -27,8 +27,8 @@ function gotoSignin() {
         function getAppSignupInfo() {
             var ref = firebase.database().ref("App/User/Signup");
             ref.once("value", function(snapshot) { 
-            unamea = snapshot.child("username").val();
-            passa = snapshot.child("password").val();
+            unamea = snapshot.child("Username").val();
+            passa = snapshot.child("Password").val();
             });
         }  
   }
