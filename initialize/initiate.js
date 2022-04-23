@@ -63,26 +63,45 @@ var ptr=0; var ptrp=0;
 	
  function updtCursor(rptr, rptrp) { 
   var x=0; var y=0; var ptr=0; 
+  var buf = new ArrayBuffer(4); 
+  var view = new DataView(buf); 
   if (rptrp==0) {x=200+16; y=144*2+8+40;} 
   else if (rptrp==512) {x=200+16; y=144*3+8+40;} 
   ptr = viewByte[rptrp+28]; 
-  ci=ptr*24; cj=0; 
+  view.setUint8(0,viewByte[32]); 
+  view.setUint8(1,viewByte[33]); 
+  ci = view.getUint16(0); 
+  view.setUint8(0,viewByte[34]); 
+  view.setUint8(1,viewByte[35]); 
+  cj = view.getUint16(0); 
   clearCursor(x+ci,y+cj); 
   if (rptr==0) {x=200+16; y=144*2+8+40;} 
   else if (rptr==512) {x=200+16; y=144*3+8+40;} 
   ptr = viewByte[rptr+28]; 
-  ci=ptr*24; cj=0; 
+  view.setUint8(0,viewByte[32]); 
+  view.setUint8(1,viewByte[33]); 
+  ci = view.getUint16(0); 
+  view.setUint8(0,viewByte[34]); 
+  view.setUint8(1,viewByte[35]); 
+  cj = view.getUint16(0); 
   writeCursor(x+ci,y+cj);
   showCursor(x+ci,y+cj); 
  }
 	
  function storekeyvalue(viewByte,rptr) { 
   var x=0; var y=0; var ptr=0; 
+  var buf = new ArrayBuffer(4); 
+  var view = new DataView(buf); 
   if (rptr==0) {x=200+16; y=144*2+8+40;} 
   else if (rptr==512) {x=200+16; y=144*3+8+40;} 
   var kstr = readKeypad(0,1664,ktype); 
   var ptr = viewByte[rptr+28]; 
-  ci=ptr*24; cj=0; 
+  view.setUint8(0,viewByte[32]); 
+  view.setUint8(1,viewByte[33]); 
+  ci = view.getUint16(0); 
+  view.setUint8(0,viewByte[34]); 
+  view.setUint8(1,viewByte[35]); 
+  cj = view.getUint16(0); 
   clearCursor(x+ci,y+cj); 
   if (kstr=="SHIFT") {  
     if (ktype==0 || ktype==2) { 
@@ -104,8 +123,11 @@ var ptr=0; var ptrp=0;
       if (ci==0) {ci=24*23;} else {ci-=24;} 
       writeChar(x+ci,y+cj,"font2448"," "); 
       ptr--; 
-      viewByte[rptr+32]=0x00; 
       viewByte[rptr+28]=ptr; 
+      viewByte[rptr+32]=(ci&0xFF00)>>8; 
+      viewByte[rptr+33]=ci&0x00FF; 
+      viewByte[rptr+34]==(cj&0xFF00)>>8; 
+      viewByte[rptr+35]=cj&0x00FF; 
     }
   } else if (kstr=="SPACE") { 
     writeChar(x+ci,y+cj,"font2448"," ");
@@ -113,8 +135,11 @@ var ptr=0; var ptrp=0;
     if (ci>=24*24) {ci=0; cj=0;} 
     viewByte[rptr+64+ptr]=" ".charCodeAt(0); 
     ptr++; 
-    viewByte[rptr+32]=0x00;
     viewByte[rptr+28]=ptr; 
+    viewByte[rptr+32]=(ci&0xFF00)>>8; 
+    viewByte[rptr+33]=ci&0x00FF; 
+    viewByte[rptr+34]==(cj&0xFF00)>>8; 
+    viewByte[rptr+35]=cj&0x00FF; 
   } else if (kstr=="ENTER") { 
   } else { 
     var kchar=readKeypad(0,1664,ktype); 
@@ -123,8 +148,11 @@ var ptr=0; var ptrp=0;
     if (ci>=24*24) {ci=0; cj=0;} 
     viewByte[rptr+64+ptr]=kchar.charCodeAt(0); 
     ptr++; 
-    viewByte[rptr+32]=0x00;
     viewByte[rptr+28]=ptr; 
+    viewByte[rptr+32]=(ci&0xFF00)>>8; 
+    viewByte[rptr+33]=ci&0x00FF; 
+    viewByte[rptr+34]==(cj&0xFF00)>>8; 
+    viewByte[rptr+35]=cj&0x00FF; 
   } 
   writeCursor(x+ci,y+cj); 
   showCursor(x+ci,y+cj); 
