@@ -21,6 +21,19 @@ writecStr(200,144*3+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],"Jiten
 	
 fileViewerUrl(920, 2024, "icon/add-icon-128.bmp"); 
 	
+if (true) { 
+   var tmr; var count=0; msgcount=0; msgcountp=0; 
+   var countf = readAppFriendCount(sender); 
+   tmr = setInterval( ()=> { 
+   if (appfriendcount) { 
+       clearInterval(tmr); 
+       for (let i=0; i<msgcount+1; i++) { 
+	   readAppFriend(sender, i); 
+       } 
+   } 
+   }, 0200); 
+}
+	
 	var timer;
 	function check() { 
 	var x = touchx;  var y = touchy; 
