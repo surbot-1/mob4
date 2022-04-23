@@ -28,21 +28,26 @@ function writeAppUser(ucount, uname) {
   ref.child("Username").set({ 
     Username: uname 
   }); 
-  ref = firebase.database().ref("App").child("User"); 
+} 
+
+function writeAppUserCount(ucount) { 
+  var ref = firebase.database().ref("App").child("User"); 
   ref.child("UserCount").set({ 
     UserCount: ucount 
   }); 
 } 
 
-function readAppUser() { 
-  var ref = firebase.database().ref("App").child("User").child(UserCount); 
+function readAppUser(ucount) { 
+  var ref = firebase.database().ref("App").child("User").child(ucount); 
   ref.once("value", function(snapshot) { 
-  ref.child("Username").set({ 
-    Username: uname 
+  var uname = snapshot.child("Username").child("Username").val(); 
   }); 
-  ref = firebase.database().ref("App").child("User"); 
-  ref.child("UserCount").set({ 
-    UserCount: ucount 
+} 
+
+function readAppUserCount() { 
+  var ref = firebase.database().ref("App").child("User"); 
+  ref.once("value", function(snapshot) { 
+  var ucount = snapshot.child("UserCount").child("UserCount").val(); 
   }); 
 } 
 
@@ -51,6 +56,9 @@ function writeAppFriend(sndr,fcount,fname) {
   ref.child("Name").set({ 
     Username: fname 
   }); 
+} 
+
+function writeAppFriendCount(sndr,fcount) { 
   ref = firebase.database().ref("App").child(sndr).child("Friend"); 
   ref.child("FriendCount").set({ 
     FriendCount: fcount 
