@@ -44,9 +44,9 @@ var ptr=0; var ptrp=0;
               } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
 	      } else if (x>0 && x<1080 && y>144*1+8 && y<144*1+8+128) { 
               } else if (x>200 && x<880 && y>144*2+8 && y<144*2+8+128) { 
-		      ptrp=ptr; ptr=0; updtCursor(ptr, ptrp); 
+		      ptrp=ptr; ptr=0; updtCursor(signByte,ptr, ptrp); 
               } else if (x>200 && x<880 && y>144*3+8 && y<144*3+8+128) { 
-		      ptrp=ptr; ptr=512; updtCursor(ptr, ptrp); 
+		      ptrp=ptr; ptr=512; updtCursor(signByte, ptr, ptrp); 
               } else if (x>200 && x<880 && y>144*4+8 && y<144*4+8+128) { 
 		      sin(); 
 	      } else if (x>200 && x<1080 && y>160*5+8 && y<144*6+128) { 
@@ -61,7 +61,7 @@ var ptr=0; var ptrp=0;
       timer = setInterval(check, 0020); 
 	
 	
- function updtCursor(rptr, rptrp) { 
+ function updtCursor(viewByte, rptr, rptrp) { 
   var x=0; var y=0; var ptr=0; var ci=0; var cj=0; 
   var buf = new ArrayBuffer(4); 
   var view = new DataView(buf); 
