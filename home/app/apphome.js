@@ -125,7 +125,7 @@ function addFriend() {
       writeAppFriend(sender,appfcount,fname); 
       writeAppFriendCount(sender,appfriendcount); 
       restoreImage(0,144,1080,2032); 
-      appHomeUser(); 
+      appHomeChats(); 
  }
 	
  var ptr=0; var ptrp=0; 
