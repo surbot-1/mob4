@@ -187,7 +187,7 @@ var ptr=0; var ptrp=0;
       viewByte[rptr+28]=ptr; 
       viewByte[rptr+32]=(ci&0xFF00)>>8; 
       viewByte[rptr+33]=ci&0x00FF; 
-      viewByte[rptr+34]==(cj&0xFF00)>>8; 
+      viewByte[rptr+34]=(cj&0xFF00)>>8; 
       viewByte[rptr+35]=cj&0x00FF; 
     }
   } else if (kstr=="SPACE") { 
@@ -199,7 +199,7 @@ var ptr=0; var ptrp=0;
     viewByte[rptr+28]=ptr; 
     viewByte[rptr+32]=(ci&0xFF00)>>8; 
     viewByte[rptr+33]=ci&0x00FF; 
-    viewByte[rptr+34]==(cj&0xFF00)>>8; 
+    viewByte[rptr+34]=(cj&0xFF00)>>8; 
     viewByte[rptr+35]=cj&0x00FF; 
   } else if (kstr=="ENTER") { 
   } else { 
@@ -212,7 +212,7 @@ var ptr=0; var ptrp=0;
     viewByte[rptr+28]=ptr; 
     viewByte[rptr+32]=(ci&0xFF00)>>8; 
     viewByte[rptr+33]=ci&0x00FF; 
-    viewByte[rptr+34]==(cj&0xFF00)>>8; 
+    viewByte[rptr+34]=(cj&0xFF00)>>8; 
     viewByte[rptr+35]=cj&0x00FF; 
   } 
   writeCursor(x+ci,y+cj); 
