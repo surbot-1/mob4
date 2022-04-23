@@ -62,7 +62,7 @@ var ptr=0; var ptrp=0;
 	
 	
  function updtCursor(rptr, rptrp) { 
-  var x=0; var y=0; var ptr=0; 
+  var x=0; var y=0; var ptr=0; var ci=0; var cj=0; 
   var buf = new ArrayBuffer(4); 
   var view = new DataView(buf); 
   if (rptrp==0) {x=200+16; y=144*2+8+40;} 
@@ -89,7 +89,7 @@ var ptr=0; var ptrp=0;
  }
 	
  function storekeyvalue(viewByte,rptr) { 
-  var x=0; var y=0; var ptr=0; 
+  var x=0; var y=0; var ptr=0; var ci=0; var cj=0; 
   var buf = new ArrayBuffer(4); 
   var view = new DataView(buf); 
   if (rptr==0) {x=200+16; y=144*2+8+40;} 
