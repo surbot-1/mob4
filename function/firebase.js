@@ -74,9 +74,11 @@ function readAppFriend(sndr,fcount) {
   ref.once("value", function(snapshot) { 
   var fname = snapshot.child("Friend").child("Username").val(); 
   for (let i=0; i<fname.length; i++) { 
-    fndView[32*fcount+2+i] = fname.charCodeAt(i); 
+    fndView[32*fcount+8+i] = fname.charCodeAt(i); 
   } 
-  fndView[32*fcount+0] = fname.length; 
+  fndView[32*fcount+0] = 1; 
+  fndView[32*fcount+1] = 1; 
+  fndView[32*fcount+2] = fname.length; 
   appfriendname = fname; 
   return fname; 
   }); 
