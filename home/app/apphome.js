@@ -32,6 +32,12 @@ function writefName() {
 function addFriend() { 
      saveImage(0,144,1080,2032); 
      imageRect(0,144,1080,2032,"rgba(240,240,240,1.0)"); 
+     imageRect(200,144*2+8,680,128,"rgba(0,0,128,1.0)"); 
+     imageRect(200+8,144*2+8+8,680-16,128-16,"rgba(255,255,255,1.0)"); 
+     imageRect(200,144*3+8,680,128,"rgba(0,0,128,1.0)"); 
+     writecStr(200+268+36,144*3+8+40,24*3,48,"font2448",[255,255,255,255],[0,0,128,255],"Add"); 
+	drawKeypad(0,1664,ktype); 
+        showCursor(200+16,144*2+8+40);
 }
 	
 if (true) { 
