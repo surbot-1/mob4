@@ -31,7 +31,7 @@ function writefName() {
 	
 function addFriend() { 
      saveImage(0,144,1080,2032); 
-     fillRect(x,y,w,h,[240,240,240,255]); 
+     imageRect(0,144,1080,2032,"rgba(240,240,240,1.0)"); 
 }
 	
 if (true) { 
