@@ -27,6 +27,11 @@ function writefName() {
 	fileViewerUrl(64, 144*i+8, "icon/business-man-icon-128.bmp"); 
         writecStr(200,144*i+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],fname[i]); 
      }
+} 
+	
+function addFriend() { 
+     saveImage(0,144,1080,2032); 
+     fillRect(x,y,w,h,[240,240,240,255]); 
 }
 	
 if (true) { 
@@ -92,8 +97,8 @@ if (true) {
 	      } else if (x>0 && x<1080 && y>160*8 && y<160*8+144) { 
 	      } else if (x>0 && x<1080 && y>160*9 && y<160*9+144) { 
 	      } else if (x>0 && x<1080 && y>160*10 && y<160*10+144) { 
-	      } else if (x>0 && x<1080 && y>2032 && y<2176) { 
-		      
+	      } else if (x>920 && x<920+128 && y>2024 && y<2024+128) { 
+		      addFriend(); 
 	      }
 		      
            } 
