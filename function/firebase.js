@@ -23,6 +23,17 @@ function writeAppMessage(sndr,rcvr,msgid,name,message,status,date,time,ip) {
   });  
 } 
 
+function writeAppUser(ucount, uname) { 
+  var ref = firebase.database().ref("App").child("User").child(ucount).child(uname); 
+  ref.child("Username").set({ 
+    Username: uname 
+  }); 
+  ref = firebase.database().ref("App").child("User"); 
+  ref.child("UserCount").set({ 
+    UserCount: ucount 
+  }); 
+} 
+
 function readAppMessage(sndr,rcvr,mid) { 
   var ref = firebase.database().ref("App").child(sndr).child(rcvr).child(mid); 
   ref.once("value", function(snapshot) { 
