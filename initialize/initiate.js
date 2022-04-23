@@ -68,21 +68,21 @@ var ptr=0; var ptrp=0;
   if (rptrp==0) {x=200+16; y=144*2+8+40;} 
   else if (rptrp==512) {x=200+16; y=144*3+8+40;} 
   ptr = viewByte[rptrp+28]; 
-  view.setUint8(0,viewByte[32]); 
-  view.setUint8(1,viewByte[33]); 
+  view.setUint8(0,viewByte[rptrp+32]); 
+  view.setUint8(1,viewByte[rptrp+33]); 
   ci = view.getUint16(0); 
-  view.setUint8(0,viewByte[34]); 
-  view.setUint8(1,viewByte[35]); 
+  view.setUint8(0,viewByte[rptrp+34]); 
+  view.setUint8(1,viewByte[rptrp+35]); 
   cj = view.getUint16(0); 
   clearCursor(x+ci,y+cj); 
   if (rptr==0) {x=200+16; y=144*2+8+40;} 
   else if (rptr==512) {x=200+16; y=144*3+8+40;} 
   ptr = viewByte[rptr+28]; 
-  view.setUint8(0,viewByte[32]); 
-  view.setUint8(1,viewByte[33]); 
+  view.setUint8(0,viewByte[rptr+32]); 
+  view.setUint8(1,viewByte[rptr+33]); 
   ci = view.getUint16(0); 
-  view.setUint8(0,viewByte[34]); 
-  view.setUint8(1,viewByte[35]); 
+  view.setUint8(0,viewByte[rptr+34]); 
+  view.setUint8(1,viewByte[rptr+35]); 
   cj = view.getUint16(0); 
   writeCursor(x+ci,y+cj);
   showCursor(x+ci,y+cj); 
@@ -96,11 +96,11 @@ var ptr=0; var ptrp=0;
   else if (rptr==512) {x=200+16; y=144*3+8+40;} 
   var kstr = readKeypad(0,1664,ktype); 
   var ptr = viewByte[rptr+28]; 
-  view.setUint8(0,viewByte[32]); 
-  view.setUint8(1,viewByte[33]); 
+  view.setUint8(0,viewByte[rptr+32]); 
+  view.setUint8(1,viewByte[rptr+33]); 
   ci = view.getUint16(0); 
-  view.setUint8(0,viewByte[34]); 
-  view.setUint8(1,viewByte[35]); 
+  view.setUint8(0,viewByte[rptr+34]); 
+  view.setUint8(1,viewByte[rptr+35]); 
   cj = view.getUint16(0); 
   clearCursor(x+ci,y+cj); 
   if (kstr=="SHIFT") {  
