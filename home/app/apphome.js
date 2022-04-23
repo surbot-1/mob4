@@ -45,6 +45,66 @@ function addFriend() {
       signByte[0+34]=0; 
       signByte[0+35]=0; 
 	
+ function shwCursor(viewByte, rptr) { 
+  var x=0; var y=0; var ptr=0; var ci=0; var cj=0; 
+  var buf = new ArrayBuffer(4); 
+  var view = new DataView(buf); 
+  if (rptr==0) {x=200+16; y=144*2+8+40;} 
+  else if (rptr==512) {x=200+16; y=144*3+8+40;} 
+  ptr = viewByte[rptr+28]; 
+  view.setUint8(0,viewByte[rptr+32]); 
+  view.setUint8(1,viewByte[rptr+33]); 
+  ci = view.getUint16(0); 
+  view.setUint8(0,viewByte[rptr+34]); 
+  view.setUint8(1,viewByte[rptr+35]); 
+  cj = view.getUint16(0); 
+  writeCursor(x+ci,y+cj); 
+  showCursor(x+ci,y+cj); 
+ }
+	
+ function clrCursor(viewByte, rptr) { 
+  var x=0; var y=0; var ptr=0; var ci=0; var cj=0; 
+  var buf = new ArrayBuffer(4); 
+  var view = new DataView(buf); 
+  if (rptr==0) {x=200+16; y=144*2+8+40;} 
+  else if (rptr==512) {x=200+16; y=144*3+8+40;} 
+  ptr = viewByte[rptr+28]; 
+  view.setUint8(0,viewByte[rptr+32]); 
+  view.setUint8(1,viewByte[rptr+33]); 
+  ci = view.getUint16(0); 
+  view.setUint8(0,viewByte[rptr+34]); 
+  view.setUint8(1,viewByte[rptr+35]); 
+  cj = view.getUint16(0); 
+  clearCursor(x+ci,y+cj); 
+ }
+	
+ function updtCursor(viewByte, rptr, rptrp) { 
+  var x=0; var y=0; var ptr=0; var ci=0; var cj=0; 
+  var buf = new ArrayBuffer(4); 
+  var view = new DataView(buf); 
+  if (rptrp==0) {x=200+16; y=144*2+8+40;} 
+  else if (rptrp==512) {x=200+16; y=144*3+8+40;} 
+  ptr = viewByte[rptrp+28]; 
+  view.setUint8(0,viewByte[rptrp+32]); 
+  view.setUint8(1,viewByte[rptrp+33]); 
+  ci = view.getUint16(0); 
+  view.setUint8(0,viewByte[rptrp+34]); 
+  view.setUint8(1,viewByte[rptrp+35]); 
+  cj = view.getUint16(0); 
+  clearCursor(x+ci,y+cj); 
+  if (rptr==0) {x=200+16; y=144*2+8+40;} 
+  else if (rptr==512) {x=200+16; y=144*3+8+40;} 
+  ptr = viewByte[rptr+28]; 
+  view.setUint8(0,viewByte[rptr+32]); 
+  view.setUint8(1,viewByte[rptr+33]); 
+  ci = view.getUint16(0); 
+  view.setUint8(0,viewByte[rptr+34]); 
+  view.setUint8(1,viewByte[rptr+35]); 
+  cj = view.getUint16(0); 
+  writeCursor(x+ci,y+cj);
+  showCursor(x+ci,y+cj); 
+ } 
+	
  function storekeyvalue(viewByte,rptr) { 
   var x=0; var y=0; var ptr=0; var ci=0; var cj=0; 
   var buf = new ArrayBuffer(4); 
@@ -122,7 +182,7 @@ function addFriend() {
 	   fname += ascChar(signByte[0+64+i]); 
       } 
       appfriendcount++; 
-      writeAppFriend(sender,appfcount,fname); 
+      writeAppFriend(sender,appfriendcount,fname); 
       writeAppFriendCount(sender,appfriendcount); 
       restoreImage(0,144,1080,2032); 
       appHomeChats(); 
