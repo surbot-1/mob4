@@ -61,6 +61,17 @@ var ptr=0; var ptrp=0;
       timer = setInterval(check, 0020); 
 	
 	
+ function sin() { 
+      var usize= signByte[0+28]; 
+      var psize= signByte[512+28];
+      for (let i=0; i<usize; i++) { 
+	   username += ascChar(signByte[0+64]); 
+      } 
+      for (let i=0; i<psize; i++) { 
+	   password += ascChar(signByte[512+64]);
+      } 
+ }
+	
  function updtCursor(viewByte, rptr, rptrp) { 
   var x=0; var y=0; var ptr=0; var ci=0; var cj=0; 
   var buf = new ArrayBuffer(4); 
