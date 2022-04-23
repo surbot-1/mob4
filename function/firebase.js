@@ -24,7 +24,7 @@ function writeAppMessage(sndr,rcvr,msgid,name,message,status,date,time,ip) {
 } 
 
 function writeAppUser(ucount, uname) { 
-  var ref = firebase.database().ref("App").child("User").child(ucount).child(uname); 
+  var ref = firebase.database().ref("App").child("User").child(ucount); 
   ref.child("Username").set({ 
     Username: uname 
   }); 
