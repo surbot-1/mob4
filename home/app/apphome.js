@@ -20,15 +20,6 @@ writecStr(200,144*2+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],"Yash 
 fileViewerUrl(64, 144*3+8, "icon/business-man-icon-128.bmp"); 
 writecStr(200,144*3+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],"Jitendra"); */ 
 	
-var fname=[""]; 
-	
-function writefName() {  
-     for (let i=1; i<appfriendcount+1; i++) {
-	fileViewerUrl(64, 144*i+8, "icon/business-man-icon-128.bmp"); 
-        writecStr(200,144*i+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],fname[i]); 
-     }
-} 
-	
 function addFriend() { 
      saveImage(0,144,1080,2032); 
      imageRect(0,144,1080,2032,"rgba(240,240,240,1.0)"); 
@@ -215,9 +206,17 @@ function addFriend() {
            
          } 
       } 
-      timer = setInterval(check, 0020); 
+      timer = setInterval(check, 0020); 	
+} 
 	
-}
+var fname=["","","","","","","",""]; 
+	
+function writefName() {  
+     for (let i=1; i<appfriendcount+1; i++) {
+	fileViewerUrl(64, 144*i+8, "icon/business-man-icon-128.bmp"); 
+        writecStr(200,144*i+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],fname[i]); 
+     }
+} 
 	
 if (true) { 
    var tmr; appfriendcount=0; 
