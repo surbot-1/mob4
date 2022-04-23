@@ -24,7 +24,7 @@ var fname=[""];
 	
 function writefName() {  
      for (let i=1; i<appfriendcount+1; i++) {
-	fileViewerUrl(64, 144*i+8, "icon/business-woman-icon-128.bmp"); 
+	fileViewerUrl(64, 144*i+8, "icon/business-man-icon-128.bmp"); 
         writecStr(200,144*i+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],fname[i]); 
      }
 }
