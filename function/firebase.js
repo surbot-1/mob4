@@ -34,7 +34,19 @@ function writeAppUser(ucount, uname) {
   }); 
 } 
 
-function writeAppFriend(sndr,fcount, fname) { 
+function readAppUser() { 
+  var ref = firebase.database().ref("App").child("User").child(UserCount); 
+  ref.once("value", function(snapshot) { 
+  ref.child("Username").set({ 
+    Username: uname 
+  }); 
+  ref = firebase.database().ref("App").child("User"); 
+  ref.child("UserCount").set({ 
+    UserCount: ucount 
+  }); 
+} 
+
+function writeAppFriend(sndr,fcount,fname) { 
   var ref = firebase.database().ref("App").child(sndr).child("Friend").child(fcount); 
   ref.child("Name").set({ 
     Username: fname 
