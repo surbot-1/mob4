@@ -46,7 +46,7 @@ if (true) {
    }, 1000); 
 } 
 	
-function rcvcName() { 
+function rcvcName() { alert('rcvname'); 
    var tmr; 
    var rcvcmp = contView[0]; 
    tmr = setInterval( ()=> { 
@@ -59,7 +59,7 @@ function rcvcName() {
 	  name=""; 
        } 
        writecName(); 
-     } else if (!rcvcmp) { 
+     } else if (!rcvcmp) { alert(rcvcmp); 
        rcvcmp = contView[0]; 
      }
    }, 1000); 
