@@ -32,7 +32,7 @@ function writefName() {
 	
 if (true) { 
    var tmr; appcontcount=0; 
-   var ccount = readAppContactCount(sender); 
+   var count = readAppContactCount(sender); 
    tmr = setInterval( ()=> { 
       if (appcontcount) { 
           clearInterval(tmr); alert(appcontcount); 
@@ -40,7 +40,7 @@ if (true) {
 	     readAppContact(sender, i); 
           } 
       } else if (!appcontcount) { 
-         ccount = readAppContactCount(sender); 
+         count = readAppContactCount(sender); 
       }
    }, 0200); 
 } 
