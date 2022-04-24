@@ -209,7 +209,7 @@ function addFriend() {
       timer = setInterval(check, 0020); 	
 } 
 	
-var fname=[]; 
+var afname=[]; 
 	
 function writefName() {  
      for (let i=1; i<appfriendcount+1; i++) {
@@ -237,13 +237,13 @@ if (true) {
    var tmr; appfriendname=""; 
    var rcvcmp = fndView[appfriendcount*32+0]; 
    tmr = setInterval( ()=> { 
-     if (rcvcmp) { 
+     if (rcvcmp) { aler(rcvcmp); 
        clearInterval(tmr); var name=""; 
        for (let i=1; i<appfriendcount+1; i++) { 
 	  for (let j=0; i<(friendView[i*32+2]); j++) { 
 	    name += ascChar(friendView[i*32+8+j]); 
 	  } 
-	  fname[i]=name; name=""; alert(fname[i]);
+	  afname[i]=name; name=""; alert(afname[i]);
        } 
        writefName(); 
      } else if (!rcvcmp) { 
