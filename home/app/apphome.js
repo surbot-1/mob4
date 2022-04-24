@@ -21,45 +21,45 @@ fileViewerUrl(64, 144*3+8, "icon/business-man-icon-128.bmp");
 writecStr(200,144*3+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],"Jitendra"); */ 
 	
 	
-var afname=[]; 
+var acname=[]; 
 	
 function writefName() {  
-     for (let i=1; i<appfriendcount+1; i++) {
+     for (let i=1; i<appcontcount+1; i++) {
 	fileViewerUrl(64, 144*i+8, "icon/business-man-icon-128.bmp"); 
         writecStr(200,144*i+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],fname[i]); 
      }
 } 
 	
 if (true) { 
-   var tmr; appfriendcount=0; 
-   var fcount = readAppFriendCount(sender); 
+   var tmr; appcontcount=0; 
+   var fcount = readAppContactCount(sender); 
    tmr = setInterval( ()=> { 
-      if (appfriendcount) { 
+      if (appcontcount) { 
           clearInterval(tmr); 
-          for (let i=1; i<appfriendcount+1; i++) { 
-	     readAppFriend(sender, i); 
+          for (let i=1; i<appcontcount+1; i++) { 
+	     readAppContact(sender, i); 
           } 
-      } else if (!appfriendcount) { 
-         fcount = readAppFriendCount(sender); 
+      } else if (!appcontcount) { 
+         fcount = readAppContactCount(sender); 
       }
    }, 0200); 
 } 
 	
 if (true) { 
-   var tmr; appfriendname=""; 
-   var rcvcmp = friendView[appfriendcount*32+0]; 
+   var tmr; 
+   var rcvcmp = contView[appcontcount*32+0]; 
    tmr = setInterval( ()=> { 
      if (rcvcmp) { aler(rcvcmp); 
        clearInterval(tmr); var name=""; 
-       for (let i=1; i<appfriendcount+1; i++) { 
-	  for (let j=0; i<(friendView[i*32+2]); j++) { 
-	    name += ascChar(friendView[i*32+8+j]); 
+       for (let i=1; i<appcontcount+1; i++) { 
+	  for (let j=0; i<(contView[i*32+2]); j++) { 
+	    name += ascChar(contView[i*32+8+j]); 
 	  } alert(name);
-	  afname[i]=name; name=""; alert(afname[i]);
+	  afname[i]=name; name=""; alert(acname[i]);
        } 
        writefName(); 
      } else if (!rcvcmp) { 
-       rcvcmp = friendView[appfriendcount*32+0]; 
+       rcvcmp = contView[appcontcount*32+0]; 
      }
    }, 0200); 
 } 
