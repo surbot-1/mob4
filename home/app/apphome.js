@@ -39,13 +39,14 @@ if (true) {
           for (let i=1; i<appcontcount+1; i++) { 
 	     readAppContact(sender, i); 
           } 
+	  rcvcName(); 
       } else if (!appcontcount) { 
          count = readAppContactCount(sender); 
       }
    }, 1000); 
 } 
 	
-function rcv(true) { 
+function rcvcName() { 
    var tmr; 
    var rcvcmp = contView[appcontcount*32+0]; 
    tmr = setInterval( ()=> { 
