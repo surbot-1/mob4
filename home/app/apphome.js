@@ -48,8 +48,8 @@ if (true) {
 	
 function rcvcName() { alert('rcvname'); 
    var tmr; 
-   var rcvcmp = contView[0]; 
-   tmr = setInterval( ()=> { 
+   var rcvcmp = contView[0]; alert(rcvcmp); 
+  /* tmr = setInterval( ()=> { 
      if (rcvcmp) { 
        clearInterval(tmr); var name=""; aler(rcvcmp); 
        for (let i=1; i<appcontcount+1; i++) { 
@@ -62,7 +62,7 @@ function rcvcName() { alert('rcvname');
      } else if (!rcvcmp) { alert(rcvcmp); 
        rcvcmp = contView[0]; 
      }
-   }, 1000); 
+   }, 1000); */ 
 } 
 	
 	
