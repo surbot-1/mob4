@@ -1,5 +1,9 @@
 function appContact() { 
-     saveImage(0,144,1080,2032); 
+     saveImage(0,0,1080,2176); 
+	
+     imageRect(0,0,1080,144,"rgba(0,0,128,1.0)"); 
+     writecStr(444,8+40,24*8,48,"font2448",[255,255,255,255],[0,0,128,255],"Contacts"); 
+	
      imageRect(0,144,1080,2032,"rgba(240,240,240,1.0)"); 
      imageRect(200,144*2+8,680,128,"rgba(0,0,128,1.0)"); 
      imageRect(200+8,144*2+8+8,680-16,128-16,"rgba(255,255,255,1.0)"); 
@@ -153,7 +157,7 @@ function storekeyvalue(viewByte,rptr) {
       appcontcount++; 
       writeAppContact(sender,appcontcount,cname); 
       writeAppContactCount(sender,appcontcount); 
-      restoreImage(0,144,1080,2032); 
+      restoreImage(0,0,1080,2176); 
       // appHomeChats(); 
  } 
 
