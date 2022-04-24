@@ -42,7 +42,7 @@ if (true) {
       } else if (!appcontcount) { 
          count = readAppContactCount(sender); 
       }
-   }, 0200); 
+   }, 1000); 
 } 
 	
 if (false) { 
@@ -61,7 +61,7 @@ if (false) {
      } else if (!rcvcmp) { 
        rcvcmp = contView[appcontcount*32+0]; 
      }
-   }, 0200); 
+   }, 1000); 
 } 
 	
 	
