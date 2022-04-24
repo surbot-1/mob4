@@ -46,7 +46,7 @@ if (true) {
    }, 1000); 
 } 
 	
-function rcvcName() { alert('rcv4'); 
+function rcvcName() { alert('rcv5'); 
    var tmr; var cname="";
    var rcv = contView[appcontcount*32+0]; alert(rcv); 
    tmr = setInterval( ()=> { 
