@@ -46,12 +46,12 @@ if (true) {
    }, 1000); 
 } 
 	
-function rcvcName() { alert('rcv3'); 
+function rcvcName() { alert('rcv4'); 
    var tmr;  
    var rcv = contView[appcontcount*32+0]; alert(rcv); 
    tmr = setInterval( ()=> { 
-     if (rcv) { 
-       clearInterval(tmr); var name=""; aler(rcv); 
+     if (rcv) { alert('rcv');
+       clearInterval(tmr); alert(rcv); 
        /* for (let i=1; i<appcontcount+1; i++) { 
 	  for (let j=0; j<contView[i*32+2]; j++) { 
 	    name += ascChar(contView[i*32+8+j]); 
