@@ -77,6 +77,7 @@ function readAppContact(sndr,ccount) {
     contView[ccount*32+8+i] = cname.charCodeAt(i); 
   } 
   contView[0] = 1; 
+  contView[2] = ccount; 
   contView[ccount*32+0] = 1; 
   contView[ccount*32+1] = 1; 
   contView[ccount*32+2] = cname.length; 
