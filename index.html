@@ -113,15 +113,16 @@ var rcvmsgid=0; var rcvmsgidp=0;
 var rcvmsgsts=""; var rcvmsgstsp=""; 
 var useractive=false; var sendactive=0; 
 var sender=""; var receiver=""; 
-var appusercount=0; var appusercountp=0;
-var appfriendcount=0; var appfriendcountp=0; 
-var appusername=""; var appfriendname=""; 
+var appusercount=0; var appusercountp=0; 
+var appusername=""; var appcontname=""; 
 	
 var contBuf = new ArrayBuffer(32*512); 
 var contView = new Uint8Array(contBuf); 
+var appcontcount=0; var appcontcountp=0; 
 	
 var chatBuf = new ArrayBuffer(32*512); 
 var chatView = new Uint8Array(chatBuf); 
+var appchatcount=0; var appchatcountp=0; 
 	
 var sndBfr = new ArrayBuffer(512); 
 var sndByte = new Uint8Array(sndBfr); 
