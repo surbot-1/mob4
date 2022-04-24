@@ -222,7 +222,7 @@ if (true) {
    var tmr; appfriendcount=0; 
    var fcount = readAppFriendCount(sender); 
    tmr = setInterval( ()=> { 
-      if (appfriendcount) { alert(appfriendcount);
+      if (appfriendcount) { 
           clearInterval(tmr); 
           for (let i=1; i<appfriendcount+1; i++) { 
 	     readAppFriend(sender, i); 
@@ -242,7 +242,7 @@ if (true) {
        for (let i=1; i<appfriendcount+1; i++) { 
 	  for (let j=0; i<(friendView[i*32+2]); j++) { 
 	    name += ascChar(friendView[i*32+8+j]); 
-	  } 
+	  } alert(name);
 	  afname[i]=name; name=""; alert(afname[i]);
        } 
        writefName(); 
