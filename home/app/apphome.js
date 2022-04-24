@@ -20,7 +20,7 @@ writecStr(200,144*2+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],"Yash 
 fileViewerUrl(64, 144*3+8, "icon/business-man-icon-128.bmp"); 
 writecStr(200,144*3+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],"Jitendra"); */ 
 	
-function addFriend() { 
+function Contact() { 
      saveImage(0,144,1080,2032); 
      imageRect(0,144,1080,2032,"rgba(240,240,240,1.0)"); 
      imageRect(200,144*2+8,680,128,"rgba(0,0,128,1.0)"); 
@@ -166,17 +166,17 @@ function addFriend() {
   showCursor(x+ci,y+cj); 
  } 
 	
- function add() { 
-      var fsize= signByte[0+28]; 
-      var fname=""; 
-      for (let i=0; i<fsize; i++) { 
-	   fname += ascChar(signByte[0+64+i]); 
+ function addContact() { 
+      var csize= signByte[0+28]; 
+      var cname=""; 
+      for (let i=0; i<csize; i++) { 
+	   cname += ascChar(signByte[0+64+i]); 
       } 
-      appfriendcount++; 
-      writeAppFriend(sender,appfriendcount,fname); 
-      writeAppFriendCount(sender,appfriendcount); 
+      appcontcount++; 
+      writeAppContact(sender,appcontcount,cname); 
+      writeAppContactCount(sender,appcontcount); 
       restoreImage(0,144,1080,2032); 
-      appHomeChats(); 
+      // appHomeChats(); 
  }
 	
  var ptr=0; var ptrp=0; 
@@ -194,7 +194,7 @@ function addFriend() {
               } else if (x>200 && x<880 && y>144*2+8 && y<144*2+8+128) { 
 		      ptrp=ptr; ptr=0; updtCursor(signByte,ptr, ptrp); 
               } else if (x>200 && x<880 && y>144*3+8 && y<144*3+8+128) { 
-		      clrCursor(signByte, ptr); clearInterval(timer); add(); 
+		      clrCursor(signByte, ptr); clearInterval(timer); addContact(); 
               } else if (x>200 && x<880 && y>144*4+8 && y<144*4+8+128) { 
 		      // clrCursor(signByte, ptr); clearInterval(timer); sin(); 
 	      } else if (x>200 && x<1080 && y>160*5+8 && y<144*6+128) { 
@@ -285,7 +285,7 @@ if (true) {
 	      } else if (x>0 && x<1080 && y>160*9 && y<160*9+144) { 
 	      } else if (x>0 && x<1080 && y>160*10 && y<160*10+144) { 
 	      } else if (x>920 && x<920+128 && y>2024 && y<2024+128) { 
-		      clearInterval(timer); addFriend(); 
+		      clearInterval(timer); contact(); 
 	      }
 		      
            } 
