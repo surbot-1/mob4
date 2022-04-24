@@ -1,14 +1,14 @@
-function appContact() { 
+function newContact() { 
      saveImage(0,0,1080,2176); 
 	
      imageRect(0,0,1080,144,"rgba(0,0,128,1.0)"); 
-     writecStr(444,8+40,24*8,48,"font2448",[255,255,255,255],[0,0,128,255],"Contacts"); 
+     writecStr(396,8+40,24*11,48,"font2448",[255,255,255,255],[0,0,128,255],"New contact"); 
 	
      imageRect(0,144,1080,2032,"rgba(240,240,240,1.0)"); 
      imageRect(200,144*2+8,680,128,"rgba(0,0,128,1.0)"); 
      imageRect(200+8,144*2+8+8,680-16,128-16,"rgba(255,255,255,1.0)"); 
      imageRect(200,144*3+8,680,128,"rgba(0,0,128,1.0)"); 
-     writecStr(200+268+36,144*3+8+40,24*3,48,"font2448",[255,255,255,255],[0,0,128,255],"Add"); 
+     writecStr(200+268+24,144*3+8+40,24*4,48,"font2448",[255,255,255,255],[0,0,128,255],"Save"); 
 	drawKeypad(0,1664,ktype); 
         showCursor(200+16,144*2+8+40); 
 	
@@ -148,7 +148,7 @@ function storekeyvalue(viewByte,rptr) {
   showCursor(x+ci,y+cj); 
  } 
 	
- function addContact() { 
+ function saveContact() { 
       var csize= signByte[0+28]; 
       var cname=""; 
       for (let i=0; i<csize; i++) { 
@@ -176,7 +176,7 @@ var ptr=0; var ptrp=0;
               } else if (x>200 && x<880 && y>144*2+8 && y<144*2+8+128) { 
 		      ptrp=ptr; ptr=0; updtCursor(signByte,ptr, ptrp); 
               } else if (x>200 && x<880 && y>144*3+8 && y<144*3+8+128) { 
-		      clrCursor(signByte, ptr); clearInterval(timer); addContact(); 
+		      clrCursor(signByte, ptr); clearInterval(timer); saveContact(); 
               } else if (x>200 && x<880 && y>144*4+8 && y<144*4+8+128) { 
 		      // clrCursor(signByte, ptr); clearInterval(timer); sin(); 
 	      } else if (x>200 && x<1080 && y>160*5+8 && y<144*6+128) { 
