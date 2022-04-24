@@ -31,7 +31,7 @@ function writecName() {
 } 
 	
 if (true) { 
-   var tmr; appcontcount=0; contView[0]=0; 
+   var tmr; appcontcount=0; 
    var count = readAppContactCount(sender); 
    tmr = setInterval( ()=> { 
       if (appcontcount) { 
@@ -48,7 +48,7 @@ if (true) {
 	
 function rcvcName() { alert('rcvname'); 
    var tmr;  
-   var rcv = contView[appcontcount+0]; alert(rcv); 
+   var rcv = contView[appcontcount*32+0]; alert(rcv); 
   /* tmr = setInterval( ()=> { 
      if (rcv) { 
        clearInterval(tmr); var name=""; aler(rcvcmp); 
