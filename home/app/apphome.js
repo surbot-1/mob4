@@ -45,17 +45,17 @@ if (true) {
    }, 1000); 
 } 
 	
-if (false) { 
+if (true) { 
    var tmr; 
    var rcvcmp = contView[appcontcount*32+0]; 
    tmr = setInterval( ()=> { 
      if (rcvcmp) { 
-       clearInterval(tmr); var name=""; // aler(rcvcmp); 
+       clearInterval(tmr); var name=""; aler(rcvcmp); 
        for (let i=1; i<appcontcount+1; i++) { 
 	  for (let j=0; i<(contView[i*32+2]); j++) { 
 	    name += ascChar(contView[i*32+8+j]); 
-	  } // alert(name);
-	  acname[i]=name; name=""; // alert(acname[i]);
+	  } alert(name);
+	  acname[i]=name; name=""; alert(acname[i]);
        } 
        writefName(); 
      } else if (!rcvcmp) { 
