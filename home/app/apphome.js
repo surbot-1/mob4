@@ -47,7 +47,7 @@ if (true) {
 } 
 	
 function rcvcName() { alert('rcvname'); 
-   var tmr; 
+   var tmr;  
    var rcvcmp = contView[0]; alert(rcvcmp); 
   /* tmr = setInterval( ()=> { 
      if (rcvcmp) { 
