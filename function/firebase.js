@@ -55,31 +55,31 @@ function readAppUserCount() {
   }); 
 } 
 
-function writeAppFriend(sndr,fcount,fname) { 
-  var ref = firebase.database().ref("App").child(sndr).child("Friend").child(fcount); 
-  ref.child("Friend").set({ 
-    Username: fname 
+function writeAppContact(sndr,ccount,cname) { 
+  var ref = firebase.database().ref("App").child(sndr).child("Contact").child(ccount); 
+  ref.child("Contact").set({ 
+    Name: cname 
   }); 
 } 
 
-function writeAppFriendCount(sndr,fcount) { 
-  ref = firebase.database().ref("App").child(sndr).child("Friend"); 
-  ref.child("FriendCount").set({ 
-    FriendCount: fcount 
+function writeAppContactCount(sndr,ccount) { 
+  ref = firebase.database().ref("App").child(sndr).child("Contact"); 
+  ref.child("ContactCount").set({ 
+    ContactCount: ccount 
   }); 
 } 
 
-function readAppFriend(sndr,fcount) { 
-  var ref = firebase.database().ref("App").child(sndr).child("Friend").child(fcount); 
+function readAppContact(sndr,ccount) { 
+  var ref = firebase.database().ref("App").child(sndr).child("Contact").child(ccount); 
   ref.once("value", function(snapshot) { 
-  var fname = snapshot.child("Friend").child("Username").val(); 
-  for (let i=0; i<fname.length; i++) { 
-    friendView[fcount*32+8+i] = fname.charCodeAt(i); 
+  var cname = snapshot.child("Contact").child("Name").val(); 
+  for (let i=0; i<cname.length; i++) { 
+    contView[ccount*32+8+i] = cname.charCodeAt(i); 
   } 
-  friendView[fcount*32+0] = 1; 
-  friendView[fcount*32+1] = 1; 
-  friendView[fcount*32+2] = fname.length; 
-  appfriendname = fname; 
+  contView[ccount*32+0] = 1; 
+  contView[ccount*32+1] = 1; 
+  contView[ccount*32+2] = cname.length; 
+  appfriendname = cname; 
   return fname; 
   }); 
 } 
