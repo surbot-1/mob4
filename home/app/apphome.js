@@ -53,7 +53,7 @@ if (true) {
    var count = readAppContactCount(sender); 
    tmr = setInterval( ()=> { 
       if (appcontcount) { 
-          clearInterval(tmr); alert(appcontcount); 
+          clearInterval(tmr); 
           for (let i=1; i<appcontcount+1; i++) { 
 	     readAppContact(sender, i); 
           } 
@@ -78,33 +78,33 @@ if (true) {
                       clearInterval(timer); appHomeChatsChatbot(); 
 		    }
               } else if (x>0 && x<1080 && y>144*2 && y<144*3) { 
-		   if (acsts[1]) { 
+		   if (acsts[2]) { 
 		      clearInterval(timer); 
-		      receiver = acname[1];  
+		      receiver = acname[2];  
 		      appHomeChatsUser(receiver); 
 		   }
               } else if (x>0 && x<1080 && y>144*3 && y<144*4) { 
-		   if (acsts[2]) { 
-		      clearInterval(timer); 
-		      receiver = acname[2]; 
-		      appHomeChatsUser(receiver); 
-		   }
-              } else if (x>0 && x<1080 && y>144*4 && y<144*5) { 
 		   if (acsts[3]) { 
 		      clearInterval(timer); 
 		      receiver = acname[3]; 
 		      appHomeChatsUser(receiver); 
 		   }
-              } else if (x>0 && x<1080 && y>144*5 && y<144*5+144) { 
+              } else if (x>0 && x<1080 && y>144*4 && y<144*5) { 
 		   if (acsts[4]) { 
 		      clearInterval(timer); 
 		      receiver = acname[4]; 
 		      appHomeChatsUser(receiver); 
 		   }
-	      } else if (x>0 && x<1080 && y>144*6 && y<144*6+128) { 
+              } else if (x>0 && x<1080 && y>144*5 && y<144*5+144) { 
 		   if (acsts[5]) { 
 		      clearInterval(timer); 
 		      receiver = acname[5]; 
+		      appHomeChatsUser(receiver); 
+		   }
+	      } else if (x>0 && x<1080 && y>144*6 && y<144*6+128) { 
+		   if (acsts[6]) { 
+		      clearInterval(timer); 
+		      receiver = acname[6]; 
 		      appHomeChatsUser(receiver); 
 		   }
 	      } else if (x>0 && x<1080 && y>160*7 && y<160*7+144) { 
