@@ -49,7 +49,7 @@ if (true) {
 function rcvcName() { alert('rcvname'); 
    var tmr;  
    var rcv = contView[appcontcount*32+0]; alert(rcv); 
-  /* tmr = setInterval( ()=> { 
+   tmr = setInterval( ()=> { 
      if (rcv) { 
        clearInterval(tmr); var name=""; aler(rcvcmp); 
        for (let i=1; i<appcontcount+1; i++) { 
@@ -59,10 +59,10 @@ function rcvcName() { alert('rcvname');
 	  name=""; 
        } 
        writecName(); 
-     } else if (!rcv) { alert(rcvcmp); 
-       rcvcmp = contView[0]; 
+     } else if (!rcv) { alert(rcv); 
+       rcv = contView[appcontcount*32+0]; 
      }
-   }, 1000); */ 
+   }, 1000); 
 } 
 	
 	
