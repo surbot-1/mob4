@@ -74,24 +74,39 @@ if (true) {
               } else if (x>360*1 && x<360*2 && y>0 && y<144) { 
               } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
               } else if (x>0 && x<1080 && y>144*1 && y<144*2) { 
-		      clearInterval(timer); appHomeChatsChatbot(); 
+		    if (acsts[1]) { 
+                      clearInterval(timer); appHomeChatsChatbot(); 
+		    }
               } else if (x>0 && x<1080 && y>144*2 && y<144*3) { 
+		   if (acsts[1]) { 
 		      clearInterval(timer); 
-		      receiver = "Yash Shiv"; 
+		      receiver = acname[1];  
 		      appHomeChatsUser(receiver); 
+		   }
               } else if (x>0 && x<1080 && y>144*3 && y<144*4) { 
+		   if (acsts[2]) { 
 		      clearInterval(timer); 
-		      receiver = "Jitendra"; 
+		      receiver = acname[2]; 
 		      appHomeChatsUser(receiver); 
+		   }
               } else if (x>0 && x<1080 && y>144*4 && y<144*5) { 
+		   if (acsts[3]) { 
 		      clearInterval(timer); 
-		      receiver = "sAy1"; 
+		      receiver = acname[3]; 
 		      appHomeChatsUser(receiver); 
+		   }
               } else if (x>0 && x<1080 && y>144*5 && y<144*5+144) { 
+		   if (acsts[4]) { 
 		      clearInterval(timer); 
-		      receiver = "sAy2"; 
+		      receiver = acname[4]; 
 		      appHomeChatsUser(receiver); 
-	      } else if (x>0 && x<1080 && y>160*6 && y<160*6+144) { 
+		   }
+	      } else if (x>0 && x<1080 && y>144*6 && y<144*6+128) { 
+		   if (acsts[5]) { 
+		      clearInterval(timer); 
+		      receiver = acname[5]; 
+		      appHomeChatsUser(receiver); 
+		   }
 	      } else if (x>0 && x<1080 && y>160*7 && y<160*7+144) { 
 	      } else if (x>0 && x<1080 && y>160*8 && y<160*8+144) { 
 	      } else if (x>0 && x<1080 && y>160*9 && y<160*9+144) { 
