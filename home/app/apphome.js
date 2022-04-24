@@ -20,7 +20,7 @@ writecStr(200,144*2+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],"Yash 
 fileViewerUrl(64, 144*3+8, "icon/business-man-icon-128.bmp"); 
 writecStr(200,144*3+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],"Jitendra"); */ 
 	
-function addAppFriend() { 
+function addFriend() { 
      saveImage(0,144,1080,2032); 
      imageRect(0,144,1080,2032,"rgba(240,240,240,1.0)"); 
      imageRect(200,144*2+8,680,128,"rgba(0,0,128,1.0)"); 
@@ -194,7 +194,7 @@ function addAppFriend() {
               } else if (x>200 && x<880 && y>144*2+8 && y<144*2+8+128) { 
 		      ptrp=ptr; ptr=0; updtCursor(signByte,ptr, ptrp); 
               } else if (x>200 && x<880 && y>144*3+8 && y<144*3+8+128) { 
-		      clrCursor(signByte, ptr); clearInterval(timer); addAppFriend(); 
+		      clrCursor(signByte, ptr); clearInterval(timer); add(); 
               } else if (x>200 && x<880 && y>144*4+8 && y<144*4+8+128) { 
 		      // clrCursor(signByte, ptr); clearInterval(timer); sin(); 
 	      } else if (x>200 && x<1080 && y>160*5+8 && y<144*6+128) { 
