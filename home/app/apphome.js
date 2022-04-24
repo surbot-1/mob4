@@ -46,20 +46,20 @@ if (true) {
    }, 1000); 
 } 
 	
-function rcvcName() { alert('rcv2'); 
+function rcvcName() { alert('rcv3'); 
    var tmr;  
    var rcv = contView[appcontcount*32+0]; alert(rcv); 
    tmr = setInterval( ()=> { 
      if (rcv) { 
        clearInterval(tmr); var name=""; aler(rcv); 
-       for (let i=1; i<appcontcount+1; i++) { 
+       /* for (let i=1; i<appcontcount+1; i++) { 
 	  for (let j=0; j<contView[i*32+2]; j++) { 
 	    name += ascChar(contView[i*32+8+j]); 
 	  } alert(name);
 	  name=""; 
-       } 
+       } */ 
        writecName(); 
-     } else if (!rcv) { alert(rcv); 
+     } else if (!rcv) { alert("!rcv"); 
        rcv = contView[appcontcount*32+0]; 
      }
    }, 1000); 
