@@ -117,8 +117,11 @@ var appusercount=0; var appusercountp=0;
 var appfriendcount=0; var appfriendcountp=0; 
 var appusername=""; var appfriendname=""; 
 	
-var friendBuf = new ArrayBuffer(32*512); 
-var friendView = new Uint8Array(friendBuf); 
+var contBuf = new ArrayBuffer(32*512); 
+var contView = new Uint8Array(contBuf); 
+	
+var chatBuf = new ArrayBuffer(32*512); 
+var chatView = new Uint8Array(chatBuf); 
 	
 var sndBfr = new ArrayBuffer(512); 
 var sndByte = new Uint8Array(sndBfr); 
