@@ -20,38 +20,6 @@ writecStr(200,144*2+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],"Yash 
 fileViewerUrl(64, 144*3+8, "icon/business-man-icon-128.bmp"); 
 writecStr(200,144*3+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],"Jitendra"); */ 
 	
- 
-      
-	
- var ptr=0; var ptrp=0; 
-
-      var timer;
-      function check() { 
-      var x = touchx;  var y = touchy; 
-      var tend = touch;  
-         if (tend == 3) { 
-              touch = 0; 
-              if (x>0 && x<360*1 && y>0 && y<144) { 
-              } else if (x>360*1 && x<360*2 && y>0 && y<144) { 
-              } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
-	      } else if (x>0 && x<1080 && y>144*1+8 && y<144*1+8+128) { 
-              } else if (x>200 && x<880 && y>144*2+8 && y<144*2+8+128) { 
-		      ptrp=ptr; ptr=0; updtCursor(signByte,ptr, ptrp); 
-              } else if (x>200 && x<880 && y>144*3+8 && y<144*3+8+128) { 
-		      clrCursor(signByte, ptr); clearInterval(timer); addContact(); 
-              } else if (x>200 && x<880 && y>144*4+8 && y<144*4+8+128) { 
-		      // clrCursor(signByte, ptr); clearInterval(timer); sin(); 
-	      } else if (x>200 && x<1080 && y>160*5+8 && y<144*6+128) { 
-	      } else if (x>0 && x<1080 && y>144*6+8 && y<144*7+128) { 
-	      } else if (x>0 && x<1080 && y>144*7+8 && y<144*8+128) {  
-	      } else if (x>0 && x<1080 && y>1664 && y<2176) { 
-		      storekeyvalue(signByte,ptr); 
-	      } 
-           
-         } 
-      } 
-      timer = setInterval(check, 0020); 	
-} 
 	
 var afname=[]; 
 	
