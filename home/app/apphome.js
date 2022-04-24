@@ -26,7 +26,7 @@ var acname=[];
 function writefName() {  
      for (let i=1; i<appcontcount+1; i++) {
 	fileViewerUrl(64, 144*i+8, "icon/business-man-icon-128.bmp"); 
-        writecStr(200,144*i+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],fname[i]); 
+        writecStr(200,144*i+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],acname[i]); 
      }
 } 
 	
