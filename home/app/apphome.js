@@ -52,7 +52,7 @@ if (true) {
      if (rcvcmp) { 
        clearInterval(tmr); var name=""; aler(rcvcmp); 
        for (let i=1; i<appcontcount+1; i++) { 
-	  for (let j=0; i<(contView[i*32+2]); j++) { 
+	  for (let j=0; j<(contView[i*32+2]); j++) { 
 	    name += ascChar(contView[i*32+8+j]); 
 	  } alert(name);
 	  acname[i]=name; name=""; alert(acname[i]);
