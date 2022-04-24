@@ -222,7 +222,7 @@ if (true) {
    var tmr; appfriendcount=0; 
    var fcount = readAppFriendCount(sender); 
    tmr = setInterval( ()=> { 
-      if (appfriendcount) { 
+      if (appfriendcount) { alert(appfriendcount);
           clearInterval(tmr); 
           for (let i=1; i<appfriendcount+1; i++) { 
 	     readAppFriend(sender, i); 
@@ -240,14 +240,14 @@ if (true) {
      if (rcvcmp) { 
        clearInterval(tmr); var name=""; 
        for (let i=1; i<appfriendcount+1; i++) { 
-	  for (let j=0; i<(fndView[i*32+2]); j++) { 
-	    name += ascChar(fndView[i*32+8+j]); 
+	  for (let j=0; i<(friendView[i*32+2]); j++) { 
+	    name += ascChar(friendView[i*32+8+j]); 
 	  } 
-	  fname[i]=name; name=""; 
+	  fname[i]=name; name=""; alert(fname[i]);
        } 
        writefName(); 
      } else if (!rcvcmp) { 
-       rcvcmp = fndView[appfriendcount*32+0]; 
+       rcvcmp = friendView[appfriendcount*32+0]; 
      }
    }, 0200); 
 } 
