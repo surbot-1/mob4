@@ -227,7 +227,7 @@ if (true) {
           for (let i=1; i<appfriendcount+1; i++) { 
 	     readAppFriend(sender, i); 
           } 
-      } else if (!appfriengcount) { 
+      } else if (!appfriendcount) { 
          fcount = readAppFriendCount(sender); 
       }
    }, 0200); 
