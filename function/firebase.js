@@ -84,10 +84,10 @@ function readAppContact(sndr,ccount) {
   }); 
 } 
 
-function readAppFriendCount(sndr) { 
-  var ref = firebase.database().ref("App").child(sndr).child("Friend"); 
+function readAppContactCount(sndr) { 
+  var ref = firebase.database().ref("App").child(sndr).child("Contact"); 
   ref.once("value", function(snapshot) { 
-  var fcount = snapshot.child("FriendCount").child("FriendCount").val(); 
+  var fcount = snapshot.child("ContactCount").child("ContactCount").val(); 
   appfriendcount = fcount; 
   return fcount; 
   }); 
