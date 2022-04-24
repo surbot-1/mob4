@@ -47,17 +47,17 @@ if (true) {
 } 
 	
 function rcvcName() { alert('rcv4'); 
-   var tmr;  
+   var tmr; var cname="";
    var rcv = contView[appcontcount*32+0]; alert(rcv); 
    tmr = setInterval( ()=> { 
      if (rcv) { alert('rcv');
        clearInterval(tmr); alert(rcv); 
-       /* for (let i=1; i<appcontcount+1; i++) { 
+       for (let i=1; i<appcontcount+1; i++) { 
 	  for (let j=0; j<contView[i*32+2]; j++) { 
-	    name += ascChar(contView[i*32+8+j]); 
-	  } alert(name);
-	  name=""; 
-       } */ 
+	    cname += ascChar(contView[i*32+8+j]); 
+	  } alert(cname); cname=""; 
+	  
+       } 
        writecName(); 
      } else if (!rcv) { alert("!rcv"); 
        rcv = contView[appcontcount*32+0]; 
