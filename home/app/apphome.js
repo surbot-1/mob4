@@ -97,7 +97,7 @@ if (true) {
 	      } else if (x>0 && x<1080 && y>160*9 && y<160*9+144) { 
 	      } else if (x>0 && x<1080 && y>160*10 && y<160*10+144) { 
 	      } else if (x>920 && x<920+128 && y>2024 && y<2024+128) { 
-		      clearInterval(timer); contact(); 
+		      clearInterval(timer); appContact(); 
 	      }
 		      
            } 
