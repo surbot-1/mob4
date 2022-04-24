@@ -32,15 +32,15 @@ function writefName() {
 	
 if (true) { 
    var tmr; appcontcount=0; 
-   var fcount = readAppContactCount(sender); 
+   var ccount = readAppContactCount(sender); 
    tmr = setInterval( ()=> { 
       if (appcontcount) { 
-          clearInterval(tmr); 
+          clearInterval(tmr); alert(appcontcount); 
           for (let i=1; i<appcontcount+1; i++) { 
 	     readAppContact(sender, i); 
           } 
       } else if (!appcontcount) { 
-         fcount = readAppContactCount(sender); 
+         ccount = readAppContactCount(sender); 
       }
    }, 0200); 
 } 
@@ -49,8 +49,8 @@ if (true) {
    var tmr; 
    var rcvcmp = contView[appcontcount*32+0]; 
    tmr = setInterval( ()=> { 
-     if (rcvcmp) { aler(rcvcmp); 
-       clearInterval(tmr); var name=""; 
+     if (rcvcmp) { 
+       clearInterval(tmr); var name=""; aler(rcvcmp); 
        for (let i=1; i<appcontcount+1; i++) { 
 	  for (let j=0; i<(contView[i*32+2]); j++) { 
 	    name += ascChar(contView[i*32+8+j]); 
