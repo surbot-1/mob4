@@ -26,12 +26,12 @@ var acname=[];
 function writecName() {  
      for (let i=1; i<appcontcount+1; i++) {
 	fileViewerUrl(64, 144*i+8, "icon/business-man-icon-128.bmp"); 
-        writecStr(200,144*i+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],acname[i]); 
-     }
+        writecStr(200,144*i+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],acname); 
+     } 
 } 
 	
 if (true) { 
-   var tmr; appcontcount=0; 
+   var tmr; appcontcount=0; contView[0]=0; 
    var count = readAppContactCount(sender); 
    tmr = setInterval( ()=> { 
       if (appcontcount) { 
@@ -48,7 +48,7 @@ if (true) {
 	
 function rcvcName() { 
    var tmr; 
-   var rcvcmp = contView[appcontcount*32+0]; 
+   var rcvcmp = contView[0]; 
    tmr = setInterval( ()=> { 
      if (rcvcmp) { 
        clearInterval(tmr); var name=""; aler(rcvcmp); 
@@ -56,11 +56,11 @@ function rcvcName() {
 	  for (let j=0; j<(contView[i*32+2]); j++) { 
 	    name += ascChar(contView[i*32+8+j]); 
 	  } alert(name);
-	  acname[i]=name; name=""; alert(acname[i]);
+	  name=""; 
        } 
        writecName(); 
      } else if (!rcvcmp) { 
-       rcvcmp = contView[appcontcount*32+0]; 
+       rcvcmp = contView[0]; 
      }
    }, 1000); 
 } 
