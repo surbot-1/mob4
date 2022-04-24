@@ -1,4 +1,4 @@
-function Contact() { 
+function appContact() { 
      saveImage(0,144,1080,2032); 
      imageRect(0,144,1080,2032,"rgba(240,240,240,1.0)"); 
      imageRect(200,144*2+8,680,128,"rgba(0,0,128,1.0)"); 
