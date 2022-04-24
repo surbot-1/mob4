@@ -55,7 +55,7 @@ if (true) {
 	  for (let j=0; i<(contView[i*32+2]); j++) { 
 	    name += ascChar(contView[i*32+8+j]); 
 	  } alert(name);
-	  afname[i]=name; name=""; alert(acname[i]);
+	  acname[i]=name; name=""; alert(acname[i]);
        } 
        writefName(); 
      } else if (!rcvcmp) { 
