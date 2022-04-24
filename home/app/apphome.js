@@ -30,19 +30,19 @@ function writecName(cname, i) {
     writecStr(200,144*i+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],cname); 
 } 
 	
-function rcvcName() { alert('rcv7'); 
+function rcvcName() { 
    var tmr; var cname="";
-   var rcv = contView[appcontcount*32+0]; alert(rcv); 
+   var rcv = contView[appcontcount*32+0]; 
    tmr = setInterval( ()=> { 
-     if (rcv) { alert('rcv');
-       clearInterval(tmr); alert(rcv); 
+     if (rcv) { 
+       clearInterval(tmr); 
        for (let i=1; i<appcontcount+1; i++) { 
 	  for (let j=0; j<(contView[i*32+2]); j++) { 
 	    cname += ascChar(contView[i*32+8+j]); 
-	  }  alert(cname); 
+	  }  
 	  writecName(cname,i); cname=""; 
        } 
-     } else if (!rcv) { alert("!rcv"); 
+     } else if (!rcv) { 
        rcv = contView[appcontcount*32+0]; 
      }
    }, 1000); 
