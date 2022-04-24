@@ -45,7 +45,7 @@ if (true) {
    }, 0200); 
 } 
 	
-if (true) { 
+if (false) { 
    var tmr; 
    var rcvcmp = contView[appcontcount*32+0]; 
    tmr = setInterval( ()=> { 
