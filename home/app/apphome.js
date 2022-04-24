@@ -235,7 +235,7 @@ if (true) {
 	
 if (true) { 
    var tmr; appfriendname=""; 
-   var rcvcmp = fndView[appfriendcount*32+0]; 
+   var rcvcmp = friendView[appfriendcount*32+0]; 
    tmr = setInterval( ()=> { 
      if (rcvcmp) { aler(rcvcmp); 
        clearInterval(tmr); var name=""; 
