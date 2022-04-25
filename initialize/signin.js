@@ -76,14 +76,14 @@ var ptr=2; var ptrp=2;
 	
 	
  function sin() { 
-      var usize= signByte[0+28]; 
-      var psize= signByte[512+28]; 
+      var usize= signByte[32*2+6]; 
+      var psize= signByte[32*3+6]; 
       var uname=""; var pass=""; 
       for (let i=0; i<usize; i++) { 
-	   uname += ascChar(signByte[0+64+i]); 
+	   uname += ascChar(signByte[32*2+8+i]); 
       } 
       for (let i=0; i<psize; i++) { 
-	   pass += ascChar(signByte[512+64+i]);
+	   pass += ascChar(signByte[32*3+8+i]);
       } 
       if (uname=="sAy1" && pass=="s@1234") { 
 	  username=uname; password=pass; 
