@@ -117,8 +117,9 @@ for (let i=0; i<aw*4*ah; i+=4) {
     imgData.data[i+3]=appView[ptri*1080*4+i+3]; 
 } 
 ctx.putImageData(imgData,0,ay); 
-}
+} 
 	
+ktype=0; 
 drawKeypad(0,1664,ktype); 
 showCursor(16,1448); 
 chatbotactive=true; useractive=0; sendactive=2; 
@@ -313,7 +314,7 @@ ctx.putImageData(imgData,0,ay);
    }, 0200); 
 } */  
 
-	
+ktype=0; 
 drawKeypad(0,1664,ktype); 
 showCursor(16,1448); 
 chatbotactive=false; useractive=true; sendactive=2; 
