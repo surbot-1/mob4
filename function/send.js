@@ -197,7 +197,29 @@ function send() {
 	  appView[appPtr*1080*4+i+2]=imgData.data[i+2];
 	  appView[appPtr*1080*4+i+3]=imgData.data[i+3];
   } 
+  var mptr=appPtr; 
   appPtr += (h+64+8); 
+  var mx=1080-w-32-16; var my=mptr; 
+  var mw=w+32; var mh=h+64; 
+  dirView[dirPtr*32+0]=dirPtr&0x00FF; 
+  dirView[dirPtr*32+1]=(dirPtr&0xFF00)>>8; 
+  dirView[dirPtr*32+16]=mx&0x000000FF; 
+  dirView[dirPtr*32+17]=(mx&0x0000FF00)>>8; 
+  dirView[dirPtr*32+18]=(mx&0x00FF0000)>>16; 
+  dirView[dirPtr*32+19]=(mx&0xFF000000)>>24; 
+  dirView[dirPtr*32+20]=my&0x000000FF; 
+  dirView[dirPtr*32+21]=(my&0x0000FF00)>>8; 
+  dirView[dirPtr*32+22]=(my&0x00FF0000)>>16; 
+  dirView[dirPtr*32+23]=(my&0xFF000000)>>24; 
+  dirView[dirPtr*32+24]=mw&0x00FF; 
+  dirView[dirPtr*32+25]=(mw&0xFF00)>>8; 
+  dirView[dirPtr*32+26]=mh&0x00FF; 
+  dirView[dirPtr*32+27]=(mh&0xFF00)>>8; 
+  dirView[dirPtr*32+28]=mw*4*mh&0x000000FF; 
+  dirView[dirPtr*32+29]=(mw*4*mh&0x0000FF00)>>8; 
+  dirView[dirPtr*32+30]=(mw*4*mh&0x00FF0000)>>16; 
+  dirView[dirPtr*32+31]=(mw*4*mh&0xFF000000)>>24; 
+  dirPtr++; 
 }
 
 function replyChatbot() { 
