@@ -36,6 +36,17 @@ ctx.fillRect(200, 144*5+8, 680, 128);
   // writecStr(200,144*6+8+48,24*9,32,"ubuntufont",[32,32,32,255],[240,240,240,255],"Password?"); 
   writecStr(200+24*22+8,144*6+8+48,24*6,32,"ubuntufont",[32,32,32,255],[240,240,240,255],"SignIn"); 
 
+for (let i=0; i<10; i++) {
+     signByte[i*32+0]=0; 
+     signByte[i*32+1]=0; 
+     signByte[i*32+2]=0; 
+     signByte[i*32+3]=0; 
+     signByte[i*32+4]=0; 
+     signByte[i*32+5]=0; 
+     signByte[i*32+6]=0; 
+     signByte[i*32+7]=0; 
+} 
+
 ktype=0; 
 drawKeypad(0,1664,ktype); 
 showCursor(200+16,144*1+8+40); 
