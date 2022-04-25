@@ -113,7 +113,7 @@ var ptr=2; var ptrp=2;
   view.setUint8(1,viewByte[rptr*32+3]); 
   ci = view.getUint16(0); 
   view.setUint8(0,viewByte[rptr*32+4]); 
-  view.setUint8(1,viewByte[rptr*32+35]); 
+  view.setUint8(1,viewByte[rptr*32+5]); 
   cj = view.getUint16(0); 
   writeCursor(x+ci,y+cj); 
   showCursor(x+ci,y+cj); 
