@@ -70,7 +70,7 @@ var ptr=1; var ptrp=1;
 		      ptrp=ptr; ptr=3; updtCursor(signByte, ptr, ptrp); 
               } else if (x>200 && x<880 && y>144*4+8 && y<144*4+8+128) { 
 		      ptrp=ptr; ptr=4; updtCursor(signByte, ptr, ptrp); 
-	      } else if (x>200 && x<1080 && y>160*5+8 && y<144*5+128) { 
+	      } else if (x>200 && x<880 && y>144*5+8 && y<144*5+128) { 
                       clrCursor(signByte, ptr); clearInterval(timer); sup(); 
 	      } else if (x>736 && x<880 && y>144*6+8 && y<144*6+128) { 
 		      clrCursor(signByte, ptr); clearInterval(timer); signin(); 
@@ -241,38 +241,34 @@ var ptr=1; var ptrp=1;
 
 
 function gotoSignup() { 
-  var unamed; var passd; 
+ /* var unamed; var passd; 
   var unamea; var passa; 
-  getIP(); 
-  getDateTime(); 
+  var ip = getIP(); 
+  var date = getDate("ddmmyyyy"); 
+  var time = getTime("12h"); 
   getUserSignupInfo(); 
   getAppSignupInfo(); 
-  firebase.database().ref("App/userinfo/signup").set({ 
-    username: unamed, 
-    password: passd, 
-    date: datetime, 
-    ip: ipads 
+  firebase.database().ref("App/User/Signup").set({ 
+    Username: unamed, 
+    Password: passd, 
+    Date: date, 
+    Time: time, 
+    ip: ip 
   }); 
   
   function getUserSignupInfo() { 
-    unamed = document.getElementById("usernameField").value ; 
-    passd = document.getElementById("passwordField").value ; 
+    
   } 
   
   function getAppSignupInfo() { 
-    var ref = firebase.database().ref("App/userinfo/signup"); 
+    var ref = firebase.database().ref("App/User/Signup"); 
     ref.once("value", function(snapshot) {   
-      unamea = snapshot.child("username").val(); 
-      passa = snapshot.child("password").val(); 
+      unamea = snapshot.child("Username").val(); 
+      passa = snapshot.child("Password").val(); 
     }); 
   } 
   
-  document.querySelector('#divSign').innerHTML = "Please wait..." ; 
   setTimeout(wait1, 15000); 
   function wait1() { 
-    document.querySelector('#divSign').innerHTML = "" ; 
-    document.querySelector('#divSign').innerHTML += "Signup done" ; 
-    document.querySelector('#divSign').innerHTML += '<br>' + "Username:" + unamea ; 
-    document.querySelector('#divSign').innerHTML += '<br>' + "Password:" + passa ;
-  } 
+  } */
 }
