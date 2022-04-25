@@ -101,16 +101,38 @@ if (true) {
 		      receiver = acname[5]; 
 		      appHomeChatsUser(receiver); 
 		   }
-	      } else if (x>0 && x<1080 && y>144*6 && y<144*6+128) { 
+	      } else if (x>0 && x<1080 && y>144*6 && y<144*6+144) { 
 		   if (acsts[6]) { 
 		      clearInterval(timer); 
 		      receiver = acname[6]; 
 		      appHomeChatsUser(receiver); 
+		   } 
+              } else if (x>0 && x<1080 && y>144*7 && y<144*8) { 
+		   if (acsts[7]) { 
+		      clearInterval(timer); 
+		      receiver = acname[7]; 
+		      appHomeChatsUser(receiver); 
 		   }
-	      } else if (x>0 && x<1080 && y>160*7 && y<160*7+144) { 
-	      } else if (x>0 && x<1080 && y>160*8 && y<160*8+144) { 
-	      } else if (x>0 && x<1080 && y>160*9 && y<160*9+144) { 
-	      } else if (x>0 && x<1080 && y>160*10 && y<160*10+144) { 
+              } else if (x>0 && x<1080 && y>144*8 && y<144*9) { 
+		   if (acsts[8]) { 
+		      clearInterval(timer); 
+		      receiver = acname[8]; 
+		      appHomeChatsUser(receiver); 
+		   }
+              } else if (x>0 && x<1080 && y>144*9 && y<144*10) { 
+		   if (acsts[9]) { 
+		      clearInterval(timer); 
+		      receiver = acname[9]; 
+		      appHomeChatsUser(receiver); 
+		   }
+	      } else if (x>0 && x<1080 && y>144*10 && y<144*11) { 
+		   if (acsts[10]) { 
+		      clearInterval(timer); 
+		      receiver = acname[10]; 
+		      appHomeChatsUser(receiver); 
+		   }
+	      } else if (x>0 && x<1080 && y>144*11 && y<144*11+144) { 
+	      } else if (x>0 && x<1080 && y>144*12 && y<144*12+144) { 
 	      } else if (x>920 && x<920+128 && y>2024 && y<2024+128) { 
 		      clearInterval(timer); newContact(); 
 	      }
