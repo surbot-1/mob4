@@ -1,4 +1,4 @@
-function signup() { 
+function signup() {  
 
 var cnv = document.getElementById("canvas"); 
 var ctx = cnv.getContext('2d'); 
