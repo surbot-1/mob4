@@ -50,7 +50,7 @@ for (let i=0; i<10; i++) {
 ktype=0; 
 drawKeypad(0,1664,ktype); 
 showCursor(200+16,144*1+8+40); 
-var ptr=1; var ptrp=1; 
+var ptr=2; var ptrp=2; 
   
   
       var timer;
@@ -63,16 +63,18 @@ var ptr=1; var ptrp=1;
               } else if (x>360*1 && x<360*2 && y>0 && y<144) { 
               } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
 	      } else if (x>0 && x<1080 && y>144*1+8 && y<144*1+8+128) { 
-                      ptrp=ptr; ptr=1; updtCursor(signByte,ptr, ptrp); 
+                      // ptrp=ptr; ptr=1; updtCursor(signByte,ptr, ptrp); 
               } else if (x>200 && x<880 && y>144*2+8 && y<144*2+8+128) { 
 		      ptrp=ptr; ptr=2; updtCursor(signByte,ptr, ptrp); 
               } else if (x>200 && x<880 && y>144*3+8 && y<144*3+8+128) { 
 		      ptrp=ptr; ptr=3; updtCursor(signByte, ptr, ptrp); 
               } else if (x>200 && x<880 && y>144*4+8 && y<144*4+8+128) { 
 		      ptrp=ptr; ptr=4; updtCursor(signByte, ptr, ptrp); 
-	      } else if (x>200 && x<880 && y>144*5+8 && y<144*5+128) { 
+	      } else if (x>200 && x<880 && y>144*5+8 && y<144*5+8+128) { 
+		      ptrp=ptr; ptr=5; updtCursor(signByte, ptr, ptrp); 
+	      } else if (x>200 && x<880 && y>144*6+8 && y<144*6+128) { 
                       clrCursor(signByte, ptr); clearInterval(timer); sup(); 
-	      } else if (x>736 && x<880 && y>144*6+8 && y<144*6+128) { 
+	      } else if (x>736 && x<880 && y>144*7+8 && y<144*7+128) { 
 		      clrCursor(signByte, ptr); clearInterval(timer); signin(); 
 	      } else if (x>0 && x<1080 && y>144*7+8 && y<144*7+128) {  
 	      } else if (x>0 && x<1080 && y>1664 && y<2176) { 
