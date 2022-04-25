@@ -51,21 +51,22 @@ var ptr=1; var ptrp=1;
               if (x>0 && x<360*1 && y>0 && y<144) { 
               } else if (x>360*1 && x<360*2 && y>0 && y<144) { 
               } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
-	            } else if (x>0 && x<1080 && y>144*1+8 && y<144*1+8+128) { 
-                     ptrp=ptr; ptr=1; updtCursor(signByte,ptr, ptrp); 
+	      } else if (x>0 && x<1080 && y>144*1+8 && y<144*1+8+128) { 
+                      ptrp=ptr; ptr=1; updtCursor(signByte,ptr, ptrp); 
               } else if (x>200 && x<880 && y>144*2+8 && y<144*2+8+128) { 
-		                 ptrp=ptr; ptr=2; updtCursor(signByte,ptr, ptrp); 
+		      ptrp=ptr; ptr=2; updtCursor(signByte,ptr, ptrp); 
               } else if (x>200 && x<880 && y>144*3+8 && y<144*3+8+128) { 
-		                 ptrp=ptr; ptr=3; updtCursor(signByte, ptr, ptrp); 
+		      ptrp=ptr; ptr=3; updtCursor(signByte, ptr, ptrp); 
               } else if (x>200 && x<880 && y>144*4+8 && y<144*4+8+128) { 
-		                 ptrp=ptr; ptr=4; updtCursor(signByte, ptr, ptrp); 
-	            } else if (x>200 && x<1080 && y>160*5+8 && y<144*6+128) { 
-                     clrCursor(signByte, ptr); clearInterval(timer); sup(); 
-	            } else if (x>0 && x<1080 && y>144*6+8 && y<144*7+128) { 
-	            } else if (x>0 && x<1080 && y>144*7+8 && y<144*8+128) {  
-	            } else if (x>0 && x<1080 && y>1664 && y<2176) { 
-		                 storekeyvalue(signByte,ptr); 
-	            } 
+		      ptrp=ptr; ptr=4; updtCursor(signByte, ptr, ptrp); 
+	      } else if (x>200 && x<1080 && y>160*5+8 && y<144*5+128) { 
+                      clrCursor(signByte, ptr); clearInterval(timer); sup(); 
+	      } else if (x>736 && x<880 && y>144*6+8 && y<144*6+128) { 
+		      clrCursor(signByte, ptr); clearInterval(timer); signin(); 
+	      } else if (x>0 && x<1080 && y>144*7+8 && y<144*7+128) {  
+	      } else if (x>0 && x<1080 && y>1664 && y<2176) { 
+		     storekeyvalue(signByte,ptr); 
+	      } 
            
          } 
       } 
