@@ -2,6 +2,7 @@ function newContact() {
      saveImage(0,0,1080,2176); 
 	
      imageRect(0,0,1080,144,"rgba(0,0,128,1.0)"); 
+     // fileViewerUrl(8, 48, "icon/arrow-left-icon-48.bmp"); 
      writecStr(396,8+40,24*11,48,"font2448",[255,255,255,255],[0,0,128,255],"New contact"); 
 	
      imageRect(0,144,1080,2032,"rgba(240,240,240,1.0)"); 
@@ -9,6 +10,7 @@ function newContact() {
      imageRect(200+8,144*2+8+8,680-16,128-16,"rgba(255,255,255,1.0)"); 
      imageRect(200,144*3+8,680,128,"rgba(0,0,128,1.0)"); 
      writecStr(200+268+24,144*3+8+40,24*4,48,"font2448",[255,255,255,255],[0,0,128,255],"Save"); 
+     writecStr(200+268,144*4+8+40,24*6,48,"font2448",[255,255,255,255],[0,0,128,255],"Cancle"); 
         ktype=0; 
 	drawKeypad(0,1664,ktype); 
         showCursor(200+16,144*2+8+40); 
@@ -170,7 +172,8 @@ var ptr=0; var ptrp=0;
       var tend = touch;  
          if (tend == 3) { 
               touch = 0; 
-              if (x>0 && x<360*1 && y>0 && y<144) { 
+              if (x>0 && x<64 && y>0 && y<144) { 
+		      
               } else if (x>360*1 && x<360*2 && y>0 && y<144) { 
               } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
 	      } else if (x>0 && x<1080 && y>144*1+8 && y<144*1+8+128) { 
@@ -179,7 +182,7 @@ var ptr=0; var ptrp=0;
               } else if (x>200 && x<880 && y>144*3+8 && y<144*3+8+128) { 
 		      clrCursor(signByte, ptr); clearInterval(timer); saveContact(); 
               } else if (x>200 && x<880 && y>144*4+8 && y<144*4+8+128) { 
-		      // clrCursor(signByte, ptr); clearInterval(timer); sin(); 
+		      clrCursor(signByte, ptr);  clearInterval(timer); appHomeChats(); 
 	      } else if (x>200 && x<1080 && y>160*5+8 && y<144*6+128) { 
 	      } else if (x>0 && x<1080 && y>144*6+8 && y<144*7+128) { 
 	      } else if (x>0 && x<1080 && y>144*7+8 && y<144*8+128) {  
