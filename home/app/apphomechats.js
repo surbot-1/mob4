@@ -4,6 +4,7 @@ var ctx = cnv.getContext('2d');
 
 ctx.fillStyle = "rgba(0, 0, 128, 1.0)"; // blue
 ctx.fillRect(0, 0, 1080, 144); 
+fileViewerUrl(8, 48, "icon/arrow-left-icon-48.bmp");  
 fileViewerUrl(64, 8, "icon/business-woman-icon-128.bmp");  
 fileViewerUrl(824, 48, "icon/video-icon-48.bmp");  
 fileViewerUrl(952, 48, "icon/telephone-icon-48.bmp"); 
@@ -43,9 +44,11 @@ var ptr=appPtr;
 	var x = touchx;  var y = touchy; 
 	var tend = touch;  
            if (tend == 3) { touch = 0;
-              if (x>0 && x<360*1 && y>0 && y<144) { 
-              } else if (x>360*1 && x<360*2 && y>0 && y<144) { 
-              } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
+              if (x>0 && x<64 && y>0 && y<144) { 
+              } else if (x>64 && x<64+128 && y>0 && y<144) { 
+              } else if (x>924 && x<924+48 && y>0 && y<144) { 
+	      } else if (x>952 && x<952+48 && y>0 && y<144) { 
+	      } else if (x>1024 && x<1024+48 && y>0 && y<144) { 
               } else if (x>1080-128 && x<1080 && y>144*1 && y<144*2) { 
 		      if (ptr>1880) {ptr-=32;} if (ptr<=1880) {ptr=1880;} 
 		      showMessage(0,144,1080,1880,0,ptr); appPtrf=ptr; 
