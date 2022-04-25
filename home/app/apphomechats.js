@@ -175,6 +175,7 @@ var cnv = document.getElementById("canvas");
 var ctx = cnv.getContext('2d'); 
 ctx.fillStyle = "rgba(0, 0, 128, 1.0)"; // blue
 ctx.fillRect(0, 0, 1080, 144); 
+fileViewerUrl(8, 48, "icon/arrow-left-icon-48.bmp");  
 fileViewerUrl(64, 8, "icon/business-man-icon-128.bmp");  
 fileViewerUrl(824, 48, "icon/video-icon-48.bmp");  
 fileViewerUrl(952, 48, "icon/telephone-icon-48.bmp"); 
@@ -267,6 +268,7 @@ var cnv = document.getElementById("canvas");
 var ctx = cnv.getContext('2d'); 
 ctx.fillStyle = "rgba(0, 0, 128, 1.0)"; // blue
 ctx.fillRect(0, 0, 1080, 144); 
+fileViewerUrl(8, 48, "icon/arrow-left-icon-48.bmp");  
 fileViewerUrl(64, 8, "icon/business-man-icon-128.bmp");  
 fileViewerUrl(824, 48, "icon/video-icon-48.bmp"); 
 fileViewerUrl(952, 48, "icon/telephone-icon-48.bmp"); 
