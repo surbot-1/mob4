@@ -232,7 +232,7 @@ var ptr=2; var ptrp=2;
 
 
 function gotoSignin() { 
-      var unamed; var passd: 
+     /* var unamed; var passd: 
       var unamea; var passa; 
       getUserSigninInfo(); 
       getAppSigniupInfo(); 
@@ -263,5 +263,5 @@ function gotoSignin() {
             unamea = snapshot.child("Username").val();
             passa = snapshot.child("Password").val();
             });
-        }  
+        }  */
   }
