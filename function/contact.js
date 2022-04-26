@@ -17,7 +17,7 @@ function newContact() {
 	drawKeypad(0,1664,ktype); 
         showCursor(200+16,144*2+8+40); 
 	
-     for (let i=0; i<2; i++) {
+     for (let i=0; i<10; i++) {
       signByte[i*64+6]=0; 
       signByte[i*64+2]=0; 
       signByte[i*64+3]=0; 
