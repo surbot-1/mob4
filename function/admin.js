@@ -30,7 +30,7 @@ function admin() {
 	      } else if (x>880-16+104 && x<880-16+104+8*24 && y>144+16+600-48 && y<144+16+600) { 
                      clearInterval(timer); signout(); 
 	      }
-            } 
+           } 
 	}
 	timer = setInterval(check, 0020); 
 }
