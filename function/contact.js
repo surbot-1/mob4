@@ -18,25 +18,24 @@ function newContact() {
         showCursor(200+16,144*2+8+40); 
 	
      for (let i=0; i<2; i++) {
-      signByte[i*512+28]=0; 
-      signByte[i*512+32]=0; 
-      signByte[i*512+33]=0; 
-      signByte[i*512+34]=0; 
-      signByte[i*512+35]=0; 
+      signByte[i*64+28]=0; 
+      signByte[i*64+32]=0; 
+      signByte[i*64+33]=0; 
+      signByte[i*64+34]=0; 
+      signByte[i*64+35]=0; 
      }
 	
  function shwCursor(viewByte, rptr) { 
   var x=0; var y=0; var ptr=0; var ci=0; var cj=0; 
   var buf = new ArrayBuffer(4); 
   var view = new DataView(buf); 
-  if (rptr==0) {x=200+16; y=144*2+8+40;} 
-  else if (rptr==512) {x=200+16; y=144*3+8+40;} 
-  ptr = viewByte[rptr+28]; 
-  view.setUint8(0,viewByte[rptr+32]); 
-  view.setUint8(1,viewByte[rptr+33]); 
+  x=200+16; y=144*rptr+8+40; 
+  ptr = viewByte[rptr*64+6]; 
+  view.setUint8(0,viewByte[rptr*64+2]); 
+  view.setUint8(1,viewByte[rptr*64+3]); 
   ci = view.getUint16(0); 
-  view.setUint8(0,viewByte[rptr+34]); 
-  view.setUint8(1,viewByte[rptr+35]); 
+  view.setUint8(0,viewByte[rptr*64+4]); 
+  view.setUint8(1,viewByte[rptr*64+5]); 
   cj = view.getUint16(0); 
   writeCursor(x+ci,y+cj); 
   showCursor(x+ci,y+cj); 
@@ -46,14 +45,13 @@ function newContact() {
   var x=0; var y=0; var ptr=0; var ci=0; var cj=0; 
   var buf = new ArrayBuffer(4); 
   var view = new DataView(buf); 
-  if (rptr==0) {x=200+16; y=144*2+8+40;} 
-  else if (rptr==512) {x=200+16; y=144*3+8+40;} 
-  ptr = viewByte[rptr+28]; 
-  view.setUint8(0,viewByte[rptr+32]); 
-  view.setUint8(1,viewByte[rptr+33]); 
+  x=200+16; y=144*rptr+8+40; 
+  ptr = viewByte[rptr*64+6]; 
+  view.setUint8(0,viewByte[rptr*64+2]); 
+  view.setUint8(1,viewByte[rptr*64+3]); 
   ci = view.getUint16(0); 
-  view.setUint8(0,viewByte[rptr+34]); 
-  view.setUint8(1,viewByte[rptr+35]); 
+  view.setUint8(0,viewByte[rptr*64+4]); 
+  view.setUint8(1,viewByte[rptr*64+5]); 
   cj = view.getUint16(0); 
   clearCursor(x+ci,y+cj); 
  } 
@@ -62,24 +60,22 @@ function newContact() {
   var x=0; var y=0; var ptr=0; var ci=0; var cj=0; 
   var buf = new ArrayBuffer(4); 
   var view = new DataView(buf); 
-  if (rptrp==0) {x=200+16; y=144*2+8+40;} 
-  else if (rptrp==512) {x=200+16; y=144*3+8+40;} 
-  ptr = viewByte[rptrp+28]; 
-  view.setUint8(0,viewByte[rptrp+32]); 
-  view.setUint8(1,viewByte[rptrp+33]); 
+  x=200+16; y=144*rptrp+8+40; 
+  ptr = viewByte[rptrp*64+6]; 
+  view.setUint8(0,viewByte[rptrp*64+2]); 
+  view.setUint8(1,viewByte[rptrp*64+3]); 
   ci = view.getUint16(0); 
-  view.setUint8(0,viewByte[rptrp+34]); 
-  view.setUint8(1,viewByte[rptrp+35]); 
+  view.setUint8(0,viewByte[rptrp*64+4]); 
+  view.setUint8(1,viewByte[rptrp*64+5]); 
   cj = view.getUint16(0); 
   clearCursor(x+ci,y+cj); 
-  if (rptr==0) {x=200+16; y=144*2+8+40;} 
-  else if (rptr==512) {x=200+16; y=144*3+8+40;} 
-  ptr = viewByte[rptr+28]; 
-  view.setUint8(0,viewByte[rptr+32]); 
-  view.setUint8(1,viewByte[rptr+33]); 
+  x=200+16; y=144*rptr+8+40; 
+  ptr = viewByte[rptr*64+6]; 
+  view.setUint8(0,viewByte[rptr*64+2]); 
+  view.setUint8(1,viewByte[rptr*64+3]); 
   ci = view.getUint16(0); 
-  view.setUint8(0,viewByte[rptr+34]); 
-  view.setUint8(1,viewByte[rptr+35]); 
+  view.setUint8(0,viewByte[rptr*64+4]); 
+  view.setUint8(1,viewByte[rptr*64+5]); 
   cj = view.getUint16(0); 
   writeCursor(x+ci,y+cj);
   showCursor(x+ci,y+cj); 
@@ -89,15 +85,14 @@ function storekeyvalue(viewByte,rptr) {
   var x=0; var y=0; var ptr=0; var ci=0; var cj=0; 
   var buf = new ArrayBuffer(4); 
   var view = new DataView(buf); 
-  if (rptr==0) {x=200+16; y=144*2+8+40;} 
-  else if (rptr==512) {x=200+16; y=144*3+8+40;} 
+  x=200+16; y=144*rptr+8+40; 
   var kstr = readKeypad(0,1664,ktype); 
-  var ptr = viewByte[rptr+28]; 
-  view.setUint8(0,viewByte[rptr+32]); 
-  view.setUint8(1,viewByte[rptr+33]); 
+  var ptr = viewByte[rptr*64+6]; 
+  view.setUint8(0,viewByte[rptr*64+2]); 
+  view.setUint8(1,viewByte[rptr*64+3]); 
   ci = view.getUint16(0); 
-  view.setUint8(0,viewByte[rptr+34]); 
-  view.setUint8(1,viewByte[rptr+35]); 
+  view.setUint8(0,viewByte[rptr*64+4]); 
+  view.setUint8(1,viewByte[rptr*64+5]); 
   cj = view.getUint16(0); 
   clearCursor(x+ci,y+cj); 
   if (kstr=="SHIFT") {  
@@ -120,11 +115,11 @@ function storekeyvalue(viewByte,rptr) {
       if (ci==0) {ci=24*23;} else {ci-=24;} 
       writeChar(x+ci,y+cj,"font2448"," "); 
       ptr--; 
-      viewByte[rptr+28]=ptr; 
-      viewByte[rptr+32]=(ci&0xFF00)>>8; 
-      viewByte[rptr+33]=ci&0x00FF; 
-      viewByte[rptr+34]=(cj&0xFF00)>>8; 
-      viewByte[rptr+35]=cj&0x00FF; 
+      viewByte[rptr*64+6]=ptr; 
+      viewByte[rptr*64+2]=(ci&0xFF00)>>8; 
+      viewByte[rptr*64+3]=ci&0x00FF; 
+      viewByte[rptr*64+4]=(cj&0xFF00)>>8; 
+      viewByte[rptr*64+5]=cj&0x00FF; 
     }
   } else if (kstr=="SPACE") { 
     writeChar(x+ci,y+cj,"font2448"," ");
@@ -132,34 +127,34 @@ function storekeyvalue(viewByte,rptr) {
     if (ci>=24*24) {ci=0; cj=0;} 
     viewByte[rptr+64+ptr]=" ".charCodeAt(0); 
     ptr++; 
-    viewByte[rptr+28]=ptr; 
-    viewByte[rptr+32]=(ci&0xFF00)>>8; 
-    viewByte[rptr+33]=ci&0x00FF; 
-    viewByte[rptr+34]=(cj&0xFF00)>>8; 
-    viewByte[rptr+35]=cj&0x00FF; 
+    viewByte[rptr*64+6]=ptr; 
+    viewByte[rptr*64+2]=(ci&0xFF00)>>8; 
+    viewByte[rptr*64+3]=ci&0x00FF; 
+    viewByte[rptr*64+4]=(cj&0xFF00)>>8; 
+    viewByte[rptr*64+5]=cj&0x00FF; 
   } else if (kstr=="ENTER") { 
   } else { 
     var kchar=readKeypad(0,1664,ktype); 
     writeChar(x+ci,y+cj,"font2448",kchar); 
     ci+=24; 
     if (ci>=24*24) {ci=0; cj=0;} 
-    viewByte[rptr+64+ptr]=kchar.charCodeAt(0); 
+    viewByte[rptr*64+8+ptr]=kchar.charCodeAt(0); 
     ptr++; 
-    viewByte[rptr+28]=ptr; 
-    viewByte[rptr+32]=(ci&0xFF00)>>8; 
-    viewByte[rptr+33]=ci&0x00FF; 
-    viewByte[rptr+34]=(cj&0xFF00)>>8; 
-    viewByte[rptr+35]=cj&0x00FF; 
+    viewByte[rptr*64+6]=ptr; 
+    viewByte[rptr*64+2]=(ci&0xFF00)>>8; 
+    viewByte[rptr*64+3]=ci&0x00FF; 
+    viewByte[rptr*64+4]=(cj&0xFF00)>>8; 
+    viewByte[rptr*64+5]=cj&0x00FF; 
   } 
   writeCursor(x+ci,y+cj); 
   showCursor(x+ci,y+cj); 
  } 
 	
  function saveContact() { 
-      var csize= signByte[0+28]; 
+      var csize= signByte[2*64+6]; 
       var cname=""; 
       for (let i=0; i<csize; i++) { 
-	   cname += ascChar(signByte[0+64+i]); 
+	   cname += ascChar(signByte[2*64+8+i]); 
       } 
       appcontcount++; 
       writeAppContact(sender,appcontcount,cname); 
@@ -168,7 +163,7 @@ function storekeyvalue(viewByte,rptr) {
       // appHomeChats(); 
  } 
 
-var ptr=0; var ptrp=0; 
+var ptr=2; var ptrp=2; 
 	
       var timer;
       function check() { 
@@ -182,9 +177,9 @@ var ptr=0; var ptrp=0;
               } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
 	      } else if (x>0 && x<1080 && y>144*1+8 && y<144*1+8+128) { 
               } else if (x>200 && x<880 && y>144*2+8 && y<144*2+8+128) { 
-		      ptrp=ptr; ptr=0; updtCursor(signByte,ptr, ptrp); 
+		      ptrp=ptr; ptr=2; updtCursor(signByte,ptr, ptrp); 
 	      } else if (x>200 && x<880 && y>144*3+8 && y<144*3+8+128) { 
-		      ptrp=ptr; ptr=512; updtCursor(signByte,ptr, ptrp); 
+		      ptrp=ptr; ptr=3; updtCursor(signByte,ptr, ptrp); 
               } else if (x>200 && x<880 && y>144*4+8 && y<144*4+8+128) { 
 		      clrCursor(signByte, ptr); clearInterval(timer); 
 		      saveContact(); appHomeChats(); 
