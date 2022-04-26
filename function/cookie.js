@@ -25,7 +25,7 @@ function checkCookie(cname) {
   if (cval != "") {
     alert("Welcome again " + cval);
   } else {
-    cval = prompt("Please enter your name:", "");
+    cval = prompt("Please enter " + cname, "");
     if (cval != "" && cval != null) {
       setCookie(cname, cval, 365);
     }
