@@ -80,10 +80,10 @@ var ptr=2; var ptrp=2;
       var psize= signByte[64*3+6]; 
       var uname=""; var pass=""; 
       for (let i=0; i<usize; i++) { 
-	   uname += ascChar(signByte[64*2+8+i]); 
+	   uname += ascChar(signByte[64*2+16+i]); 
       } 
       for (let i=0; i<psize; i++) { 
-	   pass += ascChar(signByte[64*3+8+i]);
+	   pass += ascChar(signByte[64*3+16+i]);
       } 
       if (uname=="sAy1" && pass=="s@1234") { 
 	  username=uname; password=pass; 
@@ -203,7 +203,7 @@ var ptr=2; var ptrp=2;
     writeChar(x+ci,y+cj,"font2448"," ");
     ci+=24; 
     if (ci>=24*24) {ci=0; cj=0;} 
-    viewByte[rptr*64+8+ptr]=" ".charCodeAt(0); 
+    viewByte[rptr*64+16+ptr]=" ".charCodeAt(0); 
     ptr++; 
     viewByte[rptr*64+6]=ptr; 
     viewByte[rptr*64+2]=(ci&0xFF00)>>8; 
@@ -216,7 +216,7 @@ var ptr=2; var ptrp=2;
     writeChar(x+ci,y+cj,"font2448",kchar); 
     ci+=24; 
     if (ci>=24*24) {ci=0; cj=0;} 
-    viewByte[rptr*64+8+ptr]=kchar.charCodeAt(0); 
+    viewByte[rptr*64+16+ptr]=kchar.charCodeAt(0); 
     ptr++; 
     viewByte[rptr*64+6]=ptr; 
     viewByte[rptr*64+2]=(ci&0xFF00)>>8; 
