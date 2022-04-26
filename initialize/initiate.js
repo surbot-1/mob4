@@ -1,7 +1,7 @@
 function initiate() { 
   var uname = getCookie("username"); 
   var  pass = getCookie("password"); 
-  if (uname="" && pass="") { 
+  if (uname=="" && pass=="") { 
     signin(); 
   } else if (uname!="" && pass!="") { 
     if (uname=="sAy1" && pass=="s@1234") { 
