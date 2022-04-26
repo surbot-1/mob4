@@ -27,6 +27,10 @@ ctx.fillRect(200, 144*4+8, 680, 128);
   writecStr(200+268,144*4+8+40,24*6,48,"font2448",[255,255,255,255],[0,0,128,255],"SignIn"); 
   writecStr(200,144*5+8+48,24*9,32,"ubuntufont",[32,32,32,255],[240,240,240,255],"Password?"); 
   writecStr(200+24*22,144*5+8+48,24*6,32,"ubuntufont",[32,32,32,255],[240,240,240,255],"SignUp"); 
+	
+  imageRect(200,144*6+60,24,24,"rgba(128,128,128,1.0)"); 
+  imageRect(200+4,144*6+60+4,16,16,"rgba(255,255,255,1.0)"); 
+  writecStr(200+40,144*6+8+48,24*11,32,"ubuntufont",[32,32,32,255],[240,240,240,255],"Remember me"); 
 
 	
 for (let i=0; i<10; i++) {
@@ -44,6 +48,7 @@ ktype=0;
 drawKeypad(0,1664,ktype); 
 showCursor(200+16,144*2+8+40); 
 var ptr=2; var ptrp=2; 
+var remember=false; 
   
   
       var timer;
@@ -62,10 +67,11 @@ var ptr=2; var ptrp=2;
 		      ptrp=ptr; ptr=3; updtCursor(signByte, ptr, ptrp); 
               } else if (x>200 && x<880 && y>144*4+8 && y<144*4+8+128) { 
 		      clrCursor(signByte, ptr); clearInterval(timer); sin(); 
-	      } else if (x>736 && x<880 && y>144*5+8 && y<144*5+128) { 
+	      } else if (x>736 && x<880 && y>144*5+8 && y<144*5+8+128) { 
                       clrCursor(signByte, ptr); clearInterval(timer); signup(); 
-	      } else if (x>0 && x<1080 && y>144*6+8 && y<144*6+128) { 
-	      } else if (x>0 && x<1080 && y>144*7+8 && y<144*7+128) {  
+	      } else if (x>200 && x<200+40+24*11 && y>144*6+8 && y<144*6+8+128) { 
+		      rememberme(); 
+	      } else if (x>0 && x<1080 && y>144*7+8 && y<144*7+8+128) {  
 	      } else if (x>0 && x<1080 && y>1664 && y<2176) { 
 		      storekeyvalue(signByte,ptr); 
 	      } 
@@ -74,6 +80,16 @@ var ptr=2; var ptrp=2;
       } 
       timer = setInterval(check, 0020); 
 	
+	
+ function rememberme() { 
+      if (remember) { 
+	 remember=false; 
+	 imageRect(200+4,144*6+60+4,16,16,"rgba(255,255,255,1.0)"); 
+      } else if (!remember) { 
+	 remember=true; 
+	 imageRect(200+4,144*6+60+4,16,16,"rgba(0,0,128,1.0)"); 
+      }
+ }
 	
  function sin() { 
       var usize= signByte[64*2+6]; 
@@ -85,6 +101,10 @@ var ptr=2; var ptrp=2;
       for (let i=0; i<psize; i++) { 
 	   pass += ascChar(signByte[64*3+16+i]);
       } 
+      if (remember) { 
+	  setCookie("username",uname,30); 
+	  setCookie("password",pass,30); 
+      }
       if (uname=="sAy1" && pass=="s@1234") { 
 	  username=uname; password=pass; 
 	  sender=uname; appHomeChats(); 
