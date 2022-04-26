@@ -105,8 +105,8 @@ function send1() {
   appPtr += (h+64+8); 
   var mx=1080-w-32-16; var my=mptr; 
   var mw=w+32; var mh=h+64; 
-  dirView[dirPtr*32+0]=dirPtr&0x00FF; 
-  dirView[dirPtr*32+1]=(dirPtr&0xFF00)>>8; 
+  dirView[dirPtr*32+0]=msgid&0x00FF; 
+  dirView[dirPtr*32+1]=(msgid&0xFF00)>>8; 
   dirView[dirPtr*32+16]=mx&0x000000FF; 
   dirView[dirPtr*32+17]=(mx&0x0000FF00)>>8; 
   dirView[dirPtr*32+18]=(mx&0x00FF0000)>>16; 
@@ -201,8 +201,8 @@ function send() {
   appPtr += (h+64+8); 
   var mx=1080-w-32-16; var my=mptr; 
   var mw=w+32; var mh=h+64; 
-  dirView[dirPtr*32+0]=dirPtr&0x00FF; 
-  dirView[dirPtr*32+1]=(dirPtr&0xFF00)>>8; 
+  dirView[dirPtr*32+0]=msgid&0x00FF; 
+  dirView[dirPtr*32+1]=(msgid&0xFF00)>>8; 
   dirView[dirPtr*32+16]=mx&0x000000FF; 
   dirView[dirPtr*32+17]=(mx&0x0000FF00)>>8; 
   dirView[dirPtr*32+18]=(mx&0x00FF0000)>>16; 
