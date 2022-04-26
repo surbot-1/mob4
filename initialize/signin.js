@@ -28,9 +28,9 @@ ctx.fillRect(200, 144*4+8, 680, 128);
   writecStr(200,144*5+8+48,24*9,32,"ubuntufont",[32,32,32,255],[240,240,240,255],"Password?"); 
   writecStr(200+24*22,144*5+8+48,24*6,32,"ubuntufont",[32,32,32,255],[240,240,240,255],"SignUp"); 
 	
-  imageRect(200,144*6+60,24,24,"rgba(128,128,128,1.0)"); 
-  imageRect(200+4,144*6+60+4,16,16,"rgba(255,255,255,1.0)"); 
-  writecStr(200+40,144*6+8+48,24*11,32,"ubuntufont",[32,32,32,255],[240,240,240,255],"Remember me"); 
+  imageRect(200,144*6+8+50,28,28,"rgba(128,128,128,1.0)"); 
+  imageRect(200+4,144*6+8+54,20,20,"rgba(255,255,255,1.0)"); 
+  writecStr(200+44,144*6+8+48,24*11,32,"ubuntufont",[32,32,32,255],[240,240,240,255],"Remember me"); 
 
 	
 for (let i=0; i<10; i++) {
@@ -84,10 +84,10 @@ var remember=false;
  function rememberme() { 
       if (remember) { 
 	 remember=false; 
-	 imageRect(200+4,144*6+60+4,16,16,"rgba(255,255,255,1.0)"); 
+	 imageRect(200+4,144*6+8+54,20,20,"rgba(255,255,255,1.0)"); 
       } else if (!remember) { 
 	 remember=true; 
-	 imageRect(200+4,144*6+60+4,16,16,"rgba(0,0,128,1.0)"); 
+	 imageRect(200+4,144*6+8+54,20,20,"rgba(0,0,128,1.0)"); 
       }
  }
 	
