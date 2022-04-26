@@ -11,7 +11,7 @@ fileViewerUrl(128*7, 48, "icon/telephone-icon-48.bmp");
   writecStr(200,40,480,32,"ubuntubold",[255,255,255,255],[0,0,128,255],"sAy"); 
   writecStr(200,80,480,32,"ubuntufont",[255,255,255,255],[0,0,128,255],"online"); 
 	
-imageRect(128*8,8+40,8,8,"rgba(255,255,255,1.0)");  
+imageRect(128*8,8+40,8,8,"rgba(255,255,255,1.0)"); 
 imageRect(128*8,8+60,8,8,"rgba(255,255,255,1.0)"); 
 imageRect(128*8,8+80,8,8,"rgba(255,255,255,1.0)"); 
 	
@@ -90,10 +90,14 @@ ctx.fillStyle = "rgba(0, 0, 128, 1.0)"; // blue
 ctx.fillRect(0, 0, 1080, 144); 
 fileViewerUrl(8, 48, "icon/arrow-left-icon-48.bmp");  
 fileViewerUrl(64, 8, "icon/business-woman-icon-128.bmp");  
-fileViewerUrl(824, 48, "icon/video-icon-48.bmp"); 
-fileViewerUrl(952, 48, "icon/telephone-icon-48.bmp"); 
+fileViewerUrl(128*6, 48, "icon/video-icon-48.bmp"); 
+fileViewerUrl(128*7, 48, "icon/telephone-icon-48.bmp"); 
   writecStr(200,40,480,32,"ubuntubold",[255,255,255,255],[0,0,128,255],"sAy"); 
-  writecStr(200,80,480,32,"ubuntufont",[255,255,255,255],[0,0,128,255],"online");
+  writecStr(200,80,480,32,"ubuntufont",[255,255,255,255],[0,0,128,255],"online"); 
+	
+imageRect(128*8,8+40,8,8,"rgba(255,255,255,1.0)"); 
+imageRect(128*8,8+60,8,8,"rgba(255,255,255,1.0)"); 
+imageRect(128*8,8+80,8,8,"rgba(255,255,255,1.0)"); 
 	
 ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // light gray
 ctx.fillRect(0, 144, 1080, 1264); 
@@ -182,10 +186,14 @@ ctx.fillStyle = "rgba(0, 0, 128, 1.0)"; // blue
 ctx.fillRect(0, 0, 1080, 144); 
 fileViewerUrl(8, 48, "icon/arrow-left-icon-48.bmp");  
 fileViewerUrl(64, 8, "icon/business-man-icon-128.bmp");  
-fileViewerUrl(824, 48, "icon/video-icon-48.bmp");  
-fileViewerUrl(952, 48, "icon/telephone-icon-48.bmp"); 
+fileViewerUrl(128*6, 48, "icon/video-icon-48.bmp");  
+fileViewerUrl(128*7, 48, "icon/telephone-icon-48.bmp"); 
   writecStr(200,40,480,32,"ubuntubold",[255,255,255,255],[0,0,128,255],user); 
   writecStr(200,80,480,32,"ubuntufont",[255,255,255,255],[0,0,128,255],"online"); 
+	
+imageRect(128*8,8+40,8,8,"rgba(255,255,255,1.0)"); 
+imageRect(128*8,8+60,8,8,"rgba(255,255,255,1.0)"); 
+imageRect(128*8,8+80,8,8,"rgba(255,255,255,1.0)"); 
 	
 ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; 
 ctx.fillRect(0, 144, 1080, 2032); 
@@ -275,10 +283,14 @@ ctx.fillStyle = "rgba(0, 0, 128, 1.0)"; // blue
 ctx.fillRect(0, 0, 1080, 144); 
 fileViewerUrl(8, 48, "icon/arrow-left-icon-48.bmp");  
 fileViewerUrl(64, 8, "icon/business-man-icon-128.bmp");  
-fileViewerUrl(824, 48, "icon/video-icon-48.bmp"); 
-fileViewerUrl(952, 48, "icon/telephone-icon-48.bmp"); 
+fileViewerUrl(128*6, 48, "icon/video-icon-48.bmp"); 
+fileViewerUrl(128*7, 48, "icon/telephone-icon-48.bmp"); 
   writecStr(200,40,480,32,"ubuntubold",[255,255,255,255],[0,0,128,255],user); 
-  writecStr(200,80,480,32,"ubuntufont",[255,255,255,255],[0,0,128,255],"online");
+  writecStr(200,80,480,32,"ubuntufont",[255,255,255,255],[0,0,128,255],"online"); 
+	
+imageRect(128*8,8+40,8,8,"rgba(255,255,255,1.0)"); 
+imageRect(128*8,8+60,8,8,"rgba(255,255,255,1.0)"); 
+imageRect(128*8,8+80,8,8,"rgba(255,255,255,1.0)"); 
 	
 ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // lightgrsy
 ctx.fillRect(0, 144, 1080, 1264); 
