@@ -1,4 +1,4 @@
-function initiate() { 
+function initiate2() { 
 
 var cnv = document.getElementById("canvas"); 
 var ctx = cnv.getContext('2d'); 
