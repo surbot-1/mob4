@@ -30,14 +30,14 @@ ctx.fillRect(200, 144*4+8, 680, 128);
 
 	
 for (let i=0; i<10; i++) {
-     signByte[i*32+0]=0; 
-     signByte[i*32+1]=0; 
-     signByte[i*32+2]=0; 
-     signByte[i*32+3]=0; 
-     signByte[i*32+4]=0; 
-     signByte[i*32+5]=0; 
-     signByte[i*32+6]=0; 
-     signByte[i*32+7]=0; 
+     signByte[i*64+0]=0; 
+     signByte[i*64+1]=0; 
+     signByte[i*64+2]=0; 
+     signByte[i*64+3]=0; 
+     signByte[i*64+4]=0; 
+     signByte[i*64+5]=0; 
+     signByte[i*64+6]=0; 
+     signByte[i*64+7]=0; 
 } 
 	
 ktype=0; 
@@ -76,14 +76,14 @@ var ptr=2; var ptrp=2;
 	
 	
  function sin() { 
-      var usize= signByte[32*2+6]; 
-      var psize= signByte[32*3+6]; 
+      var usize= signByte[64*2+6]; 
+      var psize= signByte[64*3+6]; 
       var uname=""; var pass=""; 
       for (let i=0; i<usize; i++) { 
-	   uname += ascChar(signByte[32*2+8+i]); 
+	   uname += ascChar(signByte[64*2+8+i]); 
       } 
       for (let i=0; i<psize; i++) { 
-	   pass += ascChar(signByte[32*3+8+i]);
+	   pass += ascChar(signByte[64*3+8+i]);
       } 
       if (uname=="sAy1" && pass=="s@1234") { 
 	  username=uname; password=pass; 
@@ -108,12 +108,12 @@ var ptr=2; var ptrp=2;
   var buf = new ArrayBuffer(4); 
   var view = new DataView(buf); 
   x=200+16; y=144*rptr+8+40; 
-  ptr = viewByte[rptr*32+6]; 
-  view.setUint8(0,viewByte[rptr*32+2]); 
-  view.setUint8(1,viewByte[rptr*32+3]); 
+  ptr = viewByte[rptr*64+6]; 
+  view.setUint8(0,viewByte[rptr*64+2]); 
+  view.setUint8(1,viewByte[rptr*64+3]); 
   ci = view.getUint16(0); 
-  view.setUint8(0,viewByte[rptr*32+4]); 
-  view.setUint8(1,viewByte[rptr*32+5]); 
+  view.setUint8(0,viewByte[rptr*64+4]); 
+  view.setUint8(1,viewByte[rptr*64+5]); 
   cj = view.getUint16(0); 
   writeCursor(x+ci,y+cj); 
   showCursor(x+ci,y+cj); 
@@ -124,12 +124,12 @@ var ptr=2; var ptrp=2;
   var buf = new ArrayBuffer(4); 
   var view = new DataView(buf); 
   x=200+16; y=144*rptr+8+40; 
-  ptr = viewByte[rptr*32+6]; 
-  view.setUint8(0,viewByte[rptr*32+2]); 
-  view.setUint8(1,viewByte[rptr*32+3]); 
+  ptr = viewByte[rptr*64+6]; 
+  view.setUint8(0,viewByte[rptr*64+2]); 
+  view.setUint8(1,viewByte[rptr*64+3]); 
   ci = view.getUint16(0); 
-  view.setUint8(0,viewByte[rptr*32+4]); 
-  view.setUint8(1,viewByte[rptr*32+5]); 
+  view.setUint8(0,viewByte[rptr*64+4]); 
+  view.setUint8(1,viewByte[rptr*64+5]); 
   cj = view.getUint16(0); 
   clearCursor(x+ci,y+cj); 
  }
@@ -139,21 +139,21 @@ var ptr=2; var ptrp=2;
   var buf = new ArrayBuffer(4); 
   var view = new DataView(buf); 
   x=200+16; y=144*rptrp+8+40; 
-  ptr = viewByte[rptrp*32+6]; 
-  view.setUint8(0,viewByte[rptrp*32+2]); 
-  view.setUint8(1,viewByte[rptrp*32+3]); 
+  ptr = viewByte[rptrp*64+6]; 
+  view.setUint8(0,viewByte[rptrp*64+2]); 
+  view.setUint8(1,viewByte[rptrp*64+3]); 
   ci = view.getUint16(0); 
-  view.setUint8(0,viewByte[rptrp*32+4]); 
-  view.setUint8(1,viewByte[rptrp*32+5]); 
+  view.setUint8(0,viewByte[rptrp*64+4]); 
+  view.setUint8(1,viewByte[rptrp*64+5]); 
   cj = view.getUint16(0); 
   clearCursor(x+ci,y+cj); 
   x=200+16; y=144*rptr+8+40; 
-  ptr = viewByte[rptr*32+6]; 
-  view.setUint8(0,viewByte[rptr*32+2]); 
-  view.setUint8(1,viewByte[rptr*32+3]); 
+  ptr = viewByte[rptr*64+6]; 
+  view.setUint8(0,viewByte[rptr*64+2]); 
+  view.setUint8(1,viewByte[rptr*64+3]); 
   ci = view.getUint16(0); 
-  view.setUint8(0,viewByte[rptr*32+4]); 
-  view.setUint8(1,viewByte[rptr*32+5]); 
+  view.setUint8(0,viewByte[rptr*64+4]); 
+  view.setUint8(1,viewByte[rptr*64+5]); 
   cj = view.getUint16(0); 
   writeCursor(x+ci,y+cj);
   showCursor(x+ci,y+cj); 
@@ -165,12 +165,12 @@ var ptr=2; var ptrp=2;
   var view = new DataView(buf); 
   x=200+16; y=144*rptr+8+40;  
   var kstr = readKeypad(0,1664,ktype); 
-  var ptr = viewByte[rptr*32+6]; 
-  view.setUint8(0,viewByte[rptr*32+2]); 
-  view.setUint8(1,viewByte[rptr*32+3]); 
+  var ptr = viewByte[rptr*64+6]; 
+  view.setUint8(0,viewByte[rptr*64+2]); 
+  view.setUint8(1,viewByte[rptr*64+3]); 
   ci = view.getUint16(0); 
-  view.setUint8(0,viewByte[rptr*32+4]); 
-  view.setUint8(1,viewByte[rptr*32+5]); 
+  view.setUint8(0,viewByte[rptr*64+4]); 
+  view.setUint8(1,viewByte[rptr*64+5]); 
   cj = view.getUint16(0); 
   clearCursor(x+ci,y+cj); 
   if (kstr=="SHIFT") {  
@@ -193,36 +193,36 @@ var ptr=2; var ptrp=2;
       if (ci==0) {ci=24*23;} else {ci-=24;} 
       writeChar(x+ci,y+cj,"font2448"," "); 
       ptr--; 
-      viewByte[rptr*32+6]=ptr; 
-      viewByte[rptr*32+2]=(ci&0xFF00)>>8; 
-      viewByte[rptr*32+3]=ci&0x00FF; 
-      viewByte[rptr*32+4]=(cj&0xFF00)>>8; 
-      viewByte[rptr*32+5]=cj&0x00FF; 
+      viewByte[rptr*64+6]=ptr; 
+      viewByte[rptr*64+2]=(ci&0xFF00)>>8; 
+      viewByte[rptr*64+3]=ci&0x00FF; 
+      viewByte[rptr*64+4]=(cj&0xFF00)>>8; 
+      viewByte[rptr*64+5]=cj&0x00FF; 
     }
   } else if (kstr=="SPACE") { 
     writeChar(x+ci,y+cj,"font2448"," ");
     ci+=24; 
     if (ci>=24*24) {ci=0; cj=0;} 
-    viewByte[rptr*32+8+ptr]=" ".charCodeAt(0); 
+    viewByte[rptr*64+8+ptr]=" ".charCodeAt(0); 
     ptr++; 
-    viewByte[rptr*32+6]=ptr; 
-    viewByte[rptr*32+2]=(ci&0xFF00)>>8; 
-    viewByte[rptr*32+3]=ci&0x00FF; 
-    viewByte[rptr*32+4]=(cj&0xFF00)>>8; 
-    viewByte[rptr*32+5]=cj&0x00FF; 
+    viewByte[rptr*64+6]=ptr; 
+    viewByte[rptr*64+2]=(ci&0xFF00)>>8; 
+    viewByte[rptr*64+3]=ci&0x00FF; 
+    viewByte[rptr*64+4]=(cj&0xFF00)>>8; 
+    viewByte[rptr*64+5]=cj&0x00FF; 
   } else if (kstr=="ENTER") { 
   } else { 
     var kchar=readKeypad(0,1664,ktype); 
     writeChar(x+ci,y+cj,"font2448",kchar); 
     ci+=24; 
     if (ci>=24*24) {ci=0; cj=0;} 
-    viewByte[rptr*32+8+ptr]=kchar.charCodeAt(0); 
+    viewByte[rptr*64+8+ptr]=kchar.charCodeAt(0); 
     ptr++; 
-    viewByte[rptr*32+6]=ptr; 
-    viewByte[rptr*32+2]=(ci&0xFF00)>>8; 
-    viewByte[rptr*32+3]=ci&0x00FF; 
-    viewByte[rptr*32+4]=(cj&0xFF00)>>8; 
-    viewByte[rptr*32+5]=cj&0x00FF; 
+    viewByte[rptr*64+6]=ptr; 
+    viewByte[rptr*64+2]=(ci&0xFF00)>>8; 
+    viewByte[rptr*64+3]=ci&0x00FF; 
+    viewByte[rptr*64+4]=(cj&0xFF00)>>8; 
+    viewByte[rptr*64+5]=cj&0x00FF; 
   } 
   writeCursor(x+ci,y+cj); 
   showCursor(x+ci,y+cj); 
