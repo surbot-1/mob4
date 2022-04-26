@@ -9,17 +9,21 @@ function newContact() {
      imageRect(200,144*2+8,680,128,"rgba(0,0,128,1.0)"); 
      imageRect(200+8,144*2+8+8,680-16,128-16,"rgba(255,255,255,1.0)"); 
      imageRect(200,144*3+8,680,128,"rgba(0,0,128,1.0)"); 
-     writecStr(200+268+24,144*3+8+40,24*4,48,"font2448",[255,255,255,255],[0,0,128,255],"Save"); 
-     writecStr(200+268,144*4+8+40,24*6,48,"font2448",[255,255,255,255],[0,0,128,255],"Cancle"); 
+     imageRect(200+8,144*3+8+8,680-16,128-16,"rgba(255,255,255,1.0)"); 
+     imageRect(200,144*4+8,680,128,"rgba(0,0,128,1.0)"); 
+     writecStr(200+268+24,144*4+8+40,24*4,48,"font2448",[255,255,255,255],[0,0,128,255],"Save"); 
+     writecStr(200+268,144*5+8+40,24*6,48,"font2448",[255,255,255,255],[0,0,128,255],"Cancle"); 
         ktype=0; 
 	drawKeypad(0,1664,ktype); 
         showCursor(200+16,144*2+8+40); 
 	
-      signByte[0+28]=0; 
-      signByte[0+32]=0; 
-      signByte[0+33]=0; 
-      signByte[0+34]=0; 
-      signByte[0+35]=0; 
+     for (let i=0; i<2; i++) {
+      signByte[i*512+28]=0; 
+      signByte[i*512+32]=0; 
+      signByte[i*512+33]=0; 
+      signByte[i*512+34]=0; 
+      signByte[i*512+35]=0; 
+     }
 	
  function shwCursor(viewByte, rptr) { 
   var x=0; var y=0; var ptr=0; var ci=0; var cj=0; 
@@ -179,10 +183,12 @@ var ptr=0; var ptrp=0;
 	      } else if (x>0 && x<1080 && y>144*1+8 && y<144*1+8+128) { 
               } else if (x>200 && x<880 && y>144*2+8 && y<144*2+8+128) { 
 		      ptrp=ptr; ptr=0; updtCursor(signByte,ptr, ptrp); 
-              } else if (x>200 && x<880 && y>144*3+8 && y<144*3+8+128) { 
+	      } else if (x>200 && x<880 && y>144*3+8 && y<144*3+8+128) { 
+		      ptrp=ptr; ptr=512; updtCursor(signByte,ptr, ptrp); 
+              } else if (x>200 && x<880 && y>144*4+8 && y<144*4+8+128) { 
 		      clrCursor(signByte, ptr); clearInterval(timer); 
 		      saveContact(); appHomeChats(); 
-              } else if (x>200 && x<880 && y>144*4+8 && y<144*4+8+128) { 
+              } else if (x>200 && x<880 && y>144*5+8 && y<144*5+8+128) { 
 		      clrCursor(signByte, ptr);  clearInterval(timer); 
 		      appHomeChats(); 
 	      } else if (x>200 && x<1080 && y>160*5+8 && y<144*6+128) { 
