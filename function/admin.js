@@ -1,7 +1,7 @@
 function admin() {
   saveImage(880-16,144+16,400,600); 
-  imageRect(880-16,144+16,400,600"rgba(128,128,128,1.0)"); 
-  imageRect(880-16+4,144+16+4,400-8,600-8"rgba(240,240,240,1.0)"); 
+  imageRect(880-16,144+16,400,600,"rgba(128,128,128,1.0)"); 
+  imageRect(880-16+4,144+16+4,400-8,600-8,"rgba(240,240,240,1.0)"); 
   fileViewerUrl(880-16+36, 144+16+16, "icon/business-man-icon-128.bmp"); 
   var aname=sender; var al=sender.length; 
   var uname=sender; var ul=sender.length; 
