@@ -73,9 +73,11 @@ if (true) {
 	var x = touchx;  var y = touchy; 
 	var tend = touch;  
            if (tend == 3) { touch = 0;
-              if (x>0 && x<360*1 && y>0 && y<144) { 
-              } else if (x>360*1 && x<360*2 && y>0 && y<144) { 
-              } else if (x>360*2 && x<360*3 && y>0 && y<144) { 
+              if (x>128*1 && x<128*2 && y>0 && y<144) { 
+              } else if (x>128*3 && x<128*4 && y>0 && y<144) { 
+              } else if (x>128*5 && x<128*7 && y>0 && y<144) { 
+	      } else if (x>1080-128 && x<1080 && y>0 && y<144) { 
+		      clearInterval(timer); admin(); 
               } else if (x>0 && x<1080 && y>144*1 && y<144*2) { 
 		    if (acsts[1]) { 
                       clearInterval(timer); appHomeChatsChatbot(); 
