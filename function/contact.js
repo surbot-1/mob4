@@ -18,11 +18,11 @@ function newContact() {
         showCursor(200+16,144*2+8+40); 
 	
      for (let i=0; i<2; i++) {
-      signByte[i*64+28]=0; 
-      signByte[i*64+32]=0; 
-      signByte[i*64+33]=0; 
-      signByte[i*64+34]=0; 
-      signByte[i*64+35]=0; 
+      signByte[i*64+6]=0; 
+      signByte[i*64+2]=0; 
+      signByte[i*64+3]=0; 
+      signByte[i*64+4]=0; 
+      signByte[i*64+5]=0; 
      }
 	
  function shwCursor(viewByte, rptr) { 
@@ -125,7 +125,7 @@ function storekeyvalue(viewByte,rptr) {
     writeChar(x+ci,y+cj,"font2448"," ");
     ci+=24; 
     if (ci>=24*24) {ci=0; cj=0;} 
-    viewByte[rptr+64+ptr]=" ".charCodeAt(0); 
+    viewByte[rptr*64+16+ptr]=" ".charCodeAt(0); 
     ptr++; 
     viewByte[rptr*64+6]=ptr; 
     viewByte[rptr*64+2]=(ci&0xFF00)>>8; 
@@ -138,7 +138,7 @@ function storekeyvalue(viewByte,rptr) {
     writeChar(x+ci,y+cj,"font2448",kchar); 
     ci+=24; 
     if (ci>=24*24) {ci=0; cj=0;} 
-    viewByte[rptr*64+8+ptr]=kchar.charCodeAt(0); 
+    viewByte[rptr*64+16+ptr]=kchar.charCodeAt(0); 
     ptr++; 
     viewByte[rptr*64+6]=ptr; 
     viewByte[rptr*64+2]=(ci&0xFF00)>>8; 
@@ -154,7 +154,7 @@ function storekeyvalue(viewByte,rptr) {
       var csize= signByte[2*64+6]; 
       var cname=""; 
       for (let i=0; i<csize; i++) { 
-	   cname += ascChar(signByte[2*64+8+i]); 
+	   cname += ascChar(signByte[2*64+16+i]); 
       } 
       appcontcount++; 
       writeAppContact(sender,appcontcount,cname); 
