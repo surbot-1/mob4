@@ -77,7 +77,7 @@ var ptr=2; var ptrp=2;
 	      } else if (x>200 && x<880 && y>144*5+8 && y<144*5+8+128) { 
 		      ptrp=ptr; ptr=5; updtCursor(signByte, ptr, ptrp); 
 	      } else if (x>200 && x<880 && y>144*6+8 && y<144*6+8+128) { 
-		      ptrp=ptr; ptr=5; updtCursor(signByte, ptr, ptrp); 
+		      ptrp=ptr; ptr=6; updtCursor(signByte, ptr, ptrp); 
 	      } else if (x>200 && x<880 && y>144*7+8 && y<144*7+128) { 
                       clrCursor(signByte, ptr); clearInterval(timer); sup(); 
 	      } else if (x>736 && x<880 && y>144*8+8 && y<144*8+128) { 
