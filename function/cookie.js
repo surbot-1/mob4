@@ -21,13 +21,13 @@ function getCookie(cname) {
 }
 
 function checkCookie(cname) {
-  let user = getCookie(cname);
-  if (user != "") {
-    alert("Welcome again " + user);
+  let cval = getCookie(cname);
+  if (cval != "") {
+    alert("Welcome again " + cval);
   } else {
-    user = prompt("Please enter your name:", "");
-    if (user != "" && user != null) {
-      setCookie("username", user, 365);
+    cval = prompt("Please enter your name:", "");
+    if (cval != "" && cval != null) {
+      setCookie(cname, cval, 365);
     }
   }
 }
