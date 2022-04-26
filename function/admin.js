@@ -3,10 +3,10 @@ function admin() {
   imageRect(680-16,144+16,400,600,"rgba(128,128,128,1.0)"); 
   imageRect(680-16+4,144+16+4,400-8,600-8,"rgba(255,255,255,1.0)"); 
   fileViewerUrl(680-16+136, 144+16+16, "icon/business-man-icon-128.bmp"); 
-  var aname=sender; var al=sender.length; 
-  var uname=sender; var ul=sender.length; 
-  writecStr(680-16+((400-al)/2),144+16+144,480,128,"font2448",[0,0,0,255],[255,255,255,255],aname); 
-  writecStr(680-16+((400-ul)/2),144+16+144+64,480,128,"ubuntufont",[0,0,0,255],[255,255,255,255],uname); 
+  var aname=sender; var am=(400-(sender.length))/2; 
+  var uname=sender; var um=(400-(sender.length))/2; 
+  writecStr(680-16+am,144+16+144,480,128,"font2448",[0,0,0,255],[255,255,255,255],aname); 
+  writecStr(680-16+um,144+16+144+64,480,128,"ubuntufont",[0,0,0,255],[255,255,255,255],uname); 
   writecStr(680-16+104,144+16+600-64,480,128,"ubuntufont",[0,0,0,255],[255,255,255,255],"Sign out"); 
 
 
