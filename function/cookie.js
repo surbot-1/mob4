@@ -2,7 +2,7 @@ function setCookie(cname, cvalue, exdays) {
   const d = new Date(); alert(d); 
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000)); alert(d); 
   let expires = "expires="+d.toUTCString(); alert((d.toUTCString())); 
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"; alert(document.cookie); 
 }
 
 function getCookie(cname) {
@@ -32,6 +32,6 @@ function checkCookie() {
   }
 }
 
-function deleteCookie() {
+function deleteCookie(cname) {
   document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"; 
 }
