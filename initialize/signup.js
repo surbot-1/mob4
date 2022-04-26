@@ -32,9 +32,13 @@ ctx.fillStyle = "rgba(255,255,255,1.0)"; // white
 ctx.fillRect(200+8, 144*5+8+8, 680-16, 128-16); 
 ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue 
 ctx.fillRect(200, 144*6+8, 680, 128); 
-  writecStr(200+268,144*6+8+40,24*6,48,"font2448",[255,255,255,255],[0,0,128,255],"SignUp"); 
-  // writecStr(200,144*7+8+48,24*9,32,"ubuntufont",[32,32,32,255],[240,240,240,255],"Password?"); 
-  writecStr(200+24*22,144*7+8+48,24*6,32,"ubuntufont",[32,32,32,255],[240,240,240,255],"SignIn"); 
+ctx.fillStyle = "rgba(255,255,255,1.0)"; // white
+ctx.fillRect(200+8, 144*6+8+8, 680-16, 128-16); 
+ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue 
+ctx.fillRect(200, 144*7+8, 680, 128); 
+  writecStr(200+268,144*7+8+40,24*6,48,"font2448",[255,255,255,255],[0,0,128,255],"SignUp"); 
+  // writecStr(200,144*8+8+48,24*9,32,"ubuntufont",[32,32,32,255],[240,240,240,255],"Password?"); 
+  writecStr(200+24*22,144*8+8+48,24*6,32,"ubuntufont",[32,32,32,255],[240,240,240,255],"SignIn"); 
 
 for (let i=0; i<10; i++) {
      signByte[i*64+0]=0; 
@@ -72,11 +76,13 @@ var ptr=2; var ptrp=2;
 		      ptrp=ptr; ptr=4; updtCursor(signByte, ptr, ptrp); 
 	      } else if (x>200 && x<880 && y>144*5+8 && y<144*5+8+128) { 
 		      ptrp=ptr; ptr=5; updtCursor(signByte, ptr, ptrp); 
-	      } else if (x>200 && x<880 && y>144*6+8 && y<144*6+128) { 
+	      } else if (x>200 && x<880 && y>144*6+8 && y<144*6+8+128) { 
+		      ptrp=ptr; ptr=5; updtCursor(signByte, ptr, ptrp); 
+	      } else if (x>200 && x<880 && y>144*7+8 && y<144*7+128) { 
                       clrCursor(signByte, ptr); clearInterval(timer); sup(); 
-	      } else if (x>736 && x<880 && y>144*7+8 && y<144*7+128) { 
+	      } else if (x>736 && x<880 && y>144*8+8 && y<144*8+128) { 
 		      clrCursor(signByte, ptr); clearInterval(timer); signin(); 
-	      } else if (x>0 && x<1080 && y>144*7+8 && y<144*7+128) {  
+	      } else if (x>0 && x<1080 && y>144*9+8 && y<144*9+128) {  
 	      } else if (x>0 && x<1080 && y>1664 && y<2176) { 
 		     storekeyvalue(signByte,ptr); 
 	      } 
