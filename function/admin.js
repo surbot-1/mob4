@@ -5,9 +5,9 @@ function admin() {
   fileViewerUrl(680-16+136, 144+16+16, "icon/business-man-icon-128.bmp"); 
   var aname=sender; var al=sender.length; 
   var uname=sender; var ul=sender.length; 
-  writecStr(680-16+((400-al)/2),144+16+144,480,128,"font2448",[0,0,0,255],[240,240,240,255],aname); 
-  writecStr(680-16+((400-ul)/2),144+16+144+64,480,128,"ubuntufont",[0,0,0,255],[240,240,240,255],uname); 
-  writecStr(680-16+104,144+16+600-64,480,128,"ubuntufont",[0,0,0,255],[240,240,240,255],"Sign out"); 
+  writecStr(680-16+((400-al)/2),144+16+144,480,128,"font2448",[0,0,0,255],[255,255,255,255],aname); 
+  writecStr(680-16+((400-ul)/2),144+16+144+64,480,128,"ubuntufont",[0,0,0,255],[255,255,255,255],uname); 
+  writecStr(680-16+104,144+16+600-64,480,128,"ubuntufont",[0,0,0,255],[255,255,255,255],"Sign out"); 
 
 
         var timer; 
