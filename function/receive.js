@@ -43,6 +43,10 @@ function receive(t) {
       } 
     } 
   } 
-  timer = setInterval(rcvMsg, 2000); 
+  if (t) { 
+    timer = setInterval(rcvMsg, 2000); 
+  } else if(!t) { 
+    clearInterval(timer); clearInterval(tmr); 
+  }
 
 }
