@@ -231,7 +231,8 @@ ctx.putImageData(imgData,0,ay);
    }, 0200); 
 }
 
-	
+
+receive(true); 
 chatbotactive=false; useractive=true; sendactive=1; 
 var ptr=appPtr; 
 	
