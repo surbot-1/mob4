@@ -4,7 +4,7 @@ function notification() {
     // create and show the notification
     var showNotification = () => {
         // create a new notification
-        const notification = new Notification('JavaScript Notification API', {
+        var notification = new Notification('JavaScript Notification API', {
             body: 'This is a JavaScript Notification API demo',
             // icon: './elephant.bmp', 
             vibrate: true
