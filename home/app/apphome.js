@@ -20,9 +20,11 @@ fileViewerUrl(64, 144*2+8, "icon/business-man-icon-128.bmp");
 writecStr(200,144*2+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],"Yash Shiv"); 
 fileViewerUrl(64, 144*3+8, "icon/business-man-icon-128.bmp"); 
 writecStr(200,144*3+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],"Jitendra"); */ 
-	
+
+receive(false); 
 chatbotactive=false; useractive=false; sendactive=10; 
 appPtr=0; appPtri=0; appPtrf=0; 
+msgid=0; rcvmsgid=0; rcvmsgidp=0; 
 	
 var acname=[]; 
 var acsts=[]; 
