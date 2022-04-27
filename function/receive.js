@@ -1,41 +1,41 @@
 function receive(t) { 
-  var timer; 
+  // var timer; var timer2; 
   function rcvMsg() { 
     if (useractive) { 
       rcvmsgid=rcvmsgidp+1; rcvmsgsts="Null"; 
       var mid = readAppMessageStatus(receiver,sender,rcvmsgid); 
       if (rcvmsgsts=="Null") { 
-        var tmr = setInterval( ()=> { 
+          timer2 = setInterval( ()=> { 
           if (rcvmsgsts!="Null") { 
-            clearInterval(tmr); 
+            clearInterval(timer2); 
             if (rcvmsgsts=="sent") { 
               rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
               rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
               readAppMessage(receiver,sender,rcvmsgidp); 
               writeAppMessageStatus(receiver,sender,rcvmsgidp,"seen"); 
-              /* } else if (rcvmsgsts=="dlvd") {  
-              rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
-              rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
+              } else if (rcvmsgsts=="dlvd") {  
+              // rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
+              // rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
               // readAppMessage(receiver,sender,rcvmsgidp); 
-              // writeAppMessageStatus(receiver,sender,rcvmsgidp,"dlvd"); */
+              // writeAppMessageStatus(receiver,sender,rcvmsgidp,"dlvd"); 
             } else if (rcvmsgsts=="seen") { 
               rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
               rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
             } 
           } 
         }, 0020); 
-        setTimeout( ()=> {clearInterval(tmr);}, 1000); 
+        setTimeout( ()=> {clearInterval(timer2);}, 1000); 
       } else if (rcvmsgsts!="Null") { 
         if (rcvmsgsts=="sent") { 
           rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1; 
           rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
           readAppMessage(receiver,sender,rcvmsgid); 
           writeAppMessageStatus(receiver,sender,rcvmsgidp,"seen"); 
-          /* } else if (rcvmsgsts=="dlvd") { 
-          rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
-          rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
+          } else if (rcvmsgsts=="dlvd") { 
+          // rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
+          // rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
           // readAppMessage(receiver,sender,rcvmsgidp); 
-          // writeAppMessageStatus(receiver,sender,rcvmsgidp,"dlvd"); */
+          // writeAppMessageStatus(receiver,sender,rcvmsgidp,"dlvd"); 
         } else if (rcvmsgsts=="seen") { 
           rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
           rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
@@ -46,7 +46,7 @@ function receive(t) {
   if (t) { 
     timer = setInterval(rcvMsg, 2000); 
   } else if(!t) { 
-    clearInterval(timer); clearInterval(tmr); 
+    clearInterval(timer1); clearInterval(timer2); 
   }
 
 }
