@@ -2,7 +2,7 @@ function notification() {
   
   (async () => {
     // create and show the notification
-    const showNotification = () => {
+    var showNotification = () => {
         // create a new notification
         const notification = new Notification('JavaScript Notification API', {
             body: 'This is a JavaScript Notification API demo',
@@ -23,7 +23,7 @@ function notification() {
     }
 
     // show an error message
-    const showError = () => {
+    var showError = () => {
         // const error = document.querySelector('.error');
         // error.style.display = 'block';
         // error.textContent = 'You blocked the notifications'; 
