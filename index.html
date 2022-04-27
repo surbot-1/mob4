@@ -53,6 +53,8 @@ var touchx=0; var touchy=0;
 var touchxp=0; var touchyp=0;  
 var touch=0; var touchp=0; 
 	
+var timer1; var timer2; 
+	
 var driveBuf = new ArrayBuffer(128*1024*1024); 
 var driveView = new Uint8Array(driveBuf); 
 var sect0 = 0; 
@@ -204,7 +206,7 @@ function handleEnd(evt) {
 	
 <script> 
 	  
-var timer; 
+/* var timer; 
 function rcvMsg() { 
  if (useractive) { rcvmsgid=rcvmsgidp+1; rcvmsgsts="Null"; 
     var mid = readAppMessageStatus(receiver,sender,rcvmsgid); 
@@ -217,11 +219,11 @@ function rcvMsg() {
 		 rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
 		 readAppMessage(receiver,sender,rcvmsgidp); 
 		 writeAppMessageStatus(receiver,sender,rcvmsgidp,"seen"); 
-	      /* } else if (rcvmsgsts=="dlvd") {  
-		 rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
-		 rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
+	      // } else if (rcvmsgsts=="dlvd") {  
+		 // rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
+		 // rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
 		 // readAppMessage(receiver,sender,rcvmsgidp); 
-		 // writeAppMessageStatus(receiver,sender,rcvmsgidp,"dlvd"); */
+		 // writeAppMessageStatus(receiver,sender,rcvmsgidp,"dlvd"); 
 	      } else if (rcvmsgsts=="seen") { 
                  rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
 		 rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
@@ -235,11 +237,11 @@ function rcvMsg() {
            rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
            readAppMessage(receiver,sender,rcvmsgid); 
            writeAppMessageStatus(receiver,sender,rcvmsgidp,"seen"); 
-    /* } else if (rcvmsgsts=="dlvd") { 
-           rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
-           rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
+       // } else if (rcvmsgsts=="dlvd") { 
+           // rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
+           // rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
            // readAppMessage(receiver,sender,rcvmsgidp); 
-           // writeAppMessageStatus(receiver,sender,rcvmsgidp,"dlvd"); */
+           // writeAppMessageStatus(receiver,sender,rcvmsgidp,"dlvd"); 
 	} else if (rcvmsgsts=="seen") { 
            rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
            rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
@@ -247,7 +249,7 @@ function rcvMsg() {
     }
  } 
 } 
-timer = setInterval(rcvMsg, 2000); 
+timer = setInterval(rcvMsg, 2000); */
 
 /* (async () => {
     var status = await readAppMessageRcvStatus(sender,receiver,msgid); 
