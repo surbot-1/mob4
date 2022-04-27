@@ -23,9 +23,10 @@ function notification() {
 
     // show an error message
     const showError = () => {
-        const error = document.querySelector('.error');
-        error.style.display = 'block';
-        error.textContent = 'You blocked the notifications';
+        // const error = document.querySelector('.error');
+        // error.style.display = 'block';
+        // error.textContent = 'You blocked the notifications'; 
+      alert('You blocked the notifications'); 
     }
 
     // check notification permission
