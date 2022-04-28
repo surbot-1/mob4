@@ -47,8 +47,8 @@ function readFile(e) {
     ctx.fillRect(x,y,w+16,h+64); 
     ctx.drawImage(image,x+8,y+8,w,h); 
     var time = getTime("12h"); var status = "sent"; 
-    writecStr(x+64+168,y+h+24,432,128,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
-    writecStr(x+64+168+8*24,y+h+24,24*4,32,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
+    writecStr(1080-16-16-12*24,y+h+24,24*7,32,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
+    writecStr(1080-16-16-4*24,y+h+24,24*4,32,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
     imgData = ctx.getImageData(0,1408-h-64-32,1080,h+64+8); 
     for (let i=0; i<1080*4*(1264-32-h-64+8); i+=4) { 
 	  appView[appPtr*1080*4+i+0]=imgData.data[i+0]; 
