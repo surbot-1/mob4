@@ -3,7 +3,7 @@ var cnv = document.getElementById("canvas");
 var ctx = cnv.getContext('2d'); 
 ctx.fillStyle = "rgba(0, 0, 128, 1.0)"; // blue
 ctx.fillRect(0, 0, 1080, 144); 
-  writecStr(16+24*2,48,480,128,"font2448",[255,255,255,255],[0,0,128,255],"MESSAGES"); 
+  writecStr(16+24*2,48,480,128,"font2448",[128,0,0,255],[0,0,128,255],"MESSAGES"); 
   writecStr(16+24*13,48,480,128,"font2448",[255,255,255,255],[0,0,128,255],"CALLS"); 
   writecStr(16+24*21,48,480,128,"font2448",[255,255,255,255],[0,0,128,255],"STATUS");  
   writecStr(16+24*30,48,480,128,"font2448",[255,255,255,255],[0,0,128,255],"CONTACTS");  
