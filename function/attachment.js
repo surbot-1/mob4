@@ -31,8 +31,8 @@ function readFile(e) {
     var x=536; var y=1408-512-64-32; 
     var w = image.naturalWidth; 
     var h = image.naturalHeight; 
-    if (w<512) {h=h*(512/w); w=512;} 
-    else if (w>512) {h=h*(512/w); w=512;} 
+    if (w<512) {h=h*Math.trunc(512/w); w=512;} 
+    else if (w>512) {h=h*Math.trunc(512/w); w=512;} 
     x=536; var y=1408-h-64-32; 
     var imgData = ctx.createImageData(1080, 1264-32-h-64+8); 
     imgData = ctx.getImageData(0,144+h+64+8,1080,1264-32-h-64); 
@@ -127,8 +127,8 @@ function readFile(e) {
     var x=536; var y=2048-512-64-32; 
     var w = image.naturalWidth; 
     var h = image.naturalHeight; 
-    if (w<512) {h=h*(512/w); w=512;} 
-    else if (w>512) {h=h*(512/w); w=512;} 
+    if (w<512) {h=h*Math.trunc(512/w); w=512;} 
+    else if (w>512) {h=h*Math.trunc(512/w); w=512;} 
     x=536; var y=2048-h-64-32; 
     var imgData = ctx.createImageData(1080, 2048-32-h-64+8); 
     imgData = ctx.getImageData(0,144+h+64+8,1080,2048-32-h-64); 
