@@ -16,7 +16,8 @@ if (window.Worker) {
     console.log('Message posted to worker');
   } */ 
 
-  myWorker.onmessage = function(e) {
+  myWorker.onmessage = function(e) { 
+    alert(e.data); 
     // result.textContent = e.data;
     // console.log('Message received from worker');
   }
