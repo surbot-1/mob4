@@ -143,7 +143,7 @@ function readFile(e) {
     var time = getTime("12h"); var status = "sent";
     writecStr(x+64+168,y+h+24,432,128,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
     writecStr(x+64+168+8*24,y+h+24,24*4,32,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
-    imgData = ctx.getImageData(0,1408-h-64-32,1080,h+64+8); 
+    imgData = ctx.getImageData(0,2192-h-64-32,1080,h+64+8); 
     for (let i=0; i<1080*4*(2048-32-h-64+8); i+=4) { 
 	  appView[appPtr*1080*4+i+0]=imgData.data[i+0]; 
 	  appView[appPtr*1080*4+i+1]=imgData.data[i+1];
