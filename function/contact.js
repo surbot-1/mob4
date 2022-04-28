@@ -1,4 +1,4 @@
-function newContact() { 
+function newContact(cf) { 
      saveImage(0,0,1080,2176); 
 	
      imageRect(0,0,1080,144,"rgba(0,0,128,1.0)"); 
@@ -185,7 +185,7 @@ var ptr=2; var ptrp=2;
 		      saveContact(); appHomeChats(); 
               } else if (x>200 && x<880 && y>144*5+8 && y<144*5+8+128) { 
 		      clrCursor(signByte, ptr);  clearInterval(timer); 
-		      appHomeChats(); 
+		      cf; // appHomeChats(); 
 	      } else if (x>200 && x<1080 && y>160*5+8 && y<144*6+128) { 
 	      } else if (x>0 && x<1080 && y>144*6+8 && y<144*7+128) { 
 	      } else if (x>0 && x<1080 && y>144*7+8 && y<144*8+128) {  
