@@ -3,10 +3,12 @@ var cnv = document.getElementById("canvas");
 var ctx = cnv.getContext('2d'); 
 ctx.fillStyle = "rgba(0, 0, 128, 1.0)"; // blue
 ctx.fillRect(0, 0, 1080, 144); 
-  writecStr(16+24*2,48,480,128,"font2448",[240,240,240,255],[0,0,128,255],"MESSAGES"); 
+  writecStr(16+24*2,48,480,128,"font2448",[255,255,255,255],[0,0,128,255],"MESSAGES"); 
   writecStr(16+24*13,48,480,128,"font2448",[255,255,255,255],[0,0,128,255],"CALLS"); 
   writecStr(16+24*21,48,480,128,"font2448",[255,255,255,255],[0,0,128,255],"STATUS");  
   writecStr(16+24*30,48,480,128,"font2448",[255,255,255,255],[0,0,128,255],"CONTACTS");  
+	
+  imageRect(16+24*2,144-8,24*8,8,"rgba(255,255,255,1.0)"); 
 	
   fileViewerUrl(1080-128+32, 8+32, "icon/business-man-icon-64.bmp"); 
   fileViewerUrl(920, 2024, "icon/add-icon-128.bmp"); 
@@ -160,6 +162,8 @@ function appHomeContacts() {
 	writecStr(16+24*13,48,480,128,"font2448",[255,255,255,255],[0,0,128,255],"CALLS"); 
 	writecStr(16+24*21,48,480,128,"font2448",[255,255,255,255],[0,0,128,255],"STATUS");  
 	writecStr(16+24*30,48,480,128,"font2448",[255,255,255,255],[0,0,128,255],"CONTACTS");  
+	
+	imageRect(16+24*13-36,144-8,24*8,8,"rgba(255,255,255,1.0)"); 
 	
 	fileViewerUrl(1080-128+32, 8+32, "icon/business-man-icon-64.bmp"); 
 	fileViewerUrl(920, 2024, "icon/add-icon-128.bmp"); 
