@@ -293,7 +293,7 @@ function appHomeContacts() {
 			} else if (x>0 && x<1080 && y>144*11 && y<144*11+144) { 
 			} else if (x>0 && x<1080 && y>144*12 && y<144*12+144) { 
 			} else if (x>920 && x<920+128 && y>2024 && y<2024+128) { 
-				clearInterval(timer); newContact("appHomeContacts()"); 
+				clearInterval(timer); newContact(appHomeContacts()); 
 			} 
 		} 
 	} 
