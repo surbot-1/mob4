@@ -163,7 +163,7 @@ function appHomeContacts() {
 	writecStr(16+24*21,48,480,128,"font2448",[255,255,255,255],[0,0,128,255],"STATUS");  
 	writecStr(16+24*30,48,480,128,"font2448",[255,255,255,255],[0,0,128,255],"CONTACTS");  
 	
-	imageRect(16+24*13-36,144-8,24*8,8,"rgba(255,255,255,1.0)"); 
+	imageRect(16+24*30,144-8,24*8,8,"rgba(255,255,255,1.0)"); 
 	
 	fileViewerUrl(1080-128+32, 8+32, "icon/business-man-icon-64.bmp"); 
 	fileViewerUrl(920, 2024, "icon/add-icon-128.bmp"); 
