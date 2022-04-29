@@ -1,10 +1,13 @@
-function writeAppMessage(sndr,rcvr,msgid,name,message,status,date,time,ip) { 
+function writeAppMessage(sndr,rcvr,msgid,name,msgtype,message,status,date,time,ip) { 
   var ref = firebase.database().ref("App").child(sndr).child(rcvr).child(msgid); 
   ref.child("Msgid").set({ 
     Msgid: msgid  
   }); 
   ref.child("Name").set({ 
     Name: name 
+  }); 
+  ref.child("Msgtype").set({ 
+    Mesgtype: msgtype
   }); 
   ref.child("Message").set({ 
     Message: message
@@ -98,6 +101,7 @@ function readAppMessage(sndr,rcvr,mid) {
   ref.once("value", function(snapshot) { 
     var msgid = snapshot.child("Msgid").child("Msgid").val(); 
     var name = snapshot.child("Name").child("Name").val(); 
+    var msgtype = snapshot.child("Msgtype").child("Msgtype").val(); 
     var message = snapshot.child("Message").child("Message").val(); 
     var status = snapshot.child("Status").child("Status").val(); 
     var date = snapshot.child("Date").child("Date").val();
@@ -132,6 +136,7 @@ function readAppMessageOnce(sndr,rcvr,msgid) {
   ref.once("value", function(snapshot) { 
     var msgid = snapshot.child("Msgid").child("Msgid").val(); 
     var name = snapshot.child("Name").child("Name").val(); 
+    var msgtype = snapshot.child("Msgtype").child("Msgtype").val(); 
     var message = snapshot.child("Message").child("Message").val(); 
     var status = snapshot.child("Status").child("Status").val(); 
     var date = snapshot.child("Date").child("Date").val(); 
