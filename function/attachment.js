@@ -34,12 +34,13 @@ function readFile(e) {
     if (w<=320 && w>=h) {h=Math.trunc(h*(320/w)); w=320;} 
     else if (w>320 && w<=480 && w>=h) { } // {h=Math.trunc(h*(320/w)); w=320;} 
     else if (w>480 && w<=720 && w>=h) { } // {h=Math.trunc(h*(480/w)); w=480;} 
-    else if (w>720  && w>=h) {h=Math.trunc(h*(720/w)); w=720;} 
+    else if (w>720 && h<=800 && w>=h) { } // {h=Math.trunc(h*(720/w)); w=720;} 
+    else if (w>800 && w>=h) {h=Math.trunc(h*(800/w)); w=800;} 
     else if (h<=320 && h>=w) {w=Math.trunc(w*(320/h)); h=320;} 
     else if (h>320 && h<=480 && h>=w) { } // {w=Math.trunc(w*(320/h)); h=320;} 
     else if (h>480 && h<=720 && h>=w) { } // {w=Math.trunc(w*(480/h)); h=480;} 
-    else if (h>720 && h<=1080 && h>=w) { } // {w=Math.trunc(w*(720/h)); h=720;} 
-    else if (h>1080 && h>=w) {w=Math.trunc(w*(1080/h)); h=1080;} 
+    else if (h>720 && h<=800 && h>=w) { } // {w=Math.trunc(w*(720/h)); h=720;} 
+    else if (h>800 && h>=w) {w=Math.trunc(w*(800/h)); h=800;} 
     x=1080-16-w-16; var y=1408-h-64-32; 
     var imgData = ctx.createImageData(1080, 1264-32-h-64+8); 
     imgData = ctx.getImageData(0,144+h+64+8,1080,1264-32-h-64); 
@@ -137,12 +138,13 @@ function readFile(e) {
     if (w<=320 && w>=h) {h=Math.trunc(h*(320/w)); w=320;} 
     else if (w>320 && w<=480 && w>=h) { } // {h=Math.trunc(h*(320/w)); w=320;} 
     else if (w>480 && w<=720 && w>=h) { } // {h=Math.trunc(h*(480/w)); w=480;} 
-    else if (w>720  && w>=h) {h=Math.trunc(h*(720/w)); w=720;} 
+    else if (w>720 && h<=800 && w>=h) { } // {h=Math.trunc(h*(720/w)); w=720;} 
+    else if (w>800 && w>=h) {h=Math.trunc(h*(800/w)); w=800;} 
     else if (h<=320 && h>=w) {w=Math.trunc(w*(320/h)); h=320;} 
     else if (h>320 && h<=480 && h>=w) { } // {w=Math.trunc(w*(320/h)); h=320;} 
     else if (h>480 && h<=720 && h>=w) { } // {w=Math.trunc(w*(480/h)); h=480;} 
-    else if (h>720 && h<=1080 && h>=w) { } // {w=Math.trunc(w*(720/h)); h=720;} 
-    else if (h>1080 && h>=w) {w=Math.trunc(w*(1080/h)); h=1080;} 
+    else if (h>720 && h<=800 && h>=w) { } // {w=Math.trunc(w*(720/h)); h=720;} 
+    else if (h>800 && h>=w) {w=Math.trunc(w*(800/h)); h=800;} 
     x=1080-16-w-16; var y=2048-h-64-32; 
     var imgData = ctx.createImageData(1080, 2048-32-h-64+8); 
     imgData = ctx.getImageData(0,144+h+64+8,1080,2048-32-h-64); 
