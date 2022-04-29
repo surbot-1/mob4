@@ -367,6 +367,9 @@ var ptr=appPtr;
 		      if (ptr<appPtr) {ptr+=32;} if (ptr>=appPtr) {ptr=appPtr;}
 		      showMessage(0,144,1080,1240,0,ptr); appPtrf=ptr; 
 	      } else if (x>680 && x<680+64 && y>1440 && y<1440+64) { 
+		      if (ptr!=appPtr) { 
+			  ptr=appPtr; showMessage(0,144,1080,1240,0,ptr); 
+		      } else if (ptr==appPtr) {} 
 		      attachment(); 
 	      } else if (x>808 && x<808+64 && y>1440 && y<1440+64) { 
 		      camera(); 
