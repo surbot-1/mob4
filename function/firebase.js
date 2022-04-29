@@ -120,10 +120,17 @@ function readAppMessage(sndr,rcvr,mid) {
     for (let i=0; i<time.length; i++) { 
        usrByte[50+i]=time.charCodeAt(i); 
     } 
-    for (let i=0; i<message.length; i++) {
+    for (let i=0; i<msgtype.length; i++) {
        usrByte[64+i]=message.charCodeAt(i); 
     } 
-    usrByte[28]=message.length;  
+    for (let i=0; i<message.length; i++) {
+       usrByte[80+i]=message.charCodeAt(i); 
+    } 
+    var msize=message.length; 
+    usrByte[28]=msize&0x000000FF; 
+    usrByte[29]=(msize&0x0000FF00)>>8; 
+    usrByte[30]=(msize&0x00FF0000)>>16; 
+    usrByte[31]=(msize&0xFF000000)>>24; 
     usrByte[32]=0x02; 
     sendUserMessage(); 
     sendOnServerRcv(sender); 
@@ -155,10 +162,17 @@ function readAppMessageOnce(sndr,rcvr,msgid) {
     for (let i=0; i<time.length; i++) {
        usrByte[50+i]=time.charCodeAt(i); 
     } 
-    for (let i=0; i<message.length; i++) {
+    for (let i=0; i<msgtype.length; i++) {
        usrByte[64+i]=message.charCodeAt(i); 
     } 
-    usrByte[28]=message.length;  
+    for (let i=0; i<message.length; i++) {
+       usrByte[80+i]=message.charCodeAt(i); 
+    } 
+    var msize=message.length; 
+    usrByte[28]=msize&0x000000FF; 
+    usrByte[29]=(msize&0x0000FF00)>>8; 
+    usrByte[30]=(msize&0x00FF0000)>>16; 
+    usrByte[31]=(msize&0xFF000000)>>24; 
     if (name==sender) {usrByte[32]=0x03;} 
     else if (name==receiver) {usrByte[32]=0x02;} 
     sendUserMessage(); 
