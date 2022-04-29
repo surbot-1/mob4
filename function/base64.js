@@ -1,4 +1,4 @@
-function base64ArrayBuffer(arrayBuffer) {
+function arrayBuffertoBase64(arrayBuffer) {
   var base64    = ''
   var encodings = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
 
@@ -48,6 +48,10 @@ function base64ArrayBuffer(arrayBuffer) {
   }
   
   return base64
+} 
+
+function base64toArrayBuffer(arrayBuffer) { 
+  
 }
 
 
