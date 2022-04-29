@@ -159,7 +159,10 @@ var ptr=appPtr;
 		      if (ptr<appPtr) {ptr+=32;}  if (ptr>=appPtr) {ptr=appPtr;} 
 		      showMessage(0,144,1080,1240,0,ptr); appPtrf=ptr; 
 	      } else if (x>680 && x<680+64 && y>1440 && y<1440+64) { 
-		      /* clearInterval(timer); */ attachment(); 
+		      if (ptr!=appPtr) { 
+			  ptr=appPtr; showMessage(0,144,1080,1240,0,ptr); 
+		      } else if (ptr==appPtr) {} 
+		      attachment(); 
 	      } else if (x>808 && x<808+64 && y>1440 && y<1440+64) { 
 		      /* clearInterval(timer); */ camera(); 
 	      } else if (x>936 && x<936+128 && y>1408 && y<1408+128) { 
