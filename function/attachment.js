@@ -52,7 +52,7 @@ function readFile(e) {
     writecStr(1080-16-16-12*24,y+h+24,24*7,32,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
     writecStr(1080-16-16-4*24,y+h+24,24*4,32,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
     imgData = ctx.getImageData(0,1408-h-64-32,1080,h+64+8); 
-    for (let i=0; i<1080*4*(1264-32-h-64+8); i+=4) { 
+    for (let i=0; i<1080*4*(1264-h-64-32+8); i+=4) { 
 	  appView[appPtr*1080*4+i+0]=imgData.data[i+0]; 
 	  appView[appPtr*1080*4+i+1]=imgData.data[i+1];
 	  appView[appPtr*1080*4+i+2]=imgData.data[i+2];
@@ -153,8 +153,8 @@ function readFile(e) {
     var time = getTime("12h"); var status = "sent"; 
     writecStr(1080-16-16-12*24,y+h+24,24*7,32,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
     writecStr(1080-16-16-4*24,y+h+24,24*4,32,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
-    imgData = ctx.getImageData(0,2192-h-64-32,1080,h+64+8); 
-    for (let i=0; i<1080*4*(2048-32-h-64+8); i+=4) { 
+    imgData = ctx.getImageData(0,2048-h-64-32,1080,h+64+8); 
+    for (let i=0; i<1080*4*(2048-h-64-32+8); i+=4) { 
 	  appView[appPtr*1080*4+i+0]=imgData.data[i+0]; 
 	  appView[appPtr*1080*4+i+1]=imgData.data[i+1];
 	  appView[appPtr*1080*4+i+2]=imgData.data[i+2];
