@@ -133,9 +133,15 @@ function readFile(e) {
     var x=536; var y=2048-512-64-32; 
     var w = image.naturalWidth; 
     var h = image.naturalHeight; 
-    if (w<512) {h=Math.trunc(h*(512/w)); w=512;} 
-    else if (w>512) {h=Math.trunc(h*(512/w)); w=512;} 
-    x=536; var y=2048-h-64-32; 
+    if (w<=320 && w>=h) {h=Math.trunc(h*(320/w)); w=320;} 
+    else if (w>320 && w<=480 && w>=h) { } // {h=Math.trunc(h*(320/w)); w=320;} 
+    else if (w>480 && w<=720 && w>=h) { } // {h=Math.trunc(h*(480/w)); w=480;} 
+    else if (w>720  && w>=h) {h=Math.trunc(h*(720/w)); w=720;} 
+    else if (h<=320 && h>=w) {w=Math.trunc(w*(320/h)); h=320;} 
+    else if (h>320 && h<=480 && h>=w) { } // {w=Math.trunc(w*(320/h)); h=320;} 
+    else if (h>480 && h<=720 && h>=w) { } // {w=Math.trunc(w*(480/h)); h=480;} 
+    else if (h>720 && h>=w) {w=Math.trunc(w*(720/h)); h=720;} 
+    x=1080-16-w-16; var y=2048-h-64-32; 
     var imgData = ctx.createImageData(1080, 2048-32-h-64+8); 
     imgData = ctx.getImageData(0,144+h+64+8,1080,2048-32-h-64); 
     ctx.putImageData(imgData,0,144); 
