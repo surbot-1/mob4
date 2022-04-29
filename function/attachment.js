@@ -34,8 +34,8 @@ function readFile(e) {
     if (w<=320 && w>=h) {h=Math.trunc(h*(320/w)); w=320;} 
     else if (w>320 && w<=480 && w>=h) { } // {h=Math.trunc(h*(320/w)); w=320;} 
     else if (w>480 && w<=720 && w>=h) { } // {h=Math.trunc(h*(480/w)); w=480;} 
-    else if (w>720 && h<=800 && w>=h) { } // {h=Math.trunc(h*(720/w)); w=720;} 
-    else if (w>800 && w>=h) {h=Math.trunc(h*(800/w)); w=800;} 
+    else if (w>720 && w>=h) {h=Math.trunc(h*(720/w)); w=720;} 
+    // else if (w>800 && w>=h) {h=Math.trunc(h*(800/w)); w=800;} 
     else if (h<=320 && h>=w) {w=Math.trunc(w*(320/h)); h=320;} 
     else if (h>320 && h<=480 && h>=w) { } // {w=Math.trunc(w*(320/h)); h=320;} 
     else if (h>480 && h<=720 && h>=w) { } // {w=Math.trunc(w*(480/h)); h=480;} 
@@ -138,8 +138,8 @@ function readFile(e) {
     if (w<=320 && w>=h) {h=Math.trunc(h*(320/w)); w=320;} 
     else if (w>320 && w<=480 && w>=h) { } // {h=Math.trunc(h*(320/w)); w=320;} 
     else if (w>480 && w<=720 && w>=h) { } // {h=Math.trunc(h*(480/w)); w=480;} 
-    else if (w>720 && h<=800 && w>=h) { } // {h=Math.trunc(h*(720/w)); w=720;} 
-    else if (w>800 && w>=h) {h=Math.trunc(h*(800/w)); w=800;} 
+    else if (w>720 && w>=h) {h=Math.trunc(h*(720/w)); w=720;} 
+    // else if (w>800 && w>=h) {h=Math.trunc(h*(800/w)); w=800;} 
     else if (h<=320 && h>=w) {w=Math.trunc(w*(320/h)); h=320;} 
     else if (h>320 && h<=480 && h>=w) { } // {w=Math.trunc(w*(320/h)); h=320;} 
     else if (h>480 && h<=720 && h>=w) { } // {w=Math.trunc(w*(480/h)); h=480;} 
