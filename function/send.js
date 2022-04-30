@@ -258,7 +258,7 @@ function sendSenderMessage() {
   writeWH(sndByte); 
   var minfo = sndByte[32]; 
   var msize = sndByte[28]; 
-  for (let i=0; i<msize+64; i++) { 
+  for (let i=0; i<msize+80; i++) { 
     msgView[msgPtr*512+i] = sndByte[i]; 
   }  
   msgPtr++; 
