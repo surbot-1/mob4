@@ -91,7 +91,11 @@ function readFile(e) {
   var reader = new FileReader(); 
   reader.onload = function(e) { 
      var dataurl = e.target.result; 
-     writeAppMessage(sender,receiver,msgid,sender,"image",dataurl,"sent","date","time","ip"); 
+     var date = getDate("ddmmyyyy"); var time = getTime("12h"); 
+    var status = "sent"; 
+     writeAppMessage(sender,receiver,msgid,sender,"image",dataurl,status,date,time,"ip"); 
+     writeAppMessageCount(sender,receiver,msgid); 
+	  msgid++; 
      // var view = new Uint8Array(buf); 
      // var size = buf.byteLength; 
      // drawImageBmp(540, 512, buf, size); 
@@ -198,7 +202,11 @@ function readFile(e) {
   var reader = new FileReader(); 
   reader.onload = function(e) { 
      var dataurl = e.target.result; 
-     writeAppMessage(sender,receiver,msgid,sender,"image",dataurl,"sent","date","time","ip");
+     var date = getDate("ddmmyyyy"); var time = getTime("12h"); 
+     var status = "sent"; 
+     writeAppMessage(sender,receiver,msgid,sender,"image",dataurl,status,date,time,"ip"); 
+     writeAppMessageCount(sender,receiver,msgid); 
+	  msgid++; 
      // var view = new Uint8Array(buf); 
      // var size = buf.byteLength; 
      // drawImageBmp(540, 512, buf, size); 
