@@ -219,7 +219,7 @@ function readFile(e) {
 document.getElementById("file").click(); 
 } 
 
-function writeAttachment(durl,mt,sa) { 
+function writeAttachment(durl,mt,sa,date,time,status) { 
 	var image = new Image(); 
 	image.src = durl; 
        image.onload = function (e) { 
@@ -253,10 +253,17 @@ function writeAttachment(durl,mt,sa) {
   ctx.fillStyle = "rgba(200,240,200,1.0)"; // blue
     ctx.fillRect(x,y,w+16,h+64); 
     ctx.drawImage(image,x+8,y+8,w,h); 
-    var date = getDate("ddmmyyyy"); var time = getTime("12h"); 
-    var status = "sent"; 
+    if (mt==1) {
+    // var date = getDate("ddmmyyyy"); var time = getTime("12h"); 
+    // var status = "sent"; 
     writecStr(1080-16-16-12*24,y+h+24,24*7,32,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
     writecStr(1080-16-16-4*24,y+h+24,24*4,32,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
+    } else if (mt==2) {
+    // var date = getDate("ddmmyyyy"); var time = getTime("12h"); 
+    // var status = "sent"; 
+    writecStr(w+32-7*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
+    // writecStr(1080-16-16-4*24,y+h+24,24*4,32,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
+    }
     imgData = ctx.getImageData(0,y,1080,h+64+8); 
     for (let i=0; i<1080*4*(h+64+8); i+=4) { 
 	  appView[appPtr*1080*4+i+0]=imgData.data[i+0]; 
