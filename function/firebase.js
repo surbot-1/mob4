@@ -184,6 +184,7 @@ function readSenderMessage(user) {
   ref.once("value", function(snapshot) { 
     var msgid = snapshot.child("Msgid").val(); 
     var name = snapshot.child("Name").val(); 
+    var msgtype = snapshot.child("Msgtype").val(); 
     var message = snapshot.child("Message").val(); 
     var status = snapshot.child("Status").val(); 
     var date = snapshot.child("Date").val(); 
@@ -199,8 +200,11 @@ function readSenderMessage(user) {
     for (let i=0; i<date.length; i++) { 
        usrByte[40+i]=name.charCodeAt(i); 
     } 
+    for (let i=0; i<msgtype.length; i++) {
+       usrByte[64+i]=msgtype.charCodeAt(i); 
+    } 
     for (let i=0; i<message.length; i++) {
-       usrByte[64+i]=message.charCodeAt(i); 
+       usrByte[80+i]=message.charCodeAt(i); 
     } 
     usrByte[28]=message.length;  
     usrByte[32]=0x03; 
