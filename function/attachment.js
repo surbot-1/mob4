@@ -219,7 +219,7 @@ function readFile(e) {
 document.getElementById("file").click(); 
 } 
 
-function writeAttachment(durl,mt,sa,date,time,status) { 
+function sendAttachment(durl,mt,sa,date,time,status) { 
 	var image = new Image(); 
 	image.src = durl; 
        image.onload = function (e) { 
