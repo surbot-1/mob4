@@ -4,7 +4,7 @@ function sendMessage() {
   var msize = msgByte[28]; 
   var mtype="text"; 
   for (let i=0; i<mtype.length; i++) { 
-    msgByte[62+i] = mtype.charCodeAt(i);
+    msgByte[64+i] = mtype.charCodeAt(i);
   }  
   var status="sent"; 
   for (let i=0; i<status.length; i++) { 
