@@ -14,7 +14,7 @@ function sendMessage() {
   for (let i=0; i<time.length; i++) { 
     msgByte[50+i] = time.charCodeAt(i);
   }  
-  for (let i=0; i<msize+64; i++) { 
+  for (let i=0; i<msize+80; i++) { 
     msgView[msgPtr*512+i] = msgByte[i]; 
   }  
   msgPtr++; 
@@ -52,7 +52,7 @@ function send1() {
   ctx.fillRect(0, 2048-(h+64)-32, 1080, h+64+32); 
   var msgstr = ""; 
   for (let i=0; i<msize; i++) { 
-    msgstr += ascChar(msgView[(msgPtr-1)*512+64+i]); 
+    msgstr += ascChar(msgView[(msgPtr-1)*512+80+i]); 
   } 
   var status=""; 
   for (let i=0; i<4; i++) { 
@@ -148,7 +148,7 @@ function send() {
   ctx.fillRect(0, 1408-(h+64)-32, 1080, h+64+32); 
   var msgstr = ""; 
   for (let i=0; i<msize; i++) { 
-    msgstr += ascChar(msgView[(msgPtr-1)*512+64+i]); 
+    msgstr += ascChar(msgView[(msgPtr-1)*512+80+i]); 
   } 
   var status=""; 
   for (let i=0; i<4; i++) { 
@@ -231,7 +231,7 @@ function sendChatbot() {
   writeWH(botByte); 
   var minfo = botByte[32]; 
   var msize = botByte[28]; 
-  for (let i=0; i<msize+64; i++) { 
+  for (let i=0; i<msize+80; i++) { 
     msgView[msgPtr*512+i] = botByte[i]; 
   }  
   msgPtr++; 
@@ -266,7 +266,7 @@ function sendUserMessage() {
   writeWH(usrByte); 
   var minfo = usrByte[32]; 
   var msize = usrByte[28]; 
-  for (let i=0; i<msize+64; i++) { 
+  for (let i=0; i<msize+80; i++) { 
     msgView[msgPtr*512+i] = usrByte[i]; 
   }  
   msgPtr++; 
@@ -288,9 +288,13 @@ function sendUserMessage() {
 function sendOnServer(user) { 
   var minfo = msgView[(msgPtr-1)*512+32]; 
   var msize = msgView[(msgPtr-1)*512+28]; 
+  var mtype = ""; 
+  for (let i=0; i<4; i++) { 
+    mtype += ascChar(msgView[(msgPtr-1)*512+64+i]); 
+  }  
   var msgstr = ""; 
   for (let i=0; i<msize; i++) { 
-    msgstr += ascChar(msgView[(msgPtr-1)*512+64+i]); 
+    msgstr += ascChar(msgView[(msgPtr-1)*512+80+i]); 
   }  
   var status =""; 
   for (let i=0; i<4; i++) { 
@@ -299,7 +303,7 @@ function sendOnServer(user) {
   var date = getDate("ddmmyyyy"); 
   var time = getTime("12h"); 
   // var ip = getIP(); 
-  writeAppMessage(sender,receiver,msgid,sender,msgstr,"sent",date,time,"ip"); 
+  writeAppMessage(sender,receiver,msgid,sender,mtype,msgstr,"sent",date,time,"ip"); 
   writeAppMessageCount(sender,receiver,msgid); 
   writeReadStatus(sender,receiver,msgid); 
   msgid++; 
@@ -308,9 +312,13 @@ function sendOnServer(user) {
 function sendOnServerRcv(user) { 
   var minfo = msgView[(msgPtr-1)*512+32]; 
   var msize = msgView[(msgPtr-1)*512+28]; 
+  var mtype =""; 
+  for (let i=0; i<4; i++) { 
+    msgstr += ascChar(msgView[(msgPtr-1)*512+64+i]); 
+  }  
   var msgstr =""; 
   for (let i=0; i<msize; i++) { 
-    msgstr += ascChar(msgView[(msgPtr-1)*512+64+i]); 
+    msgstr += ascChar(msgView[(msgPtr-1)*512+80+i]); 
   }  
   var status =""; 
   for (let i=0; i<4; i++) { 
@@ -325,7 +333,7 @@ function sendOnServerRcv(user) {
     time += ascChar(msgView[(msgPtr-1)*512+50+i]); 
   }  
   // var ip = getIP(); 
-  writeAppMessage(sender,receiver,msgid,receiver,msgstr,"seen",date,time,"ip"); 
+  writeAppMessage(sender,receiver,msgid,receiver,mtype,msgstr,"seen",date,time,"ip"); 
   writeAppMessageCount(sender,receiver,msgid); 
   msgid++; 
 } 
