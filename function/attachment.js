@@ -23,7 +23,7 @@ function readFile(e) {
   var fname = name.substring(0,index);
   var fext = name.substring(index+1,index+4);  
   if (fext=="jpg"||fext=="jpe"||fext=="png"||fext=="bmp") { 
-       var reader = new FileReader(); 
+       // var reader = new FileReader(); 
        var image = new Image(); 
        var url = window.URL.createObjectURL(file); 
        image.src = url; 
@@ -86,20 +86,20 @@ function readFile(e) {
   dirPtr++; 
     window.URL.revokeObjectURL(url); 
     document.body.removeChild(ele); 
-    };  
-   writeAppMessage(sender,receiver,msgid,sender,"image",url,"sent",date,time,"ip"); 
+    }; 
   }
- /* var reader = new FileReader(); 
+  var reader = new FileReader(); 
   reader.onload = function(e) { 
-     var buf = e.target.result; 
-     var view = new Uint8Array(buf); 
-     var size = buf.byteLength; 
-     drawImageBmp(540, 512, buf, size); 
-     fileManagerSave("image.bmp",buf,size); 
+     var dataurl = e.target.result; 
+     writeAppMessage(sender,receiver,msgid,sender,"image",dataurl,"sent","date","time","ip"); 
+     // var view = new Uint8Array(buf); 
+     // var size = buf.byteLength; 
+     // drawImageBmp(540, 512, buf, size); 
+     // fileManagerSave("image.bmp",buf,size); 
      // fileManagerOpen(540,800,"image.bmp"); 
-     document.body.removeChild(ele);  
+     // document.body.removeChild(ele);  
   }; 
-  reader.readAsArrayBuffer(file) */ 
+  reader.readAsDataURL(file) 
 } 
 document.getElementById("file").click(); 
 }
@@ -129,7 +129,7 @@ function readFile(e) {
   var fname = name.substring(0,index);
   var fext = name.substring(index+1,index+4);  
   if (fext=="jpg"||fext=="jpe"||fext=="png"||fext=="bmp") { 
-       var reader = new FileReader(); 
+       // var reader = new FileReader(); 
        var image = new Image(); 
        var url = window.URL.createObjectURL(file); 
        image.src = url; 
@@ -193,19 +193,20 @@ function readFile(e) {
     window.URL.revokeObjectURL(url); 
     document.body.removeChild(ele); 
     }; 
-   writeAppMessage(sender,receiver,msgid,sender,"image",url,"sent",date,time,"ip");
+   // writeAppMessage(sender,receiver,msgid,sender,"image",url,"sent",date,time,"ip");
   }
- /* var reader = new FileReader(); 
+  var reader = new FileReader(); 
   reader.onload = function(e) { 
-     var buf = e.target.result; 
-     var view = new Uint8Array(buf); 
-     var size = buf.byteLength; 
-     drawImageBmp(540, 512, buf, size); 
-     fileManagerSave("image.bmp",buf,size); 
+     var dataurl = e.target.result; 
+     writeAppMessage(sender,receiver,msgid,sender,"image",dataurl,"sent","date","time","ip");
+     // var view = new Uint8Array(buf); 
+     // var size = buf.byteLength; 
+     // drawImageBmp(540, 512, buf, size); 
+     // fileManagerSave("image.bmp",buf,size); 
      // fileManagerOpen(540,800,"image.bmp"); 
-     document.body.removeChild(ele);  
+     // document.body.removeChild(ele);  
   }; 
-  reader.readAsArrayBuffer(file) */ 
+  reader.readAsDataURL(file) 
 } 
 document.getElementById("file").click(); 
 }
