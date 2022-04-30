@@ -179,7 +179,7 @@ function readAppMessageOnce(sndr,rcvr,msgid) {
       if (name==sender) {usrByte[32]=0x03;} 
       else if (name==receiver) {usrByte[32]=0x02;} 
       sendUserMessage(); 
-    else if (msgtype=="image") { 
+    } else if (msgtype=="image") { 
       if (name==sender) {minfo=0;} 
       else if (name==receiver) {minfo=1;} 
       sendAttachment(message,minfo,sendactive,date,time,status);
