@@ -121,7 +121,7 @@ function readAppMessage(sndr,rcvr,mid) {
        usrByte[50+i]=time.charCodeAt(i); 
     } 
     for (let i=0; i<msgtype.length; i++) {
-       usrByte[64+i]=message.charCodeAt(i); 
+       usrByte[64+i]=msgtype.charCodeAt(i); 
     } 
     for (let i=0; i<message.length; i++) {
        usrByte[80+i]=message.charCodeAt(i); 
@@ -165,7 +165,7 @@ function readAppMessageOnce(sndr,rcvr,msgid) {
        usrByte[50+i]=time.charCodeAt(i); 
     } 
     for (let i=0; i<msgtype.length; i++) {
-       usrByte[64+i]=message.charCodeAt(i); 
+       usrByte[64+i]=msgtype.charCodeAt(i); 
     } 
     for (let i=0; i<message.length; i++) {
        usrByte[80+i]=message.charCodeAt(i); 
