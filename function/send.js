@@ -339,6 +339,7 @@ function sendOnServerRcv(user) {
   // var ip = getIP(); 
   writeAppMessage(sender,receiver,msgid,receiver,mtype,msgstr,"seen",date,time,"ip"); 
   writeAppMessageCount(sender,receiver,msgid); 
+  writeReadStatus(sender,receiver,msgid); 
   msgid++; 
 } 
 
