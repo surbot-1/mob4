@@ -50,7 +50,8 @@ function readFile(e) {
   ctx.fillStyle = "rgba(200,240,200,1.0)"; // blue
     ctx.fillRect(x,y,w+16,h+64); 
     ctx.drawImage(image,x+8,y+8,w,h); 
-    var time = getTime("12h"); var status = "sent"; 
+    var date = getDate("ddmmyyyy"); var time = getTime("12h"); 
+    var status = "sent"; 
     writecStr(1080-16-16-12*24,y+h+24,24*7,32,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
     writecStr(1080-16-16-4*24,y+h+24,24*4,32,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
     imgData = ctx.getImageData(0,1408-h-64-32,1080,h+64+8); 
@@ -86,6 +87,7 @@ function readFile(e) {
     window.URL.revokeObjectURL(url); 
     document.body.removeChild(ele); 
     };  
+   writeAppMessage(sender,receiver,msgid,sender,"image",url,"sent",date,time,"ip"); 
   }
  /* var reader = new FileReader(); 
   reader.onload = function(e) { 
@@ -154,7 +156,8 @@ function readFile(e) {
   ctx.fillStyle = "rgba(200,240,200,1.0)"; // blue
     ctx.fillRect(x,y,w+16,h+64); 
     ctx.drawImage(image,x+8,y+8,w,h); 
-    var time = getTime("12h"); var status = "sent"; 
+    var date = getDate("ddmmyyyy"); var time = getTime("12h"); 
+    var status = "sent"; 
     writecStr(1080-16-16-12*24,y+h+24,24*7,32,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
     writecStr(1080-16-16-4*24,y+h+24,24*4,32,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
     imgData = ctx.getImageData(0,2048-h-64-32,1080,h+64+8); 
@@ -189,7 +192,8 @@ function readFile(e) {
   dirPtr++; 
     window.URL.revokeObjectURL(url); 
     document.body.removeChild(ele); 
-    };  
+    }; 
+   writeAppMessage(sender,receiver,msgid,sender,"image",url,"sent",date,time,"ip");
   }
  /* var reader = new FileReader(); 
   reader.onload = function(e) { 
