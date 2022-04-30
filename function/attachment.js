@@ -255,8 +255,8 @@ function readAttachment(minfo,sact) {
 			}; 
 			reader.readAsDataURL(file); 
 		} 
-		document.getElementById("file").click(); 
 	} 
+	document.getElementById("file").click(); 
 }
 
 
