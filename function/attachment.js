@@ -284,7 +284,7 @@ function sendAttachment(durl,minfo,sact,date,time,status) {
        x=16; y=2048-h-64-32; 
     } else if (minfo==0 && sact==2) {
        x=1080-16-w-16; y=1408-h-64-32; 
-    } if (minfo==1 && sact==2) {
+    } else if (minfo==1 && sact==2) {
       x=16; y=1408-h-64-32; 
     } 
     var imgData = ctx.createImageData(1080, y-144+8); 
