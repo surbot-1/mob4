@@ -255,7 +255,7 @@ function readFile(e) {
 	  msgid++; 
      document.body.removeChild(ele);  
   }; 
-  reader. readAsDataURL(file); 
+  reader.readAsDataURL(file); 
 }  
 document.getElementById("file").click(); 
 }
