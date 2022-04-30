@@ -7,7 +7,7 @@ function writeAppMessage(sndr,rcvr,msgid,name,msgtype,message,status,date,time,i
     Name: name 
   }); 
   ref.child("Msgtype").set({ 
-    Mesgtype: msgtype
+    Msgtype: msgtype
   }); 
   ref.child("Message").set({ 
     Message: message
