@@ -291,9 +291,13 @@ function sendAttachment(durl,minfo,sact,date,time,status) {
     var imgData = ctx.createImageData(1080, y-144+8); 
     imgData = ctx.getImageData(0,144+h+64+8,1080,y-144+8); 
     ctx.putImageData(imgData,0,144); 
-  ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // white
+  ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // lightgray
   ctx.fillRect(0, y, 1080, h+64+32); 
-  ctx.fillStyle = "rgba(200,240,200,1.0)"; // blue
+     if (minfo==0) { 
+	  ctx.fillStyle = "rgba(200,240,200,1.0)";    // blue 
+     } else if (minfo==1) { 
+	  ctx.fillStyle = "rgba(255,255,255,1.0)";    // white
+     } 
     ctx.fillRect(x,y,w+16,h+64); 
     ctx.drawImage(image,x+8,y+8,w,h); 
     if (minfo==0) {
@@ -304,7 +308,7 @@ function sendAttachment(durl,minfo,sact,date,time,status) {
     } else if (minfo==1) {
     // var date = getDate("ddmmyyyy"); var time = getTime("12h"); 
     // var status = "sent"; 
-    writecStr(w+16-7*24,y+h-8,24*7,32,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
+    writecStr(w+16-7*24,y+h+24,24*7,32,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
     // writecStr(1080-16-16-4*24,y+h+24,24*4,32,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
     }
     imgData = ctx.getImageData(0,y,1080,h+64+8); 
