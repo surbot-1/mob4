@@ -133,7 +133,7 @@ function readAppMessage(sndr,rcvr,mid) {
     usrByte[31]=(msize&0xFF000000)>>24; 
     usrByte[32]=0x02; 
     if (msgtype=="text") {sendUserMessage();} 
-    if (msgtype=="image") {sendAttachment(message,1,sendactive,date,time,status);}
+    else if (msgtype=="image") {sendAttachment(message,1,sendactive,date,time,status);}
     sendOnServerRcv(sender); 
     // writeAppMessageStatus(sndr,rcvr,mid,"seen"); 
   }); 
@@ -151,6 +151,7 @@ function readAppMessageOnce(sndr,rcvr,msgid) {
     var time = snapshot.child("Time").child("Time").val(); 
     var ip = snapshot.child("Ip").child("Ip").val(); 
     // snapshot.forEach(function(element) { 
+    var minfo=0; 
     for (let i=0; i<name.length; i++) {
        usrByte[i]=name.charCodeAt(i); 
     } 
@@ -174,9 +175,15 @@ function readAppMessageOnce(sndr,rcvr,msgid) {
     usrByte[29]=(msize&0x0000FF00)>>8; 
     usrByte[30]=(msize&0x00FF0000)>>16; 
     usrByte[31]=(msize&0xFF000000)>>24; 
-    if (name==sender) {usrByte[32]=0x03;} 
-    else if (name==receiver) {usrByte[32]=0x02;} 
-    sendUserMessage(); 
+    if (msgtype=="text") { 
+      if (name==sender) {usrByte[32]=0x03;} 
+      else if (name==receiver) {usrByte[32]=0x02;} 
+      sendUserMessage(); 
+    else if (msgtype=="image") { 
+      if (name==sender) {minfo=0;} 
+      else if (name==receiver) {minfo=1;} 
+      sendAttachment(message,minfo,sendactive,date,time,status);
+    }
   }); 
 } 
 
