@@ -235,7 +235,7 @@ function openFile() {
   var element = document.getElementById("file");
   element.addEventListener("change", readFile);
 }  
-document.getElementById("file").click(); 
+
 function readFile(e) { 
   var file = e.target.files[0]; 
   if (!file) {return;} 
@@ -257,7 +257,7 @@ function readFile(e) {
   }; 
   reader. readAsDataURL(file); 
 }  
-
+document.getElementById("file").click(); 
 }
 
 
