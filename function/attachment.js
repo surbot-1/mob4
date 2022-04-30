@@ -261,6 +261,8 @@ function readAttachment(minfo,sact) {
 
 
 function sendAttachment(durl,minfo,sact,date,time,status) { 
+	var cnv = document.getElementById("canvas"); 
+        var ctx = cnv.getContext('2d'); 
 	var image = new Image(); 
 	image.src = durl; 
        image.onload = function (e) { 
