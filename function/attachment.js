@@ -217,4 +217,57 @@ function readFile(e) {
   reader.readAsDataURL(file) 
 } 
 document.getElementById("file").click(); 
+} 
+
+function writeAttachment(durl,mt,sa) { 
+	var image = new Image(); 
+	image.src = durl; 
+       image.onload = function (e) { 
+    var x=536; var y=1408-512-64-32; 
+    var w = image.naturalWidth; 
+    var h = image.naturalHeight; 
+    if (w<=320 && w>=h) {h=Math.trunc(h*(320/w)); w=320;} 
+    else if (w>320 && w<=480 && w>=h) { } // {h=Math.trunc(h*(320/w)); w=320;} 
+    else if (w>480 && w<=720 && w>=h) { } // {h=Math.trunc(h*(480/w)); w=480;} 
+    else if (w>720 && w>=h) {h=Math.trunc(h*(720/w)); w=720;} 
+    // else if (w>800 && w>=h) {h=Math.trunc(h*(800/w)); w=800;} 
+    else if (h<=320 && h>=w) {w=Math.trunc(w*(320/h)); h=320;} 
+    else if (h>320 && h<=480 && h>=w) { } // {w=Math.trunc(w*(320/h)); h=320;} 
+    else if (h>480 && h<=720 && h>=w) { } // {w=Math.trunc(w*(480/h)); h=480;} 
+    else if (h>720 && h<=800 && h>=w) { } // {w=Math.trunc(w*(720/h)); h=720;} 
+    else if (h>800 && h>=w) {w=Math.trunc(w*(800/h)); h=800;} 
+    if (mt==0 && sa==1) {
+       x=1080-16-w-16; y=2048-h-64-32; 
+    } else if (mt==1 && sa==1) {
+       x=16; y=2048-h-64-32; 
+    } else if (mt==0 && sa==2) {
+       x=1080-16-w-16; y=1408-h-64-32; 
+    } if (mt==1 && sa==2) {
+      x=16; y=1408-h-64-32; 
+    } 
+    var imgData = ctx.createImageData(1080, 1264-32-h-64+8); 
+    imgData = ctx.getImageData(0,144+h+64+8,1080,1264-32-h-64); 
+    ctx.putImageData(imgData,0,144); 
+  ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // white
+  ctx.fillRect(0, y, 1080, h+64+32); 
+  ctx.fillStyle = "rgba(200,240,200,1.0)"; // blue
+    ctx.fillRect(x,y,w+16,h+64); 
+    ctx.drawImage(image,x+8,y+8,w,h); 
+    var date = getDate("ddmmyyyy"); var time = getTime("12h"); 
+    var status = "sent"; 
+    writecStr(1080-16-16-12*24,y+h+24,24*7,32,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
+    writecStr(1080-16-16-4*24,y+h+24,24*4,32,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
+    imgData = ctx.getImageData(0,y,1080,h+64+8); 
+    for (let i=0; i<1080*4*(h+64+8); i+=4) { 
+	  appView[appPtr*1080*4+i+0]=imgData.data[i+0]; 
+	  appView[appPtr*1080*4+i+1]=imgData.data[i+1];
+	  appView[appPtr*1080*4+i+2]=imgData.data[i+2];
+	  appView[appPtr*1080*4+i+3]=imgData.data[i+3];
+    } 
+   }; 
+	       	       
 }
+
+
+
+
