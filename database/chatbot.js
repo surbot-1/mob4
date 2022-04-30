@@ -65,7 +65,7 @@ var msgbot=[[[""],
 	var b=false;
 	
 	for(let i=0; i<msize; i++) { 
-		var charcode=msgView[ptr*512+64+i]; 
+		var charcode=msgView[ptr*512+80+i]; 
 		nbot += ascChar(charcode); 
 	} 
 	
@@ -110,10 +110,14 @@ var msgbot=[[[""],
 	if(!b) {rbot=msgbot[0][1];} 
 	rbot=rbot.toString(); 
 	for(let i=0; i<rbot.length; i++) {  
-            botByte[64+i]=rbot.charCodeAt(i); 
+            botByte[80+i]=rbot.charCodeAt(i); 
 	} 
 	botByte[32]=0x01;    // chatbot 
 	botByte[28]=rbot.length; 
+	var mtype="text"; 
+	for(let i=0; i<mtype.length; i++) {  
+            botByte[64+i]=mtype.charCodeAt(i); 
+	} 
 	var status="sent"; 
 	for(let i=0; i<status.length; i++) {  
             botByte[36+i]=status.charCodeAt(i); 
