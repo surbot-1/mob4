@@ -219,7 +219,7 @@ function readFile(e) {
 document.getElementById("file").click(); 
 } 
 
-function readAttachment(sact) { 
+/* function readAttachment(sact) { 
 	var cnv = document.getElementById("canvas"); 
 	var ctx = cnv.getContext('2d');
 	var ele; 
@@ -258,10 +258,10 @@ function readFile(e) {
   reader.readAsDataURL(file); 
 }  
 document.getElementById("file").click(); 
-}
+} */ 
 
 
-function sendAttachment(durl,minfo,sact,date,time,status) { 
+/* function sendAttachment(durl,minfo,sact,date,time,status) { 
 	var image = new Image(); 
 	image.src = durl; 
        image.onload = function (e) { 
@@ -338,7 +338,7 @@ function sendAttachment(durl,minfo,sact,date,time,status) {
   dirPtr++; 
    }; 
 	       	       
-}
+} */ 
 
 
 
