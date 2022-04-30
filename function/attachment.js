@@ -247,7 +247,7 @@ function readAttachment(minfo,sact) {
 				var date = getDate("ddmmyyyy"); 
 				var time = getTime("12h"); 
 				var status = "sent"; 
-				// sendAttachment(dataurl,minfo,sact,date,time,status); 
+				sendAttachment(dataurl,minfo,sact,date,time,status); 
 				writeAppMessage(sender,receiver,msgid,sender,"image",dataurl,status,date,time,"ip"); 
 				writeAppMessageCount(sender,receiver,msgid); 
 				msgid++; 
@@ -260,7 +260,7 @@ function readAttachment(minfo,sact) {
 }
 
 
-/* function sendAttachment(durl,minfo,sact,date,time,status) { 
+function sendAttachment(durl,minfo,sact,date,time,status) { 
 	var image = new Image(); 
 	image.src = durl; 
        image.onload = function (e) { 
@@ -337,7 +337,7 @@ function readAttachment(minfo,sact) {
   dirPtr++; 
    }; 
 	       	       
-} */ 
+} 
 
 
 
