@@ -342,6 +342,12 @@ function sendOnServerRcv(user) {
   msgid++; 
 } 
 
+function sendOnServerRcvImg(sndr,rcvr,mid,name,mtype,msg,sts,date,time,ip) { 
+	writeAppMessage(sender,receiver,msgid,receiver,mtype,msg,sts,date,time,ip); 
+        writeAppMessageCount(sender,receiver,msgid); 
+        msgid++; 
+}
+
 function receiveFromServer(user) { 
   readAppMessage(user+"To"+sender); 
   sendUserMessage(); 
