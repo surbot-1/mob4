@@ -132,7 +132,8 @@ function readAppMessage(sndr,rcvr,mid) {
     usrByte[30]=(msize&0x00FF0000)>>16; 
     usrByte[31]=(msize&0xFF000000)>>24; 
     usrByte[32]=0x02; 
-    sendUserMessage(); 
+    if (msgtype=="text") {sendUserMessage();} 
+    if (msgtype=="image") {sendAttachment(message,1,sendactive,date,time,status);}
     sendOnServerRcv(sender); 
     // writeAppMessageStatus(sndr,rcvr,mid,"seen"); 
   }); 
