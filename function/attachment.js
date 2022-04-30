@@ -219,7 +219,7 @@ function readFile(e) {
 document.getElementById("file").click(); 
 } 
 
-function sendAttachment(durl,mt,sa,date,time,status) { 
+function sendAttachment(durl,minfo,sact,date,time,status) { 
 	var image = new Image(); 
 	image.src = durl; 
        image.onload = function (e) { 
@@ -236,13 +236,13 @@ function sendAttachment(durl,mt,sa,date,time,status) {
     else if (h>480 && h<=720 && h>=w) { } // {w=Math.trunc(w*(480/h)); h=480;} 
     else if (h>720 && h<=800 && h>=w) { } // {w=Math.trunc(w*(720/h)); h=720;} 
     else if (h>800 && h>=w) {w=Math.trunc(w*(800/h)); h=800;} 
-    if (mt==0 && sa==1) {
+    if (minfo==0 && sact==1) {
        x=1080-16-w-16; y=2048-h-64-32; 
-    } else if (mt==1 && sa==1) {
+    } else if (minfo==1 && sact==1) {
        x=16; y=2048-h-64-32; 
-    } else if (mt==0 && sa==2) {
+    } else if (minfo==0 && sact==2) {
        x=1080-16-w-16; y=1408-h-64-32; 
-    } if (mt==1 && sa==2) {
+    } if (minfo==1 && sact==2) {
       x=16; y=1408-h-64-32; 
     } 
     var imgData = ctx.createImageData(1080, y-144+8); 
@@ -253,15 +253,15 @@ function sendAttachment(durl,mt,sa,date,time,status) {
   ctx.fillStyle = "rgba(200,240,200,1.0)"; // blue
     ctx.fillRect(x,y,w+16,h+64); 
     ctx.drawImage(image,x+8,y+8,w,h); 
-    if (mt==1) {
+    if (minfo==0) {
     // var date = getDate("ddmmyyyy"); var time = getTime("12h"); 
     // var status = "sent"; 
     writecStr(1080-16-16-12*24,y+h+24,24*7,32,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
     writecStr(1080-16-16-4*24,y+h+24,24*4,32,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
-    } else if (mt==2) {
+    } else if (minfo==1) {
     // var date = getDate("ddmmyyyy"); var time = getTime("12h"); 
     // var status = "sent"; 
-    writecStr(w+32-7*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
+    writecStr(w+24-7*24,y+h-8,24*7,32,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
     // writecStr(1080-16-16-4*24,y+h+24,24*4,32,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
     }
     imgData = ctx.getImageData(0,y,1080,h+64+8); 
