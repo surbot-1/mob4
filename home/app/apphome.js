@@ -236,7 +236,9 @@ function appHomeContacts() {
 				clearInterval(timer); admin(); 
 			} else if (x>0 && x<1080 && y>144*1 && y<144*2) { 
 				if (acsts[1]) { 
-					clearInterval(timer); appHomeChatsChatbot(); 
+					clearInterval(timer); 
+					receiver = acname[1]; 
+					appHomeChatsChatbot(); 
 				} 
 			} else if (x>0 && x<1080 && y>144*2 && y<144*3) {  
 				if (acsts[2]) { 
