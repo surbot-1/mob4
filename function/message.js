@@ -29,7 +29,7 @@ function message() {
     writeChar(16+ci,1448+cj,"font2448"," ");
     ci+=24; 
     if (ci>=24*24) {ci=0; cj=0;} 
-    msgByte[64+ptr]=" ".charCodeAt(0); 
+    msgByte[80+ptr]=" ".charCodeAt(0); 
     ptr++; 
     msgByte[32]=0x00;
     msgByte[28]=ptr; 
@@ -39,7 +39,7 @@ function message() {
     writeChar(16+ci,1448+cj,"font2448",kchar); 
     ci+=24; 
     if (ci>=24*24) {ci=0; cj=0;} 
-    msgByte[64+ptr]=kchar.charCodeAt(0); 
+    msgByte[80+ptr]=kchar.charCodeAt(0); 
     ptr++; 
     msgByte[32]=0x00;
     msgByte[28]=ptr; 
