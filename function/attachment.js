@@ -250,6 +250,7 @@ function readAttachment(minfo,sact) {
 				sendAttachment(dataurl,minfo,sact,date,time,status); 
 				writeAppMessage(sender,receiver,msgid,sender,"image",dataurl,status,date,time,"ip"); 
 				writeAppMessageCount(sender,receiver,msgid); 
+				writeReadStatus(sender,receiver,msgid); 
 				msgid++; 
 				document.body.removeChild(ele);  
 			}; 
