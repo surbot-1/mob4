@@ -219,7 +219,7 @@ function readFile(e) {
 document.getElementById("file").click(); 
 } 
 
-function readAttachment(sact) { 
+function readAttachment(minfo,sact) { 
 	var cnv = document.getElementById("canvas"); 
 	var ctx = cnv.getContext('2d');
 	var ele; 
@@ -249,7 +249,7 @@ function readFile(e) {
      var dataurl = e.target.result; 
      var date = getDate("ddmmyyyy"); var time = getTime("12h"); 
      var status = "sent"; 
-     sendAttachment(dataurl,0,sact,date,time,status); 
+     sendAttachment(dataurl,minfo,sact,date,time,status); 
      writeAppMessage(sender,receiver,msgid,sender,"image",dataurl,status,date,time,"ip"); 
      writeAppMessageCount(sender,receiver,msgid); 
 	  msgid++; 
