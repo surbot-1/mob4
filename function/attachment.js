@@ -247,7 +247,7 @@ function readAttachment(minfo,sact) {
 				var date = getDate("ddmmyyyy"); 
 				var time = getTime("12h"); 
 				var status = "sent"; 
-				sendAttachment(dataurl,minfo,sact,date,time,status); 
+				// sendAttachment(dataurl,minfo,sact,date,time,status); 
 				writeAppMessage(sender,receiver,msgid,sender,"image",dataurl,status,date,time,"ip"); 
 				writeAppMessageCount(sender,receiver,msgid); 
 				msgid++; 
