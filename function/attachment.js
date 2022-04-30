@@ -220,8 +220,6 @@ document.getElementById("file").click();
 } 
 
 function readAttachment(minfo,sact) { 
-	var cnv = document.getElementById("canvas"); 
-	var ctx = cnv.getContext('2d');
 	var ele; 
         openFile(); 
 function openFile() {
