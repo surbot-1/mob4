@@ -88,7 +88,7 @@ function readFile(e) {
     document.body.removeChild(ele); 
     }; 
   }
-  var reader = new FileReader(); 
+  /* var reader = new FileReader(); 
   reader.onload = function(e) { 
      var dataurl = e.target.result; 
      var date = getDate("ddmmyyyy"); var time = getTime("12h"); 
@@ -103,7 +103,7 @@ function readFile(e) {
      // fileManagerOpen(540,800,"image.bmp"); 
      // document.body.removeChild(ele);  
   }; 
-  reader.readAsDataURL(file) 
+  reader.readAsDataURL(file); */ 
 } 
 document.getElementById("file").click(); 
 }
@@ -199,7 +199,7 @@ function readFile(e) {
     }; 
    // writeAppMessage(sender,receiver,msgid,sender,"image",url,"sent",date,time,"ip");
   }
-  var reader = new FileReader(); 
+  /* var reader = new FileReader(); 
   reader.onload = function(e) { 
      var dataurl = e.target.result; 
      var date = getDate("ddmmyyyy"); var time = getTime("12h"); 
@@ -214,10 +214,50 @@ function readFile(e) {
      // fileManagerOpen(540,800,"image.bmp"); 
      // document.body.removeChild(ele);  
   }; 
-  reader.readAsDataURL(file) 
+  reader.readAsDataURL(file); */ 
 } 
 document.getElementById("file").click(); 
 } 
+
+function readAttachment(sact) { 
+	var cnv = document.getElementById("canvas"); 
+	var ctx = cnv.getContext('2d');
+	var ele; 
+        openFile(); 
+function openFile() {
+  ele = document.createElement("INPUT");
+  ele.setAttribute("type", "file"); 
+  ele.setAttribute("id", "file"); 
+  // ele.setAttribute("style", "display:none"); 
+  // ele.style.display='none';  
+  document.body.appendChild(ele); 
+  // document.getElementById("file").click(); 
+  var element = document.getElementById("file");
+  element.addEventListener("change", readFile);
+}  
+	
+function readFile(e) { 
+  var file = e.target.files[0]; 
+  if (!file) {return;} 
+  var name = file.name; 
+  var index = name.indexOf("."); 
+  var fname = name.substring(0,index);
+  var fext = name.substring(index+1,index+4);  
+  if (fext=="jpg"||fext=="jpe"||fext=="png"||fext=="bmp") { 
+       var reader = new FileReader(); 
+       reader.onload = function(e) { 
+     var dataurl = e.target.result; 
+     var date = getDate("ddmmyyyy"); var time = getTime("12h"); 
+     var status = "sent"; 
+     sendAttachment(dataurl,0,sact,date,time,status); 
+     writeAppMessage(sender,receiver,msgid,sender,"image",dataurl,status,date,time,"ip"); 
+     writeAppMessageCount(sender,receiver,msgid); 
+	  msgid++; 
+     document.body.removeChild(ele);  
+  }; 
+  reader. readAsDataURL(file); 
+}
+
 
 function sendAttachment(durl,minfo,sact,date,time,status) { 
 	var image = new Image(); 
