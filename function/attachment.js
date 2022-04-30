@@ -261,7 +261,7 @@ function sendAttachment(durl,minfo,sact,date,time,status) {
     } else if (minfo==1) {
     // var date = getDate("ddmmyyyy"); var time = getTime("12h"); 
     // var status = "sent"; 
-    writecStr(w+24-7*24,y+h-8,24*7,32,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
+    writecStr(w+16-7*24,y+h-8,24*7,32,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
     // writecStr(1080-16-16-4*24,y+h+24,24*4,32,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
     }
     imgData = ctx.getImageData(0,y,1080,h+64+8); 
