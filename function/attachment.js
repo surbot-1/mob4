@@ -219,44 +219,45 @@ function readFile(e) {
 document.getElementById("file").click(); 
 } 
 
-function readAttachment(minfo,sact) { 
+function readAttachment(minfo,sact) {
 	var ele; 
-        openFile(); 
-function openFile() {
-  ele = document.createElement("INPUT");
-  ele.setAttribute("type", "file"); 
-  ele.setAttribute("id", "file"); 
-  // ele.setAttribute("style", "display:none"); 
-  // ele.style.display='none';  
-  document.body.appendChild(ele); 
-  // document.getElementById("file").click(); 
-  var element = document.getElementById("file");
-  element.addEventListener("change", readFile);
-}  
-
-function readFile(e) { 
-  var file = e.target.files[0]; 
-  if (!file) {return;} 
-  var name = file.name; 
-  var index = name.indexOf("."); 
-  var fname = name.substring(0,index);
-  var fext = name.substring(index+1,index+4);  
-  if (fext=="jpg"||fext=="jpe"||fext=="png"||fext=="bmp") { 
-       var reader = new FileReader(); 
-       reader.onload = function(e) { 
-     var dataurl = e.target.result; 
-     var date = getDate("ddmmyyyy"); var time = getTime("12h"); 
-     var status = "sent"; 
-     // sendAttachment(dataurl,minfo,sact,date,time,status); 
-     writeAppMessage(sender,receiver,msgid,sender,"image",dataurl,status,date,time,"ip"); 
-     writeAppMessageCount(sender,receiver,msgid); 
-	  msgid++; 
-     document.body.removeChild(ele);  
-  }; 
-  reader.readAsDataURL(file); 
-}  
-document.getElementById("file").click(); 
-} 
+	openFile(); 
+	function openFile() { 
+		ele = document.createElement("INPUT");
+		ele.setAttribute("type", "file"); 
+		ele.setAttribute("id", "file"); 
+		// ele.setAttribute("style", "display:none"); 
+		// ele.style.display='none';  
+		document.body.appendChild(ele); 
+		// document.getElementById("file").click(); 
+		var element = document.getElementById("file");
+		element.addEventListener("change", readFile);
+	} 
+	function readFile(e) { 
+		var file = e.target.files[0]; 
+		if (!file) {return;} 
+		var name = file.name; 
+		var index = name.indexOf("."); 
+		var fname = name.substring(0,index);
+		var fext = name.substring(index+1,index+4);  
+		if (fext=="jpg"||fext=="jpe"||fext=="png"||fext=="bmp") { 
+			var reader = new FileReader(); 
+			reader.onload = function(e) { 
+				var dataurl = e.target.result; 
+				var date = getDate("ddmmyyyy"); 
+				var time = getTime("12h"); 
+				var status = "sent"; 
+				sendAttachment(dataurl,minfo,sact,date,time,status); 
+				writeAppMessage(sender,receiver,msgid,sender,"image",dataurl,status,date,time,"ip"); 
+				writeAppMessageCount(sender,receiver,msgid); 
+				msgid++; 
+				document.body.removeChild(ele);  
+			}; 
+			reader.readAsDataURL(file); 
+		} 
+		document.getElementById("file").click(); 
+	} 
+}
 
 
 /* function sendAttachment(durl,minfo,sact,date,time,status) { 
