@@ -165,7 +165,7 @@ function send() {
   var x=0; var y=0; if (w<12*24) {w=12*24;} 
   if (minfo==0) { 
     x=1080-w-32-16; y=1408-(h+64)-32; 
-    ctx.fillStyle = "rgba(240, 255, 240, 1.0)"; // light green
+    ctx.fillStyle = "rgba(208, 240, 208, 1.0)"; // light green
     ctx.fillRect(x, y, w+32, h+32+32);  
     writecStr(x+16,y+16,w,h,"font2448",[0,0,0,255],[200,240,200,255],msgstr); 
     writecStr(1080-16-16-12*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
