@@ -215,7 +215,7 @@ function readKeypad(x, y, t) {
 
 // writeStr(0,50,100,100,"font2448","ABCDEFGH");  
 function writeStr(x, y, w, h, font, str) {  
-	var cw=24; var ch=32; var sw=0; var sh=0;
+	var cw=24; var ch=32; var sw=0; var sh=4;
 
 	if (font=="font1632") { cw=16; ch=32; 
 	} else if (font=="font2448") { cw=24; ch=48; 
@@ -231,8 +231,8 @@ function writeStr(x, y, w, h, font, str) {
 	for (let k=0; k<(str.length); k++) { 
 		var char=str.charAt(k); 
 		writeChar(x+i, y+j, font, char); 
-		i+=cw; 
-		if (i>=w) {i=0; j+=ch;} 
+		i+=cw+sw; 
+		if (i>=w) {i=0; j+=ch+sh;} 
 		if(j>=h) {i=0; j=0;}
 	}
 	
@@ -341,7 +341,7 @@ function writeChar(x, y, font, char) {
 
 
 function writecStr(x, y, w, h, font,fcolor, bcolor, str) {  
-	var cw=24; var ch=32; var sw=0; var sh=0;
+	var cw=24; var ch=32; var sw=0; var sh=4;
 
 	if (font=="font1632") { cw=16; ch=32; 
 	} else if (font=="font2448") { cw=24; ch=48; 
@@ -357,8 +357,8 @@ function writecStr(x, y, w, h, font,fcolor, bcolor, str) {
 	for (let k=0; k<(str.length); k++) { 
 		var char=str.charAt(k); 
 		writecChar(x+i, y+j, font, fcolor, bcolor, char); 
-		i+=cw; 
-		if (i>=w) {i=0; j+=ch;} 
+		i+=cw+sw; 
+		if (i>=w) {i=0; j+=ch+sh;} 
 		if(j>=h) {i=0; j=0;}
 	}
 	
