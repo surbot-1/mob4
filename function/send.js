@@ -375,11 +375,11 @@ function writeReadStatus(sndr,rcvr,mid) {
 
 function writeWH(view) { 
   var msize = view[28]; 
-  var j=0; var w=0; var h=32+4; 
+  var j=0; var w=0; var h=48+4; 
   for (let i=0; i<msize; i++) {  
     if (i>=36) {w=24*36;} else {w+=24;} 
-    if (view[i]==0x0A) {j=0; h+=32+4;} 
-    if (j>=36) {j=0; h+=32+4;} 
+    if (view[i]==0x0A) {j=0; h+=48+4;} 
+    if (j>=36) {j=0; h+=48+4;} 
     j++; 
   }
     view[16] = w&0x00FF; 
