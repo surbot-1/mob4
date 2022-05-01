@@ -71,7 +71,7 @@ function send1() {
     x=1080-w-32-16; y=2048-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue 
     ctx.fillRect(x, y, w+32, h+32+32); 
-    writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
+    writecStr(x+16,y+16,w,h,"bold2448",[0,0,0,255],[200,240,200,255],msgstr); 
     writecStr(1080-16-16-12*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
     writecStr(1080-16-16-4*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
     // setTimeout(() => {msgStatus(1080-16-16-4*24,y+h+24,"send");},1000); 
@@ -82,19 +82,19 @@ function send1() {
     x=16; y=2048-(h+64)-32; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white 
     ctx.fillRect(x, y, w+32, h+32+32); 
-    writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[255,255,255,255],msgstr); 
+    writecStr(x+16,y+16,w,h,"bold2448",[0,0,0,255],[255,255,255,255],msgstr); 
     writecStr(w+32-7*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
   } else if(minfo==2) { 
     x=16; y=2048-(h+64)-32; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white 
     ctx.fillRect(x, y, w+32, h+32+32); 
-    writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[255,255,255,255],msgstr); 
+    writecStr(x+16,y+16,w,h,"bold2448",[0,0,0,255],[255,255,255,255],msgstr); 
     writecStr(w+32-7*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
   } else if(minfo==3) { 
     x=1080-w-32-16; y=2048-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue  
     ctx.fillRect(x, y, w+32, h+32+32); 
-    writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
+    writecStr(x+16,y+16,w,h,"bold2448",[0,0,0,255],[200,240,200,255],msgstr); 
     writecStr(1080-16-16-12*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
     writecStr(1080-16-16-4*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
   } 
@@ -167,7 +167,7 @@ function send() {
     x=1080-w-32-16; y=1408-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue 
     ctx.fillRect(x, y, w+32, h+32+32);  
-    writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
+    writecStr(x+16,y+16,w,h,"font2448",[0,0,0,255],[200,240,200,255],msgstr); 
     writecStr(1080-16-16-12*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
     writecStr(1080-16-16-4*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
     // setTimeout(() => {msgStatus(1080-16-16-4*24,y+h+24,"send");},1000); 
@@ -178,19 +178,19 @@ function send() {
     x=16; y=1408-(h+64)-32; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white 
     ctx.fillRect(x, y, w+32, h+32+32); 
-    writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[255,255,255,255],msgstr); 
+    writecStr(x+16,y+16,w,h,"font2448",[0,0,0,255],[255,255,255,255],msgstr); 
     writecStr(w+32-7*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
   } else if(minfo==2) { 
     x=16; y=1408-(h+64)-32; 
     ctx.fillStyle = "rgba(255, 255, 255, 1.0)"; // white 
     ctx.fillRect(x, y, w+32, h+32+32); 
-    writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[255,255,255,255],msgstr); 
+    writecStr(x+16,y+16,w,h,"font2448",[0,0,0,255],[255,255,255,255],msgstr); 
     writecStr(w+32-7*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[255,255,255,255],time); 
   } else if(minfo==3) { 
     x=1080-w-32-16; y=1408-(h+64)-32; 
     ctx.fillStyle = "rgba(200, 240, 200, 1.0)"; // blue  
     ctx.fillRect(x, y, w+32, h+32+32); 
-    writecStr(x+16,y+16,w,h,"ubuntubold",[0,0,0,255],[200,240,200,255],msgstr); 
+    writecStr(x+16,y+16,w,h,"font2448",[0,0,0,255],[200,240,200,255],msgstr); 
     writecStr(1080-16-16-12*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],time); 
     writecStr(1080-16-16-4*24,y+h+24,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],status); 
   }
