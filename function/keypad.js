@@ -215,7 +215,7 @@ function readKeypad(x, y, t) {
 
 // writeStr(0,50,100,100,"font2448","ABCDEFGH");  
 function writeStr(x, y, w, h, font, str) {  
-	var cw=24; var ch=32; var sw=0; var sh=4;
+	var cw=24; var ch=32; var sw=0; var sh=8;
 
 	if (font=="font1632") { cw=16; ch=32; 
 	} else if (font=="font2448") { cw=24; ch=48; 
@@ -341,7 +341,7 @@ function writeChar(x, y, font, char) {
 
 
 function writecStr(x, y, w, h, font,fcolor, bcolor, str) {  
-	var cw=24; var ch=32; var sw=0; var sh=4;
+	var cw=24; var ch=32; var sw=0; var sh=8;
 
 	if (font=="font1632") { cw=16; ch=32; 
 	} else if (font=="font2448") { cw=24; ch=48; 
