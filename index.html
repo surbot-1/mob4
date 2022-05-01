@@ -205,7 +205,22 @@ function handleEnd(evt) {
 </script> 
 	
 <script> 
-	  
+	
+window.addEventListener('beforeunload', function (e) { 
+e.preventDefault(); 
+e.returnValue = ''; 
+}); 
+	
+</script> 
+	
+<script> 
+	
+initiate(); 
+	
+</script> 
+	
+<script> 
+	
 /* var timer; 
 function rcvMsg() { 
  if (useractive) { rcvmsgid=rcvmsgidp+1; rcvmsgsts="Null"; 
@@ -259,7 +274,7 @@ timer = setInterval(rcvMsg, 2000); */
 	
 <script> 
 	
-initiate(); 
+// initiate(); 
 // signin(); 
 // notification(); 
 // appHomeChats(); 
