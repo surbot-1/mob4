@@ -248,61 +248,61 @@ function appHomeContacts() {
 			} else if (x>0 && x<1080 && y>144*1 && y<144*2) { 
 				if (acsts[1]) { 
 					clearInterval(timer); 
-					receiver = acname[1]; 
+					receiver = acuname[1]; 
 					appHomeChatsChatbot(); 
 				} 
 			} else if (x>0 && x<1080 && y>144*2 && y<144*3) {  
 				if (acsts[2]) { 
 					clearInterval(timer); 
-					receiver = acname[2];  
+					receiver = acuname[2];  
 					appHomeChatsUser(receiver); 
 				} 
 			} else if (x>0 && x<1080 && y>144*3 && y<144*4) { 
 				if (acsts[3]) { 
 					clearInterval(timer); 
-					receiver = acname[3]; 
+					receiver = acuname[3]; 
 					appHomeChatsUser(receiver); 
 				} 
 			} else if (x>0 && x<1080 && y>144*4 && y<144*5) { 
 				if (acsts[4]) { 
 					clearInterval(timer); 
-					receiver = acname[4]; 
+					receiver = acuname[4]; 
 					appHomeChatsUser(receiver); 
 				} 
 			} else if (x>0 && x<1080 && y>144*5 && y<144*5+144) { 
 				if (acsts[5]) { 
 					clearInterval(timer); 
-					receiver = acname[5]; 
+					receiver = acuname[5]; 
 					appHomeChatsUser(receiver); 
 				} 
 			} else if (x>0 && x<1080 && y>144*6 && y<144*6+144) { 
 				if (acsts[6]) { 
 					clearInterval(timer); 
-					receiver = acname[6]; 
+					receiver = acuname[6]; 
 					appHomeChatsUser(receiver); 
 				} 
 			} else if (x>0 && x<1080 && y>144*7 && y<144*8) { 
 				if (acsts[7]) { 
 					clearInterval(timer); 
-					receiver = acname[7]; 
+					receiver = acuname[7]; 
 					appHomeChatsUser(receiver); 
 				} 
 			} else if (x>0 && x<1080 && y>144*8 && y<144*9) { 
 				if (acsts[8]) { 
 					clearInterval(timer); 
-					receiver = acname[8]; 
+					receiver = acuname[8]; 
 					appHomeChatsUser(receiver); 
 				} 
 			} else if (x>0 && x<1080 && y>144*9 && y<144*10) { 
 				if (acsts[9]) { 
 					clearInterval(timer); 
-					receiver = acname[9]; 
+					receiver = acuname[9]; 
 					appHomeChatsUser(receiver); 
 				} 
 			} else if (x>0 && x<1080 && y>144*10 && y<144*11) { 
 				if (acsts[10]) { 
 					clearInterval(timer); 
-					receiver = acname[10]; 
+					receiver = acuname[10]; 
 					appHomeChatsUser(receiver); 
 				} 
 			} else if (x>0 && x<1080 && y>144*11 && y<144*11+144) { 
