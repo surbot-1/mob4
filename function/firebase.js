@@ -58,13 +58,13 @@ function readAppUserCount() {
   }); 
 } 
 
-function writeAppContact(sndr,ccount,cuname,cname) { 
+function writeAppContact(sndr,ccount,cname,cuname) { 
   var ref = firebase.database().ref("App").child(sndr).child("Contact").child(ccount).child("Contact"); 
   ref.child("Username").set({ 
-    Username: cuname 
+    Name: cname 
   }); 
   ref.child("Name").set({ 
-    Name: cname 
+    Username: cuname 
   }); 
 } 
 
@@ -78,19 +78,20 @@ function writeAppContactCount(sndr,ccount) {
 function readAppContact(sndr,ccount) { 
   var ref = firebase.database().ref("App").child(sndr).child("Contact").child(ccount).child("Contact"); 
   ref.once("value", function(snapshot) { 
-  var cuname = snapshot.child("Username").child("Username").val(); 
   var cname = snapshot.child("Name").child("Name").val(); 
+  var cuname = snapshot.child("Username").child("Username").val(); 
   for (let i=0; i<cuname.length; i++) { 
     contView[ccount*64+8+i] = cname.charCodeAt(i); 
   } 
   for (let i=0; i<cname.length; i++) { 
-    contView[ccount*64+36+i] = cname.charCodeAt(i); 
+    contView[ccount*64+36+i] = cuname.charCodeAt(i); 
   } 
   contView[ccount*64+0] = ccount; 
   contView[ccount*64+2] = cname.length; 
+  contView[ccount*64+4] = cuname.length; 
   var obj = { 
-    uname: cuname, 
-    name: cname 
+    name: cname, 
+    uname: cuname 
   };
   return object; 
   }); 
