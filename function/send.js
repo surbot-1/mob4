@@ -31,7 +31,8 @@ function sendMessage() {
   ctx.fillRect(16, 1448, 24*24, 48); 
   writeCursor(16,1448); 
   showCursor(16,1448);   
-  if (chatbotactive) {setTimeout(replyChatbot, 5000);}
+  if (chatbotactive) {setTimeout(replyChatbot, 5000);} 
+  msgsendtone.play(); 
 }  
 
 function send1() { 
@@ -229,6 +230,7 @@ function send() {
 function replyChatbot() { 
   chatbot(); 
   sendChatbot(); 
+  msgnotitone.play(); 
 }
 
 function sendChatbot() { 
@@ -367,6 +369,7 @@ function writeReadStatus(sndr,rcvr,mid) {
        if (sendactive==1) {x=1080-16-16-4*24; y=2048-32-32-8;} 
        else if (sendactive==2) {x=1080-16-16-4*24; y=1408-32-32-8;} 
        writecStr(x,y,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],"seen"); 
+       msgseentone.play(); 
     } 
   }
   tmr = setInterval(f1, 0100); 
