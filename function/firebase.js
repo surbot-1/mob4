@@ -58,9 +58,12 @@ function readAppUserCount() {
   }); 
 } 
 
-function writeAppContact(sndr,ccount,cname) { 
-  var ref = firebase.database().ref("App").child(sndr).child("Contact").child(ccount); 
-  ref.child("Contact").set({ 
+function writeAppContact(sndr,ccount,cuname,cname) { 
+  var ref = firebase.database().ref("App").child(sndr).child("Contact").child(ccount).child("Contact"); 
+  ref.child("Username").set({ 
+    Username: cuname 
+  }); 
+  ref.child("Name").set({ 
     Name: cname 
   }); 
 } 
@@ -73,16 +76,23 @@ function writeAppContactCount(sndr,ccount) {
 } 
 
 function readAppContact(sndr,ccount) { 
-  var ref = firebase.database().ref("App").child(sndr).child("Contact").child(ccount); 
+  var ref = firebase.database().ref("App").child(sndr).child("Contact").child(ccount).child("Contact"); 
   ref.once("value", function(snapshot) { 
-  var cname = snapshot.child("Contact").child("Name").val(); 
-  for (let i=0; i<cname.length; i++) { 
-    contView[ccount*32+8+i] = cname.charCodeAt(i); 
+  var cuname = snapshot.child("Username").child("Username").val(); 
+  var cname = snapshot.child("Name").child("Name").val(); 
+  for (let i=0; i<cuname.length; i++) { 
+    contView[ccount*64+8+i] = cname.charCodeAt(i); 
   } 
-  contView[ccount*32+0] = ccount; 
-  contView[ccount*32+2] = cname.length; 
-  appcontname = cname; 
-  return cname; 
+  for (let i=0; i<cname.length; i++) { 
+    contView[ccount*64+36+i] = cname.charCodeAt(i); 
+  } 
+  contView[ccount*64+0] = ccount; 
+  contView[ccount*64+2] = cname.length; 
+  var obj = { 
+    uname: cuname, 
+    name: cname 
+  };
+  return object; 
   }); 
 } 
 
