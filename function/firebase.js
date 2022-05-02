@@ -137,9 +137,11 @@ function readAppMessage(sndr,rcvr,mid) {
     if (msgtype=="text") {
       sendUserMessage(); 
       sendOnServerRcv(sender); 
+      msgnotitone.play(); 
     } else if (msgtype=="image") {
       sendAttachment(message,1,sendactive,date,time,status); 
       sendOnServerRcvImg(rcvr,sndr,mid,name,msgtype,message,"seen",date,time,ip); 
+      msgnotitone.play(); 
     }
     
     // writeAppMessageStatus(sndr,rcvr,mid,"seen"); 
