@@ -86,6 +86,7 @@ function readAppContact(sndr,ccount) {
   for (let i=0; i<cuname.length; i++) { 
     contView[ccount*64+36+i] = cuname.charCodeAt(i); 
   } 
+  contView[0]=ccount; 
   contView[ccount*64+0] = ccount; 
   contView[ccount*64+2] = cname.length; 
   contView[ccount*64+4] = cuname.length; 
