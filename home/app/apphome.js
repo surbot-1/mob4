@@ -185,28 +185,33 @@ function appHomeContacts() {
 	msgid=1; rcvmsgid=0; rcvmsgidp=0; 
 	
 	var acname=[]; 
+	var acuname=[]; 
 	var acsts=[]; 
 	
-	function writecName(cname, i) {  
-		acname[i]=cname; acsts[i]=true; 
+	function writeCont(cname, cuname, i) {  
+		acname[i]=cname; acuname[i]=cuname; acsts[i]=true; 
 		fileViewerUrl(64, 144*i+8, "icon/business-man-icon-128.bmp"); 
-		writecStr(200,144*i+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],cname); 
+		writecStr(200,144*i+36,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],cname); 
+		writecStr(200,144*i+76,480,128,"ubuntufont",[0,0,0,255],[240,240,240,255],cuname); 
 	} 
 	
-	function rcvcName() { 
-		var tmr; var cname=""; 
-		var rcv = contView[appcontcount*32+0]; 
+	function rcvCont() { 
+		var tmr; var cname=""; var cuname=""; 
+		var rcv = contView[appcontcount*64+0]; 
 		tmr = setInterval( ()=> { 
 			if (rcv) { 
 				clearInterval(tmr); 
 				for (let i=1; i<appcontcount+1; i++) { 
-					for (let j=0; j<(contView[i*32+2]); j++) { 
-						cname += ascChar(contView[i*32+8+j]); 
+					for (let j=0; j<(contView[i*64+2]); j++) { 
+						cname += ascChar(contView[i*64+8+j]); 
 					}  
-					writecName(cname,i); cname=""; 
+					for (let j=0; j<(contView[i*64+4]); j++) { 
+						cuname += ascChar(contView[i*64+36+j]); 
+					}  
+					writeCont(cname,cuname,i); cname="";  cuname="";
 				} 
 			} else if (!rcv) { 
-				rcv = contView[appcontcount*32+0]; 
+				rcv = contView[appcontcount*64+0]; 
 			} 
 		}, 1000); 
 	} 
@@ -220,7 +225,7 @@ function appHomeContacts() {
 				for (let i=1; i<appcontcount+1; i++) { 
 					readAppContact(sender, i); 
 				} 
-				rcvcName(); 
+				rcvCont(); 
 			} else if (!appcontcount) { 
 				count = readAppContactCount(sender); 
 			} 
