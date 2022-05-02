@@ -33,7 +33,7 @@ function writeCont(cname, cuname, i) {
     writecStr(200,144*i+72,480,128,"ubuntufont",[0,0,0,255],[240,240,240,255],cuname); 
 } 
 	
-function rcvcCont() { 
+function rcvCont() { 
    var tmr; var cname=""; var cuname=""; 
    var rcv = contView[appcontcount*64+0]; 
    tmr = setInterval( ()=> { 
