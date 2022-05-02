@@ -252,7 +252,8 @@ function readAttachment(minfo,sact) {
 				writeAppMessageCount(sender,receiver,msgid); 
 				writeReadStatus(sender,receiver,msgid); 
 				msgid++; 
-				document.body.removeChild(ele);  
+				document.body.removeChild(ele); 
+				msgsendtone.play(); 
 			}; 
 			reader.readAsDataURL(file); 
 		} 
