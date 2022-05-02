@@ -23,6 +23,7 @@ msgid=1; rcvmsgid=0; rcvmsgidp=0;
 	
 var acname=[]; 
 var acsts=[]; 
+var account=0; 
 	
 function writecName(cname, i) {  
     acname[i]=cname; acsts[i]=true; 
