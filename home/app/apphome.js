@@ -29,8 +29,8 @@ var account=0;
 function writeCont(cname, cuname, i) {  
     acname[i]=cname; acuname[i]=cuname; acsts[i]=true; 
     fileViewerUrl(64, 144*i+8, "icon/business-man-icon-128.bmp"); 
-    writecStr(200,144*i+32,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],cname); 
-    writecStr(200,144*i+72,480,128,"ubuntufont",[0,0,0,255],[240,240,240,255],cuname); 
+    writecStr(200,144*i+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],cname); 
+    // writecStr(200,144*i+72,480,128,"ubuntufont",[0,0,0,255],[240,240,240,255],cuname); 
 } 
 	
 function rcvCont() { 
@@ -93,55 +93,55 @@ if (true) {
 		   if (acsts[2]) { 
 		      clearInterval(timer); 
 		      receiver = acuname[2];  
-		      appHomeChatsUser(receiver); 
+		      appHomeChatsUser(acname[2]); 
 		   }
               } else if (x>0 && x<1080 && y>144*3 && y<144*4) { 
 		   if (acsts[3]) { 
 		      clearInterval(timer); 
 		      receiver = acuname[3]; 
-		      appHomeChatsUser(receiver); 
+		      appHomeChatsUser(acname[3]); 
 		   }
               } else if (x>0 && x<1080 && y>144*4 && y<144*5) { 
 		   if (acsts[4]) { 
 		      clearInterval(timer); 
 		      receiver = acuname[4]; 
-		      appHomeChatsUser(receiver); 
+		      appHomeChatsUser(acname[4]); 
 		   }
               } else if (x>0 && x<1080 && y>144*5 && y<144*5+144) { 
 		   if (acsts[5]) { 
 		      clearInterval(timer); 
 		      receiver = acuname[5]; 
-		      appHomeChatsUser(receiver); 
+		      appHomeChatsUser(acname[5]); 
 		   }
 	      } else if (x>0 && x<1080 && y>144*6 && y<144*6+144) { 
 		   if (acsts[6]) { 
 		      clearInterval(timer); 
 		      receiver = acuname[6]; 
-		      appHomeChatsUser(receiver); 
+		      appHomeChatsUser(acname[6]); 
 		   } 
               } else if (x>0 && x<1080 && y>144*7 && y<144*8) { 
 		   if (acsts[7]) { 
 		      clearInterval(timer); 
 		      receiver = acuname[7]; 
-		      appHomeChatsUser(receiver); 
+		      appHomeChatsUser(acname[7]); 
 		   }
               } else if (x>0 && x<1080 && y>144*8 && y<144*9) { 
 		   if (acsts[8]) { 
 		      clearInterval(timer); 
 		      receiver = acuname[8]; 
-		      appHomeChatsUser(receiver); 
+		      appHomeChatsUser(acname[8]); 
 		   }
               } else if (x>0 && x<1080 && y>144*9 && y<144*10) { 
 		   if (acsts[9]) { 
 		      clearInterval(timer); 
 		      receiver = acuname[9]; 
-		      appHomeChatsUser(receiver); 
+		      appHomeChatsUser(acname[9]); 
 		   }
 	      } else if (x>0 && x<1080 && y>144*10 && y<144*11) { 
 		   if (acsts[10]) { 
 		      clearInterval(timer); 
 		      receiver = acuname[10]; 
-		      appHomeChatsUser(receiver); 
+		      appHomeChatsUser(acname[10]); 
 		   }
 	      } else if (x>0 && x<1080 && y>144*11 && y<144*11+144) { 
 	      } else if (x>0 && x<1080 && y>144*12 && y<144*12+144) { 
