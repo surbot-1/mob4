@@ -151,13 +151,17 @@ function storekeyvalue(viewByte,rptr) {
  } 
 	
  function saveContact() { 
-      var csize= signByte[2*64+6]; 
-      var cname=""; 
-      for (let i=0; i<csize; i++) { 
+      var cnsize= signByte[2*64+6]; 
+      var cunsize= signByte[3*64+6]; 
+      var cname=""; var cuname=""; 
+      for (let i=0; i<cnsize; i++) { 
 	   cname += ascChar(signByte[2*64+16+i]); 
       } 
+      for (let i=0; i<cunsize; i++) { 
+	   cuname += ascChar(signByte[3*64+16+i]); 
+      } 
       appcontcount++; 
-      writeAppContact(sender,appcontcount,cname); 
+      writeAppContact(sender,appcontcount,cname,cuname); 
       writeAppContactCount(sender,appcontcount); 
       restoreImage(0,0,1080,2176); 
       // appHomeChats(); 
