@@ -60,10 +60,10 @@ function readAppUserCount() {
 
 function writeAppContact(sndr,ccount,cname,cuname) { 
   var ref = firebase.database().ref("App").child(sndr).child("Contact").child(ccount).child("Contact"); 
-  ref.child("Username").set({ 
+  ref.child("Name").set({ 
     Name: cname 
   }); 
-  ref.child("Name").set({ 
+  ref.child("Username").set({ 
     Username: cuname 
   }); 
 } 
@@ -80,10 +80,10 @@ function readAppContact(sndr,ccount) {
   ref.once("value", function(snapshot) { 
   var cname = snapshot.child("Name").child("Name").val(); 
   var cuname = snapshot.child("Username").child("Username").val(); 
-  for (let i=0; i<cuname.length; i++) { 
+  for (let i=0; i<cname.length; i++) { 
     contView[ccount*64+8+i] = cname.charCodeAt(i); 
   } 
-  for (let i=0; i<cname.length; i++) { 
+  for (let i=0; i<cuname.length; i++) { 
     contView[ccount*64+36+i] = cuname.charCodeAt(i); 
   } 
   contView[ccount*64+0] = ccount; 
