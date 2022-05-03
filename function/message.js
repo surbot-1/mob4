@@ -45,7 +45,7 @@ function message() {
     msgByte[28]=ptr; 
   } 
   
-  if (kstr=="SHIFT" || kstr=="?123" || kstr=="ENTER" || kstr=="ABC") { 
+  if (kstr=="SHIFT" || kstr=="?123" || kstr=="ENTER") { 
   } else { 
     if (msgByte[28]==0) { 
       ktype=0; 
