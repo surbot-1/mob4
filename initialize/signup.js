@@ -14,7 +14,7 @@ var signupform = ["","","Mobile/Email","OTP/Password","Name","DOB","Gender","","
 for (let i=2; i<7; i++) { 
 	imageRect(200,144*i+8,680,128,"rgba(0,0,128,1.0)"); 
 	imageRect(200+8,144*i+8+8,680-16,128-16,"rgba(255,255,255,1.0)"); 
-	writecStr(200+16+8,144*i+48,24*24,48,"font2448",[48,48,48,255],[255,255,255,255],signupform[i]); 
+	writecStr(200+16+8,144*i+48+8,24*24,48,"ubuntufont",[48,48,48,255],[255,255,255,255],signupform[i]); 
 } 
 	
 ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue 
@@ -230,7 +230,7 @@ var ptr=2; var ptrp=2;
   } 
 	 
   if (ptr==0) { 
-      writecStr(x+ci+8,y+cj,24*24,48,"font2448",[48,48,48,255],[255,255,255,255],signupform[rptr]); 
+      writecStr(x+ci+8,y+cj+8,24*24,48,"ubuntufont",[48,48,48,255],[255,255,255,255],signupform[rptr]); 
   }
 	 
   writeCursor(x+ci,y+cj); 
