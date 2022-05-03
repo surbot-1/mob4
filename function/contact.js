@@ -27,7 +27,7 @@ function newContact() {
      for (let i=0; i<10; i++) {
       signByte[i*64+6]=0; 
       signByte[i*64+2]=0; 
-      signByte[i*64+3]=0; 
+      signByte[i*64+3]=0;  
       signByte[i*64+4]=0; 
       signByte[i*64+5]=0; 
      }
