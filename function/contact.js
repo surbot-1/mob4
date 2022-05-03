@@ -1,15 +1,22 @@
 function newContact() { 
      saveImage(0,0,1080,2176); 
 	
-     imageRect(0,0,1080,144,"rgba(0,0,128,1.0)"); 
+     imaimageRect(200,144*3+8,680,128,"rgba(0,0,128,1.0)"); 
+
+     imageRect(200+8,144*3+8+8,680-16,128-16,"rgba(255,255,255,1.0)"); geRect(0,0,1080,144,"rgba(0,0,128,1.0)"); 
      // fileViewerUrl(8, 48, "icon/arrow-left-icon-48.bmp"); 
      writecStr(396,8+40,24*11,48,"font2448",[255,255,255,255],[0,0,128,255],"New contact"); 
 	
      imageRect(0,144,1080,2032,"rgba(240,240,240,1.0)"); 
-     imageRect(200,144*2+8,680,128,"rgba(0,0,128,1.0)"); 
-     imageRect(200+8,144*2+8+8,680-16,128-16,"rgba(255,255,255,1.0)"); 
-     imageRect(200,144*3+8,680,128,"rgba(0,0,128,1.0)"); 
-     imageRect(200+8,144*3+8+8,680-16,128-16,"rgba(255,255,255,1.0)"); 
+	
+     var newcontform = ["","","Name","Mob/Email","","",];
+	
+     for (let i=2; i<4; i++) {
+         imageRect(200,144*i+8,680,128,"rgba(0,0,128,1.0)"); 
+         imageRect(200+8,144*i+8+8,680-16,128-16,"rgba(255,255,255,1.0)"); 
+	 writecStr(200+16+8,144*i+48+8,24*24,32,"ubuntufont",[48,48,48,255],[255,255,255,255],newcontform[i]); 
+     }
+     
      imageRect(200,144*4+8,680,128,"rgba(0,0,128,1.0)"); 
      writecStr(200+268+24,144*4+8+40,24*4,48,"font2448",[255,255,255,255],[0,0,128,255],"Save"); 
      writecStr(200+268,144*5+8+40,24*6,48,"font2448",[255,255,255,255],[0,0,128,255],"Cancle"); 
@@ -95,6 +102,11 @@ function storekeyvalue(viewByte,rptr) {
   view.setUint8(1,viewByte[rptr*64+5]); 
   cj = view.getUint16(0); 
   clearCursor(x+ci,y+cj); 
+	
+  if (ptr==0) { 
+     imageRect(x,y,24*24,48,"rgba(255,255,255,1.0)"); 
+  }
+	
   if (kstr=="SHIFT") {  
     if (ktype==0 || ktype==2) { 
       ktype++; 
@@ -146,6 +158,11 @@ function storekeyvalue(viewByte,rptr) {
     viewByte[rptr*64+4]=(cj&0xFF00)>>8; 
     viewByte[rptr*64+5]=cj&0x00FF; 
   } 
+	
+  if (ptr==0) { 
+      writecStr(x+ci+8,y+cj+8,24*24,48,"ubuntufont",[48,48,48,255],[255,255,255,255],newcontform[rptr]); 
+  }
+	
   writeCursor(x+ci,y+cj); 
   showCursor(x+ci,y+cj); 
  } 
