@@ -25,8 +25,10 @@ ctx.fillRect(200+8, 144*3+8+8, 680-16, 128-16);
 ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue 
 ctx.fillRect(200, 144*4+8, 680, 128); 
 	
-writecStr(200+16+8,144*2+48,24*24,48,"font2448",[32,32,32,255],[255,255,255,255],"Mob/Email"); 
-writecStr(200+16+8,144*3+48,24*24,48,"font2448",[32,32,32,255],[255,255,255,255],"OTP/Password"); 
+var signinform = ["", "", "Mobile/Email", "OTP/Password"]; 
+	
+writecStr(200+16+8,144*2+48,24*24,48,"font2448",[32,32,32,255],[255,255,255,255],signinform[2]); 
+writecStr(200+16+8,144*3+48,24*24,48,"font2448",[32,32,32,255],[255,255,255,255],signinform[3]); 
 	
   writecStr(200+268,144*4+8+40,24*6,48,"font2448",[255,255,255,255],[0,0,128,255],"SignIn"); 
   writecStr(200,144*5+8+48,24*9,32,"ubuntufont",[32,32,32,255],[240,240,240,255],"Password?"); 
@@ -198,12 +200,10 @@ var remember=false;
   cj = view.getUint16(0); 
   clearCursor(x+ci,y+cj); 
   
-  if (viewByte[rptr*64+6]==0 && rptr==2) { 
-      imageRect(x,y,24*24,48,"rgba(255,255,255,1.0)"); 
-  } else if (viewByte[rptr*64+6]==0 && rptr==3) { 
-      imageRect(x,y,24*24,48,"rgba(255,255,255,1.0)"); 
-  }
-	 
+  if (ptr==0) { 
+     imageRect(x,y,24*24,48,"rgba(255,255,255,1.0)"); 
+  } 
+       
   if (kstr=="SHIFT") {  
     if (ktype==0 || ktype==2) { 
       ktype++; 
@@ -256,11 +256,9 @@ var remember=false;
     viewByte[rptr*64+5]=cj&0x00FF; 
   } 
 	 
-  if (viewByte[rptr*64+6]==0 && rptr==2) { 
-      writecStr(x+ci+8,y+cj,24*24,48,"font2448",[32,32,32,255],[255,255,255,255],"Mob/Email"); 
-  } else if (viewByte[rptr*64+6]==0 && rptr==3) { 
-      writecStr(x+ci+8,y+cj,24*24,48,"font2448",[32,32,32,255],[255,255,255,255],"OTP/Password"); 
-  }
+  if (ptr==0) { 
+      writecStr(x+ci+8,y+cj,24*24,48,"font2448",[32,32,32,255],[255,255,255,255],signinform[rptr]); 
+  } 
 	 
   writeCursor(x+ci,y+cj); 
   showCursor(x+ci,y+cj); 
