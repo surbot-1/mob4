@@ -1,9 +1,7 @@
 function newContact() { 
      saveImage(0,0,1080,2176); 
 	
-     imaimageRect(200,144*3+8,680,128,"rgba(0,0,128,1.0)"); 
-
-     imageRect(200+8,144*3+8+8,680-16,128-16,"rgba(255,255,255,1.0)"); geRect(0,0,1080,144,"rgba(0,0,128,1.0)"); 
+     imageRect(0,0,1080,144,"rgba(0,0,128,1.0)"); 
      // fileViewerUrl(8, 48, "icon/arrow-left-icon-48.bmp"); 
      writecStr(396,8+40,24*11,48,"font2448",[255,255,255,255],[0,0,128,255],"New contact"); 
 	
