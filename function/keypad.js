@@ -17,11 +17,6 @@ function drawKeypad(x, y, t) {  // alert('1');
 	ctx.fillStyle = "rgba(192,192,192,1.0)"; // gray
 	ctx.fillRect(x, y-128, 1080, 128); 
 	
-        /* ctx.fillStyle = "rgba(0,0,192,1.0)"; // blue
-	ctx.fillRect(x, y-128*2, 1080, 128); 
-	ctx.fillStyle = "rgba(255,255,255,1.0)"; // white
-	ctx.fillRect(x+4, y-128*2+4, 1080-8, 128-8); */
-	
   var imgBuf = new ArrayBuffer(kw*4*kh*rw*cl); 
   var imgView = new Uint8Array(imgBuf); 
   
@@ -70,12 +65,6 @@ function drawKeypad(x, y, t) {  // alert('1');
 	  var ki = kx+kl+(kw+pw-(str.length)*24)/2;  
 	  var kj = ky+kt+(kh+ph-48)/2; 
 	  writeStr(ki, kj, 24*5, 48*1, font, str); 
-	  
-	  /* ctx.beginPath(); 
-	  ctx.lineWidth = "2"; 
-	  ctx.strokeStyle = "rgba(220,220,220,1.0)"; // "black"; 
-	  ctx.rect(kx, ky, kw+pw+kl*2, kh+ph+kt*2); 
-	  ctx.stroke(); */
   } 
   
   for (let j=0; j<rw; j++) { 
