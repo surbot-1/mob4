@@ -46,7 +46,7 @@ function message() {
   } 
   
   if (mdgByte[28]==0) {ktype=0;} 
-  else if (mdgByte[28]!=0) {ktype=1;}
+  else if (mdgByte[28]!=0 && ktype==0) {ktype=1;}
   
   writeCursor(16,1448); 
   showCursor(16,1448);
