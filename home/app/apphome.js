@@ -29,8 +29,8 @@ var account=0;
 function writeCont(cname, cuname, i) {  
     acname[i]=cname; acuname[i]=cuname; acsts[i]=true; 
     fileViewerUrl(64, 144*i+8, "icon/business-man-icon-128.bmp"); 
-    writecStr(200,144*i+48,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],cname); 
-    // writecStr(200,144*i+72,480,128,"ubuntufont",[0,0,0,255],[240,240,240,255],cuname); 
+    writecStr(200,144*i+48,24*24,32,"ubuntubold",[0,0,0,255],[240,240,240,255],cname); 
+    // writecStr(200,144*i+72,24*24,32,"ubuntufont",[0,0,0,255],[240,240,240,255],cuname); 
 } 
 	
 function rcvCont() { 
@@ -191,8 +191,8 @@ function appHomeContacts() {
 	function writeCont(cname, cuname, i) {  
 		acname[i]=cname; acuname[i]=cuname; acsts[i]=true; 
 		fileViewerUrl(64, 144*i+8, "icon/business-man-icon-128.bmp"); 
-		writecStr(200,144*i+36,480,128,"ubuntubold",[0,0,0,255],[240,240,240,255],cname); 
-		writecStr(200,144*i+76,480,128,"ubuntufont",[0,0,0,255],[240,240,240,255],cuname); 
+		writecStr(200,144*i+36,24*24,32,"ubuntubold",[0,0,0,255],[240,240,240,255],cname); 
+		writecStr(200,144*i+76,24*24,32,"ubuntufont",[0,0,0,255],[240,240,240,255],cuname); 
 	} 
 	
 	function rcvCont() { 
