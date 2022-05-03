@@ -250,10 +250,10 @@ var remember=false;
   } 
 	 
   if (viewByte[rptr*64+6]==0 && rptr==2) { 
-      writeChar(x+ci+8,y+cj,"font2448","Mob/Email"); 
+      writecStr(x+ci+8,y+cj,24*24,48,"font2448",[32,32,32,255],[255,255,255,255],"Mob/Email"); 
   } 
   if (viewByte[rptr*64+6]==0 && rptr==3) { 
-      writeChar(x+ci+8,y+cj,"font2448","OTP/Password"); 
+      writecStr(x+ci+8,y+cj,24*24,48,"font2448",[32,32,32,255],[255,255,255,255],"OTP/Password"); 
   }
 	 
   writeCursor(x+ci,y+cj); 
