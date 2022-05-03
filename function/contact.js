@@ -9,7 +9,7 @@ function newContact() {
 	
      imageRect(0,144,1080,2032,"rgba(240,240,240,1.0)"); 
 	
-     var newcontform = ["","","Name","Mob/Email","",""];
+     var newcontform = ["", "", "Name", "Mobile/Email", "", ""];
 	
      for (let i=2; i<4; i++) {
          imageRect(200,144*i+8,680,128,"rgba(0,0,128,1.0)"); 
