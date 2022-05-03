@@ -171,6 +171,10 @@ function readKeypad(x, y, t) {
 	   var ki = kx+kl+(kw+pw-(str.length)*24)/2;  
 	   var kj = ky+kt+(kh+ph-48)/2; 
 	   writeStr(ki, kj, 24*5, 48*1, font, str); 
+           if (t!=ktype) { 
+               str = keyChar(kc, kr, ktype); 
+               writeStr(ki, kj, 24*5, 48*1, font, str); 
+	   }
         } 
         f1(); 
         setTimeout(f2, 0010);
