@@ -86,7 +86,7 @@ function readAppContact(sndr,ccount) {
   for (let i=0; i<cuname.length; i++) { 
     contView[ccount*64+36+i] = cuname.charCodeAt(i); 
   } 
-  contView[0]=ccount; 
+  contView[0*64+0]=ccount; 
   contView[ccount*64+0] = ccount; 
   contView[ccount*64+2] = cname.length; 
   contView[ccount*64+4] = cuname.length; 
@@ -102,7 +102,7 @@ function readAppContactCount(sndr) {
   var ref = firebase.database().ref("App").child(sndr).child("Contact"); 
   ref.once("value", function(snapshot) { 
   var ccount = snapshot.child("ContactCount").child("ContactCount").val(); 
-  contView[0] = ccount; 
+  contView[0*64+0] = ccount; 
   appcontcount = ccount; 
   return ccount; 
   }); 
