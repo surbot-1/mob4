@@ -43,7 +43,7 @@ function rcvCont() {
 	  for (let j=0; j<(contView[i*512+2]); j++) { 
 	    cname += ascChar(contView[i*512+32+j]); 
 	  }  
-	  for (let j=0; j<(contView[i*64+4]); j++) { 
+	  for (let j=0; j<(contView[i*512+4]); j++) { 
 	    cuname += ascChar(contView[i*512+80+j]); 
 	  }  
 	  writeCont(cname,cuname,i); cname=""; cuname=""; 
