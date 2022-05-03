@@ -5,11 +5,6 @@ var ctx = cnv.getContext('2d');
 
 ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // light gray
 ctx.fillRect(0, 0, 1080, 144); 
-// fileViewerUrl(64, 8, "icon/business-woman-icon-128.bmp");  
-// fileViewerUrl(824, 48, "icon/video-icon-48.bmp");  
-// fileViewerUrl(952, 48, "icon/telephone-icon-48.bmp"); 
-// writecStr(200,48,480,32,"ubuntubold",[255,255,255,255],[0,0,128,255],"sAy"); 
-// writecStr(200,80,480,32,"ubuntufont",[255,255,255,255],[0,0,128,255],"online");
 
 ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // light gray
 ctx.fillRect(0, 144, 1080, 2032); 
@@ -27,8 +22,8 @@ ctx.fillRect(200, 144*4+8, 680, 128);
 	
 var signinform = ["", "", "Mobile/Email", "OTP/Password"]; 
 	
-writecStr(200+16+8,144*2+48,24*24,48,"font2448",[32,32,32,255],[255,255,255,255],signinform[2]); 
-writecStr(200+16+8,144*3+48,24*24,48,"font2448",[32,32,32,255],[255,255,255,255],signinform[3]); 
+writecStr(200+16+8,144*2+48,24*24,48,"font2448",[48,48,48,255],[255,255,255,255],signinform[2]); 
+writecStr(200+16+8,144*3+48,24*24,48,"font2448",[48,48,48,255],[255,255,255,255],signinform[3]); 
 	
   writecStr(200+268,144*4+8+40,24*6,48,"font2448",[255,255,255,255],[0,0,128,255],"SignIn"); 
   writecStr(200,144*5+8+48,24*9,32,"ubuntufont",[32,32,32,255],[240,240,240,255],"Password?"); 
@@ -257,7 +252,7 @@ var remember=false;
   } 
 	 
   if (ptr==0) { 
-      writecStr(x+ci+8,y+cj,24*24,48,"font2448",[32,32,32,255],[255,255,255,255],signinform[rptr]); 
+      writecStr(x+ci+8,y+cj,24*24,48,"font2448",[48,48,48,255],[255,255,255,255],signinform[rptr]); 
   } 
 	 
   writeCursor(x+ci,y+cj); 
