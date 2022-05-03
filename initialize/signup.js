@@ -5,35 +5,18 @@ var ctx = cnv.getContext('2d');
 
 ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // light gray
 ctx.fillRect(0, 0, 1080, 144); 
-// fileViewerUrl(64, 8, "icon/business-woman-icon-128.bmp");  
-// fileViewerUrl(824, 48, "icon/video-icon-48.bmp");  
-// fileViewerUrl(952, 48, "icon/telephone-icon-48.bmp"); 
-// writecStr(200,48,480,32,"ubuntubold",[255,255,255,255],[0,0,128,255],"sAy"); 
-// writecStr(200,80,480,32,"ubuntufont",[255,255,255,255],[0,0,128,255],"online");
 
 ctx.fillStyle = "rgba(240, 240, 240, 1.0)"; // light gray
 ctx.fillRect(0, 144, 1080, 2032); 
+	
+var signupform = ["","","Mobile/Email","OTP/Password","Name","DOB","Gender","",""]; 
 
-ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue 
-ctx.fillRect(200, 144*2+8, 680, 128); 
-ctx.fillStyle = "rgba(255,255,255,1.0)"; // white
-ctx.fillRect(200+8, 144*2+8+8, 680-16, 128-16); 
-ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue 
-ctx.fillRect(200, 144*3+8, 680, 128); 
-ctx.fillStyle = "rgba(255,255,255,1.0)"; // white
-ctx.fillRect(200+8, 144*3+8+8, 680-16, 128-16); 
-ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue 
-ctx.fillRect(200, 144*4+8, 680, 128); 
-ctx.fillStyle = "rgba(255,255,255,1.0)"; // white
-ctx.fillRect(200+8, 144*4+8+8, 680-16, 128-16); 
-ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue 
-ctx.fillRect(200, 144*5+8, 680, 128); 
-ctx.fillStyle = "rgba(255,255,255,1.0)"; // white
-ctx.fillRect(200+8, 144*5+8+8, 680-16, 128-16); 
-ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue 
-ctx.fillRect(200, 144*6+8, 680, 128); 
-ctx.fillStyle = "rgba(255,255,255,1.0)"; // white
-ctx.fillRect(200+8, 144*6+8+8, 680-16, 128-16); 
+for (let i=2; i<7; i++) { 
+	imageRect(200,144*i+8,680,128,"rgba(0,0,128,1.0)"); 
+	imageRect(200+8,144*i+8+8,680-16,128-16,"rgba(255,255,255,1.0)"); 
+	writecStr(200+16+8,144*i+48,24*24,48,"font2448",[48,48,48,255],[255,255,255,255],signupform[i]); 
+} 
+	
 ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue 
 ctx.fillRect(200, 144*7+8, 680, 128); 
   writecStr(200+268,144*7+8+40,24*6,48,"font2448",[255,255,255,255],[0,0,128,255],"SignUp"); 
@@ -190,6 +173,10 @@ var ptr=2; var ptrp=2;
   view.setUint8(1,viewByte[rptr*64+5]); 
   cj = view.getUint16(0); 
   clearCursor(x+ci,y+cj); 
+  if (ptr==0) { 
+     imageRect(x,y,24*24,48,"rgba(255,255,255,1.0)"); 
+  }
+	 
   if (kstr=="SHIFT") {  
     if (ktype==0 || ktype==2) { 
       ktype++; 
@@ -241,6 +228,11 @@ var ptr=2; var ptrp=2;
     viewByte[rptr*64+4]=(cj&0xFF00)>>8; 
     viewByte[rptr*64+5]=cj&0x00FF; 
   } 
+	 
+  if (ptr==0) { 
+      writecStr(x+ci+8,y+cj,24*24,48,"font2448",[48,48,48,255],[255,255,255,255],signupform[rptr]); 
+  }
+	 
   writeCursor(x+ci,y+cj); 
   showCursor(x+ci,y+cj); 
  } 
