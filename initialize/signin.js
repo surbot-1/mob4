@@ -197,6 +197,13 @@ var remember=false;
   view.setUint8(1,viewByte[rptr*64+5]); 
   cj = view.getUint16(0); 
   clearCursor(x+ci,y+cj); 
+  
+  if (viewByte[rptr*64+6]==0 && rptr==2) { 
+      imageRect(x,y,24*24,48,"rgba(255,255,255,1.0)"); 
+  } else if (viewByte[rptr*64+6]==0 && rptr==3) { 
+      imageRect(x,y,24*24,48,"rgba(255,255,255,1.0)"); 
+  }
+	 
   if (kstr=="SHIFT") {  
     if (ktype==0 || ktype==2) { 
       ktype++; 
@@ -251,8 +258,7 @@ var remember=false;
 	 
   if (viewByte[rptr*64+6]==0 && rptr==2) { 
       writecStr(x+ci+8,y+cj,24*24,48,"font2448",[32,32,32,255],[255,255,255,255],"Mob/Email"); 
-  } 
-  if (viewByte[rptr*64+6]==0 && rptr==3) { 
+  } else if (viewByte[rptr*64+6]==0 && rptr==3) { 
       writecStr(x+ci+8,y+cj,24*24,48,"font2448",[32,32,32,255],[255,255,255,255],"OTP/Password"); 
   }
 	 
