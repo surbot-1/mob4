@@ -35,21 +35,21 @@ function writeCont(cname, cuname, i) {
 	
 function rcvCont() { 
    var tmr; var cname=""; var cuname=""; 
-   var rcv = contView[appcontcount*64+0]; 
+   var rcv = contView[appcontcount*512+0]; 
    tmr = setInterval( ()=> { 
      if (rcv) { 
        clearInterval(tmr); 
        for (let i=1; i<appcontcount+1; i++) { 
-	  for (let j=0; j<(contView[i*64+2]); j++) { 
-	    cname += ascChar(contView[i*64+8+j]); 
+	  for (let j=0; j<(contView[i*512+2]); j++) { 
+	    cname += ascChar(contView[i*512+32+j]); 
 	  }  
 	  for (let j=0; j<(contView[i*64+4]); j++) { 
-	    cuname += ascChar(contView[i*64+36+j]); 
+	    cuname += ascChar(contView[i*512+80+j]); 
 	  }  
 	  writeCont(cname,cuname,i); cname=""; cuname=""; 
        } 
      } else if (!rcv) { 
-       rcv = contView[appcontcount*64+0]; 
+       rcv = contView[appcontcount*512+0]; 
      }
    }, 1000); 
 } 
@@ -197,21 +197,21 @@ function appHomeContacts() {
 	
 	function rcvCont() { 
 		var tmr; var cname=""; var cuname=""; 
-		var rcv = contView[appcontcount*64+0]; 
+		var rcv = contView[appcontcount*512+0]; 
 		tmr = setInterval( ()=> { 
 			if (rcv) { 
 				clearInterval(tmr); 
 				for (let i=1; i<appcontcount+1; i++) { 
-					for (let j=0; j<(contView[i*64+2]); j++) { 
-						cname += ascChar(contView[i*64+8+j]); 
+					for (let j=0; j<(contView[i*512+2]); j++) { 
+						cname += ascChar(contView[i*512+32+j]); 
 					}  
-					for (let j=0; j<(contView[i*64+4]); j++) { 
-						cuname += ascChar(contView[i*64+36+j]); 
+					for (let j=0; j<(contView[i*512+4]); j++) { 
+						cuname += ascChar(contView[i*512+80+j]); 
 					}  
 					writeCont(cname,cuname,i); cname="";  cuname="";
 				} 
 			} else if (!rcv) { 
-				rcv = contView[appcontcount*64+0]; 
+				rcv = contView[appcontcount*512+0]; 
 			} 
 		}, 1000); 
 	} 
