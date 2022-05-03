@@ -45,7 +45,8 @@ function message() {
     msgByte[28]=ptr; 
   } 
   
-  if (kstr!="SHIFT" || kstr!="?123" || kstr!="ENTER") { 
+  if (kstr=="SHIFT" || kstr=="?123" || kstr=="ENTER" || kstr=="ABC") { 
+  } else { 
     if (msgByte[28]==0) { 
       ktype=0; 
       drawKeypad(0,1664,ktype); 
