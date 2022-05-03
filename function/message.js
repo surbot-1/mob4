@@ -45,14 +45,15 @@ function message() {
     msgByte[28]=ptr; 
   } 
   
-  if (msgByte[28]==0) { 
-    ktype=0; 
-    drawKeypad(0,1664,ktype); 
-  } 
-  else if (msgByte[28]!=0 && ktype==0) { 
-    ktype=1; 
-    drawKeypad(0,1664,ktype); 
-  } 
+  if (kstr!="SHIFT" || kstr!="?123" || kstr!="ENTER") { 
+    if (msgByte[28]==0) { 
+      ktype=0; 
+      drawKeypad(0,1664,ktype); 
+    } else if (msgByte[28]!=0 && ktype==0) { 
+      ktype=1; 
+      drawKeypad(0,1664,ktype); 
+    } 
+  }
   
   writeCursor(16,1448); 
   showCursor(16,1448);
