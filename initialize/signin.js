@@ -22,8 +22,8 @@ ctx.fillRect(200, 144*4+8, 680, 128);
 	
 var signinform = ["", "", "Mobile/Email", "OTP/Password"]; 
 	
-writecStr(200+16+8,144*2+48,24*24,48,"font2448",[48,48,48,255],[255,255,255,255],signinform[2]); 
-writecStr(200+16+8,144*3+48,24*24,48,"font2448",[48,48,48,255],[255,255,255,255],signinform[3]); 
+writecStr(200+16+8,144*2+48+8,24*24,48,"ubuntufont",[48,48,48,255],[255,255,255,255],signinform[2]); 
+writecStr(200+16+8,144*3+48+8,24*24,48,"ubuntufont",[48,48,48,255],[255,255,255,255],signinform[3]); 
 	
   writecStr(200+268,144*4+8+40,24*6,48,"font2448",[255,255,255,255],[0,0,128,255],"SignIn"); 
   writecStr(200,144*5+8+48,24*9,32,"ubuntufont",[32,32,32,255],[240,240,240,255],"Password?"); 
@@ -252,7 +252,7 @@ var remember=false;
   } 
 	 
   if (ptr==0) { 
-      writecStr(x+ci+8,y+cj,24*24,48,"font2448",[48,48,48,255],[255,255,255,255],signinform[rptr]); 
+      writecStr(x+ci+8,y+cj+8,24*24,48,"ubuntufont",[48,48,48,255],[255,255,255,255],signinform[rptr]); 
   } 
 	 
   writeCursor(x+ci,y+cj); 
