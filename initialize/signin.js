@@ -24,6 +24,10 @@ ctx.fillStyle = "rgba(255,255,255,1.0)"; // white
 ctx.fillRect(200+8, 144*3+8+8, 680-16, 128-16); 
 ctx.fillStyle = "rgba(0,0,128,1.0)"; // blue 
 ctx.fillRect(200, 144*4+8, 680, 128); 
+	
+writecChar(200+16+8,144*2+48,"font2448",[32,32,32,255],[255,255,255,255],"Mob/Email"); 
+writecChar(200+16+8,144*3+48,"font2448",[32,32,32,255],[255,255,255,255],"OTP/Password"); 
+	
   writecStr(200+268,144*4+8+40,24*6,48,"font2448",[255,255,255,255],[0,0,128,255],"SignIn"); 
   writecStr(200,144*5+8+48,24*9,32,"ubuntufont",[32,32,32,255],[240,240,240,255],"Password?"); 
   writecStr(200+24*22,144*5+8+48,24*6,32,"ubuntufont",[32,32,32,255],[240,240,240,255],"SignUp"); 
@@ -244,6 +248,14 @@ var remember=false;
     viewByte[rptr*64+4]=(cj&0xFF00)>>8; 
     viewByte[rptr*64+5]=cj&0x00FF; 
   } 
+	 
+  if (viewByte[rptr*64+6]==0 && rptr==2) { 
+      writeChar(x+ci+8,y+cj,"font2448","Mob/Email"); 
+  } 
+  if (viewByte[rptr*64+6]==0 && rptr==3) { 
+      writeChar(x+ci+8,y+cj,"font2448","OTP/Password"); 
+  }
+	 
   writeCursor(x+ci,y+cj); 
   showCursor(x+ci,y+cj); 
  } 
