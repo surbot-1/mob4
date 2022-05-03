@@ -24,6 +24,8 @@ function sendMessage() {
   msgPtr++; 
   ci=0; cj=0; msgByte[28]=0; // msize 
   send(); 
+  ktype=0; 
+  drawKeypad(0,1664,ktype);
   clearCursor(16,1448); 
   var cnv = document.getElementById("canvas"); 
   var ctx = cnv.getContext('2d'); 
