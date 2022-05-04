@@ -26,14 +26,14 @@ var acuname=[];
 var acsts=[]; 
 var account=0; 
 	
-function writeCont(cname, cuname, i) {  
+function writeContact(cname, cuname, i) {  
     acname[i]=cname; acuname[i]=cuname; acsts[i]=true; 
     fileViewerUrl(64, 144*i+8, "icon/business-man-icon-128.bmp"); 
     writecStr(200,144*i+48,24*24,32,"ubuntubold",[0,0,0,255],[240,240,240,255],cname); 
     // writecStr(200,144*i+72,24*24,32,"ubuntufont",[0,0,0,255],[240,240,240,255],cuname); 
 } 
 	
-function rcvCont() { 
+function receiveContact() { 
    var tmr; var cname=""; var cuname=""; 
    var rcv = contView[appcontcount*512+0]; 
    tmr = setInterval( ()=> { 
@@ -46,7 +46,7 @@ function rcvCont() {
 	  for (let j=0; j<(contView[i*512+4]); j++) { 
 	    cuname += ascChar(contView[i*512+80+j]); 
 	  }  
-	  writeCont(cname,cuname,i); cname=""; cuname=""; 
+	  writeContact(cname,cuname,i); cname=""; cuname=""; 
        } 
      } else if (!rcv) { 
        rcv = contView[appcontcount*512+0]; 
@@ -63,7 +63,7 @@ if (true) {
           for (let i=1; i<appcontcount+1; i++) { 
 	     readAppContact(sender, i); 
           } 
-	  rcvCont(); 
+	  receiveContact(); 
       } else if (!appcontcount) { 
          count = readAppContactCount(sender); 
       }
