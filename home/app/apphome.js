@@ -18,7 +18,7 @@ ctx.fillStyle = "rgba(240, 240, 240, 1.0)";  // lightgray
 ctx.fillRect(0, 144, 1080, 2032); 
 } 
 	
-receive(false); 
+receive(false); retrieveContact(); 
 chatbotactive=false; useractive=false; sendactive=10; 
 appPtr=0; appPtri=0; appPtrf=0; 
 msgid=1; rcvmsgid=0; rcvmsgidp=0; 
