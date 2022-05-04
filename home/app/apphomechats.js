@@ -49,7 +49,7 @@ var ptr=appPtr;
 	var tend = touch;  
            if (tend == 3) { touch = 0;
               if (x>0 && x<64 && y>0 && y<144) { 
-		      clearInterval(timer); appHomeChats(); 
+		      clearInterval(timer); appHomeChats(1,0,1); 
               } else if (x>64 && x<64+128 && y>0 && y<144) { 
               } else if (x>924 && x<924+48 && y>0 && y<144) { 
 	      } else if (x>952 && x<952+48 && y>0 && y<144) { 
@@ -142,7 +142,7 @@ var ptr=appPtr;
 	var tend = touch;  
            if (tend == 3) { touch = 0; 
               if (x>0 && x<64 && y>0 && y<144) { 
-		      clearInterval(timer); clearCursor(16,1448); appHomeChats(); 
+		      clearInterval(timer); clearCursor(16,1448); appHomeChats(1,0,1); 
               } else if (x>64 && x<64+128 && y>0 && y<144) { 
               } else if (x>924 && x<924+48 && y>0 && y<144) { 
 	      } else if (x>952 && x<952+48 && y>0 && y<144) { 
@@ -248,7 +248,7 @@ var ptr=appPtr; var minfo=0;
 	var tend = touch;  
            if (tend == 3) { touch = 0;  
 	      if (x>0 && x<64 && y>0 && y<144) { 
-		      clearInterval(timer); appHomeChats(); 
+		      clearInterval(timer); appHomeChats(1,0,1); 
               } else if (x>64 && x<64+128 && y>0 && y<144) { 
               } else if (x>924 && x<924+48 && y>0 && y<144) { 
 	      } else if (x>952 && x<952+48 && y>0 && y<144) { 
@@ -352,7 +352,7 @@ var ptr=appPtr; var minfo=0;
 	var tend = touch;  
            if (tend == 3) { touch = 0;  
 	      if (x>0 && x<64 && y>0 && y<144) { 
-		      clearInterval(timer); clearCursor(16,1448); appHomeChats(); 
+		      clearInterval(timer); clearCursor(16,1448); appHomeChats(1,0,1); 
               } else if (x>64 && x<64+128 && y>0 && y<144) { 
               } else if (x>924 && x<924+48 && y>0 && y<144) { 
 	      } else if (x>952 && x<952+48 && y>0 && y<144) { 
