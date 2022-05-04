@@ -201,10 +201,10 @@ var ptr=2; var ptrp=2;
 		      ptrp=ptr; ptr=3; updtCursor(signByte,ptr, ptrp); 
               } else if (x>200 && x<880 && y>144*4+8 && y<144*4+8+128) { 
 		      clrCursor(signByte, ptr); clearInterval(timer); 
-		      saveContact(); appHomeChats(); 
+		      saveContact(); appHomeChats(1,1,1); 
               } else if (x>200 && x<880 && y>144*5+8 && y<144*5+8+128) { 
 		      clrCursor(signByte, ptr);  clearInterval(timer); 
-		      appHomeChats(); 
+		      appHomeChats(1,0,1); 
 	      } else if (x>200 && x<1080 && y>160*5+8 && y<144*6+128) { 
 	      } else if (x>0 && x<1080 && y>144*6+8 && y<144*7+128) { 
 	      } else if (x>0 && x<1080 && y>144*7+8 && y<144*8+128) {  
