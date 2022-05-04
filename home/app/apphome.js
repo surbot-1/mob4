@@ -92,13 +92,13 @@ var account=0;
           clearInterval(tmr); 
 	  if (appcontcount==contView[appcontcount*512+0]) { 
               getContact(); 
-	  } else { 
+	  } else if (appcontcount!=contView[appcontcount*512+0]) { 
               for (let i=1; i<appcontcount+1; i++) { 
 	         readAppContact(sender, i); 
               } 
+              getContact(); 
+              storeContact(); 
 	  }
-	  getContact(); 
-	  storeContact(); 
       } else if (!appcontcount) { 
          count = readAppContactCount(sender); 
       }
