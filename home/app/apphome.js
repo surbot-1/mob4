@@ -1,4 +1,5 @@
-function appHomeChats() { 
+function appHomeChats(p1,p2,p3) { 
+if (p1) { 
 var cnv = document.getElementById("canvas"); 
 var ctx = cnv.getContext('2d'); 
 ctx.fillStyle = "rgba(0, 0, 128, 1.0)"; // blue
@@ -15,6 +16,7 @@ ctx.fillRect(0, 0, 1080, 144);
 	
 ctx.fillStyle = "rgba(240, 240, 240, 1.0)";  // lightgray 
 ctx.fillRect(0, 144, 1080, 2032); 
+} 
 	
 receive(false); 
 chatbotactive=false; useractive=false; sendactive=10; 
@@ -26,14 +28,14 @@ var acuname=[];
 var acsts=[]; 
 var account=0; 
 	
-function writeContact(cname, cuname, i) {  
+  function writeContact(cname, cuname, i) {  
     acname[i]=cname; acuname[i]=cuname; acsts[i]=true; 
     fileViewerUrl(64, 144*i+8, "icon/business-man-icon-128.bmp"); 
     writecStr(200,144*i+48,24*24,32,"ubuntubold",[0,0,0,255],[240,240,240,255],cname); 
     // writecStr(200,144*i+72,24*24,32,"ubuntufont",[0,0,0,255],[240,240,240,255],cuname); 
-} 
+  } 
 	
-function receiveContact() { 
+  function getContact() { 
    var tmr; var cname=""; var cuname=""; 
    var rcv = contView[appcontcount*512+0]; 
    tmr = setInterval( ()=> { 
@@ -52,9 +54,22 @@ function receiveContact() {
        rcv = contView[appcontcount*512+0]; 
      }
    }, 1000); 
-} 
+  } 
 	
-if (true) { 
+  function storeContact() { 
+	  var base64 = base64EncArr (contView); 
+	  localStorage.setItem('contact', base64); 
+  } 
+	
+  function retrieveContact() { 
+	  var contact = localStorage.getItem('contact'); 
+	  var arr = base64DecToArr (contact, 1); 
+	  for (let i=0; i<arr.length; i++) { 
+		  contView[i]=arr[i]; 
+	  }
+  }
+	
+  if (p2) { 
    var tmr; appcontcount=0; 
    var count = readAppContactCount(sender); 
    tmr = setInterval( ()=> { 
@@ -63,14 +78,37 @@ if (true) {
           for (let i=1; i<appcontcount+1; i++) { 
 	     readAppContact(sender, i); 
           } 
-	  receiveContact(); 
+	  getContact(); 
+	  storeContact(); 
       } else if (!appcontcount) { 
          count = readAppContactCount(sender); 
       }
    }, 1000); 
-} 
+  } else if(!p2 && appcontcount==0) { 
+   var tmr; appcontcount=0; 
+   var count = readAppContactCount(sender); 
+   tmr = setInterval( ()=> { 
+      if (appcontcount) { 
+          clearInterval(tmr); 
+	  if (appcontcount==contView[appcontcount*512+0]) { 
+              getContact(); 
+	  } else { 
+              for (let i=1; i<appcontcount+1; i++) { 
+	         readAppContact(sender, i); 
+              } 
+	  }
+	  getContact(); 
+	  storeContact(); 
+      } else if (!appcontcount) { 
+         count = readAppContactCount(sender); 
+      }
+   }, 1000); 
+  } else if(!p2 && appcontcount!=0) { 
+    getContact(); 
+  }
 	
 
+     if (p3) {
 	var timer;
 	function check() { 
 	var x = touchx;  var y = touchy; 
@@ -152,6 +190,7 @@ if (true) {
            } 
 	}
 	timer = setInterval(check, 0020); 
+     }
 
 }
 
