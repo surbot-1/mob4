@@ -108,16 +108,16 @@ var remember=false;
       }
       if (uname=="sAy1" && pass=="s@1234") { 
 	  username=uname; password=pass; 
-	  sender=uname; appHomeChats(); 
+	  sender=uname; appHomeChats(1,0,1); 
       } else if (uname=="sAy2" && pass=="k@1234") { 
 	  username=uname; password=pass; 
-	  sender=uname; appHomeChats(); 
+	  sender=uname; appHomeChats(1,0,1); 
       } else if (uname=="Yash Shiv" && pass=="ys@1234") { 
 	  username=uname; password=pass; 
-	  sender=uname; appHomeChats(); 
+	  sender=uname; appHomeChats(1,0,1); 
       } else if (uname=="Jitendra" && pass=="j@1234") { 
 	  username=uname; password=pass; 
-	  sender=uname; appHomeChats(); 
+	  sender=uname; appHomeChats(1,0,1); 
       } else { 
 	  shwCursor(signByte, ptr); 
 	  timer = setInterval(check, 0020); 
