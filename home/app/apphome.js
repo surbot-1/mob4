@@ -63,14 +63,14 @@ var account=0;
 	
   function retrieveContact() { 
 	  var contact = localStorage.getItem('contact'); alert(contact); 
-	  if (contact) { 
+	  if (contact != null) { 
 		  var arr = base64DecToArr (contact, 1); 
 		  for (let i=0; i<arr.length; i++) { 
 		  contView[i]=arr[i]; 
 		  } 
 		  appcontcount=contView[0]; 
 		  getContact(); 
-	  } else if (contact == "undefined") { 
+	  } else if (contact == null) { 
 		  var tmr; appcontcount=0; 
                   var count = readAppContactCount(sender); 
                   tmr = setInterval( ()=> { 
