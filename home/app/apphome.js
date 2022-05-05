@@ -67,7 +67,7 @@ var account=0;
 		  var arr = base64DecToArr (contact, 1); alert((arr.length));
 		  for (let i=0; i<arr.length; i++) { 
 		  contView[i]=arr[i]; 
-		  } 
+		  } alert(contView[0]); 
 		  appcontcount=contView[0]; 
 		  getContact(); 
 	  } else if (contact == null) { 
