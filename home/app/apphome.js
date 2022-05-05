@@ -181,15 +181,15 @@ msgid=1; rcvmsgid=0; rcvmsgidp=0;
                     if (x>0 && x<1080 && y>144*i && y<144*(i+1)) {
 		      if (acsts[i]) {  
 			   clearInterval(timer); 
-			   /* var acname=""; var acuname=""; 
+			    var cname=""; var cuname=""; 
 			   for (let j=0; j<contView[i*512+2]; j++) { 
-				   acname += ascChar(contView[i*512+32+j]); 
+				   cname += ascChar(contView[i*512+32+j]); 
 			   } 
 			   for (let j=0; j<contView[i*512+4]; j++) { 
-				   acuname += ascChar(contView[i*512+80+j]); 
-			   } */
-			   receiver = acuname[i]; 
-			   appHomeChatsUser(acname[i]); break; 
+				   cuname += ascChar(contView[i*512+80+j]); 
+			   } 
+			   receiver = cuname; 
+			   appHomeChatsUser(cname); break; 
 		      } 
 		    }
 		 } 
