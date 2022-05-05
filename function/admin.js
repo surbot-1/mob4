@@ -18,7 +18,7 @@ function admin() {
               if (x>1080-128 && x<1080 && y>0 && y<144) { 
 		      clearInterval(timer); 
 		      restoreImage(680-16,144+16,400,600); 
-		      appHomeChats(); 
+		      appHomeChats(0,0,1); 
 	      } else if (x>1024 && x<1024+48 && y>0 && y<144) { 
               } else if (x>0 && x<1080 && y>144*2+8 && y<144*2+8+128) { 
               } else if (x>0 && x<1080 && y>144*3+8 && y<144*3+8+128) { 
