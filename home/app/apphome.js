@@ -41,7 +41,7 @@ msgid=1; rcvmsgid=0; rcvmsgidp=0;
    var rcv = contView[count*512+0]; 
    tmr = setInterval( ()=> { 
      if (rcv) { 
-       clearInterval(tmr); 
+       clearInterval(tmr); contView[0*512+2]=1; 
        for (let i=1; i<count+1; i++) { 
 	  for (let j=0; j<(contView[i*512+2]); j++) { 
 	    cname += ascChar(contView[i*512+32+j]); 
@@ -118,6 +118,7 @@ msgid=1; rcvmsgid=0; rcvmsgidp=0;
          count = readAppContactCount(sender); 
       }
    }, 1000); 
+  } else if(!p2 && contView[0*512+2]) { 
   } else if(!p2) { 
    if (contView[0] != 0) { 
       getContact(); 
