@@ -189,7 +189,7 @@ msgid=1; rcvmsgid=0; rcvmsgidp=0;
 				   acuname += ascChar(contView[i*512+80+j]); 
 			   } */
 			   receiver = acuname[i]; 
-			   appHomeChatsUser(acname[i]); 
+			   appHomeChatsUser(acname[i]); break; 
 		      } 
 		    }
 		 } 
