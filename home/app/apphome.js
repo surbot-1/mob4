@@ -161,17 +161,33 @@ var account=0;
 	      } else if (x>1080-128 && x<1080 && y>0 && y<144) { 
 		      clearInterval(timer); admin(); 
               } else if (x>0 && x<1080 && y>144*1 && y<144*2) { 
-		    if (acsts[1]) { 
-                      clearInterval(timer); 
-                      receiver = acuname[1]; 
-                      appHomeChatsChatbot(); 
-		    }
-              } else if (x>0 && x<1080 && y>144*2 && y<144*3) { 
-		   if (acsts[2]) { 
-		      clearInterval(timer); 
-		      receiver = acuname[2];  
-		      appHomeChatsUser(acname[2]); 
-		   }
+		        if (contView[1*512+0]) { 
+                            clearInterval(timer); 
+			    var acname=""; var acuname=""; 
+			    for (let j=0; j<contView[1*512+2]; j++) { 
+				    acname += ascChar(contView[1*512+32]); 
+			    } 
+			    for (let j=0; j<contView[1*512+4]; j++) { 
+				    acuname += ascChar(contView[1*512+80]); 
+			    } 
+			    receiver = acuname; 
+			    appHomeChatsChatbot(); 
+		       }
+              } else if (x>0 && x<1080 && y>144*2 && y<144*11) { 
+		 for (let i=2; i<contView[0]+1; i++) {
+		      if (contView[i*512+0]) { 
+			   clearInterval(timer); 
+			   var acname=""; var acuname=""; 
+			   for (let j=0; j<contView[i*512+2]; j++) { 
+				   acname += ascChar(contView[i*512+32]); 
+			   } 
+			   for (let j=0; j<contView[i*512+4]; j++) { 
+				   acuname += ascChar(contView[i*512+80]); 
+			   } 
+			   receiver = acuname; 
+			   appHomeChatsUser(acname); 
+		      } 
+		 }
               } else if (x>0 && x<1080 && y>144*3 && y<144*4) { 
 		   if (acsts[3]) { 
 		      clearInterval(timer); 
@@ -184,13 +200,13 @@ var account=0;
 		      receiver = acuname[4]; 
 		      appHomeChatsUser(acname[4]); 
 		   }
-              } else if (x>0 && x<1080 && y>144*5 && y<144*5+144) { 
+              } else if (x>0 && x<1080 && y>144*5 && y<144*6) { 
 		   if (acsts[5]) { 
 		      clearInterval(timer); 
 		      receiver = acuname[5]; 
 		      appHomeChatsUser(acname[5]); 
 		   }
-	      } else if (x>0 && x<1080 && y>144*6 && y<144*6+144) { 
+	      } else if (x>0 && x<1080 && y>144*6 && y<144*7) { 
 		   if (acsts[6]) { 
 		      clearInterval(timer); 
 		      receiver = acuname[6]; 
