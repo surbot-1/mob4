@@ -23,13 +23,13 @@ chatbotactive=false; useractive=false; sendactive=10;
 appPtr=0; appPtri=0; appPtrf=0; 
 msgid=1; rcvmsgid=0; rcvmsgidp=0; 
 	
-var acname=[]; 
-var acuname=[]; 
-var acsts=[]; 
-var account=0; 
+// var acname=[]; 
+// var acuname=[]; 
+// var acsts=[]; 
+// var account=0; 
 	
   function writeContact(cname, cuname, i) {  
-    acname[i]=cname; acuname[i]=cuname; acsts[i]=true; 
+    // acname[i]=cname; acuname[i]=cuname; acsts[i]=true; 
     fileViewerUrl(64, 144*i+8, "icon/business-man-icon-128.bmp"); 
     writecStr(200,144*i+48,24*24,32,"ubuntubold",[0,0,0,255],[240,240,240,255],cname); 
     // writecStr(200,144*i+72,24*24,32,"ubuntufont",[0,0,0,255],[240,240,240,255],cuname); 
