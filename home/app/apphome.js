@@ -192,55 +192,7 @@ msgid=1; rcvmsgid=0; rcvmsgidp=0;
 			   appHomeChatsUser(acname); 
 		      } 
 		    }
-		 }
-             /* } else if (x>0 && x<1080 && y>144*3 && y<144*4) { 
-		   if (acsts[3]) { 
-		      clearInterval(timer); 
-		      receiver = acuname[3]; 
-		      appHomeChatsUser(acname[3]); 
-		   }
-              } else if (x>0 && x<1080 && y>144*4 && y<144*5) { 
-		   if (acsts[4]) { 
-		      clearInterval(timer); 
-		      receiver = acuname[4]; 
-		      appHomeChatsUser(acname[4]); 
-		   }
-              } else if (x>0 && x<1080 && y>144*5 && y<144*6) { 
-		   if (acsts[5]) { 
-		      clearInterval(timer); 
-		      receiver = acuname[5]; 
-		      appHomeChatsUser(acname[5]); 
-		   }
-	      } else if (x>0 && x<1080 && y>144*6 && y<144*7) { 
-		   if (acsts[6]) { 
-		      clearInterval(timer); 
-		      receiver = acuname[6]; 
-		      appHomeChatsUser(acname[6]); 
-		   } 
-              } else if (x>0 && x<1080 && y>144*7 && y<144*8) { 
-		   if (acsts[7]) { 
-		      clearInterval(timer); 
-		      receiver = acuname[7]; 
-		      appHomeChatsUser(acname[7]); 
-		   }
-              } else if (x>0 && x<1080 && y>144*8 && y<144*9) { 
-		   if (acsts[8]) { 
-		      clearInterval(timer); 
-		      receiver = acuname[8]; 
-		      appHomeChatsUser(acname[8]); 
-		   }
-              } else if (x>0 && x<1080 && y>144*9 && y<144*10) { 
-		   if (acsts[9]) { 
-		      clearInterval(timer); 
-		      receiver = acuname[9]; 
-		      appHomeChatsUser(acname[9]); 
-		   } 
-	      } else if (x>0 && x<1080 && y>144*10 && y<144*11) { 
-		   if (acsts[10]) { 
-		      clearInterval(timer); 
-		      receiver = acuname[10]; 
-		      appHomeChatsUser(acname[10]); 
-		   } */ 
+		 } 
 	      } else if (x>0 && x<1080 && y>144*11 && y<144*11+144) { 
 	      } else if (x>0 && x<1080 && y>144*12 && y<144*12+144) { 
 	      } else if (x>920 && x<920+128 && y>2024 && y<2024+128) { 
