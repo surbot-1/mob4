@@ -37,11 +37,12 @@ var account=0;
 	
   function getContact() { 
    var tmr; var cname=""; var cuname=""; 
-   var rcv = contView[appcontcount*512+0]; 
+   var count = contView[0*512+0] ; 
+   var rcv = contView[count*512+0]; 
    tmr = setInterval( ()=> { 
      if (rcv) { 
        clearInterval(tmr); 
-       for (let i=1; i<appcontcount+1; i++) { 
+       for (let i=1; i<count+1; i++) { 
 	  for (let j=0; j<(contView[i*512+2]); j++) { 
 	    cname += ascChar(contView[i*512+32+j]); 
 	  }  
@@ -51,7 +52,7 @@ var account=0;
 	  writeContact(cname,cuname,i); cname=""; cuname=""; 
        } 
      } else if (!rcv) { 
-       rcv = contView[appcontcount*512+0]; 
+       rcv = contView[count*512+0]; 
      }
    }, 1000); 
   } 
