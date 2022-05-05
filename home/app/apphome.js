@@ -62,7 +62,7 @@ var account=0;
   } 
 	
   function retrieveContact() { 
-	  var contact = localStorage.getItem('contact'); 
+	  var contact = localStorage.getItem('contact'); alert(contact); 
 	  if (contact) { 
 		  var arr = base64DecToArr (contact, 1); 
 		  for (let i=0; i<arr.length; i++) { 
