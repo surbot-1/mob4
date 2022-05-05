@@ -118,15 +118,15 @@ msgid=1; rcvmsgid=0; rcvmsgidp=0;
          count = readAppContactCount(sender); 
       }
     }, 1000); 
-  } else if(!p2 && contView[0*512+2]) { 
+  } else if(p2==2 && contView[0*512+2]) { 
       getContact(); 
-  } else if(!p2) { 
+  } else if(p2==2) { 
      if (contView[0] != 0) { 
         getContact(); 
      } else if (contView[0] == 0) { 
         retrieveContact(); 
      }
-  } else if (p2==2) { 
+  } else if (!p2) { 
   }
 	
 
