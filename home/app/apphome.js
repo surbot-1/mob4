@@ -244,7 +244,7 @@ msgid=1; rcvmsgid=0; rcvmsgidp=0;
 		      
            } 
 	}
-	timer = setInterval(check, 0020); 
+	timer = setInterval(check, 0100); 
      }
 
 }
