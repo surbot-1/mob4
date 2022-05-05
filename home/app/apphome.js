@@ -23,13 +23,13 @@ chatbotactive=false; useractive=false; sendactive=10;
 appPtr=0; appPtri=0; appPtrf=0; 
 msgid=1; rcvmsgid=0; rcvmsgidp=0; 
 	
- var acname=[]; 
- var acuname=[]; 
- var acsts=[]; 
- var account=0; 
+ // var acname=[]; 
+ // var acuname=[]; 
+ // var acsts=[]; 
+ // var account=0; 
 	
   function writeContact(cname, cuname, i) {  
-    acname[i]=cname; acuname[i]=cuname; acsts[i]=true; 
+    // acname[i]=cname; acuname[i]=cuname; acsts[i]=true; 
     fileViewerUrl(64, 144*i+8, "icon/business-man-icon-128.bmp"); 
     writecStr(200,144*i+48,24*24,32,"ubuntubold",[0,0,0,255],[240,240,240,255],cname); 
     // writecStr(200,144*i+72,24*24,32,"ubuntufont",[0,0,0,255],[240,240,240,255],cuname); 
@@ -164,22 +164,22 @@ msgid=1; rcvmsgid=0; rcvmsgidp=0;
 	      } else if (x>1080-128 && x<1080 && y>0 && y<144) { 
 		      clearInterval(timer); admin(); 
               } else if (x>0 && x<1080 && y>144*1 && y<144*2) { 
-		        if (acsts[1]) { 
+		        if (contView[1*512+0]) { 
                             clearInterval(timer); 
-			   /* var acname=""; var acuname=""; 
+			    var cname=""; var cuname=""; 
 			    for (let j=0; j<contView[1*512+2]; j++) { 
-				    acname += ascChar(contView[1*512+32+j]); 
+				    cname += ascChar(contView[1*512+32+j]); 
 			    } 
 			    for (let j=0; j<contView[1*512+4]; j++) { 
-				    acuname += ascChar(contView[1*512+80+j]); 
-			    } */
-			    receiver = acuname[1]; 
+				    cuname += ascChar(contView[1*512+80+j]); 
+			    } 
+			    receiver = cuname; 
 			    appHomeChatsChatbot(); 
 		       }
               } else if (x>0 && x<1080 && y>144*2 && y<144*11) { 
-		 for (let i=2; i<appcontcount+1; i++) { 
+		 for (let i=2; i<contView[0*512+0]+1; i++) { 
                     if (x>0 && x<1080 && y>144*i && y<144*(i+1)) {
-		      if (acsts[i]) {  
+		      if (contView[i*512+0]) {  
 			   clearInterval(timer); 
 			    var cname=""; var cuname=""; 
 			   for (let j=0; j<contView[i*512+2]; j++) { 
