@@ -175,7 +175,7 @@ msgid=1; rcvmsgid=0; rcvmsgidp=0;
 			    appHomeChatsChatbot(); 
 		       }
               } else if (x>0 && x<1080 && y>144*2 && y<144*11) { 
-		 for (let i=2; i<contView[0]+1; i++) {
+		 for (let i=2; i<(contView[0])+1; i++) {
 		      if (contView[i*512+0]) { 
 			   clearInterval(timer); 
 			   var acname=""; var acuname=""; 
