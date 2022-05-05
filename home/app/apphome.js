@@ -57,8 +57,22 @@ var account=0;
   } 
 	
   function storeContact() { 
-	  var base64 = base64EncArr (contView); 
-	  localStorage.setItem('contact', base64); 
+	  var arr=[]; 
+	  var rcv = contView[appcontcount*512+0]; 
+	  tmr = setInterval( ()=> { 
+		  if (rcv) { 
+			  clearInterval(tmr); 
+			  for (let i=0; i<appcontcount+1; i++) { 
+				  for (let j=0; j<512; j++) { 
+					  arr[i*512+j]=contView[i*512+j];
+				  }   
+			  } 
+			  var base64 = base64EncArr (arr); 
+			  localStorage.setItem('contact', base64); 
+		  } else if (!rcv) { 
+			  rcv = contView[appcontcount*512+0]; 
+		  }
+	  }, 1000); 
   } 
 	
   function retrieveContact() { 
