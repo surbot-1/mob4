@@ -62,12 +62,13 @@ var account=0;
   } 
 	
   function retrieveContact() { 
-	  var contact = localStorage.getItem('contact'); 
+	  var contact = localStorage.getItem('contact'); alert(contact); 
 	  if (contact != "undefined") {
 		  var arr = base64DecToArr (contact, 1); 
 		  for (let i=0; i<arr.length; i++) { 
 		  contView[i]=arr[i]; 
 		  } 
+		  getContact(); 
 	  } else if (contact == "undefined") { 
 		  var tmr; appcontcount=0; 
                   var count = readAppContactCount(sender); 
@@ -106,7 +107,7 @@ var account=0;
       getContact(); 
    } else if (contView[0] == 0) { 
       retrieveContact(); 
-      getContact(); 
+      // getContact(); 
    } else { 
    var tmr; appcontcount=0; 
    var count = readAppContactCount(sender); 
