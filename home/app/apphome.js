@@ -188,7 +188,7 @@ msgid=1; rcvmsgid=0; rcvmsgidp=0;
 			   appHomeChatsUser(acname); 
 		      } 
 		 }
-              } else if (x>0 && x<1080 && y>144*3 && y<144*4) { 
+             /* } else if (x>0 && x<1080 && y>144*3 && y<144*4) { 
 		   if (acsts[3]) { 
 		      clearInterval(timer); 
 		      receiver = acuname[3]; 
@@ -229,7 +229,7 @@ msgid=1; rcvmsgid=0; rcvmsgidp=0;
 		      clearInterval(timer); 
 		      receiver = acuname[9]; 
 		      appHomeChatsUser(acname[9]); 
-		   }
+		   } */ 
 	      } else if (x>0 && x<1080 && y>144*10 && y<144*11) { 
 		   if (acsts[10]) { 
 		      clearInterval(timer); 
