@@ -165,10 +165,10 @@ msgid=1; rcvmsgid=0; rcvmsgidp=0;
                             clearInterval(timer); 
 			    var acname=""; var acuname=""; 
 			    for (let j=0; j<contView[1*512+2]; j++) { 
-				    acname += ascChar(contView[1*512+32]); 
+				    acname += ascChar(contView[1*512+32+j]); 
 			    } 
 			    for (let j=0; j<contView[1*512+4]; j++) { 
-				    acuname += ascChar(contView[1*512+80]); 
+				    acuname += ascChar(contView[1*512+80+j]); 
 			    } 
 			    receiver = acuname; 
 			    appHomeChatsChatbot(); 
@@ -179,10 +179,10 @@ msgid=1; rcvmsgid=0; rcvmsgidp=0;
 			   clearInterval(timer); 
 			   var acname=""; var acuname=""; 
 			   for (let j=0; j<contView[i*512+2]; j++) { 
-				   acname += ascChar(contView[i*512+32]); 
+				   acname += ascChar(contView[i*512+32+j]); 
 			   } 
 			   for (let j=0; j<contView[i*512+4]; j++) { 
-				   acuname += ascChar(contView[i*512+80]); 
+				   acuname += ascChar(contView[i*512+80+j]); 
 			   } 
 			   receiver = acuname; 
 			   appHomeChatsUser(acname); 
