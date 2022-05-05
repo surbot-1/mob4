@@ -78,10 +78,10 @@ var account=0;
   function retrieveContact() { 
 	  var contact = localStorage.getItem('contact'); 
 	  if (contact != null) { 
-		  var arr = base64DecToArr (contact, 1); alert((arr.length));
+		  var arr = base64DecToArr (contact, 1); 
 		  for (let i=0; i<arr.length; i++) { 
 		  contView[i]=arr[i]; 
-		  } alert(contView[0]); 
+		  } 
 		  appcontcount=contView[0]; 
 		  getContact(); 
 	  } else if (contact == null) { 
