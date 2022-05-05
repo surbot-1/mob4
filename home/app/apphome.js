@@ -179,7 +179,7 @@ msgid=1; rcvmsgid=0; rcvmsgidp=0;
               } else if (x>0 && x<1080 && y>144*2 && y<144*11) { 
 		 for (let i=2; i<appcontcount+1; i++) { 
                     if (x>0 && x<1080 && y>144*i && y<144*(i+1)) {
-		      if (acsts[i]) { 
+		      if (acsts[i]) {  
 			   clearInterval(timer); 
 			   /* var acname=""; var acuname=""; 
 			   for (let j=0; j<contView[i*512+2]; j++) { 
