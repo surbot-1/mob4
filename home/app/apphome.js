@@ -109,7 +109,7 @@ var account=0;
    } else if (contView[0] == 0) { 
       retrieveContact(); 
       // getContact(); 
-   } else { 
+   } else if (0) { 
    var tmr; appcontcount=0; 
    var count = readAppContactCount(sender); 
    tmr = setInterval( ()=> { 
