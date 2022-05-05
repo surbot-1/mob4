@@ -18,7 +18,7 @@ ctx.fillStyle = "rgba(240, 240, 240, 1.0)";  // lightgray
 ctx.fillRect(0, 144, 1080, 2032); 
 } 
 	
-receive(false); retrieveContact(); 
+receive(false); // retrieveContact(); 
 chatbotactive=false; useractive=false; sendactive=10; 
 appPtr=0; appPtri=0; appPtrf=0; 
 msgid=1; rcvmsgid=0; rcvmsgidp=0; 
@@ -84,7 +84,13 @@ var account=0;
          count = readAppContactCount(sender); 
       }
    }, 1000); 
-  } else if(!p2 && appcontcount==0) { 
+  } else if(!p2) { 
+   if (contView[0] != 0) { 
+      getContact(); 
+   } else if (contView[0] == 0) { 
+      retrieveContact(); 
+      getContact(); 
+   } else { 
    var tmr; appcontcount=0; 
    var count = readAppContactCount(sender); 
    tmr = setInterval( ()=> { 
@@ -92,7 +98,7 @@ var account=0;
           clearInterval(tmr); 
 	  if (appcontcount==contView[appcontcount*512+0]) { 
               getContact(); 
-	  } else if (appcontcount!=contView[appcontcount*512+0]) { 
+	  } else if (appcontcount != contView[appcontcount*512+0]) { 
               for (let i=1; i<appcontcount+1; i++) { 
 	         readAppContact(sender, i); 
               } 
@@ -103,9 +109,8 @@ var account=0;
          count = readAppContactCount(sender); 
       }
    }, 1000); 
-  } else if(!p2 && appcontcount!=0) { 
-    getContact(); 
-  }
+   }
+  } 
 	
 
      if (p3) {
