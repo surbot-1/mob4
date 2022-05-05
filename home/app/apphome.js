@@ -230,13 +230,13 @@ msgid=1; rcvmsgid=0; rcvmsgidp=0;
 		      clearInterval(timer); 
 		      receiver = acuname[9]; 
 		      appHomeChatsUser(acname[9]); 
-		   } */ 
+		   } 
 	      } else if (x>0 && x<1080 && y>144*10 && y<144*11) { 
 		   if (acsts[10]) { 
 		      clearInterval(timer); 
 		      receiver = acuname[10]; 
 		      appHomeChatsUser(acname[10]); 
-		   }
+		   } */ 
 	      } else if (x>0 && x<1080 && y>144*11 && y<144*11+144) { 
 	      } else if (x>0 && x<1080 && y>144*12 && y<144*12+144) { 
 	      } else if (x>920 && x<920+128 && y>2024 && y<2024+128) { 
