@@ -165,29 +165,31 @@ msgid=1; rcvmsgid=0; rcvmsgidp=0;
 		        if (contView[1*512+0]) { 
                             clearInterval(timer); 
 			    var acname=""; var acuname=""; 
-			    for (let j=0; j<(contView[1*512+2]); j++) { 
+			    for (let j=0; j<contView[1*512+2]; j++) { 
 				    acname += ascChar(contView[1*512+32+j]); 
 			    } 
-			    for (let j=0; j<(contView[1*512+4]); j++) { 
+			    for (let j=0; j<contView[1*512+4]; j++) { 
 				    acuname += ascChar(contView[1*512+80+j]); 
 			    } 
 			    receiver = acuname; 
 			    appHomeChatsChatbot(); 
 		       }
               } else if (x>0 && x<1080 && y>144*2 && y<144*11) { 
-		 for (let i=2; i<(contView[0])+1; i++) {
+		 for (let i=2; i<contView[0]+1; i++) { 
+                    if (x>0 && x<1080 && y>144*i && y<144*(contView[0]+1)) {
 		      if (contView[i*512+0]) { 
 			   clearInterval(timer); 
 			   var acname=""; var acuname=""; 
-			   for (let j=0; j<(contView[i*512+2]); j++) { 
+			   for (let j=0; j<contView[i*512+2]; j++) { 
 				   acname += ascChar(contView[i*512+32+j]); 
 			   } 
-			   for (let j=0; j<(contView[i*512+4]); j++) { 
+			   for (let j=0; j<contView[i*512+4]; j++) { 
 				   acuname += ascChar(contView[i*512+80+j]); 
 			   } 
 			   receiver = acuname; 
 			   appHomeChatsUser(acname); 
 		      } 
+		    }
 		 }
              /* } else if (x>0 && x<1080 && y>144*3 && y<144*4) { 
 		   if (acsts[3]) { 
