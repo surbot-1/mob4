@@ -152,7 +152,8 @@ msgid=1; rcvmsgid=0; rcvmsgidp=0;
 	function check() { 
 	var x = touchx;  var y = touchy; 
 	var tend = touch;  
-           if (tend == 3) { touch = 0;
+           if (tend == 3) { 
+              touch = 0;
               if (x>128*1 && x<128*2 && y>0 && y<144) { 
               } else if (x>128*2 && x<128*3 && y>0 && y<144) { 
               } else if (x>128*3 && x<128*4 && y>0 && y<144) { 
