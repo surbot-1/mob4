@@ -63,9 +63,26 @@ var account=0;
 	
   function retrieveContact() { 
 	  var contact = localStorage.getItem('contact'); 
-	  var arr = base64DecToArr (contact, 1); 
-	  for (let i=0; i<arr.length; i++) { 
+	  if (contact != "undefined") {
+		  var arr = base64DecToArr (contact, 1); 
+		  for (let i=0; i<arr.length; i++) { 
 		  contView[i]=arr[i]; 
+		  } 
+	  } else if (contact == "undefined") { 
+		  var tmr; appcontcount=0; 
+                  var count = readAppContactCount(sender); 
+                  tmr = setInterval( ()=> { 
+                    if (appcontcount) { 
+                       clearInterval(tmr); 
+                       for (let i=1; i<appcontcount+1; i++) { 
+	                    readAppContact(sender, i); 
+                       } 
+                       getContact(); 
+	               storeContact(); 
+		    } else if (!appcontcount) { 
+                        count = readAppContactCount(sender); 
+		    } 
+		  }, 1000); 
 	  }
   }
 	
