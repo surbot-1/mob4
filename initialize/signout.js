@@ -1,5 +1,6 @@
 function signout() {
   deleteCookie("username"); 
   deleteCookie("password"); 
-  // signin(); 
+  // window.localStorage.clear(); 
+  window.localStorage.removeItem('contact')
 }
