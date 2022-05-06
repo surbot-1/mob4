@@ -103,7 +103,7 @@ msgid=1; rcvmsgid=0; rcvmsgidp=0;
 	  }
   }
 	
-  if (p2) { 
+  if (p2==1) { 
     var tmr; appcontcount=0; 
     var count = readAppContactCount(sender); 
     tmr = setInterval( ()=> { 
