@@ -35,6 +35,15 @@ msgid=1; rcvmsgid=0; rcvmsgidp=0;
     // writecStr(200,144*i+72,24*24,32,"ubuntufont",[0,0,0,255],[240,240,240,255],cuname); 
   } 
 	
+  function putName() { 
+     for (let i=0; i<username.length; i++) { 
+	contView[0*512+32+i] = username.charCodeAt(i);
+     } 
+     for (let i=0; i<username.length; i++) { 
+	contView[0*512+80+i] = username.charCodeAt(i); 
+     }
+  }
+	
   function getContact() { 
    var tmr; var cname=""; var cuname=""; 
    var count = contView[0*512+0] ; 
@@ -94,6 +103,7 @@ msgid=1; rcvmsgid=0; rcvmsgidp=0;
                        for (let i=1; i<appcontcount+1; i++) { 
 	                    readAppContact(sender, i); 
                        } 
+                       putName(); 
                        getContact(); 
 	               storeContact(); 
 		    } else if (!appcontcount) { 
@@ -112,6 +122,7 @@ msgid=1; rcvmsgid=0; rcvmsgidp=0;
           for (let i=1; i<appcontcount+1; i++) { 
 	     readAppContact(sender, i); 
           } 
+	  putName(); 
 	  getContact(); 
 	  storeContact(); 
       } else if (!appcontcount) { 
