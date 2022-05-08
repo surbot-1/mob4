@@ -366,7 +366,7 @@ function writeReadStatus(sndr,rcvr,mid) {
        b1=false; msgsendtone.play(); 
        if (sendactive==1) {x=1080-16-16-4*24; y=2048-32-32-8;} 
        else if (sendactive==2) {x=1080-16-16-4*24; y=1408-32-32-8;} 
-       writecStr(x,y,w,h,"ubuntufont",[255,255,255,255],[200,240,200,255],"sent"); 
+       writecStr(x,y,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],"sent"); 
     } else if (readmsgsts=="dlvd" && b2) { 
        b2=false; 
        if (sendactive==1) {x=1080-16-16-4*24; y=2048-32-32-8;} 
