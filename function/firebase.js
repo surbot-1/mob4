@@ -156,7 +156,7 @@ function readAppMessage(sndr,rcvr,mid) {
       msgnotitone.play(); 
     }
     
-    writeAppMessageStatus(sndr,rcvr,mid,"seen"); 
+    // writeAppMessageStatus(sndr,rcvr,mid,"seen"); 
   }); 
 } 
 
