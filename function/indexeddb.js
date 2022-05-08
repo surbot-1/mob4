@@ -26,14 +26,10 @@
          
          request.onupgradeneeded = function(event) {
             var db = event.target.result;
-            var objectStore = db.createObjectStore("employee", {keyPath: "id"});
-            
-           /* for (var i in employeeData) { 
-               objectStore.add(employeeData[i]);
-            } */
+            var objectStore = db.createObjectStore("employee", {keyPath: "id"}); 
          } 
-         // alert('10'); 
-         function read() {
+         // alert('1'); 
+         function readDB() {
             var transaction = db.transaction(["employee"]);
             var objectStore = transaction.objectStore("employee");
             var request = objectStore.get("00-03");
@@ -56,7 +52,7 @@
             };
          }
          // alert('2'); 
-         function readAll() {
+         function readAllDB() {
             var objectStore = db.transaction("employee").objectStore("employee");
             
             objectStore.openCursor().onsuccess = function(event) {
@@ -76,7 +72,7 @@
             };
          }
          // alert('3'); 
-         function add() {
+         function addDB() {
             var request = db.transaction(["employee"], "readwrite")
             .objectStore("employee")
             .add({ id: "00-03", name: "Kenny", age: 19, gender: "female", email: "kenny@planet.org" });
@@ -90,7 +86,7 @@
             }
          }
          // alert('4'); 
-         function remove() {
+         function removeDB() {
             var request = db.transaction(["employee"], "readwrite")
             .objectStore("employee")
             .delete("00-03");
