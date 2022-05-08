@@ -12,7 +12,7 @@ function receive(t) {
               rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
               rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
               readAppMessage(receiver,sender,rcvmsgidp); 
-              writeAppMessageStatus(receiver,sender,rcvmsgidp,"seen"); 
+              // writeAppMessageStatus(receiver,sender,rcvmsgidp,"seen"); 
               } else if (rcvmsgsts=="dlvd") {  
               // rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
               // rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
@@ -30,7 +30,7 @@ function receive(t) {
           rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1; 
           rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
           readAppMessage(receiver,sender,rcvmsgid); 
-          writeAppMessageStatus(receiver,sender,rcvmsgidp,"seen"); 
+          // writeAppMessageStatus(receiver,sender,rcvmsgidp,"seen"); 
           } else if (rcvmsgsts=="dlvd") { 
           // rcvmsgidp=rcvmsgid; rcvmsgid=rcvmsgidp+1;
           // rcvmsgstsp=rcvmsgsts; rcvmsgsts="Null"; 
