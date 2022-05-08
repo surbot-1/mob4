@@ -1,6 +1,6 @@
 function admin() {
   saveImage(680-16,144+16,400,600); 
-  imageRect(680-16,144+16,400,600,"rgba(128,128,128,1.0)"); 
+  imageRect(680-16,144+16,400,600,"rgba(248,248,248,1.0)"); 
   imageRect(680-16+4,144+16+4,400-8,600-8,"rgba(255,255,255,1.0)"); 
   fileViewerUrl(680-16+136, 144+16+16, "icon/business-man-icon-128.bmp"); 
   var aname=sender; var am=(400-(aname.length)*24)/2; 
@@ -27,7 +27,7 @@ function admin() {
 	      } else if (x>0 && x<1080 && y>144*4+8 && y<144*4+8+128) { 
 	      } else if (x>0 && x<1080 && y>144*4+8 && y<144*4+8+128) { 
 	      } else if (x>0 && x<1080 && y>144*4+8 && y<144*4+8+128) { 
-	      } else if (x>680-16+104 && x<680-16+104+8*24 && y>144+16+600-64 && y<144+16+600) { 
+	      } else if (x>680-16+104 && x<680-16+104+8*24 && y>144+16+600-64-64 && y<144+16+600) { 
                      clearInterval(timer); signout(); signin(); 
 	      }
            } 
