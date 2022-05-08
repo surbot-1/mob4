@@ -358,11 +358,17 @@ function receiveFromServer(user) {
 } 
 
 function writeReadStatus(sndr,rcvr,mid) { 
-  var tmr; var tmr2; var b=true;  // readmsgsts="Null"; 
+  var tmr; var tmr2; var b1=true; var b2=true;  // readmsgsts="Null"; 
   var x=0; var y=0; var w=24*4; var h=32; 
   var readsts = readAppMessageReadStatus(sndr,rcvr,mid);  
   function f1() { 
-    if (readmsgsts=="dlvd" && b) { b=false; 
+    if (readmsgsts=="sent" && b1) { 
+       b1=false; msgnotitone.play(); 
+       if (sendactive==1) {x=1080-16-16-4*24; y=2048-32-32-8;} 
+       else if (sendactive==2) {x=1080-16-16-4*24; y=1408-32-32-8;} 
+       writecStr(x,y,w,h,"ubuntufont",[240,240,240,255],[200,240,200,255],"sent"); 
+    } else if (readmsgsts=="dlvd" && b2) { 
+       b2=false; 
        if (sendactive==1) {x=1080-16-16-4*24; y=2048-32-32-8;} 
        else if (sendactive==2) {x=1080-16-16-4*24; y=1408-32-32-8;} 
        writecStr(x,y,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],"dlvd"); 
@@ -370,7 +376,7 @@ function writeReadStatus(sndr,rcvr,mid) {
        clearInterval(tmr); clearInterval(tmr2); 
        if (sendactive==1) {x=1080-16-16-4*24; y=2048-32-32-8;} 
        else if (sendactive==2) {x=1080-16-16-4*24; y=1408-32-32-8;} 
-       writecStr(x,y,w,h,"ubuntufont",[0,0,0,255],[200,240,200,255],"seen"); 
+       writecStr(x,y,w,h,"ubuntufont",[0,0,255,255],[200,240,200,255],"seen"); 
        msgseentone.play(); 
     } 
   }
