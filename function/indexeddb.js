@@ -7,14 +7,19 @@
          window.webkitIDBTransaction || window.msIDBTransaction;
          window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || 
          window.msIDBKeyRange; 
+
+         var dbname="dbapp"; 
+         var dbversion=1; 
+         var dbstore="dbcontact";
          
+     function openDB(dbname, dbversion, dbstore, key) { 
          if (!window.indexedDB) {
             window.alert("Your browser doesn't support a stable version of IndexedDB."); 
          } else { } 
 
-         var db; var request; 
-      function requestDB(database, version) {
-         request = window.indexedDB.open(database, version);
+         var db; // var request; 
+
+         var request = window.indexedDB.open(dbname, dbversion);
          
          request.onerror = function(event) {
             alert("error: ");
@@ -24,18 +29,32 @@
             db = request.result;
             // alert("success: "+ db);
          }; 
-      }
+      
          
-     function onUpgradeNeeded(store, keypath) { 
          request.onupgradeneeded = function(event) {
             var db = event.target.result;
-            var objectStore = db.createObjectStore(store, {keyPath: keypath}); 
+            var objectStore = db.createObjectStore(store, {keyPath: key}); 
          } 
-      }
+     }
+      
+  function getObjectStore(dbstore, mode) {
+    var tx = db.transaction(dbstore, mode);
+    return tx.objectStore(dbstore);
+  }
+
+  function clearObjectStore(dbstore, mode) {
+    var store = getObjectStore(dbstore, mode);
+    var req = store.clear();
+    req.onsuccess = function(evt) { 
+    };
+    req.onerror = function (evt) { 
+    };
+  }
+
          // alert('1'); 
-         function readDB(store, key) {
-            var transaction = db.transaction([store]);
-            var objectStore = transaction.objectStore(store);
+         function readObjectStore(dbstore, key) {
+            var transaction = db.transaction([dbstore]);
+            var objectStore = transaction.objectStore(dbstore);
             var request = objectStore.get(key);
             
             request.onerror = function(event) {
@@ -56,8 +75,8 @@
             };
          }
          // alert('2'); 
-         function readAllDB(store, ) {
-            var objectStore = db.transaction(store).objectStore(store);
+         function readAllObjectStore(dbstore) {
+            var objectStore = db.transaction(dbstore).objectStore(dbstore);
             
             objectStore.openCursor().onsuccess = function(event) {
                var cursor = event.target.result;
@@ -76,9 +95,9 @@
             };
          }
          // alert('3'); 
-         function addDB(store, ) {
-            var request = db.transaction([store], "readwrite")
-            .objectStore(store)
+         function addObjectStore(dbstore, mode, objdata ) {
+            var request = db.transaction([dbstore], mode)
+            .objectStore(dbstore)
             .add({ id: "00-03", name: "Kenny", age: 19, gender: "female", email: "kenny@planet.org" });
             
             request.onsuccess = function(event) {
@@ -90,9 +109,9 @@
             }
          }
          // alert('4'); 
-         function removeDB(store, key) {
-            var request = db.transaction([store], "readwrite")
-            .objectStore(store)
+         function removeObjectStore(dbstore, mode, key) {
+            var request = db.transaction([dbstore], key)
+            .objectStore(dbstore)
             .delete(key);
             
             request.onsuccess = function(event) {
