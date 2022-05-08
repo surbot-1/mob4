@@ -111,7 +111,7 @@
          }
          // alert('4'); 
          function removeObjectStore(dbstore, mode, key) {
-            var request = db.transaction([dbstore], key)
+            var request = db.transaction([dbstore], mode)
             .objectStore(dbstore)
             .delete(key);
             
