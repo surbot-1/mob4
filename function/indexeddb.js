@@ -10,14 +10,15 @@
 
          var dbname="dbapp"; 
          var dbversion=1; 
-         var dbstore="dbcontact";
+         var dbstore="dbcontact"; 
+         var db; 
          
      function openDB(dbname, dbversion, dbstore, key) { 
          if (!window.indexedDB) {
             window.alert("Your browser doesn't support a stable version of IndexedDB."); 
          } else { } 
 
-         var db; // var request; 
+         // var db; // var request; 
 
          var request = window.indexedDB.open(dbname, dbversion);
          
