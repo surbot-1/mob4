@@ -12,8 +12,9 @@
             window.alert("Your browser doesn't support a stable version of IndexedDB."); 
          } else { } 
 
-         var db;
-         var request = window.indexedDB.open("newDatabase", 1);
+         var db; var request; 
+      function requestDB(database, version) {
+         request = window.indexedDB.open(database, version);
          
          request.onerror = function(event) {
             alert("error: ");
@@ -22,17 +23,20 @@
          request.onsuccess = function(event) {
             db = request.result;
             // alert("success: "+ db);
-         };
+         }; 
+      }
          
+     function onUpgradeNeeded(store, keypath) { 
          request.onupgradeneeded = function(event) {
             var db = event.target.result;
-            var objectStore = db.createObjectStore("employee", {keyPath: "id"}); 
+            var objectStore = db.createObjectStore(store, {keyPath: keypath}); 
          } 
+      }
          // alert('1'); 
-         function readDB() {
-            var transaction = db.transaction(["employee"]);
-            var objectStore = transaction.objectStore("employee");
-            var request = objectStore.get("00-03");
+         function readDB(store, key) {
+            var transaction = db.transaction([store]);
+            var objectStore = transaction.objectStore(store);
+            var request = objectStore.get(key);
             
             request.onerror = function(event) {
                alert("Unable to retrieve daa from database!");
@@ -52,8 +56,8 @@
             };
          }
          // alert('2'); 
-         function readAllDB() {
-            var objectStore = db.transaction("employee").objectStore("employee");
+         function readAllDB(store, ) {
+            var objectStore = db.transaction(store).objectStore(store);
             
             objectStore.openCursor().onsuccess = function(event) {
                var cursor = event.target.result;
@@ -72,9 +76,9 @@
             };
          }
          // alert('3'); 
-         function addDB() {
-            var request = db.transaction(["employee"], "readwrite")
-            .objectStore("employee")
+         function addDB(store, ) {
+            var request = db.transaction([store], "readwrite")
+            .objectStore(store)
             .add({ id: "00-03", name: "Kenny", age: 19, gender: "female", email: "kenny@planet.org" });
             
             request.onsuccess = function(event) {
@@ -86,10 +90,10 @@
             }
          }
          // alert('4'); 
-         function removeDB() {
-            var request = db.transaction(["employee"], "readwrite")
-            .objectStore("employee")
-            .delete("00-03");
+         function removeDB(store, key) {
+            var request = db.transaction([store], "readwrite")
+            .objectStore(store)
+            .delete(key);
             
             request.onsuccess = function(event) {
                alert("Kenny's entry has been removed from your database.");
