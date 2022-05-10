@@ -8,12 +8,12 @@
          window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || 
          window.msIDBKeyRange; 
 
-         var dbname="dbapp"; 
+         var dbname="app"; 
          var dbversion=1; 
-         var dbstore="dbcontact"; 
+         var dbostore="contact"; 
          var db; 
          
-     function openDB(dbname, dbversion, dbstore, key) { 
+     function openDB(dbname, dbversion, dbostore, key) { 
          if (!window.indexedDB) {
             window.alert("Your browser doesn't support a stable version of IndexedDB."); 
          } else { } 
@@ -34,7 +34,7 @@
          
          request.onupgradeneeded = function(event) {
             var db = event.target.result;
-            var objectStore = db.createObjectStore(store, {keyPath: key}); 
+            var objectStore = db.createObjectStore(dbostore, {keyPath: key}); 
          } 
      }
       
@@ -50,12 +50,68 @@
     };
     req.onerror = function (evt) { 
     };
-  }
+  } 
+
+         function readObjectStore(objstore,key) {
+            var transaction = db.transaction([objstore]);
+            var objectStore = transaction.objectStore(objstore); 
+            var request = objectStore.get(key);
+            
+            request.onerror = function(event) {
+               alert("Unable to retrieve daa from database!");
+            };
+            
+            request.onsuccess = function(event) {
+               // Do something with the request.result!
+               if(request.result) { 
+                  var value1 = request.result.value1; 
+                  var value2 = request.result.value2; 
+                  var value3 = request.result.value3; 
+                  var value4 = request.result.value4; 
+                  var obj = { 
+                      value1: value1, 
+                      value2: value2, 
+                      value3: value3, 
+                      value4: value4
+                  }; 
+                  alert("Value1: " + value1 + ", Value2: " + value2 + ", Value3: " + value3 + ", Value4: " + value4); 
+                  return obj; 
+               } else {
+                  alert("couldn't be found in database!"); 
+                  return "error"; 
+               }
+            };
+         } 
+
+         function addObjectStore(objstore,object) {
+            var request = db.transaction([objstore], "readwrite")
+            .objectStore(objstore)
+            .add(object); 
+            // .add({ id: "00-03", name: "Kenny", username: "uname", dob: "01/01/2020", gender: "female" });
+            
+            request.onsuccess = function(event) {
+               alert("Added to database.");
+            };
+            
+            request.onerror = function(event) {
+               alert("Already exist in database!");
+            }
+         }
+         // alert('4'); 
+         function removeObjectStore(objstore,key) {
+            var request = db.transaction([objstore], "readwrite")
+            .objectStore(objstore)
+            .delete(key);
+            
+            request.onsuccess = function(event) {
+               alert("Removed from database.");
+            };
+         } 
 
          // alert('1'); 
-         function readObjectStore(dbstore, key) {
-            var transaction = db.transaction([dbstore]);
-            var objectStore = transaction.objectStore(dbstore);
+         function readOSContact(key) {
+            var transaction = db.transaction(["contact"]);
+            var objectStore = transaction.objectStore("contact");
             var request = objectStore.get(key);
             
             request.onerror = function(event) {
@@ -66,18 +122,26 @@
                // Do something with the request.result!
                if(request.result) { 
                   var name = request.result.name; 
-                  var age = request.result.age; 
-                  var gender = request.result.gender;  
-                  var email = request.result.email; 
-                  alert("Name: " + name + ", Age: " + age + ", Gender: " + gender + ", Email: " + email);
+                  var username = request.result.username; 
+                  var dob = request.result.dob; 
+                  var gender = request.result.gender; 
+                  var obj = { 
+                      name: name, 
+                      username: username, 
+                      dob: dob, 
+                      gender: gender
+                  }; 
+                  alert("Name: " + name + ", Username: " + username + ", DOB: " + dob + ", Gender: " + gender); 
+                  return obj; 
                } else {
-                  alert("Kenny couldn't be found in your database!");
+                  alert("couldn't be found in database!"); 
+                  return "error"; 
                }
             };
          }
          // alert('2'); 
-         function readAllObjectStore(dbstore) {
-            var objectStore = db.transaction(dbstore).objectStore(dbstore);
+         function readAllOSContact() {
+            var objectStore = db.transaction("contact").objectStore("contact");
             
             objectStore.openCursor().onsuccess = function(event) {
                var cursor = event.target.result;
@@ -85,10 +149,10 @@
                if (cursor) { 
                   var id = cursor.key; 
                   var name = cursor.value.name; 
-                  var age = cursor.value.age; 
+                  var username = cursor.value.username; 
+                  var dob = cursor.value.dob; 
                   var gender = cursor.value.gender; 
-                  var email = cursor.value.email; 
-                  alert("Name for id " + id + " is " + name + ", Age: " + age + ", Gender: " + gender + ", Email: " + email);
+                  alert("ID: " + id + ", Name " + name + ", DOB: " + dob + ", Gender: " + gender);
                   cursor.continue();
                } else {
                   alert("No more entries!");
@@ -96,26 +160,49 @@
             };
          }
          // alert('3'); 
-         function addObjectStore(dbstore, mode, objdata ) {
-            var request = db.transaction([dbstore], mode)
-            .objectStore(dbstore)
-            .add({ id: "00-03", name: "Kenny", age: 19, gender: "female", email: "kenny@planet.org" });
+         function addOSContact(objcontact) {
+            var request = db.transaction(["contact"], "readwrite")
+            .objectStore("contact")
+            .add(objcontact); 
+            // .add({ id: "00-03", name: "Kenny", username: "uname", dob: "01/01/2020", gender: "female" });
             
             request.onsuccess = function(event) {
-               alert("Kenny has been added to your database.");
+               alert("Added to database.");
             };
             
             request.onerror = function(event) {
-               alert("Unable to add data\r\nKenny is aready exist in your database! ");
+               alert("Already exist in database!");
             }
          }
          // alert('4'); 
-         function removeObjectStore(dbstore, mode, key) {
-            var request = db.transaction([dbstore], mode)
-            .objectStore(dbstore)
+         function removeOSContact(key) {
+            var request = db.transaction(["contact"], "readwrite")
+            .objectStore("contact")
             .delete(key);
             
             request.onsuccess = function(event) {
-               alert("Kenny's entry has been removed from your database.");
+               alert("Removed from database.");
             };
          } 
+
+  function clearOSContact() {
+    var store = getObjectStore("contact", "readwrite");
+    var req = store.clear();
+    req.onsuccess = function(evt) { 
+    };
+    req.onerror = function (evt) { 
+    };
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
